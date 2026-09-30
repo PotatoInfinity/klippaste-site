@@ -99,7 +99,8 @@ main { display: block; }
 .panel h2 { font-size: clamp(32px, 5vw, 40px); }
 .hero { max-width: 1080px; margin: 0 auto; text-align: center; padding: 150px 20px 0; }
 .hero h1 { font-size: clamp(40px, 6.4vw, 64px); max-width: 16ch; margin: 0 auto; }
-.hero h1 u { text-decoration: underline; text-decoration-color: var(--amber); text-decoration-thickness: 3px; text-underline-offset: 8px; }
+.hero h1 u { text-decoration: none; background: linear-gradient(var(--amber), var(--amber)) left bottom / 0% 3px no-repeat; padding-bottom: 8px; transition: background-size 0.9s var(--ease) 1s; }
+.hero h1.in u { background-size: 100% 3px; }
 .hero .sub { max-width: 680px; margin: 24px auto 0; color: var(--sage); text-shadow: 0 1px 12px rgba(0,0,0,0.6); }
 .hero .sub strong { color: var(--paper); }
 .app-duo { display: flex; gap: 48px; justify-content: center; flex-wrap: wrap; margin: 0 auto 36px; }
@@ -121,7 +122,7 @@ main { display: block; }
 /* ---------- video spotlight ---------- */
 .spot { position: relative; height: 180vh; margin-top: 24px; }
 .spot-sticky { position: sticky; top: 0; height: 100vh; height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; overflow: hidden; padding: 0 20px; }
-.spot-veil { position: absolute; inset: 0; background: rgba(10,30,20,0); backdrop-filter: blur(0px); -webkit-backdrop-filter: blur(0px); }
+.spot-veil { position: absolute; inset: 0; background: rgba(10,30,20,0); backdrop-filter: blur(0px); -webkit-backdrop-filter: blur(0px); -webkit-mask-image: linear-gradient(to bottom, transparent, black 14%, black 86%, transparent); mask-image: linear-gradient(to bottom, transparent, black 14%, black 86%, transparent); }
 .spot-frame { position: relative; z-index: 2; width: min(960px, 92vw); transform: scale(0.96); border-radius: var(--r2); overflow: hidden; border: 1px solid var(--line); background: #000; box-shadow: 0 24px 72px rgba(0,0,0,0.5); }
 .spot-frame video { display: block; width: 100%; aspect-ratio: 1280 / 832; cursor: pointer; }
 .spot-mute { position: absolute; right: 14px; bottom: 14px; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); background: rgba(10,30,20,0.6); color: var(--paper); cursor: pointer; backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; transition: transform 0.2s var(--ease); }
@@ -132,7 +133,8 @@ main { display: block; }
 .spot-mute.live .ic-muted { display: none; }
 
 /* ---------- compare: mac windows ---------- */
-.compare { position: relative; display: grid; border-radius: var(--r2); border: 1px solid var(--line); --pos: 50%; user-select: none; margin-top: 28px; }
+@property --pos { syntax: "<percentage>"; inherits: true; initial-value: 50%; }
+.compare { position: relative; display: grid; border-radius: var(--r2); border: 1px solid var(--line); --pos: 50%; user-select: none; margin-top: 28px; transition: --pos 0.12s ease-out; }
 .mac { grid-area: 1 / 1; overflow: hidden; min-width: 0; border-radius: var(--r2); }
 .mac-bar { display: flex; align-items: center; gap: 7px; padding: 12px 16px; background: rgba(10,30,20,0.92); border-bottom: 1px solid var(--line); font-family: ui-monospace, "SF Mono", monospace; font-size: 12px; color: var(--sage); }
 .mac-bar i { width: 12px; height: 12px; border-radius: 50%; }
@@ -152,8 +154,13 @@ main { display: block; }
 .mac.out table { width: 100%; table-layout: fixed; border-collapse: collapse; font-size: 14.5px; margin-top: 6px; }
 .mac.out th, .mac.out td { border: 1px solid rgba(20,38,28,0.25); padding: 8px 12px; text-align: left; overflow-wrap: anywhere; }
 .mac.out th { background: rgba(14,39,27,0.08); }
-.cmp-handle { position: absolute; top: -14px; bottom: -14px; left: var(--pos); width: 2px; background: var(--amber); border-radius: 2px; }
-.cmp-handle span { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; background: rgba(10,30,20,0.9); color: var(--amber); border: 1.5px solid var(--amber); border-radius: 50%; box-shadow: 0 4px 20px rgba(0,0,0,0.5); white-space: nowrap; }
+.cmp-handle { position: absolute; top: 0; bottom: 0; left: var(--pos); width: 2px; margin-left: -1px; background: var(--paper); box-shadow: 0 0 0 1px rgba(0,0,0,0.25); pointer-events: none; }
+.cmp-handle span { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; gap: 1px; background: var(--paper); color: var(--paper-ink); border-radius: 50%; box-shadow: 0 4px 16px rgba(0,0,0,0.4); white-space: nowrap; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.cmp-handle span svg { width: 22px; height: 22px; }
+.cmp-handle span svg:first-child { margin-right: -9px; }
+.cmp-handle span svg:last-child { margin-left: -9px; }
+.compare:hover .cmp-handle span { box-shadow: 0 4px 16px rgba(0,0,0,0.4), 0 0 0 6px rgba(245,239,224,0.15); }
+.compare.dragging .cmp-handle span { transform: translate(-50%,-50%) scale(0.93); }
 .cmp-hint { position: absolute; top: 64px; left: 50%; transform: translateX(-50%); background: rgba(10,30,20,0.8); border: 1px solid var(--line); color: var(--paper); font-size: 13px; font-weight: 600; padding: 8px 18px; border-radius: 999px; transition: opacity 0.4s; pointer-events: none; }
 .compare.used .cmp-hint { opacity: 0; }
 .cmp-range { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; margin: 0; touch-action: pan-y; }
@@ -163,7 +170,7 @@ main { display: block; }
 .wall-panel { max-width: none; padding-left: 0; padding-right: 0; }
 .wall-panel .eyebrow, .wall-panel h2, .wall-panel .lede { max-width: 1080px; margin-left: auto; margin-right: auto; padding-left: 20px; padding-right: 20px; }
 .wall-panel .lede { margin-top: 12px; }
-.wall-track { display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 28px max(20px, calc((100vw - 1080px) / 2 + 20px)) 6px; scrollbar-width: none; }
+.wall-track { display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 28px max(20px, calc((100vw - 1080px) / 2 + 20px)) 6px; scrollbar-width: none; -webkit-mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent); mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent); }
 .wall-track::-webkit-scrollbar { display: none; }
 .wall-card { flex: 0 0 340px; scroll-snap-align: center; margin: 0; }
 .wall-img { display: flex; align-items: center; justify-content: center; aspect-ratio: 16 / 9; border-radius: var(--r2); background: linear-gradient(160deg, var(--pine-2), var(--pine)); border: 1px solid var(--line); }
@@ -232,7 +239,19 @@ footer { margin-top: clamp(40px, 6vw, 80px); border-top: 1px solid var(--line); 
 .wip-card p { color: var(--sage); }
 .wip-card .dl-btn { margin-top: 18px; }
 
-/* ---------- reveal ---------- */
+/* ---------- page-open choreography ---------- */
+@keyframes navDrop { from { opacity: 0; transform: translateY(-18px); } to { opacity: 1; transform: none; } }
+@keyframes riseIn { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+@keyframes popIn { from { opacity: 0; transform: scale(0.8); } to { opacity: 1; transform: scale(1); } }
+.nav-pill { animation: navDrop 0.7s var(--ease) backwards; }
+.hero .app-mini:first-child { animation: popIn 0.55s var(--ease) 0.1s backwards; }
+.hero .app-mini:last-child { animation: popIn 0.55s var(--ease) 0.2s backwards; }
+.hero h1 { animation: riseIn 0.7s var(--ease) 0.3s backwards; }
+.hero .sub { animation: riseIn 0.7s var(--ease) 0.45s backwards; }
+.hero .badges { animation: riseIn 0.7s var(--ease) 0.55s backwards; }
+.hero .flow-strip { animation: riseIn 0.7s var(--ease) 0.65s backwards; }
+
+/* ---------- reveal on scroll ---------- */
 .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.5s var(--ease), transform 0.5s var(--ease); }
 .reveal.in { opacity: 1; transform: none; }
 
@@ -245,6 +264,8 @@ footer { margin-top: clamp(40px, 6vw, 80px); border-top: 1px solid var(--line); 
   .faq-row details { max-width: none; }
   .q-pill { font-size: 15px; padding: 15px 24px; }
   .code, .mac.out .doc { min-height: 0; font-size: 13px; }
+  .cmp-handle span { width: 40px; height: 40px; }
+  .cmp-handle span svg { width: 18px; height: 18px; }
   .wall-card { flex-basis: 78vw; }
 }
 @media (prefers-reduced-motion: reduce) {
