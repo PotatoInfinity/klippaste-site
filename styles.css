@@ -156,9 +156,7 @@ main { display: block; }
 .mac.out th { background: rgba(14,39,27,0.08); }
 .cmp-handle { position: absolute; top: 0; bottom: 0; left: var(--pos); width: 2px; margin-left: -1px; background: var(--paper); box-shadow: 0 0 0 1px rgba(0,0,0,0.25); pointer-events: none; }
 .cmp-handle span { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; gap: 1px; background: var(--paper); color: var(--paper-ink); border-radius: 50%; box-shadow: 0 4px 16px rgba(0,0,0,0.4); white-space: nowrap; transition: transform 0.2s ease, box-shadow 0.2s ease; }
-.cmp-handle span svg { width: 22px; height: 22px; }
-.cmp-handle span svg:first-child { margin-right: -9px; }
-.cmp-handle span svg:last-child { margin-left: -9px; }
+.cmp-handle span svg { width: 24px; height: 24px; }
 .compare:hover .cmp-handle span { box-shadow: 0 4px 16px rgba(0,0,0,0.4), 0 0 0 6px rgba(245,239,224,0.15); }
 .compare.dragging .cmp-handle span { transform: translate(-50%,-50%) scale(0.93); }
 .cmp-hint { position: absolute; top: 64px; left: 50%; transform: translateX(-50%); background: rgba(10,30,20,0.8); border: 1px solid var(--line); color: var(--paper); font-size: 13px; font-weight: 600; padding: 8px 18px; border-radius: 999px; transition: opacity 0.4s; pointer-events: none; }
@@ -265,7 +263,7 @@ footer { margin-top: clamp(40px, 6vw, 80px); border-top: 1px solid var(--line); 
   .q-pill { font-size: 15px; padding: 15px 24px; }
   .code, .mac.out .doc { min-height: 0; font-size: 13px; }
   .cmp-handle span { width: 40px; height: 40px; }
-  .cmp-handle span svg { width: 18px; height: 18px; }
+  .cmp-handle span svg { width: 20px; height: 20px; }
   .wall-card { flex-basis: 78vw; }
 }
 @media (prefers-reduced-motion: reduce) {

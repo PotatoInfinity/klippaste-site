@@ -151,7 +151,7 @@
   var range = document.getElementById('cmpRange');
   var hint = document.getElementById('cmpHint');
   function setPos(p, mark) {
-    p = Math.max(2, Math.min(98, p));
+    p = Math.max(0, Math.min(100, p));
     if (box) {
       box.style.setProperty('--pos', p + '%');
       if (mark !== false) box.classList.add('used');
