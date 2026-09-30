@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Klip + KlipOCR — Copy math. Paste beauty.</title>
+<meta name="description" content="Klip turns Markdown + LaTeX into editable equations and native tables in Pages, Keynote, Word and LibreOffice. KlipOCR snips anything on screen straight to paste-ready LaTeX. 100% on-device.">
+<link rel="icon" type="image/png" href="icons/favicon-64.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Dithered forest background: fixed full image + reusable sky strip + grain -->
+<div class="bg-fixed" aria-hidden="true"></div>
+<div class="bg-sky" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- Pill glass nav -->
+<header class="nav-wrap">
+  <nav class="nav-pill" id="navPill" aria-label="Main">
+    <a class="brand" href="#top">
+      <img src="icons/klip-512.png" alt="Klip icon" width="28" height="28">
+      <span>Klip</span>
+    </a>
+    <div class="nav-links">
+      <a href="#apps">Apps</a>
+      <a href="#demo">Demo</a>
+      <a href="#flow">Flow</a>
+      <a href="#features">Features</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <a class="dl-btn small" href="#apps"><span class="dl-text">Download</span><span class="dl-apple" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.81-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8.78-.16 2.05-.93 3.57-.84 1.58.13 2.77.75 3.55 1.9-3.27 1.96-2.5 6.24.5 7.45-.6 1.58-1.42 3.14-2.7 3.66zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg></span></a>
+    <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false">☰</button>
+  </nav>
+  <div class="nav-mobile" id="navMobile">
+    <a href="#apps">Apps</a><a href="#demo">Demo</a><a href="#flow">Flow</a>
+    <a href="#features">Features</a><a href="#faq">FAQ</a><a href="license.html">License</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="eyebrow reveal">//&nbsp; paste &nbsp;•&nbsp; scan &nbsp;•&nbsp; ship</p>
+    <h1 class="reveal">Copy math.<br><em>Paste beauty.</em></h1>
+    <p class="sub reveal">Klip turns Markdown + LaTeX into <strong>editable equations</strong> and <strong>native tables</strong> in Pages, Keynote, Word and LibreOffice. KlipOCR snips anything on screen — PDFs, slides, scans — straight to paste-ready LaTeX. 100% on-device.</p>
+    <div class="badges reveal">
+      <span>macOS 13+</span><span>Apple Silicon</span><span>On-device</span><span>No cloud</span>
+    </div>
+
+    <!-- Two app cards: icon + download button each -->
+    <div class="app-cards" id="apps">
+      <article class="app-card reveal">
+        <img src="icons/klip-512.png" alt="Klip app icon" width="96" height="96" class="app-icon">
+        <h2>Klip</h2>
+        <p class="tag">Markdown + LaTeX → native office paste</p>
+        <ul>
+          <li>Editable equations, never screenshots</li>
+          <li>Native tables in Pages &amp; Keynote</li>
+          <li>One copy, every target</li>
+        </ul>
+        <a class="dl-btn" href="#"><span class="dl-text">Download Klip</span><span class="dl-apple" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.81-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8.78-.16 2.05-.93 3.57-.84 1.58.13 2.77.75 3.55 1.9-3.27 1.96-2.5 6.24.5 7.45-.6 1.58-1.42 3.14-2.7 3.66zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg></span></a>
+        <p class="fine">Menu-bar app · macOS 13+ · v0.1.0</p>
+      </article>
+      <article class="app-card reveal">
+        <img src="icons/klipocr-512.png" alt="KlipOCR app icon" width="96" height="96" class="app-icon">
+        <h2>KlipOCR</h2>
+        <p class="tag">Hotkey snip → Markdown / LaTeX on clipboard</p>
+        <ul>
+          <li>Frozen overlay, in-memory only</li>
+          <li>Bundled OvisOCR2, no cloud</li>
+          <li>Built for Klip — Cmd+V just works</li>
+        </ul>
+        <a class="dl-btn ghost" href="#"><span class="dl-text">Download KlipOCR</span><span class="dl-apple" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.81-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8.78-.16 2.05-.93 3.57-.84 1.58.13 2.77.75 3.55 1.9-3.27 1.96-2.5 6.24.5 7.45-.6 1.58-1.42 3.14-2.7 3.66zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg></span></a>
+        <p class="fine">Menu-bar app · macOS 14+ · ScreenCapture permission</p>
+      </article>
+    </div>
+    <p class="scroll-hint" aria-hidden="true">↓</p>
+  </section>
+
+  <div class="section-foot" aria-hidden="true"></div>
+
+  <!-- DEMO -->
+  <section class="panel" id="demo">
+    <p class="eyebrow reveal">01 — demo</p>
+    <h2 class="reveal">Watch it paste.</h2>
+    <p class="lede reveal">71 seconds, real clipboard, real Pages. Copy AI math, hit paste, keep editing.</p>
+    <div class="video-frame reveal">
+      <video controls playsinline preload="none" poster="video/poster.jpg" id="demoVideo">
+        <source src="video/klip-demo-720p.mp4" type="video/mp4">
+        Sorry — your browser can't play this video.
+      </video>
+    </div>
+  </section>
+
+  <!-- FLOW -->
+  <section class="panel" id="flow">
+    <p class="eyebrow reveal">02 — flow</p>
+    <h2 class="reveal">Two apps, one path.</h2>
+    <div class="steps">
+      <div class="step reveal"><span class="n">1</span><h3>Snip</h3><p>KlipOCR hotkey freezes the screen. Drag over any equation or table — stays in memory, never touches disk.</p></div>
+      <div class="step reveal"><span class="n">2</span><h3>Copy</h3><p>On-device OCR writes clean Markdown + LaTeX to the clipboard: <code>$..$</code>, <code>$$..$$</code>, pipe tables.</p></div>
+      <div class="step reveal"><span class="n">3</span><h3>Paste native</h3><p>Klip converts the clipboard to every flavor at once — then <kbd>⌘V</kbd> drops editable equations &amp; real tables.</p></div>
+    </div>
+  </section>
+
+  <!-- FEATURES BENTO -->
+  <section class="panel" id="features">
+    <p class="eyebrow reveal">03 — features</p>
+    <h2 class="reveal">Small apps, deep craft.</h2>
+    <div class="bento">
+      <div class="card wide reveal"><h3>Editable equations, not screenshots</h3><p>Pages / Keynote native TSP, Word OMML, LibreOffice StarMath. Degrade rule: never drop an equation — fall back to <code>$source$</code> text.</p></div>
+      <div class="card reveal"><h3>Native tables</h3><p>Pipe tables paste as real Pages / Keynote tables. Cell equations stay editable.</p></div>
+      <div class="card reveal"><h3>One copy, every target</h3><p>Apple + Word + LO flavors in a single paste. Auto plain-text for Obsidian, Typora, Bear.</p></div>
+      <div class="card reveal"><h3>Hotkey snip</h3><p>Frozen overlay, in-memory only. Preloads on keydown so the first snip is instant.</p></div>
+      <div class="card reveal"><h3>On-device OCR</h3><p>Bundled OvisOCR2 + RapidLaTeXOCR. Reading-order Markdown, HTML tables. No cloud, ever.</p></div>
+      <div class="card wide reveal"><h3>Menu-bar fast</h3><p>Clipboard watch · text / equation size sliders · strip AI citations <code>[1] [^1] 【】</code> · fast / balanced / efficient modes · images embedded raster.</p></div>
+    </div>
+    <div class="targets reveal">
+      <span>Pastes into</span>
+      <strong>Pages</strong><strong>Keynote</strong><strong>Word</strong><strong>LibreOffice</strong><strong>Google Docs</strong>
+    </div>
+  </section>
+
+  <div class="section-foot flip" aria-hidden="true"></div>
+
+  <!-- PRICING TEASER -->
+  <section class="panel" id="pricing">
+    <p class="eyebrow reveal">04 — license</p>
+    <h2 class="reveal">One price. Yours.</h2>
+    <p class="lede reveal">Native, private, local-first — like the good old shareware days, minus the nag screens.</p>
+    <div class="price-card reveal">
+      <p class="pc-title">Klip + KlipOCR bundle</p>
+      <p class="pc-soon">Licensing opens soon</p>
+      <a class="dl-btn" href="license.html"><span class="dl-text">Get a license</span><span class="dl-apple" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.81-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8.78-.16 2.05-.93 3.57-.84 1.58.13 2.77.75 3.55 1.9-3.27 1.96-2.5 6.24.5 7.45-.6 1.58-1.42 3.14-2.7 3.66zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg></span></a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="panel" id="faq">
+    <p class="eyebrow reveal">05 — faq</p>
+    <h2 class="reveal">Asked often.</h2>
+    <div class="faq">
+      <details class="reveal"><summary>Which macOS versions?</summary><p>Klip needs macOS 13+, KlipOCR needs macOS 14+ (ScreenCapture). Apple Silicon only.</p></details>
+      <details class="reveal"><summary>Does anything leave my Mac?</summary><p>No. OCR models run bundled on-device; Klip converts locally. No accounts, no cloud.</p></details>
+      <details class="reveal"><summary>What if an equation can't convert?</summary><p>It never vanishes — Klip falls back to the <code>$source$</code> text so nothing is lost.</p></details>
+      <details class="reveal"><summary>How do Obsidian / Typora / Bear get plain text?</summary><p>The app detects markdown targets at paste time and filters to plain text automatically.</p></details>
+      <details class="reveal"><summary>Where do downloads live?</summary><p>Download buttons above are placeholders until the first signed DMGs ship — then they point at the release files.</p></details>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final reveal">
+    <h2>ChatGPT → Pages,<br>without the cleanup.</h2>
+    <div class="final-btns">
+      <a class="dl-btn" href="#apps"><span class="dl-text">Download Klip</span><span class="dl-apple" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.81-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8.78-.16 2.05-.93 3.57-.84 1.58.13 2.77.75 3.55 1.9-3.27 1.96-2.5 6.24.5 7.45-.6 1.58-1.42 3.14-2.7 3.66zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg></span></a>
+      <a class="dl-btn ghost" href="#apps"><span class="dl-text">Meet KlipOCR</span><span class="dl-apple" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.81-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8.78-.16 2.05-.93 3.57-.84 1.58.13 2.77.75 3.55 1.9-3.27 1.96-2.5 6.24.5 7.45-.6 1.58-1.42 3.14-2.7 3.66zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg></span></a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <img src="icons/klip-512.png" alt="" width="40" height="40">
+      <p>Copy math. Paste beauty.<br><span>Built for Mac, on Mac.</span></p>
+    </div>
+    <div><h4>Apps</h4><a href="#apps">Klip</a><a href="#apps">KlipOCR</a><a href="#demo">Demo</a></div>
+    <div><h4>Site</h4><a href="#features">Features</a><a href="license.html">License</a><a href="#faq">FAQ</a></div>
+    <div><h4>Notes</h4><a href="#flow">How it works</a><a href="#pricing">Pricing</a><a href="#top">Back to top ↑</a></div>
+  </div>
+  <p class="copy">© <span id="year">2026</span> Klip. Dithered with care. <span class="mono">v0.1.0</span></p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
