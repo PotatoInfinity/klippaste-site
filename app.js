@@ -1,4 +1,4 @@
-// Klip landing: sticky nav, active link, dropdown, parallax, spotlight video, compare, FAQ hover
+// Klip landing: nav, parallax, spotlight video, compare, wall, faq
 (function () {
   var pill = document.getElementById('navPill');
   var bgFixed = document.getElementById('bgFixed');
@@ -8,44 +8,44 @@
   var video = document.getElementById('demoVideo');
   var frame = video ? video.closest('.spot-frame') : null;
 
-  // Nav: always visible, depth on scroll
-  function navDepth() {
-    if (pill) pill.classList.toggle('scrolled', window.scrollY > 24);
-  }
+  var RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // Parallax: background drifts with content; veil blur handled in spotlight tick
   var ticking = false;
   function tick() {
     ticking = false;
     var y = window.scrollY;
-    navDepth();
-    if (bgFixed) bgFixed.style.transform = 'translateY(' + (y * 0.12) + 'px)';
-    if (bgSky) bgSky.style.transform = 'translateY(' + (y * 0.06) + 'px)';
-    spotlight(y);
+    if (pill) pill.classList.toggle('scrolled', y > 24);
+    if (!RM) {
+      if (bgFixed) bgFixed.style.transform = 'translateY(' + (y * 0.12) + 'px)';
+      if (bgSky) bgSky.style.transform = 'translateY(' + (y * 0.06) + 'px)';
+    }
+    spotlight();
   }
-  function onScroll() {
+  window.addEventListener('scroll', function () {
     if (!ticking) { ticking = true; requestAnimationFrame(tick); }
-  }
-  window.addEventListener('scroll', onScroll, { passive: true });
+  }, { passive: true });
 
-  // Spotlight: blur surroundings near video center, autoplay; exit resets to start
+  // Spotlight: veil up to 8px near center, autoplay; exit pauses + resets.
+  // Reduced motion: static veil, no autoplay — video keeps controls.
   var wasPlaying = false;
-  function spotlight(y) {
+  function spotlight() {
     if (!spot || !video) return;
+    if (RM) {
+      if (!video.hasAttribute('controls')) video.setAttribute('controls', '');
+      return;
+    }
     var r = spot.getBoundingClientRect();
     var vh = window.innerHeight;
     var center = r.top + r.height / 2;
     var dist = Math.abs(vh / 2 - center);
-    var zone = vh * 0.45;
-    var k = Math.max(0, Math.min(1, 1 - dist / (vh * 0.9))); // 0 far .. 1 centered
+    var k = Math.max(0, Math.min(1, 1 - dist / (vh * 0.9)));
     if (veil) {
-      veil.style.background = 'rgba(11,31,22,' + (k * 0.62).toFixed(3) + ')';
-      veil.style.backdropFilter = 'blur(' + (k * 14).toFixed(1) + 'px)';
-      veil.style.webkitBackdropFilter = 'blur(' + (k * 14).toFixed(1) + 'px)';
+      veil.style.background = 'rgba(10,30,20,' + (k * 0.55).toFixed(3) + ')';
+      veil.style.backdropFilter = 'blur(' + (k * 8).toFixed(1) + 'px)';
+      veil.style.webkitBackdropFilter = 'blur(' + (k * 8).toFixed(1) + 'px)';
     }
-    if (frame) frame.style.transform = 'scale(' + (0.94 + k * 0.06).toFixed(3) + ')';
-    if (bgFixed) bgFixed.style.filter = 'blur(' + (k * 6).toFixed(1) + 'px)';
-    var inZone = dist < zone && r.bottom > 0 && r.top < vh;
+    if (frame) frame.style.transform = 'scale(' + (0.96 + k * 0.04).toFixed(3) + ')';
+    var inZone = dist < vh * 0.45 && r.bottom > 0 && r.top < vh;
     if (inZone && !wasPlaying) {
       wasPlaying = true;
       try { video.currentTime = 0; } catch (e) {}
@@ -57,7 +57,18 @@
     }
   }
 
-  // Mute toggle
+  // Click frame toggles play; controls appear if autoplay was blocked
+  if (video) {
+    video.addEventListener('click', function () {
+      if (video.paused) { var p = video.play(); if (p && p.catch) p.catch(function () {}); }
+      else video.pause();
+    });
+    video.addEventListener('play', function () { wasPlaying = true; }, true);
+    setTimeout(function () {
+      if (video.paused && !wasPlaying && !RM) video.setAttribute('controls', '');
+    }, 4000);
+  }
+  window.addEventListener('resize', function () { tick(); });
   var muteBtn = document.getElementById('spotMute');
   if (muteBtn && video) {
     muteBtn.addEventListener('click', function () {
@@ -84,13 +95,7 @@
     mobile.querySelectorAll('a').forEach(function (a) {
       a.addEventListener('click', function () {
         burger.setAttribute('aria-expanded', 'false');
-        if (mobile.classList.contains('open') && mobile.animate) {
-          var anim = mobile.animate(
-            [{ opacity: 1 }, { opacity: 0, transform: 'translateY(-6px)' }],
-            { duration: 180, easing: 'ease-in' }
-          );
-          anim.onfinish = function () { mobile.classList.remove('open'); };
-        } else mobile.classList.remove('open');
+        mobile.classList.remove('open');
       });
     });
   }
@@ -113,7 +118,10 @@
     if (s) secIo.observe(s);
   });
 
-  // Reveal on scroll
+  // Reveal on scroll (instant if observer unsupported)
+  if (!('IntersectionObserver' in window)) {
+    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
+  } else {
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e, i) {
       if (e.isIntersecting) {
@@ -124,53 +132,54 @@
     });
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+  }
 
-  // Footer year
   var yr = document.getElementById('year');
   if (yr) yr.textContent = new Date().getFullYear();
 
-  // FAQ: hover to open (single-open), click still works
-  var faqBox = document.getElementById('faqBox');
+  // FAQ: click toggle, single-open
   var faqs = Array.prototype.slice.call(document.querySelectorAll('.faq details'));
-  function openOnly(d) {
-    faqs.forEach(function (o) { if (o !== d && o.open) o.open = false; });
-    if (!d.open) d.open = true;
-  }
   faqs.forEach(function (d) {
-    d.addEventListener('mouseenter', function () { openOnly(d); });
     d.addEventListener('toggle', function () {
       if (d.open) faqs.forEach(function (o) { if (o !== d) o.open = false; });
     });
   });
-  if (faqBox) faqBox.addEventListener('mouseleave', function () {});
 
-  // Compare slider: drag handle + range input
+  // Compare slider
   var box = document.getElementById('compareBox');
   var range = document.getElementById('cmpRange');
+  var hint = document.getElementById('cmpHint');
   function setPos(p) {
     p = Math.max(2, Math.min(98, p));
-    if (box) box.style.setProperty('--pos', p + '%');
+    if (box) {
+      box.style.setProperty('--pos', p + '%');
+      box.classList.add('used');
+    }
     if (range && document.activeElement !== range) range.value = Math.round(p);
+    if (range) range.setAttribute('aria-valuetext', Math.round(p) + ' percent source revealed');
   }
   if (box && range) {
     setPos(50);
+    box.classList.remove('used');
     range.addEventListener('input', function () { setPos(parseFloat(range.value)); });
     var dragging = false;
     function xToPos(clientX) {
       var r = box.getBoundingClientRect();
       return ((clientX - r.left) / r.width) * 100;
     }
-    box.addEventListener('pointerdown', function (e) { dragging = true; box.setPointerCapture(e.pointerId); setPos(xToPos(e.clientX)); });
+    box.addEventListener('pointerdown', function (e) { dragging = true; try { box.setPointerCapture(e.pointerId); } catch (err) {} setPos(xToPos(e.clientX)); });
     box.addEventListener('pointermove', function (e) { if (dragging) setPos(xToPos(e.clientX)); });
     ['pointerup', 'pointercancel'].forEach(function (ev) {
       box.addEventListener(ev, function () { dragging = false; });
     });
   }
 
-  // Compatibility wall: dots + auto-advance + pause (droppy-style)
+  // Compatibility wall: dots + arrows + auto-advance + pause
   var wall = document.getElementById('wallTrack');
   var dotsWrap = document.getElementById('wallDots');
   var pauseBtn = document.getElementById('wallPause');
+  var prevBtn = document.getElementById('wallPrev');
+  var nextBtn = document.getElementById('wallNext');
   var wallPaused = false;
   var wallTimer = null;
   var SVG_PAUSE = '<svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>';
@@ -180,11 +189,11 @@
     var cards = wallCards();
     if (!cards.length) return;
     i = (i + cards.length) % cards.length;
-    wall.scrollTo({ left: cards[i].offsetLeft - wall.offsetLeft - (wall.clientWidth - cards[i].clientWidth) / 2, behavior: 'smooth' });
+    wall.scrollTo({ left: cards[i].offsetLeft - wall.offsetLeft - (wall.clientWidth - cards[i].clientWidth) / 2, behavior: RM ? 'auto' : 'smooth' });
   }
   function wallActive() {
     var cards = wallCards();
-    if (!cards.length || !dotsWrap) return;
+    if (!cards.length || !dotsWrap) return 0;
     var mid = wall.scrollLeft + wall.clientWidth / 2;
     var best = 0, bd = Infinity;
     cards.forEach(function (c, i) {
@@ -192,19 +201,21 @@
       if (d < bd) { bd = d; best = i; }
     });
     Array.prototype.forEach.call(dotsWrap.children, function (b, i) {
-      b.classList.toggle('on', i === best);
+      var on = i === best;
+      b.classList.toggle('on', on);
+      if (on) b.setAttribute('aria-current', 'true');
+      else b.removeAttribute('aria-current');
     });
     return best;
   }
   function wallAuto() {
-    if (wallTimer) clearInterval(wallTimer);
-    if (wallPaused || !wall || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    wallTimer = setInterval(function () { wallGo((wallActive() || 0) + 1); }, 4500);
+    if (wallTimer) { clearInterval(wallTimer); wallTimer = null; }
+    if (wallPaused || !wall || RM || document.hidden) return;
+    wallTimer = setInterval(function () { wallGo(wallActive() + 1); }, 5000);
   }
   if (wall && dotsWrap) {
     wallCards().forEach(function (_, i) {
       var b = document.createElement('button');
-      b.setAttribute('role', 'tab');
       b.setAttribute('aria-label', 'Show application ' + (i + 1));
       b.addEventListener('click', function () { wallGo(i); wallAuto(); });
       dotsWrap.appendChild(b);
@@ -213,8 +224,16 @@
     wall.addEventListener('scroll', function () {
       if (!wallTick) { wallTick = true; requestAnimationFrame(function () { wallTick = false; wallActive(); }); }
     }, { passive: true });
-    wall.addEventListener('mouseenter', function () { if (wallTimer) clearInterval(wallTimer); });
+    wall.addEventListener('mouseenter', function () { if (wallTimer) { clearInterval(wallTimer); wallTimer = null; } });
     wall.addEventListener('mouseleave', wallAuto);
+    wall.addEventListener('pointerdown', function () { if (wallTimer) { clearInterval(wallTimer); wallTimer = null; } });
+    wall.addEventListener('pointerup', wallAuto);
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) { if (wallTimer) { clearInterval(wallTimer); wallTimer = null; } }
+      else wallAuto();
+    });
+    if (prevBtn) prevBtn.addEventListener('click', function () { wallGo(wallActive() - 1); wallAuto(); });
+    if (nextBtn) nextBtn.addEventListener('click', function () { wallGo(wallActive() + 1); wallAuto(); });
     wallActive();
     wallAuto();
   }

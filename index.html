@@ -3,22 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Klip + KlipOCR — Professional Markdown and LaTeX conversion for Mac</title>
-<meta name="description" content="Klip converts Markdown, HTML and LaTeX into native, editable office documents. KlipOCR captures equations and tables with a highly optimized OvisOCR2 engine. 100% air-gapped, on-device.">
+<title>Klip — Markdown/HTML and LaTeX to office · KlipOCR — OCR screenshots and documents</title>
+<meta name="description" content="Klip is Markdown/HTML and LaTeX to office: native, editable equations and tables in Pages, Keynote, Word and LibreOffice. KlipOCR is OCR for screenshots and documents. 100% air-gapped.">
+<meta name="theme-color" content="#0a1e14">
+<meta property="og:title" content="Klip + KlipOCR — Professional conversion for Mac">
+<meta property="og:description" content="Markdown/HTML and LaTeX to office. OCR for screenshots and documents. 100% air-gapped.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="icons/favicon-64.png">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
 </head>
 <body>
 
+<a class="skip" href="#apps">Skip to content</a>
 <div class="bg-fixed" id="bgFixed" aria-hidden="true"></div>
 <div class="bg-sky" id="bgSky" aria-hidden="true"></div>
 <div class="grain" aria-hidden="true"></div>
 
-<!-- Pill glass nav: always visible, active-section highlight, hover download menu -->
 <header class="nav-wrap">
   <nav class="nav-pill" id="navPill" aria-label="Main">
     <a class="brand" href="#top">
@@ -39,19 +45,20 @@
         <a class="dl-btn small ghost" href="#apps"><span class="dl-text">KlipOCR</span><span class="dl-apple" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.81-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8.78-.16 2.05-.93 3.57-.84 1.58.13 2.77.75 3.55 1.9-3.27 1.96-2.5 6.24.5 7.45-.6 1.58-1.42 3.14-2.7 3.66zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg></span></a>
       </span>
     </div>
-    <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false">☰</button>
+    <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false" aria-controls="navMobile"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 5h16M2 10h16M2 15h16"/></svg></button>
   </nav>
   <div class="nav-mobile" id="navMobile">
     <a href="#apps">Apps</a><a href="#demo">Demo</a><a href="#compare">Compare</a>
-    <a href="#features">Features</a><a href="#faq">FAQ</a><a href="license.html">License</a><a href="#apps">Download Klip</a><a href="#apps">Download KlipOCR</a>
+    <a href="#features">Features</a><a href="#faq">FAQ</a><a href="license.html">License</a>
+    <a href="#apps">Download Klip</a><a href="#apps">Download KlipOCR</a>
   </div>
 </header>
 
 <main id="top">
 
   <!-- HERO -->
-  <section class="hero">
-    <div class="app-duo reveal" id="apps">
+  <section class="hero" id="apps">
+    <div class="app-duo reveal">
       <div class="app-mini">
         <img src="icons/klip-512.png" alt="Klip app icon" width="88" height="88">
         <p class="tag">Markdown/HTML and LaTeX to office</p>
@@ -64,32 +71,41 @@
       </div>
     </div>
     <h1 class="reveal">From AI output to <u>publication-ready documents</u>.</h1>
-    <p class="sub reveal">Klip converts Markdown, HTML and LaTeX into <strong>native, editable office documents</strong> with the most efficient conversion engine available. KlipOCR captures screenshots and documents with a <strong>highly optimized OvisOCR2 engine</strong> delivering state-of-the-art performance and top-1 accuracy. Fully air-gapped — 100% on-device, no network required.</p>
+    <p class="sub reveal">Klip converts Markdown, HTML and LaTeX into <strong>native, editable office documents</strong> with the most efficient conversion engine available. KlipOCR captures screenshots and documents with a <strong>highly optimized OvisOCR2 engine</strong> — state-of-the-art, top-1 accuracy. No network required.</p>
     <div class="badges reveal">
       <span>100% air-gapped</span><span>On-device</span><span>No cloud</span>
     </div>
-
+    <div class="flow-strip reveal">
+      <div><span class="n">1</span><p><strong>Capture.</strong> Hotkey snip, entirely in memory.</p></div>
+      <div><span class="n">2</span><p><strong>Convert.</strong> One pass serves every target.</p></div>
+      <div><span class="n">3</span><p><strong>Publish.</strong> Paste with ⌘V. Keep editing.</p></div>
+    </div>
   </section>
 
-  <!-- DEMO SPOTLIGHT: seamless, no heading. Sticky video, surroundings blur, autoplay on center -->
+  <!-- PROOF: video spotlight -->
   <section class="spot" id="demo" aria-label="Product demo video">
     <div class="spot-sticky">
       <div class="spot-veil" id="spotVeil" aria-hidden="true"></div>
-      <div class="video-frame spot-frame">
-        <video id="demoVideo" muted loop playsinline preload="auto" poster="video/poster.jpg" src="video/klip-demo-720p.mp4"></video>
-        <button class="spot-mute" id="spotMute" aria-label="Toggle sound"><svg class="ic-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor" stroke="none"/><path d="m16 9 5 6m0-6-5 6"/></svg><svg class="ic-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor" stroke="none"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.2 5.8a9 9 0 0 1 0 12.4"/></svg></button>
+      <div class="spot-head">
+        <p class="eyebrow">Proof</p>
+        <h2>Watch Klip paste into Pages.</h2>
+      </div>
+      <div class="spot-frame">
+        <video id="demoVideo" muted loop playsinline preload="auto" poster="video/poster.jpg" src="video/klip-demo-720p.mp4" aria-label="Demo video: Klip pasting equations and tables into Pages" title="Click to play or pause"></video>
+        <button class="spot-mute" id="spotMute" aria-label="Unmute video"><svg class="ic-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor" stroke="none"/><path d="m16 9 5 6m0-6-5 6"/></svg><svg class="ic-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor" stroke="none"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.2 5.8a9 9 0 0 1 0 12.4"/></svg></button>
+        <div class="spot-cap"><span>Real clipboard · Real Pages · 71 seconds</span><span>⌘V and keep editing</span></div>
       </div>
     </div>
   </section>
 
-  <!-- COMPARE: raw source vs rendered output -->
+  <!-- COMPARE -->
   <section class="panel" id="compare">
     <p class="eyebrow reveal">Conversion</p>
-    <h2 class="reveal">Source in. Document out.</h2>
-    <p class="lede reveal">Drag the divider to compare raw Markdown, LaTeX and HTML input against the native rendered result Klip produces.</p>
+    <h2 class="reveal">From source to document.</h2>
+    <p class="lede reveal">Drag the divider to compare raw Markdown, LaTeX and HTML input against the native rendered result.</p>
     <div class="compare reveal" id="compareBox">
       <div class="mac">
-        <div class="mac-bar"><i class="r"></i><i class="y"></i><i class="g"></i><span>source.md</span><em>INPUT</em></div>
+        <div class="mac-bar"><i class="r" aria-hidden="true"></i><i class="y" aria-hidden="true"></i><i class="g" aria-hidden="true"></i><span>source.md</span><em>INPUT</em></div>
 <pre class="code"><code><span class="tok-h"># Results</span>
 
 The solution is <span class="tok-math">$x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}$</span>.
@@ -103,15 +119,16 @@ The solution is <span class="tok-math">$x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}$</s
 <span class="tok-g">&lt;table&gt;</span> … <span class="tok-g">&lt;/table&gt;</span></code></pre>
       </div>
       <div class="mac out" id="cmpRendered">
-        <div class="mac-bar light"><i class="r"></i><i class="y"></i><i class="g"></i><span>output.pages</span><em>OUTPUT</em></div>
+        <div class="mac-bar light"><i class="r" aria-hidden="true"></i><i class="y" aria-hidden="true"></i><i class="g" aria-hidden="true"></i><span>output.pages</span><em>OUTPUT</em></div>
         <div class="doc">
-          <h3>Results</h3>
+          <p class="doc-title">Results</p>
           <p>The solution is <em>x</em> = (−<em>b</em> ± √( <em>b</em>² − 4<em>ac</em> )) / 2<em>a</em>.</p>
           <p class="display-eq">∑<sub>i=1</sub><sup>n</sup> i = n(n+1) / 2</p>
           <table><tr><th>Model</th><th>Score</th></tr><tr><td>OvisOCR</td><td>97.4</td></tr><tr><td>Other</td><td>83.1</td></tr></table>
         </div>
       </div>
-      <div class="cmp-handle" id="cmpHandle" aria-hidden="true"><span>⟨ ⟩</span></div>
+      <div class="cmp-handle" aria-hidden="true"><span>⟨ ⟩</span></div>
+      <div class="cmp-hint" id="cmpHint">← Drag to compare →</div>
       <input class="cmp-range" id="cmpRange" type="range" min="0" max="100" value="50" aria-label="Compare source and rendered output">
     </div>
   </section>
@@ -119,33 +136,25 @@ The solution is <span class="tok-math">$x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}$</s
   <!-- COMPATIBILITY WALL -->
   <section class="panel wall-panel" id="targets">
     <p class="eyebrow reveal">Compatibility</p>
-    <h2 class="reveal">There when you need it.</h2>
+    <h2 class="reveal">Works in every editor.</h2>
+    <p class="lede reveal">One conversion pass produces native output for every editor on your Mac.</p>
     <div class="wall reveal" id="wall">
       <div class="wall-track" id="wallTrack">
         <figure class="wall-card"><span class="wall-img"><img src="icons/apps/pages.png" alt="Pages icon" loading="lazy"></span><figcaption><strong>Native Pages paste.</strong> Tables and editable equations land exactly where they belong.</figcaption></figure>
         <figure class="wall-card"><span class="wall-img"><img src="icons/apps/keynote.png" alt="Keynote icon" loading="lazy"></span><figcaption><strong>Deck-ready Keynote.</strong> Math and tables stay editable on the slide.</figcaption></figure>
         <figure class="wall-card"><span class="wall-img"><img src="icons/apps/word.png" alt="Microsoft Word icon" loading="lazy"></span><figcaption><strong>True Word output.</strong> OMML equations and clean tables, no cleanup pass.</figcaption></figure>
         <figure class="wall-card"><span class="wall-img"><img src="icons/apps/libreoffice.png" alt="LibreOffice icon" loading="lazy"></span><figcaption><strong>LibreOffice correct.</strong> StarMath formulas with proper baseline alignment.</figcaption></figure>
-        <figure class="wall-card"><span class="wall-img"><img src="icons/apps/googledocs.svg" alt="Google Docs icon" loading="lazy"></span><figcaption><strong>Google Docs too.</strong> Structure survives the trip into Docs.</figcaption></figure>
+        <figure class="wall-card"><span class="wall-img"><img src="icons/apps/googledocs.svg" alt="Google Docs icon" loading="lazy"></span><figcaption><strong>Google Docs, structured.</strong> Formatting survives the trip into Docs.</figcaption></figure>
         <figure class="wall-card"><span class="wall-img"><img src="icons/apps/obsidian.png" alt="Obsidian icon" loading="lazy"></span><figcaption><strong>Obsidian friendly.</strong> Markdown targets get clean plain text automatically.</figcaption></figure>
-        <figure class="wall-card"><span class="wall-img"><img src="icons/apps/typora.svg" alt="Typora icon" loading="lazy"></span><figcaption><strong>Typora clean.</strong> What you copied stays readable where you write.</figcaption></figure>
-        <figure class="wall-card"><span class="wall-img"><img src="icons/apps/bear.png" alt="Bear icon" loading="lazy"></span><figcaption><strong>Bear notes.</strong> Clipboard output drops straight into your notes.</figcaption></figure>
+        <figure class="wall-card"><span class="wall-img"><img src="icons/apps/typora.svg" alt="Typora icon" loading="lazy"></span><figcaption><strong>Typora stays clean.</strong> What you copied stays readable where you write.</figcaption></figure>
+        <figure class="wall-card"><span class="wall-img"><img src="icons/apps/bear.png" alt="Bear icon" loading="lazy"></span><figcaption><strong>Bear, ready to paste.</strong> Clipboard output drops straight into your notes.</figcaption></figure>
       </div>
     </div>
     <div class="wall-ctrl reveal">
-      <div class="wall-dots" id="wallDots" role="tablist" aria-label="Choose application"></div>
-      <button class="wall-pause" id="wallPause" aria-label="Pause auto-scroll">❚❚</button>
-    </div>
-  </section>
-
-  <!-- WORKFLOW -->
-  <section class="panel" id="flow">
-    <p class="eyebrow reveal">Workflow</p>
-    <h2 class="reveal">Capture. Convert. Publish.</h2>
-    <div class="steps">
-      <div class="step reveal"><span class="n">1</span><h3>Capture</h3><p>KlipOCR acquires equations, tables and documents through a hotkey overlay. Processing remains entirely in memory on your Mac.</p></div>
-      <div class="step reveal"><span class="n">2</span><h3>Convert</h3><p>Klip applies the most efficient conversion engine available, generating native equation and table structures for every supported target in a single pass.</p></div>
-      <div class="step reveal"><span class="n">3</span><h3>Publish</h3><p>Paste with <kbd>⌘V</kbd>. Equations remain editable, tables remain native, and markdown editors receive clean plain text automatically.</p></div>
+      <button class="wall-btn" id="wallPrev" aria-label="Previous application">←</button>
+      <div class="wall-dots" id="wallDots" aria-label="Choose application"></div>
+      <button class="wall-btn" id="wallPause" aria-label="Pause auto-scroll"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg></button>
+      <button class="wall-btn" id="wallNext" aria-label="Next application">→</button>
     </div>
   </section>
 
@@ -154,63 +163,59 @@ The solution is <span class="tok-math">$x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}$</s
     <p class="eyebrow reveal">Capabilities</p>
     <h2 class="reveal">Engineered for professionals.</h2>
     <div class="bento">
-      <div class="card wide reveal"><h3>Native editable equations</h3><p>Pages and Keynote receive true native structures, Word receives OMML, LibreOffice receives StarMath. Any content outside the convertible set is preserved as source text — nothing is ever discarded.</p></div>
+      <div class="card reveal"><h3>Native editable equations</h3><p>Pages and Keynote receive true native structures, Word receives OMML, LibreOffice receives StarMath. Anything outside the convertible set is preserved as source text.</p></div>
       <div class="card reveal"><h3>Native tables</h3><p>Markdown and HTML tables are reconstructed as genuine tables with editable cells, including embedded equations.</p></div>
       <div class="card reveal"><h3>Single-pass multi-target</h3><p>One clipboard conversion serves Apple, Microsoft and LibreOffice targets simultaneously, with automatic plain-text delivery to markdown editors.</p></div>
-      <div class="card reveal"><h3>State-of-the-art OCR</h3><p>KlipOCR integrates a highly optimized OvisOCR2 build with top-1 accuracy, reading-order Markdown output and structured HTML tables.</p></div>
+      <div class="card reveal"><h3>State-of-the-art OCR</h3><p>KlipOCR integrates an optimized OvisOCR2 build with reading-order Markdown output and structured HTML tables.</p></div>
       <div class="card reveal"><h3>Air-gapped by design</h3><p>Both applications operate without network access. Models, conversion and rendering execute locally at all times.</p></div>
-      <div class="card wide reveal"><h3>Professional controls</h3><p>Menu-bar operation · typography and equation scaling · AI citation cleanup <code>[1] [^1]</code> · performance tiers for speed, balance and efficiency · embedded raster imagery.</p></div>
-    </div>
-  </section>
-
-  <!-- LICENSE TEASER -->
-  <section class="panel" id="pricing">
-    <p class="eyebrow reveal">Licensing</p>
-    <h2 class="reveal">One license. Both applications.</h2>
-    <p class="lede reveal">A single professional license covers Klip and KlipOCR, including offline operation and future updates in the 1.x series.</p>
-    <div class="price-card reveal">
-      <p class="pc-title">Klip + KlipOCR bundle</p>
-      <p class="pc-soon">Licensing opens soon</p>
-      <a class="dl-btn" href="license.html"><span class="dl-text">Get a license</span><span class="dl-apple" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.81-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8.78-.16 2.05-.93 3.57-.84 1.58.13 2.77.75 3.55 1.9-3.27 1.96-2.5 6.24.5 7.45-.6 1.58-1.42 3.14-2.7 3.66zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg></span></a>
+      <div class="card reveal"><h3>Professional controls</h3><p>Menu-bar operation · typography and equation scaling · AI citation cleanup <code>[1] [^1]</code> · performance tiers · embedded raster imagery.</p></div>
     </div>
   </section>
 
   <!-- FAQ -->
   <section class="panel" id="faq">
     <p class="eyebrow reveal">Questions</p>
-    <h2 class="reveal">Frequently asked.</h2>
+    <h2 class="reveal">Frequently asked questions.</h2>
     <div class="faq" id="faqBox">
-      <div class="faq-row left reveal"><details><summary><span class="q-pill">Which systems are supported?</span><span class="q-plus">+</span></summary><div class="a"><p>Klip requires macOS 13 or later; KlipOCR requires macOS 14 or later. Both require Apple Silicon.</p></div></details></div>
-      <div class="faq-row right reveal"><details><summary><span class="q-pill">Does any data leave the machine?</span><span class="q-plus">+</span></summary><div class="a"><p>No. Both applications are 100% air-gapped. Recognition, conversion and rendering execute locally with no network dependency.</p></div></details></div>
-      <div class="faq-row left reveal"><details><summary><span class="q-pill">How accurate is the recognition?</span><span class="q-plus">+</span></summary><div class="a"><p>KlipOCR uses a highly optimized OvisOCR2 engine with state-of-the-art performance and top-1 accuracy on standard benchmarks.</p></div></details></div>
-      <div class="faq-row right reveal"><details><summary><span class="q-pill">What happens to unsupported equations?</span><span class="q-plus">+</span></summary><div class="a"><p>Content is always preserved. Anything outside the convertible set is retained as source text.</p></div></details></div>
-      <div class="faq-row left reveal"><details><summary><span class="q-pill">How are markdown editors handled?</span><span class="q-plus">+</span></summary><div class="a"><p>Markdown targets such as Obsidian, Typora and Bear automatically receive clean plain text at paste time.</p></div></details></div>
-      <div class="faq-row right reveal"><details><summary><span class="q-pill">When are downloads available?</span><span class="q-plus">+</span></summary><div class="a"><p>Download buttons are placeholders until the first signed releases ship, at which point they will reference the release files directly.</p></div></details></div>
+      <div class="faq-row left reveal"><details><summary><span class="q-pill">Which systems are supported?</span><span class="q-plus" aria-hidden="true">+</span></summary><div class="a"><div><p>Klip requires macOS 13 or later; KlipOCR requires macOS 14 or later. Both require Apple Silicon.</p></div></div></details></div>
+      <div class="faq-row right reveal"><details><summary><span class="q-pill">Does any data leave the machine?</span><span class="q-plus" aria-hidden="true">+</span></summary><div class="a"><div><p>No. Both applications are 100% air-gapped. Recognition, conversion and rendering execute locally with no network dependency.</p></div></div></details></div>
+      <div class="faq-row left reveal"><details><summary><span class="q-pill">How accurate is the recognition?</span><span class="q-plus" aria-hidden="true">+</span></summary><div class="a"><div><p>KlipOCR uses a highly optimized OvisOCR2 engine with state-of-the-art performance and top-1 accuracy on standard benchmarks.</p></div></div></details></div>
+      <div class="faq-row right reveal"><details><summary><span class="q-pill">What happens to unsupported equations?</span><span class="q-plus" aria-hidden="true">+</span></summary><div class="a"><div><p>Content is always preserved. Anything outside the convertible set is retained as source text.</p></div></div></details></div>
+      <div class="faq-row left reveal"><details><summary><span class="q-pill">How are markdown editors handled?</span><span class="q-plus" aria-hidden="true">+</span></summary><div class="a"><div><p>Markdown targets such as Obsidian, Typora and Bear automatically receive clean plain text at paste time.</p></div></div></details></div>
+      <div class="faq-row right reveal"><details><summary><span class="q-pill">When are downloads available?</span><span class="q-plus" aria-hidden="true">+</span></summary><div class="a"><div><p>Download buttons are placeholders until the first signed releases ship, at which point they will reference the release files directly.</p></div></div></details></div>
     </div>
   </section>
 
-  <!-- FINAL CTA -->
+  <!-- FINAL -->
   <section class="final reveal">
-    <h2>Professional conversion,<br>entirely offline.</h2>
+    <p class="eyebrow">Licensing</p>
+    <h2>One license. Both applications.</h2>
+    <div class="price-card">
+      <p class="pc-title">Klip + KlipOCR bundle</p>
+      <p class="pc-soon">Licensing opens soon</p>
+      <a class="dl-btn" href="license.html"><span class="dl-text">Get a license</span><span class="dl-apple" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.81-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8.78-.16 2.05-.93 3.57-.84 1.58.13 2.77.75 3.55 1.9-3.27 1.96-2.5 6.24.5 7.45-.6 1.58-1.42 3.14-2.7 3.66zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg></span></a>
+    </div>
     <div class="final-btns">
-      <a class="dl-btn" href="#apps"><span class="dl-text">Download Klip</span><span class="dl-apple" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.81-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8.78-.16 2.05-.93 3.57-.84 1.58.13 2.77.75 3.55 1.9-3.27 1.96-2.5 6.24.5 7.45-.6 1.58-1.42 3.14-2.7 3.66zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg></span></a>
+      <a class="dl-btn ghost" href="#apps"><span class="dl-text">Download Klip</span><span class="dl-apple" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.81-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8.78-.16 2.05-.93 3.57-.84 1.58.13 2.77.75 3.55 1.9-3.27 1.96-2.5 6.24.5 7.45-.6 1.58-1.42 3.14-2.7 3.66zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg></span></a>
       <a class="dl-btn ghost" href="#apps"><span class="dl-text">Download KlipOCR</span><span class="dl-apple" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.81-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8.78-.16 2.05-.93 3.57-.84 1.58.13 2.77.75 3.55 1.9-3.27 1.96-2.5 6.24.5 7.45-.6 1.58-1.42 3.14-2.7 3.66zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg></span></a>
     </div>
   </section>
 
 </main>
 
-<div class="foot-band" aria-hidden="true"></div>
 <footer>
-  <div class="foot-grid">
+  <div class="foot-row">
     <div class="foot-brand">
-      <img src="icons/klip-512.png" alt="" width="40" height="40">
-      <p>Professional conversion for Mac.<br><span>Air-gapped. On-device.</span></p>
+      <img src="icons/klip-512.png" alt="" width="36" height="36">
+      <span>Klip<small>Professional conversion for Mac · Air-gapped</small></span>
     </div>
-    <div><h4>Apps</h4><a href="#apps">Klip</a><a href="#apps">KlipOCR</a><a href="#demo">Demo</a></div>
-    <div><h4>Site</h4><a href="#features">Features</a><a href="license.html">License</a><a href="#faq">FAQ</a></div>
-    <div><h4>Notes</h4><a href="#flow">Workflow</a><a href="#pricing">Licensing</a><a href="#top">Back to top ↑</a></div>
+    <div class="foot-links">
+      <a href="#apps">Apps</a><a href="#demo">Demo</a><a href="#compare">Compare</a>
+      <a href="#features">Features</a><a href="#faq">FAQ</a><a href="license.html">License</a>
+      <a href="#top">Back to top ↑</a>
+    </div>
   </div>
+  <div class="wordmark" aria-hidden="true">Klip</div>
   <p class="copy">© <span id="year">2026</span> Klip.</p>
 </footer>
 
