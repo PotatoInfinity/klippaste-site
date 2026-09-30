@@ -38,7 +38,8 @@
     var vh = window.innerHeight;
     var center = r.top + r.height / 2;
     var dist = Math.abs(vh / 2 - center);
-    var k = Math.max(0, Math.min(1, 1 - dist / (vh * 0.9)));
+    var t = Math.max(0, Math.min(1, 1 - dist / (vh * 1.1)));
+    var k = t * t * (3 - 2 * t); // smoothstep: blur eases in, never abrupt
     if (veil) {
       veil.style.background = 'rgba(10,30,20,' + (k * 0.55).toFixed(3) + ')';
       veil.style.backdropFilter = 'blur(' + (k * 8).toFixed(1) + 'px)';
@@ -182,6 +183,7 @@
   var nextBtn = document.getElementById('wallNext');
   var wallPaused = false;
   var wallTimer = null;
+  var wallVisible = false;
   var SVG_PAUSE = '<svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>';
   var SVG_PLAY = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg>';
   function wallCards() { return wall ? Array.prototype.slice.call(wall.querySelectorAll('.wall-card')) : []; }
@@ -210,10 +212,16 @@
   }
   function wallAuto() {
     if (wallTimer) { clearInterval(wallTimer); wallTimer = null; }
-    if (wallPaused || !wall || RM || document.hidden) return;
+    if (wallPaused || !wall || RM || document.hidden || !wallVisible) return;
     wallTimer = setInterval(function () { wallGo(wallActive() + 1); }, 5000);
   }
   if (wall && dotsWrap) {
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        wallVisible = entries[0].isIntersecting;
+        wallAuto();
+      }, { threshold: 0.15 }).observe(document.getElementById('wall'));
+    } else wallVisible = true;
     wallCards().forEach(function (_, i) {
       var b = document.createElement('button');
       b.setAttribute('aria-label', 'Show application ' + (i + 1));

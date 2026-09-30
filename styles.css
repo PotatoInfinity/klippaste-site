@@ -122,12 +122,9 @@ main { display: block; }
 .spot { position: relative; height: 180vh; margin-top: 24px; }
 .spot-sticky { position: sticky; top: 0; height: 100vh; height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; overflow: hidden; padding: 0 20px; }
 .spot-veil { position: absolute; inset: 0; background: rgba(10,30,20,0); backdrop-filter: blur(0px); -webkit-backdrop-filter: blur(0px); }
-.spot-head { position: relative; z-index: 2; text-align: center; }
-.spot-head h2 { font-size: clamp(28px, 4vw, 40px); }
 .spot-frame { position: relative; z-index: 2; width: min(960px, 92vw); transform: scale(0.96); border-radius: var(--r2); overflow: hidden; border: 1px solid var(--line); background: #000; box-shadow: 0 24px 72px rgba(0,0,0,0.5); }
 .spot-frame video { display: block; width: 100%; aspect-ratio: 1280 / 832; cursor: pointer; }
-.spot-cap { display: flex; justify-content: space-between; gap: 12px; padding: 12px 18px; background: var(--pine-2); font-size: 13.5px; color: var(--sage); }
-.spot-mute { position: absolute; right: 14px; bottom: 58px; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); background: rgba(10,30,20,0.6); color: var(--paper); cursor: pointer; backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; transition: transform 0.2s var(--ease); }
+.spot-mute { position: absolute; right: 14px; bottom: 14px; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); background: rgba(10,30,20,0.6); color: var(--paper); cursor: pointer; backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; transition: transform 0.2s var(--ease); }
 .spot-mute:hover { transform: scale(1.08); }
 .spot-mute svg { width: 20px; height: 20px; }
 .spot-mute .ic-on { display: none; }
@@ -135,8 +132,8 @@ main { display: block; }
 .spot-mute.live .ic-muted { display: none; }
 
 /* ---------- compare: mac windows ---------- */
-.compare { position: relative; display: grid; border-radius: var(--r2); overflow: hidden; border: 1px solid var(--line); --pos: 50%; user-select: none; margin-top: 28px; }
-.mac { grid-area: 1 / 1; overflow: hidden; min-width: 0; }
+.compare { position: relative; display: grid; border-radius: var(--r2); border: 1px solid var(--line); --pos: 50%; user-select: none; margin-top: 28px; }
+.mac { grid-area: 1 / 1; overflow: hidden; min-width: 0; border-radius: var(--r2); }
 .mac-bar { display: flex; align-items: center; gap: 7px; padding: 12px 16px; background: rgba(10,30,20,0.92); border-bottom: 1px solid var(--line); font-family: ui-monospace, "SF Mono", monospace; font-size: 12px; color: var(--sage); }
 .mac-bar i { width: 12px; height: 12px; border-radius: 50%; }
 .mac-bar .r { background: #ff5f57; } .mac-bar .y { background: #febc2e; } .mac-bar .g { background: #28c840; }
@@ -155,7 +152,7 @@ main { display: block; }
 .mac.out table { width: 100%; table-layout: fixed; border-collapse: collapse; font-size: 14.5px; margin-top: 6px; }
 .mac.out th, .mac.out td { border: 1px solid rgba(20,38,28,0.25); padding: 8px 12px; text-align: left; overflow-wrap: anywhere; }
 .mac.out th { background: rgba(14,39,27,0.08); }
-.cmp-handle { position: absolute; top: 0; bottom: 0; left: var(--pos); width: 2px; background: var(--amber); }
+.cmp-handle { position: absolute; top: -14px; bottom: -14px; left: var(--pos); width: 2px; background: var(--amber); border-radius: 2px; }
 .cmp-handle span { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; background: rgba(10,30,20,0.9); color: var(--amber); border: 1.5px solid var(--amber); border-radius: 50%; box-shadow: 0 4px 20px rgba(0,0,0,0.5); white-space: nowrap; }
 .cmp-hint { position: absolute; top: 64px; left: 50%; transform: translateX(-50%); background: rgba(10,30,20,0.8); border: 1px solid var(--line); color: var(--paper); font-size: 13px; font-weight: 600; padding: 8px 18px; border-radius: 999px; transition: opacity 0.4s; pointer-events: none; }
 .compare.used .cmp-hint { opacity: 0; }
