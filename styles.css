@@ -84,13 +84,6 @@ code, kbd { font-family: ui-monospace, "SF Mono", monospace; font-size: 0.86em; 
 .nav-links a.active { color: var(--paper); }
 .nav-links a.active::after { transform: scaleX(1); }
 /* download expands inline: 0fr -> 1fr grid trick, smooth both ways */
-.nav-dl { display: flex; align-items: center; }
-.nav-dl-one { display: inline-flex; }
-.nav-dl-two { display: flex; gap: 8px; max-width: 0; opacity: 0; overflow: hidden; white-space: nowrap; transform: translateX(10px); transition: max-width 0.35s var(--ease), opacity 0.25s, transform 0.35s var(--ease); }
-.nav-dl:hover .nav-dl-two, .nav-dl:focus-within .nav-dl-two { max-width: 340px; opacity: 1; transform: none; }
-.nav-dl-one { transition: opacity 0.2s, margin 0.3s var(--ease); }
-.nav-dl:hover .nav-dl-one, .nav-dl:focus-within .nav-dl-one { opacity: 0; width: 0; margin: 0; padding: 0; overflow: hidden; pointer-events: none; }
-.nav-dl-two .dl-btn { padding: 0 16px; font-size: 13.5px; }
 .nav-burger { display: none; background: none; border: 0; color: var(--paper); cursor: pointer; padding: 12px; min-width: 44px; min-height: 44px; align-items: center; justify-content: center; }
 .nav-burger svg { width: 20px; height: 20px; }
 .skip { position: fixed; top: -60px; left: 16px; z-index: 200; background: var(--amber); color: var(--amber-ink); font-weight: 700; font-size: 14px; padding: 10px 18px; border-radius: 999px; text-decoration: none; transition: top 0.2s var(--ease); }
@@ -247,7 +240,7 @@ footer { margin-top: clamp(40px, 6vw, 80px); border-top: 1px solid var(--line); 
 .reveal.in { opacity: 1; transform: none; }
 
 @media (max-width: 860px) {
-  .nav-links, .nav-dl { display: none; }
+  .nav-links, .nav-pill > .dl-btn { display: none; }
   .nav-burger { display: block; }
   .bento { grid-template-columns: 1fr; }
   .hero { padding-top: 130px; }
