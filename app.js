@@ -62,7 +62,8 @@
   if (muteBtn && video) {
     muteBtn.addEventListener('click', function () {
       video.muted = !video.muted;
-      muteBtn.textContent = video.muted ? '🔇' : '🔊';
+      muteBtn.classList.toggle('live', !video.muted);
+      muteBtn.setAttribute('aria-label', video.muted ? 'Unmute video' : 'Mute video');
     });
   }
 
@@ -92,14 +93,6 @@
         } else mobile.classList.remove('open');
       });
     });
-  }
-
-  // Nav dropdown aria (CSS handles show/hide on hover + focus)
-  var navDl = document.querySelector('.nav-dl');
-  var navDlBtn = document.getElementById('navDlBtn');
-  if (navDl && navDlBtn) {
-    navDl.addEventListener('mouseenter', function () { navDlBtn.setAttribute('aria-expanded', 'true'); });
-    navDl.addEventListener('mouseleave', function () { navDlBtn.setAttribute('aria-expanded', 'false'); });
   }
 
   // Active-section highlight
@@ -174,11 +167,65 @@
     });
   }
 
-  // Marquee: duplicate cards for a seamless loop
-  var mq = document.getElementById('mqTrack');
-  if (mq && !mq.dataset.dup) {
-    mq.dataset.dup = '1';
-    mq.innerHTML += mq.innerHTML;
+  // Compatibility wall: dots + auto-advance + pause (droppy-style)
+  var wall = document.getElementById('wallTrack');
+  var dotsWrap = document.getElementById('wallDots');
+  var pauseBtn = document.getElementById('wallPause');
+  var wallPaused = false;
+  var wallTimer = null;
+  var SVG_PAUSE = '<svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>';
+  var SVG_PLAY = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg>';
+  function wallCards() { return wall ? Array.prototype.slice.call(wall.querySelectorAll('.wall-card')) : []; }
+  function wallGo(i) {
+    var cards = wallCards();
+    if (!cards.length) return;
+    i = (i + cards.length) % cards.length;
+    wall.scrollTo({ left: cards[i].offsetLeft - wall.offsetLeft - (wall.clientWidth - cards[i].clientWidth) / 2, behavior: 'smooth' });
+  }
+  function wallActive() {
+    var cards = wallCards();
+    if (!cards.length || !dotsWrap) return;
+    var mid = wall.scrollLeft + wall.clientWidth / 2;
+    var best = 0, bd = Infinity;
+    cards.forEach(function (c, i) {
+      var d = Math.abs(c.offsetLeft - wall.offsetLeft + c.clientWidth / 2 - mid);
+      if (d < bd) { bd = d; best = i; }
+    });
+    Array.prototype.forEach.call(dotsWrap.children, function (b, i) {
+      b.classList.toggle('on', i === best);
+    });
+    return best;
+  }
+  function wallAuto() {
+    if (wallTimer) clearInterval(wallTimer);
+    if (wallPaused || !wall || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    wallTimer = setInterval(function () { wallGo((wallActive() || 0) + 1); }, 4500);
+  }
+  if (wall && dotsWrap) {
+    wallCards().forEach(function (_, i) {
+      var b = document.createElement('button');
+      b.setAttribute('role', 'tab');
+      b.setAttribute('aria-label', 'Show application ' + (i + 1));
+      b.addEventListener('click', function () { wallGo(i); wallAuto(); });
+      dotsWrap.appendChild(b);
+    });
+    var wallTick = false;
+    wall.addEventListener('scroll', function () {
+      if (!wallTick) { wallTick = true; requestAnimationFrame(function () { wallTick = false; wallActive(); }); }
+    }, { passive: true });
+    wall.addEventListener('mouseenter', function () { if (wallTimer) clearInterval(wallTimer); });
+    wall.addEventListener('mouseleave', wallAuto);
+    wallActive();
+    wallAuto();
+  }
+  if (pauseBtn && wall) {
+    pauseBtn.innerHTML = SVG_PAUSE;
+    pauseBtn.addEventListener('click', function () {
+      wallPaused = !wallPaused;
+      pauseBtn.innerHTML = wallPaused ? SVG_PLAY : SVG_PAUSE;
+      pauseBtn.setAttribute('aria-label', wallPaused ? 'Resume auto-scroll' : 'Pause auto-scroll');
+      wallAuto();
+    });
   }
 
   tick();

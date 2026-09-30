@@ -32,18 +32,18 @@
       <a href="#features">Features</a>
       <a href="#faq">FAQ</a>
     </div>
-    <div class="nav-dl">
-      <button class="dl-btn small" aria-haspopup="true" aria-expanded="false" id="navDlBtn"><span class="dl-text">Download</span><span class="dl-apple" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.81-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8.78-.16 2.05-.93 3.57-.84 1.58.13 2.77.75 3.55 1.9-3.27 1.96-2.5 6.24.5 7.45-.6 1.58-1.42 3.14-2.7 3.66zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg></span></button>
-      <div class="nav-dl-menu" id="navDlMenu" role="menu">
-        <a href="#apps" role="menuitem"><img src="icons/klip-512.png" alt="" width="22" height="22"><span>Download Klip</span></a>
-        <a href="#apps" role="menuitem"><img src="icons/klipocr-512.png" alt="" width="22" height="22"><span>Download KlipOCR</span></a>
-      </div>
+    <div class="nav-dl" id="navDl">
+      <a class="dl-btn small nav-dl-one" href="#apps"><span class="dl-text">Download</span><span class="dl-apple" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.81-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8.78-.16 2.05-.93 3.57-.84 1.58.13 2.77.75 3.55 1.9-3.27 1.96-2.5 6.24.5 7.45-.6 1.58-1.42 3.14-2.7 3.66zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg></span></a>
+      <span class="nav-dl-two">
+        <a class="dl-btn small" href="#apps"><span class="dl-text">Klip</span><span class="dl-apple" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.81-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8.78-.16 2.05-.93 3.57-.84 1.58.13 2.77.75 3.55 1.9-3.27 1.96-2.5 6.24.5 7.45-.6 1.58-1.42 3.14-2.7 3.66zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg></span></a>
+        <a class="dl-btn small ghost" href="#apps"><span class="dl-text">KlipOCR</span><span class="dl-apple" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.81-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8.78-.16 2.05-.93 3.57-.84 1.58.13 2.77.75 3.55 1.9-3.27 1.96-2.5 6.24.5 7.45-.6 1.58-1.42 3.14-2.7 3.66zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg></span></a>
+      </span>
     </div>
     <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false">☰</button>
   </nav>
   <div class="nav-mobile" id="navMobile">
     <a href="#apps">Apps</a><a href="#demo">Demo</a><a href="#compare">Compare</a>
-    <a href="#features">Features</a><a href="#faq">FAQ</a><a href="license.html">License</a>
+    <a href="#features">Features</a><a href="#faq">FAQ</a><a href="license.html">License</a><a href="#apps">Download Klip</a><a href="#apps">Download KlipOCR</a>
   </div>
 </header>
 
@@ -51,36 +51,24 @@
 
   <!-- HERO -->
   <section class="hero">
+    <div class="app-duo reveal" id="apps">
+      <div class="app-mini">
+        <img src="icons/klip-512.png" alt="Klip app icon" width="88" height="88">
+        <p class="tag">Markdown/HTML and LaTeX to office</p>
+        <a class="dl-btn" href="#"><span class="dl-text">Download Klip</span><span class="dl-apple" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.81-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8.78-.16 2.05-.93 3.57-.84 1.58.13 2.77.75 3.55 1.9-3.27 1.96-2.5 6.24.5 7.45-.6 1.58-1.42 3.14-2.7 3.66zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg></span></a>
+      </div>
+      <div class="app-mini">
+        <img src="icons/klipocr-512.png" alt="KlipOCR app icon" width="88" height="88">
+        <p class="tag">OCR screenshots and documents</p>
+        <a class="dl-btn ghost" href="#"><span class="dl-text">Download KlipOCR</span><span class="dl-apple" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.81-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8.78-.16 2.05-.93 3.57-.84 1.58.13 2.77.75 3.55 1.9-3.27 1.96-2.5 6.24.5 7.45-.6 1.58-1.42 3.14-2.7 3.66zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg></span></a>
+      </div>
+    </div>
     <h1 class="reveal">From AI output to <u>publication-ready documents</u>.</h1>
     <p class="sub reveal">Klip converts Markdown, HTML and LaTeX into <strong>native, editable office documents</strong> with the most efficient conversion engine available. KlipOCR captures screenshots and documents with a <strong>highly optimized OvisOCR2 engine</strong> delivering state-of-the-art performance and top-1 accuracy. Fully air-gapped — 100% on-device, no network required.</p>
     <div class="badges reveal">
       <span>100% air-gapped</span><span>On-device</span><span>No cloud</span>
     </div>
 
-    <div class="app-cards" id="apps">
-      <article class="app-card reveal">
-        <img src="icons/klip-512.png" alt="Klip app icon" width="96" height="96" class="app-icon">
-        <h2>Klip</h2>
-        <p class="tag">Markdown/HTML and LaTeX to office</p>
-        <ul>
-          <li>Native editable equations in Pages, Keynote, Word and LibreOffice</li>
-          <li>True native tables with fully editable cell content</li>
-          <li>One copy serves every target through a single conversion pass</li>
-        </ul>
-        <a class="dl-btn" href="#"><span class="dl-text">Download Klip</span><span class="dl-apple" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.81-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8.78-.16 2.05-.93 3.57-.84 1.58.13 2.77.75 3.55 1.9-3.27 1.96-2.5 6.24.5 7.45-.6 1.58-1.42 3.14-2.7 3.66zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg></span></a>
-      </article>
-      <article class="app-card reveal">
-        <img src="icons/klipocr-512.png" alt="KlipOCR app icon" width="96" height="96" class="app-icon">
-        <h2>KlipOCR</h2>
-        <p class="tag">OCR screenshots and documents</p>
-        <ul>
-          <li>Highly optimized OvisOCR2 — state-of-the-art performance, top-1 accuracy</li>
-          <li>Hotkey capture of equations, tables and full documents</li>
-          <li>Structured Markdown and LaTeX output, ready for Klip</li>
-        </ul>
-        <a class="dl-btn ghost" href="#"><span class="dl-text">Download KlipOCR</span><span class="dl-apple" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.81-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8.78-.16 2.05-.93 3.57-.84 1.58.13 2.77.75 3.55 1.9-3.27 1.96-2.5 6.24.5 7.45-.6 1.58-1.42 3.14-2.7 3.66zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg></span></a>
-      </article>
-    </div>
   </section>
 
   <!-- DEMO SPOTLIGHT: seamless, no heading. Sticky video, surroundings blur, autoplay on center -->
@@ -89,7 +77,7 @@
       <div class="spot-veil" id="spotVeil" aria-hidden="true"></div>
       <div class="video-frame spot-frame">
         <video id="demoVideo" muted loop playsinline preload="auto" poster="video/poster.jpg" src="video/klip-demo-720p.mp4"></video>
-        <button class="spot-mute" id="spotMute" aria-label="Unmute video">🔇</button>
+        <button class="spot-mute" id="spotMute" aria-label="Toggle sound"><svg class="ic-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor" stroke="none"/><path d="m16 9 5 6m0-6-5 6"/></svg><svg class="ic-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor" stroke="none"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.2 5.8a9 9 0 0 1 0 12.4"/></svg></button>
       </div>
     </div>
   </section>
@@ -100,22 +88,22 @@
     <h2 class="reveal">Source in. Document out.</h2>
     <p class="lede reveal">Drag the divider to compare raw Markdown, LaTeX and HTML input against the native rendered result Klip produces.</p>
     <div class="compare reveal" id="compareBox">
-      <div class="cmp-pane cmp-raw">
-<pre><code># Results
+      <div class="mac">
+        <div class="mac-bar"><i class="r"></i><i class="y"></i><i class="g"></i><span>source.md</span><em>INPUT</em></div>
+<pre class="code"><code><span class="tok-h"># Results</span>
 
-The solution is $x = \frac{-b \pm
-\sqrt{b^2 - 4ac}}{2a}$.
+The solution is <span class="tok-math">$x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}$</span>.
 
-$$\sum_{i=1}^{n} i = \frac{n(n+1)}{2}$$
+<span class="tok-math">$$\sum_{i=1}^{n} i = \frac{n(n+1)}{2}$$</span>
 
-| Model   | Score |
-|---------|-------|
-| OvisOCR | 97.4  |
-| Other   | 83.1  |
+<span class="tok-t">| Model   | Score |</span>
+<span class="tok-t">|---------|-------|</span>
+<span class="tok-t">| OvisOCR | 97.4  |</span>
 
-&lt;table&gt;…native…&lt;/table&gt;</code></pre>
+<span class="tok-g">&lt;table&gt;</span> … <span class="tok-g">&lt;/table&gt;</span></code></pre>
       </div>
-      <div class="cmp-pane cmp-rendered" id="cmpRendered">
+      <div class="mac out" id="cmpRendered">
+        <div class="mac-bar light"><i class="r"></i><i class="y"></i><i class="g"></i><span>output.pages</span><em>OUTPUT</em></div>
         <div class="doc">
           <h3>Results</h3>
           <p>The solution is <em>x</em> = (−<em>b</em> ± √( <em>b</em>² − 4<em>ac</em> )) / 2<em>a</em>.</p>
@@ -128,21 +116,25 @@ $$\sum_{i=1}^{n} i = \frac{n(n+1)}{2}$$
     </div>
   </section>
 
-  <!-- SUPPORTED APPS MARQUEE -->
-  <section class="panel" id="targets">
+  <!-- COMPATIBILITY WALL -->
+  <section class="panel wall-panel" id="targets">
     <p class="eyebrow reveal">Compatibility</p>
-    <h2 class="reveal">Pastes where you work.</h2>
-    <div class="marquee reveal" aria-label="Supported applications">
-      <div class="mq-track" id="mqTrack">
-        <div class="mq-card"><img src="https://cdn.simpleicons.org/apple/F4EFE3" alt="" loading="lazy" onerror="this.style.display='none'"><span>Pages</span></div>
-        <div class="mq-card"><img src="https://cdn.simpleicons.org/keynote/F4EFE3" alt="" loading="lazy" onerror="this.style.display='none'"><span>Keynote</span></div>
-        <div class="mq-card"><img src="https://cdn.simpleicons.org/microsoftword/F4EFE3" alt="" loading="lazy" onerror="this.style.display='none'"><span>Word</span></div>
-        <div class="mq-card"><img src="https://cdn.simpleicons.org/libreoffice/F4EFE3" alt="" loading="lazy" onerror="this.style.display='none'"><span>LibreOffice</span></div>
-        <div class="mq-card"><img src="https://cdn.simpleicons.org/googledocs/F4EFE3" alt="" loading="lazy" onerror="this.style.display='none'"><span>Google Docs</span></div>
-        <div class="mq-card"><img src="https://cdn.simpleicons.org/obsidian/F4EFE3" alt="" loading="lazy" onerror="this.style.display='none'"><span>Obsidian</span></div>
-        <div class="mq-card"><img src="https://cdn.simpleicons.org/typora/F4EFE3" alt="" loading="lazy" onerror="this.style.display='none'"><span>Typora</span></div>
-        <div class="mq-card"><img src="https://cdn.simpleicons.org/bear/F4EFE3" alt="" loading="lazy" onerror="this.style.display='none'"><span>Bear</span></div>
+    <h2 class="reveal">There when you need it.</h2>
+    <div class="wall reveal" id="wall">
+      <div class="wall-track" id="wallTrack">
+        <figure class="wall-card"><span class="wall-img"><img src="icons/apps/pages.png" alt="Pages icon" loading="lazy"></span><figcaption><strong>Native Pages paste.</strong> Tables and editable equations land exactly where they belong.</figcaption></figure>
+        <figure class="wall-card"><span class="wall-img"><img src="icons/apps/keynote.png" alt="Keynote icon" loading="lazy"></span><figcaption><strong>Deck-ready Keynote.</strong> Math and tables stay editable on the slide.</figcaption></figure>
+        <figure class="wall-card"><span class="wall-img"><img src="icons/apps/word.png" alt="Microsoft Word icon" loading="lazy"></span><figcaption><strong>True Word output.</strong> OMML equations and clean tables, no cleanup pass.</figcaption></figure>
+        <figure class="wall-card"><span class="wall-img"><img src="icons/apps/libreoffice.png" alt="LibreOffice icon" loading="lazy"></span><figcaption><strong>LibreOffice correct.</strong> StarMath formulas with proper baseline alignment.</figcaption></figure>
+        <figure class="wall-card"><span class="wall-img"><img src="icons/apps/googledocs.svg" alt="Google Docs icon" loading="lazy"></span><figcaption><strong>Google Docs too.</strong> Structure survives the trip into Docs.</figcaption></figure>
+        <figure class="wall-card"><span class="wall-img"><img src="icons/apps/obsidian.png" alt="Obsidian icon" loading="lazy"></span><figcaption><strong>Obsidian friendly.</strong> Markdown targets get clean plain text automatically.</figcaption></figure>
+        <figure class="wall-card"><span class="wall-img"><img src="icons/apps/typora.svg" alt="Typora icon" loading="lazy"></span><figcaption><strong>Typora clean.</strong> What you copied stays readable where you write.</figcaption></figure>
+        <figure class="wall-card"><span class="wall-img"><img src="icons/apps/bear.png" alt="Bear icon" loading="lazy"></span><figcaption><strong>Bear notes.</strong> Clipboard output drops straight into your notes.</figcaption></figure>
       </div>
+    </div>
+    <div class="wall-ctrl reveal">
+      <div class="wall-dots" id="wallDots" role="tablist" aria-label="Choose application"></div>
+      <button class="wall-pause" id="wallPause" aria-label="Pause auto-scroll">❚❚</button>
     </div>
   </section>
 
@@ -188,12 +180,12 @@ $$\sum_{i=1}^{n} i = \frac{n(n+1)}{2}$$
     <p class="eyebrow reveal">Questions</p>
     <h2 class="reveal">Frequently asked.</h2>
     <div class="faq" id="faqBox">
-      <details class="reveal"><summary>Which systems are supported?</summary><p>Klip requires macOS 13 or later; KlipOCR requires macOS 14 or later. Both require Apple Silicon.</p></details>
-      <details class="reveal"><summary>Does any data leave the machine?</summary><p>No. Both applications are 100% air-gapped. Recognition, conversion and rendering execute locally with no network dependency.</p></details>
-      <details class="reveal"><summary>How accurate is the recognition?</summary><p>KlipOCR uses a highly optimized OvisOCR2 engine with state-of-the-art performance and top-1 accuracy on standard benchmarks.</p></details>
-      <details class="reveal"><summary>What happens to unsupported equations?</summary><p>Content is always preserved. Anything outside the convertible set is retained as source text.</p></details>
-      <details class="reveal"><summary>How are markdown editors handled?</summary><p>Markdown targets such as Obsidian, Typora and Bear automatically receive clean plain text at paste time.</p></details>
-      <details class="reveal"><summary>When are downloads available?</summary><p>Download buttons are placeholders until the first signed releases ship, at which point they will reference the release files directly.</p></details>
+      <div class="faq-row left reveal"><details><summary><span class="q-pill">Which systems are supported?</span><span class="q-plus">+</span></summary><div class="a"><p>Klip requires macOS 13 or later; KlipOCR requires macOS 14 or later. Both require Apple Silicon.</p></div></details></div>
+      <div class="faq-row right reveal"><details><summary><span class="q-pill">Does any data leave the machine?</span><span class="q-plus">+</span></summary><div class="a"><p>No. Both applications are 100% air-gapped. Recognition, conversion and rendering execute locally with no network dependency.</p></div></details></div>
+      <div class="faq-row left reveal"><details><summary><span class="q-pill">How accurate is the recognition?</span><span class="q-plus">+</span></summary><div class="a"><p>KlipOCR uses a highly optimized OvisOCR2 engine with state-of-the-art performance and top-1 accuracy on standard benchmarks.</p></div></details></div>
+      <div class="faq-row right reveal"><details><summary><span class="q-pill">What happens to unsupported equations?</span><span class="q-plus">+</span></summary><div class="a"><p>Content is always preserved. Anything outside the convertible set is retained as source text.</p></div></details></div>
+      <div class="faq-row left reveal"><details><summary><span class="q-pill">How are markdown editors handled?</span><span class="q-plus">+</span></summary><div class="a"><p>Markdown targets such as Obsidian, Typora and Bear automatically receive clean plain text at paste time.</p></div></details></div>
+      <div class="faq-row right reveal"><details><summary><span class="q-pill">When are downloads available?</span><span class="q-plus">+</span></summary><div class="a"><p>Download buttons are placeholders until the first signed releases ship, at which point they will reference the release files directly.</p></div></details></div>
     </div>
   </section>
 
@@ -208,6 +200,7 @@ $$\sum_{i=1}^{n} i = \frac{n(n+1)}{2}$$
 
 </main>
 
+<div class="foot-band" aria-hidden="true"></div>
 <footer>
   <div class="foot-grid">
     <div class="foot-brand">
