@@ -55,7 +55,7 @@ code, kbd { font-family: ui-monospace, "SF Mono", monospace; font-size: 0.86em; 
 .dl-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(233,180,76,0.45); }
 .dl-btn:active { transform: scale(0.97); }
 .dl-btn.ghost { background: rgba(245,239,224,0.1); color: var(--paper); border: 1px solid var(--line); box-shadow: none; }
-.dl-btn.small { height: 40px; padding: 0 20px; min-width: 0; font-size: 14px; }
+.dl-btn.small { height: 42px; padding: 0 22px; min-width: 0; font-size: 14px; }
 .dl-text { transition: opacity 0.12s linear; }
 .dl-apple { position: absolute; display: flex; color: var(--leaf); transform: scale(0.5); opacity: 0; transition: opacity 0.15s linear, transform 0.25s var(--ease); filter: drop-shadow(0 0 8px rgba(126,226,168,0.6)); }
 .dl-btn:hover .dl-text { opacity: 0; }
