@@ -79,10 +79,10 @@ code, kbd { font-family: ui-monospace, "SF Mono", monospace; font-size: 0.86em; 
 .nav-links { display: flex; gap: 2px; }
 .nav-links a { position: relative; color: rgba(245,239,224,0.9); text-decoration: none; font-size: 14px; font-weight: 500; padding: 10px 13px; border-radius: 999px; transition: color 0.2s; text-shadow: 0 1px 8px rgba(0,0,0,0.5); }
 .nav-links a:hover { color: var(--paper); }
-.nav-links a::after { content: ""; position: absolute; left: 13px; right: 13px; bottom: 5px; height: 2px; border-radius: 2px; background: var(--amber); transform: scaleX(0); transition: transform 0.28s var(--ease); }
+.nav-links a::after { content: ""; position: absolute; left: 13px; right: 13px; bottom: 5px; height: 2px; border-radius: 2px; background: var(--amber); transform: scaleX(0); transition: transform 0.28s var(--ease), height 0.2s var(--ease), box-shadow 0.2s var(--ease); }
 .nav-links a:hover::after { transform: scaleX(0.55); }
-.nav-links a.active { color: var(--paper); }
 .nav-links a.active::after { transform: scaleX(1); }
+.nav-links a.active:hover::after { height: 4px; box-shadow: 0 0 10px rgba(233,180,76,0.8); }
 /* download expands inline: 0fr -> 1fr grid trick, smooth both ways */
 .nav-burger { display: none; background: none; border: 0; color: var(--paper); cursor: pointer; padding: 12px; min-width: 44px; min-height: 44px; align-items: center; justify-content: center; }
 .nav-burger svg { width: 20px; height: 20px; }
