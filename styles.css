@@ -93,7 +93,7 @@ code, kbd { font-family: ui-monospace, "SF Mono", monospace; font-size: 0.86em; 
 .dl-apple { position: absolute; display: flex; color: var(--leaf); transform: scale(0.5); opacity: 0; transition: opacity 0.15s linear, transform 0.25s var(--ease); filter: drop-shadow(0 0 8px rgba(126,226,168,0.6)); }
 @media (hover: hover) {
   .dl-btn:hover .dl-text { opacity: 0; transition-delay: 0.08s; }
-  .dl-btn:hover .dl-apple { opacity: 1; transform: scale(1.15); transition: opacity 0.12s linear, transform 0.22s var(--ease); animation: sealPop 0.45s ease; }
+  .dl-btn:hover .dl-apple { opacity: 1; transform: scale(1.15); transition: opacity 0.12s linear, transform 0.22s var(--ease); }
 }
 
 *:focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; }
@@ -267,30 +267,32 @@ footer { margin-top: clamp(48px, 6vw, 80px); border-top: 1px solid var(--line); 
 .plans-fine { color: rgba(203,220,207,0.78); font-size: 13px; line-height: 1.5; margin: 0; }
 /* seal buttons: same lift/glow/press as .dl-btn, icon stays visible (no hover swap) */
 .dl-seal { display: inline-flex; flex: 0 0 auto; margin-right: 10px; transform-origin: center; }
-.dl-seal .seal-disc { fill: #14261c; }
-.dl-seal .seal-check { fill: none; stroke: #e9b44c; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
-.dl-btn.ghost .dl-seal .seal-disc { fill: #f5efe0; }
-.dl-btn.ghost .dl-seal .seal-check { stroke: #14261c; }
+.dl-seal .seal-shield { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.dl-seal .seal-check { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.dl-btn.ghost .dl-seal .seal-shield,
+.dl-btn.ghost .dl-seal .seal-check { stroke: currentColor; }
 .dl-apple .dl-seal { margin-right: 0; }
 @media (hover: hover) {
   .dl-btn.has-seal:hover .dl-text { opacity: 1; }
   .dl-btn.has-seal:hover .dl-seal,
-  .dl-btn:hover .dl-apple .dl-seal { animation: sealPop 0.45s ease; }
+  .dl-btn:hover .dl-apple .dl-seal { animation: sealPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); }
 }
 /* hover never fires for keyboard/touch: same pop on focus + press (reduced-motion kill below still wins) */
 .dl-btn.has-seal:focus-visible .dl-seal,
 .dl-btn.has-seal:active .dl-seal,
 .dl-btn:focus-visible .dl-apple .dl-seal,
-.dl-btn:active .dl-apple .dl-seal { animation: sealPop 0.45s ease; }
+.dl-btn:active .dl-apple .dl-seal { animation: sealPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); }
 @keyframes sealPop {
   0% { transform: scale(1) rotate(0deg); }
-  40% { transform: scale(1.3) rotate(-10deg); }
-  70% { transform: scale(0.94) rotate(3deg); }
+  45% { transform: scale(1.22) rotate(-6deg); }
+  75% { transform: scale(0.95) rotate(2deg); }
   100% { transform: scale(1) rotate(0deg); }
 }
 @media (prefers-reduced-motion: reduce) {
   .dl-btn.has-seal:hover .dl-seal,
-  .dl-btn:hover .dl-apple .dl-seal { animation: none; }
+  .dl-btn:hover .dl-apple .dl-seal,
+  .dl-btn.has-seal:focus-visible .dl-seal,
+  .dl-btn:active .dl-apple .dl-seal { animation: none; }
 }
 
 /* ---------- license WIP (legacy, unused) ---------- */
