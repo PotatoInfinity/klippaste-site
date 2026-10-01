@@ -178,8 +178,8 @@ main { display: block; }
 .wall-track { display: flex; gap: 24px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 24px max(20px, calc((100vw - 1080px) / 2 + 20px)) 8px; scrollbar-width: none; -webkit-mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent); mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent); }
 .wall-track::-webkit-scrollbar { display: none; }
 .wall-card { flex: 0 0 340px; max-width: 78vw; scroll-snap-align: center; margin: 0; }
-.wall-img { display: flex; align-items: center; justify-content: center; aspect-ratio: 16 / 9; border-radius: var(--r2); background: linear-gradient(160deg, var(--pine-2), var(--pine)); border: 1px solid var(--line); box-shadow: var(--shadow-card); }
-.wall-img img { width: 64px; height: 64px; object-fit: contain; border-radius: 22%; box-shadow: 0 8px 24px rgba(0,0,0,0.45); }
+.wall-img { display: flex; align-items: center; justify-content: center; aspect-ratio: 16 / 9; }
+.wall-img img { width: 88px; height: 88px; object-fit: contain; filter: drop-shadow(0 0 18px rgba(126,226,168,0.35)); }
 .wall-card figcaption { margin-top: 16px; font-size: 15px; line-height: 1.6; color: var(--sage); max-width: 52ch; }
 .wall-card figcaption strong { color: var(--paper); }
 .wall-ctrl { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 16px; margin-top: 24px; padding: 0 20px; }
@@ -213,11 +213,13 @@ main { display: block; }
 .faq-row details:hover .q-pill { transform: translateY(-2px); border-color: rgba(233,180,76,0.4); }
 .faq-row details[open] .q-pill { border-color: rgba(233,180,76,0.55); }
 .faq-row details[open]:hover .q-pill { border-color: rgba(233,180,76,0.7); }
-.q-plus { flex: 0 0 auto; width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid rgba(245,239,224,0.45); color: var(--paper); display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 300; line-height: 1; transition: transform 0.3s var(--ease), background 0.3s, border-color 0.3s, color 0.3s; }
+.q-plus { flex: 0 0 auto; width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid rgba(245,239,224,0.45); color: var(--paper); display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 300; line-height: 1; padding-bottom: 3px; transition: transform 0.3s var(--ease), background 0.3s, border-color 0.3s, color 0.3s; }
+/* + ink sits ~1.7px low in Inter Tight: bottom padding lifts content only, ring stays centered; composes with open-state rotate */
 .faq-row details[open] .q-plus { transform: rotate(45deg); background: var(--amber); border-color: var(--amber); color: var(--amber-ink); }
 .faq-row .a { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.3s var(--ease); }
 .faq-row details[open] .a { grid-template-rows: 1fr; }
-.faq-row .a > div { overflow: hidden; }
+.faq-row .a > div { overflow: hidden; opacity: 0; transform: translateY(-6px); transition: opacity 0.25s var(--ease), transform 0.3s var(--ease); }
+.faq-row details[open] .a > div { opacity: 1; transform: none; }
 .faq-row .a p { margin: 0; padding: 16px 32px 0; color: var(--sage); font-size: 15px; line-height: 1.6; }
 
 /* ---------- final ---------- */
@@ -264,6 +266,9 @@ footer { margin-top: clamp(48px, 6vw, 80px); border-top: 1px solid var(--line); 
   .dl-btn.has-seal:hover .dl-text { opacity: 1; }
   .dl-btn.has-seal:hover .dl-seal { animation: sealPop 0.45s ease; }
 }
+/* hover never fires for keyboard/touch: same pop on focus + press (reduced-motion kill below still wins) */
+.dl-btn.has-seal:focus-visible .dl-seal,
+.dl-btn.has-seal:active .dl-seal { animation: sealPop 0.45s ease; }
 @keyframes sealPop {
   0% { transform: scale(1) rotate(0deg); }
   40% { transform: scale(1.3) rotate(-10deg); }
