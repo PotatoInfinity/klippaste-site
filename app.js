@@ -1,4 +1,4 @@
-// Klip landing: nav, parallax, spotlight video, compare, wall, faq
+// Klip landing: nav, parallax, spotlight video, wall, faq
 (function () {
   var pill = document.getElementById('navPill');
   var bgFixed = document.getElementById('bgFixed');
@@ -114,7 +114,7 @@
       }
     });
   }, { rootMargin: '-40% 0px -55% 0px' });
-  ['apps', 'demo', 'compare', 'features', 'faq'].forEach(function (id) {
+  ['apps', 'demo', 'features', 'faq'].forEach(function (id) {
     var s = document.getElementById(id);
     if (s) secIo.observe(s);
   });
@@ -145,47 +145,6 @@
       if (d.open) faqs.forEach(function (o) { if (o !== d) o.open = false; });
     });
   });
-
-  // Compare slider
-  var box = document.getElementById('compareBox');
-  var range = document.getElementById('cmpRange');
-  var hint = document.getElementById('cmpHint');
-  function setPos(p, mark) {
-    p = Math.max(0, Math.min(100, p));
-    if (box) {
-      box.style.setProperty('--pos', p + '%');
-      if (mark !== false) box.classList.add('used');
-    }
-    if (range && document.activeElement !== range) range.value = Math.round(p);
-    if (range) range.setAttribute('aria-valuetext', Math.round(p) + ' percent source revealed');
-  }
-  if (box && range) {
-    setPos(50, false);
-    range.addEventListener('input', function () { setPos(parseFloat(range.value)); });
-    range.addEventListener('pointerdown', function () { box.classList.add('dragging'); });
-    ['pointerup', 'pointercancel'].forEach(function (ev) {
-      range.addEventListener(ev, function () { box.classList.remove('dragging'); });
-    });
-    // Guided intro sweep on first view (skipped after real use / reduced motion)
-    if ('IntersectionObserver' in window && !RM) {
-      var cmpIo = new IntersectionObserver(function (es) {
-        if (es[0].isIntersecting) {
-          cmpIo.disconnect();
-          if (box.classList.contains('used')) return;
-          var t0 = null;
-          (function sweep(t) {
-            if (box.classList.contains('used')) return;
-            if (t0 === null) t0 = t;
-            var p = (t - t0) / 1500;
-            if (p >= 1) { setPos(50, false); return; }
-            setPos(50 + Math.sin(p * Math.PI * 2) * 12 * (1 - p), false);
-            requestAnimationFrame(sweep);
-          })(performance.now());
-        }
-      }, { threshold: 0.4 });
-      cmpIo.observe(box);
-    }
-  }
 
   // Compatibility wall: dots + arrows + auto-advance + pause
   var wall = document.getElementById('wallTrack');
