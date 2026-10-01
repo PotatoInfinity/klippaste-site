@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Licenses — Klip, pay once</title>
-<meta name="description" content="Klip $4.99, KlipOCR $2.99.">
+<title>Get license — Klip, pay once</title>
+<meta name="description" content="Pay once. Use offline. No account. Klip $4.99, KlipOCR $2.99, both $6.99.">
 <meta name="theme-color" content="#0a1e14">
-<meta property="og:title" content="Licenses — Klip, pay once">
-<meta property="og:description" content="Klip $4.99, KlipOCR $2.99.">
+<meta property="og:title" content="Get license — Klip, pay once">
+<meta property="og:description" content="Pay once. Use offline. No account. Klip $4.99, KlipOCR $2.99, both $6.99.">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
 <link rel="icon" type="image/png" href="icons/favicon-64.png">
@@ -38,15 +38,58 @@
   </div>
 </header>
 
-<main class="wip">
-  <div class="wip-card reveal in">
+<main class="plans">
+  <div class="plans-head reveal in">
     <h1>Get license</h1>
-    <p>Pay once. Use it offline. No account.</p>
-    <div class="final-btns">
-      <button type="button" class="dl-btn ghost"><span class="dl-text">Klip license — $4.99</span></button>
-      <button type="button" class="dl-btn"><span class="dl-text">One covers both</span></button>
-      <button type="button" class="dl-btn ghost"><span class="dl-text">KlipOCR license — $2.99</span></button>
+    <p class="lede">Pay once. Use it offline. No account. Yours to keep on your Mac.</p>
+    <div class="badges" aria-label="Included with every license">
+      <span>Pay once</span><span>Works offline</span><span>No account</span>
     </div>
+  </div>
+
+  <div class="plans-grid">
+    <article class="plan featured reveal in" aria-label="Bundle plan">
+      <p class="plan-badge">Best value</p>
+      <h2>One covers both</h2>
+      <p class="plan-price">$6.99</p>
+      <p class="plan-for">One code unlocks Klip and KlipOCR — save $1.</p>
+      <ul class="plan-list">
+        <li>Notes and math to office, plus screenshots to text</li>
+        <li>Works offline, no account needed</li>
+        <li>Pay once, yours to keep</li>
+      </ul>
+      <button type="button" class="dl-btn has-seal"><svg class="dl-seal" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5 4.5 5.5v6c0 4.6 3.2 8 7.5 10 4.3-2 7.5-5.4 7.5-10v-6L12 2.5z"/><path d="m9 12 2 2 4-4"/></svg><span class="dl-text">One covers both — $6.99</span></button>
+      <p class="plan-fine">One code for both apps.</p>
+    </article>
+
+    <div class="plans-duo">
+      <article class="plan reveal in" aria-label="Klip plan">
+        <h2>Klip</h2>
+        <p class="plan-price">$4.99</p>
+        <p class="plan-for">Notes and math to office.</p>
+        <ul class="plan-list">
+          <li>Tables and math stay editable</li>
+          <li>Free to try: 1,000 chars per paste, 21 first week then 14 a week</li>
+          <li>Pay once, works offline</li>
+        </ul>
+        <button type="button" class="dl-btn ghost has-seal"><svg class="dl-seal" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5 4.5 5.5v6c0 4.6 3.2 8 7.5 10 4.3-2 7.5-5.4 7.5-10v-6L12 2.5z"/><path d="m9 12 2 2 4-4"/></svg><span class="dl-text">Klip license — $4.99</span></button>
+      </article>
+
+      <article class="plan reveal in" aria-label="KlipOCR plan">
+        <h2>KlipOCR</h2>
+        <p class="plan-price">$2.99</p>
+        <p class="plan-for">Screenshots and scans to text.</p>
+        <ul class="plan-list">
+          <li>Text and tables in reading order</li>
+          <li>Free to try: snips with unlimited length, document mode locked</li>
+          <li>Pay once, works offline</li>
+        </ul>
+        <button type="button" class="dl-btn ghost has-seal"><svg class="dl-seal" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5 4.5 5.5v6c0 4.6 3.2 8 7.5 10 4.3-2 7.5-5.4 7.5-10v-6L12 2.5z"/><path d="m9 12 2 2 4-4"/></svg><span class="dl-text">KlipOCR license — $2.99</span></button>
+      </article>
+    </div>
+
+    <p class="plans-note">Both apps together cost less than a coffee.</p>
+    <p class="plans-fine">Payment comes later — these buttons do nothing yet.</p>
   </div>
 </main>
 
