@@ -104,7 +104,7 @@
   // Active-section highlight
   var links = Array.prototype.slice.call(document.querySelectorAll('#navLinks a'));
   var map = {};
-  links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+  links.forEach(function (a) { map[(a.getAttribute('href') || '').slice(1)] = a; });
   var secIo = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
       if (e.isIntersecting) {
