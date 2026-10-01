@@ -236,7 +236,35 @@ footer { margin-top: clamp(48px, 6vw, 80px); border-top: 1px solid var(--line); 
 .wordmark { font-family: "Fraunces", serif; font-weight: 700; font-size: clamp(96px, 23vw, 300px); letter-spacing: -0.04em; line-height: 0.85; text-align: center; color: rgba(245,239,224,0.07); margin: 32px 0 -0.12em; user-select: none; }
 .copy { text-align: center; color: var(--sage); font-size: 13px; margin: 0; padding: 16px 0 24px; position: relative; }
 
-/* ---------- license WIP ---------- */
+/* ---------- license plans: symmetric bundle-over-duo ---------- */
+.plans { max-width: 1080px; margin: 0 auto; padding: 150px 20px 0; text-align: center; }
+.plans-head h1 { font-size: clamp(2.5rem, 1.5rem + 4.5vw, 4rem); line-height: 1.02; letter-spacing: -0.025em; max-width: 16ch; margin: 0 auto; }
+.plans-head .lede { margin-left: auto; margin-right: auto; }
+.plans-head .badges { margin-top: 20px; }
+.plans-grid { display: flex; flex-direction: column; align-items: center; gap: 24px; margin-top: 36px; }
+.plan { background: var(--pine-2); border: 1px solid var(--line); border-radius: var(--r2); box-shadow: var(--shadow-card); padding: 28px 28px 30px; width: 100%; max-width: 560px; text-align: center; transition: border-color 0.25s, transform 0.25s var(--ease), box-shadow 0.25s; }
+.plan:hover { border-color: rgba(233,180,76,0.45); transform: translateY(-3px); box-shadow: var(--shadow-lift); }
+.plan.featured { border-color: rgba(233,180,76,0.55); box-shadow: var(--shadow-lift); }
+.plan-badge { display: inline-block; margin: 0 0 12px; padding: 6px 14px; border-radius: 999px; background: var(--amber); color: var(--amber-ink); font-size: 13px; font-weight: 700; }
+.plan h2 { font-size: clamp(1.5rem, 1.3rem + 0.8vw, 1.875rem); }
+.plan-price { font-family: "Fraunces", Georgia, serif; font-weight: 600; font-size: 2rem; line-height: 1.1; letter-spacing: -0.02em; margin: 8px 0 0; text-shadow: 0 2px 24px rgba(0,0,0,0.55); }
+.plan-for { color: var(--sage); font-size: 15px; line-height: 1.6; margin: 8px 0 0; text-wrap: pretty; }
+.plan-list { list-style: none; margin: 18px 0 0; padding: 0; display: flex; flex-direction: column; gap: 10px; text-align: left; }
+.plan-list li { position: relative; padding-left: 28px; color: var(--sage); font-size: 15px; line-height: 1.55; }
+.plan-list li::before { content: "✓"; position: absolute; left: 2px; top: 0; color: var(--leaf); font-weight: 700; }
+.plans-duo { display: flex; gap: 24px; justify-content: center; align-items: stretch; width: 100%; max-width: 840px; }
+.plans-duo .plan { flex: 1 1 0; max-width: none; }
+.plan .dl-btn { width: 100%; min-width: 0; margin-top: 22px; }
+.plan-fine { font-size: 13px; line-height: 1.5; color: rgba(203,220,207,0.78); margin: 14px 0 0; }
+.plans-note { color: var(--sage); font-size: 15px; margin: 8px 0 0; text-shadow: 0 1px 8px rgba(0,0,0,0.6); }
+.plans-fine { color: rgba(203,220,207,0.78); font-size: 13px; line-height: 1.5; margin: 0; }
+/* seal buttons: same lift/glow/press as .dl-btn, icon stays visible (no hover swap) */
+.dl-seal { display: inline-flex; flex: 0 0 auto; margin-right: 10px; }
+@media (hover: hover) {
+  .dl-btn.has-seal:hover .dl-text { opacity: 1; }
+}
+
+/* ---------- license WIP (legacy, unused) ---------- */
 .wip { min-height: 70vh; display: flex; align-items: center; justify-content: center; padding: 140px 20px 60px; }
 .wip-card { text-align: center; background: var(--pine-2); border: 1px solid var(--line); border-radius: var(--r2); box-shadow: var(--shadow-card); padding: 56px 48px; max-width: 520px; }
 .wip-card h1 { font-size: 40px; margin: 12px 0 10px; }
@@ -278,7 +306,13 @@ footer { margin-top: clamp(48px, 6vw, 80px); border-top: 1px solid var(--line); 
   .app-duo { gap: 24px; }
   .flow-strip { gap: 16px; }
   .wip-card { padding: 40px 24px; }
+  .plans { padding-top: 130px; }
   .foot-row { align-items: flex-start; }
+}
+@media (max-width: 640px) {
+  .plans-duo { flex-direction: column; align-items: center; }
+  .plans-duo .plan { width: 100%; }
+  .plan { padding: 24px 20px 26px; }
 }
 @media (min-width: 561px) and (max-width: 860px) {
   .bento { grid-template-columns: repeat(2, 1fr); }
@@ -291,5 +325,5 @@ footer { margin-top: clamp(48px, 6vw, 80px); border-top: 1px solid var(--line); 
   .spot-sticky { position: static; height: auto; padding: 40px 20px; }
 }
 @media (forced-colors: active) {
-  .dl-btn, .q-pill, .card, .nav-pill, .nav-mobile { border: 1px solid ButtonText; }
+  .dl-btn, .q-pill, .card, .plan, .nav-pill, .nav-mobile { border: 1px solid ButtonText; }
 }
