@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page not found — Klip</title>
+<meta name="description" content="This page doesn't exist. Klip turns LaTeX, Markdown and HTML into editable documents. Offline on your Mac.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0a1e14">
+<link rel="icon" type="image/png" href="/icons/favicon-64.png">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css?v=5a18385">
+<style>
+  .err { min-height: 70vh; display: flex; align-items: center; justify-content: center; padding: 140px 20px 60px; }
+  .err-card, .status-card { text-align: center; background: var(--pine-2); border: 1px solid var(--line); border-radius: var(--r2); box-shadow: var(--shadow-card); padding: 56px 48px; max-width: 560px; width: 100%; }
+  .err-code { font-family: "Fraunces", Georgia, serif; font-size: clamp(3rem, 2rem + 5vw, 4.5rem); line-height: 1; margin: 0; color: var(--paper); }
+  .err-card p, .status-sub { color: var(--sage); font-size: 15px; line-height: 1.6; }
+  .err-card .dl-btn { margin-top: 22px; }
+  .status-card { text-align: left; }
+  .status-code { font-family: ui-monospace, "SF Mono", monospace; font-size: 13px; color: var(--sage); letter-spacing: 0.08em; margin: 0 0 20px; }
+  .status-line { display: flex; align-items: center; gap: 16px; margin: 0; }
+  .dot { flex: 0 0 auto; width: 22px; height: 22px; border-radius: 50%; background: var(--sage); }
+  .dot.pending { background: #ff6b6b; box-shadow: 0 0 12px 3px rgba(255,107,107,0.8), 0 0 36px 8px rgba(255,107,107,0.35); animation: pulse 2s ease-in-out infinite; }
+  .dot.processing { background: var(--amber); box-shadow: 0 0 12px 3px rgba(233,180,76,0.8), 0 0 36px 8px rgba(233,180,76,0.35); animation: pulse 2s ease-in-out infinite; }
+  .dot.resolved { background: var(--leaf); box-shadow: 0 0 12px 3px rgba(126,226,168,0.8), 0 0 36px 8px rgba(126,226,168,0.35); }
+  @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(0.86); opacity: 0.75; } }
+  .status-label { font-family: "Fraunces", Georgia, serif; font-weight: 600; font-size: clamp(1.75rem, 1.4rem + 1.6vw, 2.25rem); letter-spacing: -0.02em; line-height: 1.15; margin: 0; text-shadow: 0 2px 24px rgba(0,0,0,0.55); }
+  .status-meta { color: var(--sage); font-size: 14px; margin: 16px 0 0; }
+  .status-meta time { color: var(--paper); }
+  .status-excerpt { margin: 20px 0 0; padding: 16px 20px; border-left: 3px solid var(--amber); background: rgba(0,0,0,0.3); border-radius: 0 12px 12px 0; color: var(--paper); font-size: 15px; line-height: 1.6; overflow-wrap: break-word; }
+  .status-loading, .status-missing { text-align: center; padding: 24px 0 8px; }
+  .status-loading p { color: var(--sage); }
+  .spin { width: 22px; height: 22px; margin: 0 auto 16px; border-radius: 50%; border: 3px solid var(--line); border-top-color: var(--amber); animation: spin 0.9s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .status-foot { margin: 28px 0 0; text-align: center; }
+  .status-foot a { color: var(--sage); font-size: 14px; }
+  @media (max-width: 640px) { .err-card, .status-card { padding: 40px 24px; } }
+  @media (prefers-reduced-motion: reduce) { .dot.pending, .dot.processing, .spin { animation: none; } }
+</style>
+</head>
+<body>
+<div class="bg-fixed" aria-hidden="true"></div>
+<div class="bg-sky" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav-wrap">
+  <nav class="nav-pill" aria-label="Main">
+    <a class="brand" href="/index.html"><img src="/icons/klip-512.png" alt="Klip icon" width="28" height="28"><span>Klip</span></a>
+    <div class="nav-links">
+      <a href="/index.html#apps">Apps</a><a href="/index.html#demo">Demo</a>
+      <a href="/index.html#features">Features</a><a href="/index.html#faq">FAQ</a>
+    </div>
+    <a class="dl-btn small" href="/license.html"><span class="dl-text">Get license</span></a>
+  </nav>
+</header>
+
+<main>
+  <!-- Normal 404 (default; also the no-JS fallback at ticket URLs) -->
+  <div class="err" id="notfoundView">
+    <div class="err-card">
+      <p class="err-code">404</p>
+      <h1 style="font-size:28px;margin:12px 0 10px">Nothing here.</h1>
+      <p>The page you asked for doesn't exist. It may have moved, or the link has a typo.</p>
+      <a class="dl-btn" href="/index.html"><span class="dl-text">Back to Klip</span></a>
+    </div>
+  </div>
+
+  <!-- Unlisted per-ticket status (shown only when path is /FB-XXXXXX) -->
+  <div class="err" id="statusView" hidden>
+    <div class="status-card">
+      <p class="status-code" id="statusCode">FB-······</p>
+      <div class="status-loading" id="statusLoading" aria-live="polite">
+        <div class="spin" aria-hidden="true"></div>
+        <p>Looking up…</p>
+      </div>
+      <div id="statusBody" hidden>
+        <p class="status-line"><span class="dot" id="statusDot" aria-hidden="true"></span><span class="status-label" id="statusLabel">—</span></p>
+        <p class="status-meta"><span id="statusKind">Report</span> · <span id="statusApp">Klip</span> · reported <time id="statusDate">—</time></p>
+        <blockquote class="status-excerpt" id="statusExcerpt"></blockquote>
+      </div>
+      <div class="status-missing" id="statusMissing" hidden>
+        <h1 style="font-size:28px;margin:0 0 10px">No report with this code.</h1>
+        <p class="status-sub">Check the code and try again. Codes look like <strong>FB-ABC123</strong>.</p>
+      </div>
+      <p class="status-foot"><a href="/index.html">Back to Klip</a></p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p class="copy">© <span id="year">2026</span> Klip. Offline by design.</p>
+</footer>
+
+<script>
+(function () {
+  var yr = document.getElementById('year');
+  if (yr) yr.textContent = new Date().getFullYear();
+
+  // Unlisted ticket URLs: /FB-XXXXXX (anchor both ends; optional trailing slash).
+  var seg = window.location.pathname.replace(/\/+$/, '').split('/').pop() || '';
+  var m = /^FB-[A-Z0-9]{6}$/.exec(seg.toUpperCase());
+  if (!m) return; // normal 404 stays visible
+  var code = m[0];
+
+  var notfound = document.getElementById('notfoundView');
+  var view = document.getElementById('statusView');
+  var loading = document.getElementById('statusLoading');
+  var body = document.getElementById('statusBody');
+  var missing = document.getElementById('statusMissing');
+  notfound.hidden = true;
+  view.hidden = false;
+  document.title = code + ' · Report status — Klip';
+  document.getElementById('statusCode').textContent = code;
+
+  function showMissing() {
+    loading.hidden = true;
+    body.hidden = true;
+    missing.hidden = false;
+  }
+  function prettyKind(k) {
+    k = String(k || '').toLowerCase();
+    if (k === 'bug') return 'Bug report';
+    if (k === 'feature') return 'Feature request';
+    return k ? k.charAt(0).toUpperCase() + k.slice(1) : 'Report';
+  }
+  function prettyApp(a) {
+    a = String(a || '').toLowerCase();
+    if (a === 'klipocr') return 'KlipOCR';
+    if (a === 'klip') return 'Klip';
+    if (a === 'site') return 'klippaste.com';
+    return a ? a.charAt(0).toUpperCase() + a.slice(1) : 'Klip';
+  }
+
+  fetch('https://cuipdwllryitspasbtut.supabase.co/functions/v1/feedback-status?code=' + encodeURIComponent(code), {
+    headers: { 'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN1aXBkd2xscnlpdHNwYXNidHV0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTA3NzIxMjcsImV4cCI6MjEwNjM0ODEyN30.g6Xj7tA8EaXgkai8aW8oeXv3Qje0133xMKFpheOmAto' }
+  }).then(function (r) {
+    if (r.status === 404) { showMissing(); return null; }
+    if (!r.ok) throw new Error('bad status ' + r.status);
+    return r.json();
+  }).then(function (d) {
+    if (!d || d.ok !== true || typeof d.status !== 'string') { showMissing(); return; }
+    var st = d.status.toLowerCase();
+    if (st !== 'pending' && st !== 'processing' && st !== 'resolved') st = 'processing';
+    var dot = document.getElementById('statusDot');
+    dot.className = 'dot ' + st;
+    // textContent only: API strings never touch HTML.
+    document.getElementById('statusLabel').textContent = d.label || d.status;
+    document.getElementById('statusKind').textContent = prettyKind(d.kind);
+    document.getElementById('statusApp').textContent = prettyApp(d.app);
+    var t = document.getElementById('statusDate');
+    var dt = d.reported ? new Date(d.reported) : null;
+    t.textContent = (dt && !isNaN(dt)) ? dt.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' }) : String(d.reported || '—');
+    if (d.reported && dt && !isNaN(dt)) t.setAttribute('datetime', d.reported);
+    document.getElementById('statusExcerpt').textContent = d.excerpt || '';
+    loading.hidden = true;
+    missing.hidden = true;
+    body.hidden = false;
+  }).catch(function () { showMissing(); });
+})();
+</script>
+</body>
+</html>
