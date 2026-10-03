@@ -214,13 +214,14 @@ main { display: block; }
 .wall-img img[src*="googledocs"] { width: 116px; height: 116px; }
 .wall-card figcaption { margin-top: 16px; font-size: 15px; line-height: 1.6; color: var(--ink-2); max-width: 52ch; }
 .wall-card figcaption strong { color: var(--ink); }
-.wall-ctrl { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 16px; margin-top: 24px; padding: 0 20px; }
-.wall-dots { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px; max-width: 100%; background: var(--paper-2); border: 1.5px solid var(--pen); padding: 8px 16px; border-radius: 999px; }
-.wall-dots button { width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; border: 0; border-radius: 8px; background: none; cursor: pointer; padding: 0; }
+.wall-ctrl { display: flex; align-items: center; justify-content: center; flex-wrap: nowrap; gap: 16px; margin-top: 24px; padding: 0 20px; }
+.wall-dots { display: flex; align-items: center; justify-content: safe center; flex: 1 1 auto; min-width: 0; width: max-content; max-width: 100%; margin-inline: auto; flex-wrap: nowrap; overflow-x: auto; gap: 8px; background: var(--paper-2); border: 1.5px solid var(--pen); padding: 8px 16px; border-radius: 999px; scrollbar-width: none; }
+.wall-dots::-webkit-scrollbar { display: none; }
+.wall-dots button { flex: 0 0 auto; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; border: 0; border-radius: 8px; background: none; cursor: pointer; padding: 0; }
 .wall-dots button::after { content: ""; width: 6px; height: 6px; border-radius: 999px; background: rgba(20, 21, 17, 0.3); transition: width 0.3s var(--ease), background 0.3s; }
 .wall-dots button:hover::after { background: rgba(20, 21, 17, 0.55); }
 .wall-dots button.on::after { width: 24px; background: var(--yellow); border: 1px solid var(--pen); }
-.wall-btn { width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid var(--pen); background: var(--paper-2); color: var(--ink); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform 0.2s var(--ease), background 0.2s; font-size: 15px; }
+.wall-btn { flex: 0 0 auto; width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid var(--pen); background: var(--paper-2); color: var(--ink); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform 0.2s var(--ease), background 0.2s; font-size: 15px; }
 .wall-btn:hover, .wall-btn:focus-visible { transform: scale(1.08); background: var(--yellow-wash); }
 .wall-btn:active { transform: scale(0.95); }
 .wall-btn svg { width: 16px; height: 16px; }
@@ -406,6 +407,10 @@ footer { margin-top: clamp(48px, 6vw, 80px); border-top: 2px solid var(--pen); b
   .plans-duo .plan { width: 100%; }
   .plan { padding: 24px 20px 26px; }
   .wall-card { flex-basis: 300px; }
+  .wall-ctrl { gap: 8px; padding: 0 16px; }
+  .wall-dots { gap: 4px; padding: 8px 12px; }
+  .wall-dots button { width: 24px; }
+  .wall-btn { width: 40px; height: 40px; }
   .dl-btn { min-width: 0; width: 100%; max-width: 340px; }
   .final-btns .dl-btn { width: 100%; }
 }
