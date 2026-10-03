@@ -287,15 +287,15 @@ footer { margin-top: clamp(48px, 6vw, 80px); border-top: 2px solid var(--pen); b
   animation: metal-spin 6s linear infinite;
 }
 .plan.featured.metal::after {
-  content: ""; position: absolute; top: -15%; bottom: -15%; left: 0; width: 55%;
+  content: ""; position: absolute; inset: -30%;
   pointer-events: none;
-  background: linear-gradient(100deg, transparent 20%, rgba(148,163,184,0.25) 42%, rgba(255,255,255,0.95) 50%, rgba(148,163,184,0.25) 58%, transparent 80%);
-  transform: translateX(220%) skewX(-6deg);
+  background: linear-gradient(135deg, transparent 42%, rgba(255,255,255,0.95) 50%, rgba(148,163,184,0.28) 54%, transparent 62%);
+  transform: translate(-38%, -38%);
   animation: metal-sheen 2.2s ease-in-out 0.6s 1 forwards;
 }
 @keyframes metal-spin { to { --angle: 360deg; } }
-/* deterministic: stripe travels right→left, parks with only a corner sliver visible */
-@keyframes metal-sheen { from { transform: translateX(220%) skewX(-6deg); } to { transform: translateX(-85%) skewX(-6deg); } }
+/* deterministic diagonal: slash enters at top-left, parks past bottom-right (corner sliver) */
+@keyframes metal-sheen { from { transform: translate(-38%, -38%); } to { transform: translate(38%, 38%); } }
 .plan-badge { display: inline-block; margin: 0 0 12px; padding: 6px 14px; border-radius: 999px; background: var(--yellow); color: var(--ink); border: 1.5px solid var(--pen); font-size: 13px; font-weight: 700; }
 .plan-badge.blue { background: var(--ink); color: #fff; border-color: var(--pen); }
 .plan.wide { max-width: 840px; margin-left: auto; margin-right: auto; }
