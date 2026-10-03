@@ -21,13 +21,34 @@
 
   // Spotlight: veil up to 8px near center, autoplay; exit pauses + resets.
   // Reduced motion: static veil, no autoplay — video keeps controls.
+  // Perf: skip layout + style writes while #demo is off-screen (IO-gated);
+  // write veil/frame styles only when the rounded value actually changed.
   var wasPlaying = false;
+  var spotVisible = true;
+  var lastVeilBg = '', lastVeilBlur = '', lastFrameT = '';
+  if ('IntersectionObserver' in window && spot) {
+    new IntersectionObserver(function (entries) {
+      spotVisible = entries[0].isIntersecting;
+      if (!spotVisible && !RM && video) {
+        wasPlaying = false;
+        try { if (!video.paused) video.pause(); video.currentTime = 0; } catch (e) {}
+      }
+    }, { threshold: 0 }).observe(spot);
+  }
+  document.addEventListener('visibilitychange', function () {
+    if (!video) return;
+    if (document.hidden) {
+      wasPlaying = false;
+      try { video.pause(); } catch (e) {}
+    } else tick();
+  });
   function spotlight() {
     if (!spot || !video) return;
     if (RM) {
       if (!video.hasAttribute('controls')) video.setAttribute('controls', '');
       return;
     }
+    if (!spotVisible) return;
     var r = spot.getBoundingClientRect();
     var vh = window.innerHeight;
     var center = r.top + r.height / 2;
@@ -35,11 +56,19 @@
     var t = Math.max(0, Math.min(1, 1 - dist / (vh * 1.1)));
     var k = t * t * (3 - 2 * t); // smoothstep: blur eases in, never abrupt
     if (veil) {
-      veil.style.background = 'rgba(253,252,247,' + (k * 0.55).toFixed(3) + ')';
-      veil.style.backdropFilter = 'blur(' + (k * 8).toFixed(1) + 'px)';
-      veil.style.webkitBackdropFilter = 'blur(' + (k * 8).toFixed(1) + 'px)';
+      var vBg = 'rgba(253,252,247,' + (k * 0.55).toFixed(3) + ')';
+      if (vBg !== lastVeilBg) { veil.style.background = vBg; lastVeilBg = vBg; }
+      var vBl = (k * 8).toFixed(1);
+      if (vBl !== lastVeilBlur) {
+        veil.style.backdropFilter = 'blur(' + vBl + 'px)';
+        veil.style.webkitBackdropFilter = 'blur(' + vBl + 'px)';
+        lastVeilBlur = vBl;
+      }
     }
-    if (frame) frame.style.transform = 'scale(' + (0.96 + k * 0.04).toFixed(3) + ')';
+    if (frame) {
+      var fT = 'scale(' + (0.96 + k * 0.04).toFixed(3) + ')';
+      if (fT !== lastFrameT) { frame.style.transform = fT; lastFrameT = fT; }
+    }
     var inZone = dist < vh * 0.45 && r.bottom > 0 && r.top < vh;
     if (inZone && !wasPlaying) {
       wasPlaying = true;

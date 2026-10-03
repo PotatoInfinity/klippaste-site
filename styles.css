@@ -69,7 +69,6 @@ body::before {
 }
 .grain {
   position: fixed; inset: 0; z-index: 50; pointer-events: none; opacity: 0.035;
-  mix-blend-mode: multiply;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
@@ -413,7 +412,29 @@ footer { margin-top: clamp(48px, 6vw, 80px); border-top: 2px solid var(--pen); b
   .dl-btn, .q-pill, .card, .plan, .nav-pill, .nav-mobile, .wall-card, .wall-dots, .wall-btn, .badges span { border: 1px solid ButtonText; }
 }
 
-/* === EXPERIMENT: mute page colors 15% — REVERT by deleting this block ===
-   (filter sits on main/footer only so fixed nav/backdrop never break) */
-main, footer { filter: saturate(0.85); }
-.bg-fixed, .bg-sky { opacity: 0.85; }
+/* === EXPERIMENT: mute page colors ~15% — REVERT by deleting this block ===
+   Baked into tokens (zero runtime cost; a filter: saturate() here would
+   force the whole page through the GPU compositor on every scroll frame). */
+:root {
+  --yellow: #fbd82b;
+  --yellow-wash: rgba(251, 216, 43, 0.22);
+}
+.bg-fixed {
+  background-image:
+    radial-gradient(620px 420px at 14% 8%, rgba(251, 216, 43, 0.14), transparent 70%),
+    radial-gradient(720px 520px at 86% 6%, rgba(59, 156, 77, 0.09), transparent 70%),
+    radial-gradient(80% 50% at 50% 0%, rgba(20, 21, 17, 0.04), transparent 70%);
+}
+.bg-sky {
+  background:
+    radial-gradient(560px 380px at 82% 22%, rgba(251, 216, 43, 0.09), transparent 70%),
+    radial-gradient(640px 420px at 12% 30%, rgba(20, 21, 17, 0.05), transparent 70%);
+}
+.hero h1 u {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 12' preserveAspectRatio='none'%3E%3Cpath d='M2 8 Q 20 2 40 7 T 78 7 T 118 5' fill='none' stroke='%23FEE87C' stroke-width='5' stroke-linecap='round'/%3E%3Cpath d='M2 9 Q 20 3 40 8 T 78 8 T 118 6' fill='none' stroke='%23141511' stroke-width='1.4' stroke-linecap='round' opacity='0.85'/%3E%3C/svg%3E");
+}
+.plan-badge.blue { background: #2e63d7; }
+.plan.wide .dl-btn.ghost:hover, .plan.wide .dl-btn.ghost:focus-visible { background: rgba(46, 99, 215, 0.12); box-shadow: 4px 5px 0 #c5ddfb; }
+.plan.wide .dl-btn.ghost:active { background: rgba(46, 99, 215, 0.18); box-shadow: 1px 1px 0 #c5ddfb; }
+#statusAi { border-left-color: #7840d8; }
+#statusAiWrap .status-notes-label { color: #7840d8; }
