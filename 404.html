@@ -37,6 +37,7 @@
   .status-excerpt { margin: 20px 0 0; padding: 16px 20px; border-left: 3px solid var(--amber); background: rgba(0,0,0,0.3); border-radius: 0 12px 12px 0; color: var(--paper); font-size: 15px; line-height: 1.6; overflow-wrap: break-word; }
   .status-notes-label { color: var(--sage); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; margin: 20px 0 0; }
   #statusNotes { border-left-color: var(--leaf); margin-top: 8px; }
+  #statusAi { border-left-color: #a78bfa; margin-top: 8px; }
   .status-loading, .status-missing { text-align: center; padding: 24px 0 8px; }
   .status-loading p { color: var(--sage); }
   .spin { width: 22px; height: 22px; margin: 0 auto 16px; border-radius: 50%; border: 3px solid var(--line); border-top-color: var(--amber); animation: spin 0.9s linear infinite; }
@@ -89,6 +90,10 @@
         <div id="statusNotesWrap" hidden>
           <p class="status-notes-label">Update from the team</p>
           <blockquote class="status-excerpt" id="statusNotes"></blockquote>
+        </div>
+        <div id="statusAiWrap" hidden>
+          <p class="status-notes-label">Our reply</p>
+          <blockquote class="status-excerpt" id="statusAi"></blockquote>
         </div>
       </div>
       <div class="status-missing" id="statusMissing" hidden>
@@ -173,6 +178,14 @@
       wrap.hidden = false;
     } else {
       wrap.hidden = true;
+    }
+    var ai = String(d.ai_answer || '');
+    var aiWrap = document.getElementById('statusAiWrap');
+    if (ai) {
+      document.getElementById('statusAi').textContent = ai;
+      aiWrap.hidden = false;
+    } else {
+      aiWrap.hidden = true;
     }
     loading.hidden = true;
     missing.hidden = true;
