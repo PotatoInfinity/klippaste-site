@@ -236,6 +236,17 @@
       if (on) b.setAttribute('aria-current', 'true');
       else b.removeAttribute('aria-current');
     });
+    // Pinned highlight: the yellow dot never leaves the visible pill. When the
+    // active dot would sit outside the strip, move the dots underneath it
+    // (minimal scroll, instant so it never fights the track's own scrolling).
+    var btn = dotsWrap.children[best];
+    if (btn) {
+      var wr = dotsWrap.getBoundingClientRect();
+      var br = btn.getBoundingClientRect();
+      var pad = 8;
+      if (br.left < wr.left + pad) dotsWrap.scrollLeft -= (wr.left + pad - br.left);
+      else if (br.right > wr.right - pad) dotsWrap.scrollLeft += (br.right - (wr.right - pad));
+    }
     return best;
   }
   function wallAuto() {
