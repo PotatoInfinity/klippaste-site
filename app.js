@@ -41,7 +41,7 @@
     var t = Math.max(0, Math.min(1, 1 - dist / (vh * 1.1)));
     var k = t * t * (3 - 2 * t); // smoothstep: blur eases in, never abrupt
     if (veil) {
-      veil.style.background = 'rgba(10,30,20,' + (k * 0.55).toFixed(3) + ')';
+      veil.style.background = 'rgba(253,252,247,' + (k * 0.55).toFixed(3) + ')';
       veil.style.backdropFilter = 'blur(' + (k * 8).toFixed(1) + 'px)';
       veil.style.webkitBackdropFilter = 'blur(' + (k * 8).toFixed(1) + 'px)';
     }
@@ -86,7 +86,7 @@
     burger.addEventListener('click', function () {
       var open = mobile.classList.toggle('open');
       burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-      if (open && mobile.animate) {
+      if (open && !RM && mobile.animate) {
         mobile.animate(
           [{ opacity: 0, transform: 'translateY(-8px)' }, { opacity: 1, transform: 'none' }],
           { duration: 250, easing: 'cubic-bezier(.22,1,.36,1)' }
@@ -105,7 +105,9 @@
   var links = Array.prototype.slice.call(document.querySelectorAll('#navLinks a'));
   var map = {};
   links.forEach(function (a) { map[(a.getAttribute('href') || '').slice(1)] = a; });
-  var secIo = new IntersectionObserver(function (entries) {
+  var secIo = null;
+  if ('IntersectionObserver' in window) {
+  secIo = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
       if (e.isIntersecting) {
         links.forEach(function (a) { a.classList.remove('active'); });
@@ -118,6 +120,7 @@
     var s = document.getElementById(id);
     if (s) secIo.observe(s);
   });
+  }
 
   // Reveal on scroll (instant if observer unsupported)
   if (!('IntersectionObserver' in window)) {

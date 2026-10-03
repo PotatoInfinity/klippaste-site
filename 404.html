@@ -6,44 +6,44 @@
 <title>Page not found — Klip</title>
 <meta name="description" content="This page doesn't exist. Klip turns LaTeX, Markdown and HTML into editable documents. Offline on your Mac.">
 <meta name="robots" content="noindex,nofollow">
-<meta name="theme-color" content="#0a1e14">
+<meta name="theme-color" content="#fdfcf7">
 <link rel="icon" type="image/png" href="/icons/favicon-64.png">
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css?v=5a18385">
+<link rel="stylesheet" href="/styles.css?v=paper1">
 <style>
   /* display:flex on .err beats the hidden attribute — without this,
      the 404 card and the status card render stacked (404 on top). */
   [hidden] { display: none !important; }
   .err { min-height: 70vh; display: flex; align-items: center; justify-content: center; padding: 140px 20px 60px; }
-  .err-card, .status-card { text-align: center; background: var(--pine-2); border: 1px solid var(--line); border-radius: var(--r2); box-shadow: var(--shadow-card); padding: 56px 48px; max-width: 560px; width: 100%; }
-  .err-code { font-family: "Fraunces", Georgia, serif; font-size: clamp(3rem, 2rem + 5vw, 4.5rem); line-height: 1; margin: 0; color: var(--paper); }
-  .err-card p, .status-sub { color: var(--sage); font-size: 15px; line-height: 1.6; }
+  .err-card, .status-card { text-align: center; background: #ffffff; border: 1.5px solid #141511; border-radius: var(--r2); padding: 56px 48px; max-width: 560px; width: 100%; }
+  .err-code { font-family: "Fraunces", Georgia, serif; font-size: clamp(3rem, 2rem + 5vw, 4.5rem); line-height: 1; margin: 0; color: #141511; }
+  .err-card p, .status-sub { color: #4b4e45; font-size: 15px; line-height: 1.6; }
   .err-card .dl-btn { margin-top: 22px; }
   .status-card { text-align: left; }
-  .status-code { font-family: ui-monospace, "SF Mono", monospace; font-size: 13px; color: var(--sage); letter-spacing: 0.08em; margin: 0 0 20px; }
+  .status-code { font-family: ui-monospace, "SF Mono", monospace; font-size: 13px; color: #6b6e63; letter-spacing: 0.08em; margin: 0 0 20px; }
   .status-line { display: flex; align-items: center; gap: 16px; margin: 0; }
-  .dot { flex: 0 0 auto; width: 22px; height: 22px; border-radius: 50%; background: var(--sage); }
-  .dot.pending { background: #ff6b6b; box-shadow: 0 0 12px 3px rgba(255,107,107,0.8), 0 0 36px 8px rgba(255,107,107,0.35); animation: pulse 2s ease-in-out infinite; }
-  .dot.processing { background: var(--amber); box-shadow: 0 0 12px 3px rgba(233,180,76,0.8), 0 0 36px 8px rgba(233,180,76,0.35); animation: pulse 2s ease-in-out infinite; }
-  .dot.resolved { background: var(--leaf); box-shadow: 0 0 12px 3px rgba(126,226,168,0.8), 0 0 36px 8px rgba(126,226,168,0.35); }
-  .dot.rejected { background: #0a0a0a; border: 1px solid #555; box-shadow: 0 0 12px 3px rgba(0,0,0,0.85), 0 0 36px 8px rgba(150,150,150,0.3); }
+  .dot { flex: 0 0 auto; width: 22px; height: 22px; border-radius: 50%; background: #6b6e63; border: 1.5px solid #141511; }
+  .dot.pending { background: #ff6b6b; animation: pulse 2s ease-in-out infinite; }
+  .dot.processing { background: #ffd60a; animation: pulse 2s ease-in-out infinite; }
+  .dot.resolved { background: #2ea043; }
+  .dot.rejected { background: #0a0a0a; border: 1px solid #555; }
   @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(0.86); opacity: 0.75; } }
-  .status-label { font-family: "Fraunces", Georgia, serif; font-weight: 600; font-size: clamp(1.75rem, 1.4rem + 1.6vw, 2.25rem); letter-spacing: -0.02em; line-height: 1.15; margin: 0; text-shadow: 0 2px 24px rgba(0,0,0,0.55); }
-  .status-meta { color: var(--sage); font-size: 14px; margin: 16px 0 0; }
-  .status-meta time { color: var(--paper); }
-  .status-excerpt { margin: 20px 0 0; padding: 16px 20px; border-left: 3px solid var(--amber); background: rgba(0,0,0,0.3); border-radius: 0 12px 12px 0; color: var(--paper); font-size: 15px; line-height: 1.6; overflow-wrap: break-word; }
-  .status-notes-label { color: var(--sage); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; margin: 20px 0 0; }
-  #statusNotes { border-left-color: var(--leaf); margin-top: 8px; }
-  #statusAi { border-left-color: #a78bfa; margin-top: 8px; }
+  .status-label { font-family: "Fraunces", Georgia, serif; font-weight: 600; font-size: clamp(1.75rem, 1.4rem + 1.6vw, 2.25rem); letter-spacing: -0.02em; line-height: 1.15; margin: 0; color: #141511; }
+  .status-meta { color: #4b4e45; font-size: 14px; margin: 16px 0 0; }
+  .status-meta time { color: #141511; }
+  .status-excerpt { margin: 20px 0 0; padding: 16px 20px; border-left: 3px solid #141511; background: #f4f1e8; border-radius: 0 12px 12px 0; color: #141511; font-size: 15px; line-height: 1.6; overflow-wrap: break-word; }
+  .status-notes-label { color: #6b6e63; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; margin: 20px 0 0; }
+  #statusNotes { border-left-color: #141511; margin-top: 8px; }
+  #statusAi { border-left-color: #141511; background: rgba(255, 214, 10, 0.22); margin-top: 8px; }
   .status-loading, .status-missing { text-align: center; padding: 24px 0 8px; }
-  .status-loading p { color: var(--sage); }
-  .spin { width: 22px; height: 22px; margin: 0 auto 16px; border-radius: 50%; border: 3px solid var(--line); border-top-color: var(--amber); animation: spin 0.9s linear infinite; }
+  .status-loading p { color: #4b4e45; }
+  .spin { width: 22px; height: 22px; margin: 0 auto 16px; border-radius: 50%; border: 3px solid rgba(20, 21, 17, 0.14); border-top-color: #141511; animation: spin 0.9s linear infinite; }
   @keyframes spin { to { transform: rotate(360deg); } }
   .status-foot { margin: 28px 0 0; text-align: center; }
-  .status-foot a { color: var(--sage); font-size: 14px; }
+  .status-foot a { color: #4b4e45; font-size: 14px; }
   @media (max-width: 640px) { .err-card, .status-card { padding: 40px 24px; } }
   @media (prefers-reduced-motion: reduce) { .dot.pending, .dot.processing, .spin { animation: none; } }
 </style>
