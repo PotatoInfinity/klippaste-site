@@ -291,7 +291,7 @@ footer { margin-top: clamp(48px, 6vw, 80px); border-top: 2px solid var(--pen); b
   pointer-events: none;
   background: linear-gradient(135deg, transparent 42%, rgba(255,255,255,0.95) 50%, rgba(148,163,184,0.28) 54%, transparent 62%);
   transform: translate(-38%, -38%);
-  animation: metal-sheen 2.2s ease-in-out 0.6s 1 forwards;
+  animation: metal-sheen 1.1s ease-in-out 0.6s 1 forwards;
 }
 @keyframes metal-spin { to { --angle: 360deg; } }
 /* deterministic diagonal: slash enters at top-left, parks past bottom-right (corner sliver) */
