@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Klip — LaTeX, Markdown and HTML to office · KlipOCR — Read text from pictures</title>
-<meta name="description" content="Klip turns LaTeX, Markdown and HTML into editable documents in Pages, Keynote, Word and LibreOffice. KlipOCR reads screenshots into text. Offline.">
+<meta name="description" content="Klip turns LaTeX, Markdown and HTML into editable documents in Word, Excel, PowerPoint, LibreOffice, ONLYOFFICE, WPS and Google Docs. KlipOCR reads screenshots into text. Runs locally, no account.">
 <meta name="theme-color" content="#fdfcf7">
 <meta property="og:title" content="Klip + KlipOCR — Documents for school and office">
-<meta property="og:description" content="LaTeX, Markdown and HTML to office. Screenshots to text. Offline on your Mac.">
+<meta property="og:description" content="LaTeX, Markdown and HTML to office. Screenshots to text. Runs locally, no account.">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="icons/favicon-64.png">
@@ -63,15 +63,15 @@
         <button type="button" class="dl-btn ghost"><span class="dl-text">Download KlipOCR</span><span class="dl-apple" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.81-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8.78-.16 2.05-.93 3.57-.84 1.58.13 2.77.75 3.55 1.9-3.27 1.96-2.5 6.24.5 7.45-.6 1.58-1.42 3.14-2.7 3.66zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg></span></button>
       </div>
     </div>
-    <h1 class="reveal">From messy notes to <u>documents ready to hand in</u>.</h1>
-    <p class="sub reveal">Klip turns LaTeX, Markdown and HTML into <strong>clean documents you can keep editing</strong>. KlipOCR reads screenshots and scans into <strong>text you can use</strong>. Built for class, teaching, research and office work. Both run offline. No account needed.</p>
+    <h1 class="reveal">From messy clipboard to <u>native pastes</u>.</h1>
+    <p class="sub reveal">Klip turns LaTeX, Markdown and HTML in your clipboard into <strong>clean office formats you can keep editing</strong> in Word, Excel, PowerPoint, LibreOffice, ONLYOFFICE, WPS and Google Docs — and turns copies from Office suites back into <strong>clean LaTeX</strong>. It adapts to your workflow and is fully customizable. KlipOCR reads screenshots into <strong>text you can reuse</strong>. Both run offline and work together.</p>
     <div class="badges reveal">
-      <span>Works offline</span><span>On your Mac</span><span>No account</span>
+      <span>Runs locally</span><span>One-time payment</span><span>No account</span>
     </div>
     <div class="flow-strip reveal">
-      <div><span class="n">1</span><p><strong>Capture.</strong> Snip anything with one shortcut.</p></div>
-      <div><span class="n">2</span><p><strong>Convert.</strong> One copy works everywhere.</p></div>
-      <div><span class="n">3</span><p><strong>Paste.</strong> Press ⌘V. Keep editing.</p></div>
+      <div><span class="n">1</span><p><strong>Capture.</strong> Screenshot or copy anything.</p></div>
+      <div><span class="n">2</span><p><strong>Convert.</strong> Clipboard instantly takes the right format wherever you paste.</p></div>
+      <div><span class="n">3</span><p><strong>Paste.</strong> Paste anywhere. Keep editing.</p></div>
     </div>
   </section>
 
@@ -80,7 +80,7 @@
     <div class="spot-sticky">
       <div class="spot-veil" id="spotVeil" aria-hidden="true"></div>
       <div class="spot-frame">
-        <video id="demoVideo" muted loop playsinline preload="auto" poster="video/poster.jpg" src="video/klip-demo-720p.mp4" aria-label="Demo video: Klip pasting equations and tables into Pages" title="Click to play or pause"></video>
+        <video id="demoVideo" muted loop playsinline preload="auto" poster="video/poster.jpg" src="video/klip-demo-720p.mp4" aria-label="Demo video: Klip pasting equations and tables into a document" title="Click to play or pause"></video>
         <button class="spot-mute" id="spotMute" aria-label="Unmute video"><svg class="ic-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor" stroke="none"/><path d="m16 9 5 6m0-6-5 6"/></svg><svg class="ic-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor" stroke="none"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.2 5.8a9 9 0 0 1 0 12.4"/></svg></button>
       </div>
     </div>
@@ -89,13 +89,14 @@
   <!-- COMPATIBILITY WALL -->
   <section class="panel wall-panel" id="targets">
     <h2 class="reveal">Works where you write.</h2>
-    <p class="lede reveal">Copy once. Paste clean tables and math into every app on your Mac.</p>
+    <p class="lede reveal">Copy once. Paste clean tables and math into every app where you write.</p>
     <div class="wall reveal" id="wall">
       <div class="wall-track" id="wallTrack">
-        <figure class="wall-card"><span class="wall-img"><img src="icons/apps/pages.png" alt="Pages icon" loading="lazy"></span><figcaption><strong>Pages that stays editable.</strong> Tables and math land where they belong.</figcaption></figure>
-        <figure class="wall-card"><span class="wall-img"><img src="icons/apps/keynote.png" alt="Keynote icon" loading="lazy"></span><figcaption><strong>Slides in Keynote.</strong> Math and tables stay editable on the slide.</figcaption></figure>
         <figure class="wall-card"><span class="wall-img"><img src="icons/apps/word.png" alt="Microsoft Word icon" loading="lazy"></span><figcaption><strong>Word without cleanup.</strong> Equations and tables arrive ready to edit.</figcaption></figure>
+        <figure class="wall-card"><span class="wall-img"><img src="icons/apps/excel.png" alt="Microsoft Excel icon" loading="lazy"></span><figcaption><strong>Excel that lines up.</strong> Tables land in cells ready to work with.</figcaption></figure>
+        <figure class="wall-card"><span class="wall-img"><img src="icons/apps/powerpoint.png" alt="Microsoft PowerPoint icon" loading="lazy"></span><figcaption><strong>Slides in PowerPoint.</strong> Math and tables stay editable on the slide.</figcaption></figure>
         <figure class="wall-card"><span class="wall-img"><img src="icons/apps/libreoffice.png" alt="LibreOffice icon" loading="lazy"></span><figcaption><strong>LibreOffice that lines up.</strong> Formulas sit right on the line.</figcaption></figure>
+        <figure class="wall-card"><span class="wall-img"><img src="icons/apps/onlyoffice.png" alt="ONLYOFFICE icon" loading="lazy"></span><figcaption><strong>ONLYOFFICE that keeps up.</strong> Documents, sheets and slides paste ready to edit.</figcaption></figure>
         <figure class="wall-card"><span class="wall-img"><img src="icons/apps/wps-office.svg" alt="WPS Office icon" loading="lazy"></span><figcaption><strong>WPS Office that keeps up.</strong> Tables and math paste ready to edit.</figcaption></figure>
         <figure class="wall-card"><span class="wall-img"><img src="icons/apps/googledocs.svg" alt="Google Docs icon" loading="lazy"></span><figcaption><strong>Google Docs intact.</strong> Formatting survives the trip into Docs.</figcaption></figure>
         <figure class="wall-card"><span class="wall-img"><img src="icons/apps/obsidian.png" alt="Obsidian icon" loading="lazy"></span><figcaption><strong>Obsidian friendly.</strong> Notes arrive as clean plain text.</figcaption></figure>
@@ -115,12 +116,12 @@
   <section class="panel" id="features">
     <h2 class="reveal">Made for school and office work.</h2>
     <div class="bento">
-      <div class="card reveal"><h3>Math you can edit</h3><p>Math stays editable in Pages, Keynote, Word and LibreOffice. Anything tricky stays as plain text, so nothing gets lost.</p></div>
+      <div class="card reveal"><h3>Math you can edit</h3><p>Math stays editable across Word, PowerPoint, LibreOffice, ONLYOFFICE, WPS and Google Docs. Anything tricky stays as plain text, so nothing gets lost.</p></div>
       <div class="card reveal"><h3>Tables that stay tables</h3><p>Rows and columns from notes or web pages paste as real tables you can edit, math included.</p></div>
-      <div class="card reveal"><h3>Copy once, paste anywhere</h3><p>One copy covers Pages, Word and LibreOffice at once. Notes apps get clean plain text automatically.</p></div>
+      <div class="card reveal"><h3>Copy once, paste anywhere</h3><p>One copy covers Word, Excel, PowerPoint, LibreOffice, ONLYOFFICE, WPS and Google Docs at once. Notes apps get clean plain text automatically.</p></div>
       <div class="card reveal"><h3>Read text from pictures</h3><p>KlipOCR turns screenshots and scans into text and tables, in reading order.</p></div>
-      <div class="card reveal"><h3>Works fully offline</h3><p>Both apps run without internet. Your documents stay on your Mac. No account needed to start.</p></div>
-      <div class="card reveal"><h3>Simple controls</h3><p>Menu-bar operation · text and math sizing · cleans stray markers <code>[1] [^1]</code> · fast, balanced and efficient modes · keeps pictures.</p></div>
+      <div class="card reveal"><h3>Works fully offline</h3><p>Both apps run without internet. Your documents stay on your computer. No account needed to start.</p></div>
+      <div class="card reveal"><h3>Office back to LaTeX</h3><p>Copy from any supported suite back into clean LaTeX — or paste from one suite into another without breaking tables and math.</p></div>
     </div>
   </section>
 
@@ -128,8 +129,8 @@
   <section class="panel" id="faq">
     <h2 class="reveal">Your questions, answered.</h2>
     <div class="faq" id="faqBox">
-      <div class="faq-row left reveal"><details><summary><span class="q-pill">Which Macs are supported?</span><span class="q-plus" aria-hidden="true">+</span></summary><div class="a"><div><p>Klip needs macOS 13 or later; KlipOCR needs macOS 14 or later. Both need Apple Silicon.</p></div></div></details></div>
-      <div class="faq-row right reveal"><details><summary><span class="q-pill">Does my work leave my Mac?</span><span class="q-plus" aria-hidden="true">+</span></summary><div class="a"><div><p>No. Both apps work fully offline. Nothing you copy or snip leaves your Mac, ever.</p></div></div></details></div>
+      <div class="faq-row left reveal"><details><summary><span class="q-pill">Which apps does it work with?</span><span class="q-plus" aria-hidden="true">+</span></summary><div class="a"><div><p>Word, Excel, PowerPoint, LibreOffice, ONLYOFFICE, WPS and Google Docs — plus Obsidian, Typora and Bear, which receive clean plain text.</p></div></div></details></div>
+      <div class="faq-row right reveal"><details><summary><span class="q-pill">Does my work leave my device?</span><span class="q-plus" aria-hidden="true">+</span></summary><div class="a"><div><p>No. Both apps work fully offline. Nothing you copy or snip leaves your computer, ever.</p></div></div></details></div>
       <div class="faq-row left reveal"><details><summary><span class="q-pill">Can it read messy screenshots?</span><span class="q-plus" aria-hidden="true">+</span></summary><div class="a"><div><p>Yes for clear text and tables. Blurry or handwritten pages may need a quick fix after pasting.</p></div></div></details></div>
       <div class="faq-row right reveal"><details><summary><span class="q-pill">What if some math won't convert?</span><span class="q-plus" aria-hidden="true">+</span></summary><div class="a"><div><p>You never lose it. Anything tricky stays as plain text you can fix by hand.</p></div></div></details></div>
       <div class="faq-row left reveal"><details><summary><span class="q-pill">What about Obsidian, Typora or Bear?</span><span class="q-plus" aria-hidden="true">+</span></summary><div class="a"><div><p>They get clean plain text automatically at paste time. What you copied stays readable.</p></div></div></details></div>

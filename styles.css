@@ -215,7 +215,7 @@ main { display: block; }
 .wall-card figcaption { margin-top: 16px; font-size: 15px; line-height: 1.6; color: var(--ink-2); max-width: 52ch; }
 .wall-card figcaption strong { color: var(--ink); }
 .wall-ctrl { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 16px; margin-top: 24px; padding: 0 20px; }
-.wall-dots { display: flex; align-items: center; gap: 8px; background: var(--paper-2); border: 1.5px solid var(--pen); padding: 8px 16px; border-radius: 999px; }
+.wall-dots { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px; max-width: 100%; background: var(--paper-2); border: 1.5px solid var(--pen); padding: 8px 16px; border-radius: 999px; }
 .wall-dots button { width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; border: 0; border-radius: 8px; background: none; cursor: pointer; padding: 0; }
 .wall-dots button::after { content: ""; width: 6px; height: 6px; border-radius: 999px; background: rgba(20, 21, 17, 0.3); transition: width 0.3s var(--ease), background 0.3s; }
 .wall-dots button:hover::after { background: rgba(20, 21, 17, 0.55); }

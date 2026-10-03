@@ -283,5 +283,32 @@
     });
   }
 
+  // Download buttons: icon follows the visitor's OS. macOS/iOS keeps the
+  // Apple mark already in the markup; Windows gets a Windows mark; anything
+  // else gets a neutral download arrow. License (seal) buttons untouched.
+  var WIN_ICON = '<svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M3 5.5 10.5 4.4v7.1H3zM11.6 4.2 21 3v8.5h-9.4zM3 12.5h7.5v7.1L3 18.5zM11.6 12.5H21V21l-9.4-1.2z"/></svg>';
+  var DL_ICON = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>';
+  function visitorOS() {
+    var p = '';
+    try {
+      if (navigator.userAgentData && navigator.userAgentData.platform) p = navigator.userAgentData.platform;
+      else p = navigator.platform || navigator.userAgent || '';
+    } catch (e) { p = ''; }
+    if (/mac|iphone|ipad|ipod|darwin/i.test(p)) return 'mac';
+    if (/win/i.test(p)) return 'windows';
+    return 'other';
+  }
+  (function swapDlIcons() {
+    var os = visitorOS();
+    if (os === 'mac') return;
+    var icon = os === 'windows' ? WIN_ICON : DL_ICON;
+    Array.prototype.forEach.call(document.querySelectorAll('.dl-btn'), function (btn) {
+      var label = btn.querySelector('.dl-text');
+      if (!label || !/download/i.test(label.textContent || '')) return;
+      var slot = btn.querySelector('.dl-apple');
+      if (slot) slot.innerHTML = icon;
+    });
+  })();
+
   tick();
 })();
