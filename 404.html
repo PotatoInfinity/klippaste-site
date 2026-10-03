@@ -135,6 +135,13 @@
     body.hidden = true;
     missing.hidden = false;
   }
+  function showError() {
+    loading.hidden = true;
+    body.hidden = true;
+    missing.hidden = false;
+    missing.querySelector('h1').textContent = "Couldn't load this report.";
+    missing.querySelector('p').textContent = 'Check your connection and reload to try again.';
+  }
   function prettyKind(k) {
     k = String(k || '').toLowerCase();
     if (k === 'bug') return 'Bug report';
@@ -157,7 +164,7 @@
     if (!r.ok) throw new Error('bad status ' + r.status);
     return r.json();
   }).then(function (d) {
-    if (!d || d.ok !== true || typeof d.status !== 'string') { showMissing(); return; }
+    if (!d || d.ok !== true || typeof d.status !== 'string') { showError(); return; }
     var st = d.status.toLowerCase();
     if (st !== 'pending' && st !== 'processing' && st !== 'resolved' && st !== 'rejected') st = 'processing';
     var dot = document.getElementById('statusDot');
@@ -171,7 +178,7 @@
     t.textContent = (dt && !isNaN(dt)) ? dt.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' }) : String(d.reported || '—');
     if (d.reported && dt && !isNaN(dt)) t.setAttribute('datetime', d.reported);
     document.getElementById('statusExcerpt').textContent = d.excerpt || '';
-    var notes = String(d.notes || '');
+    var notes = String(d.notes || '').trim();
     var wrap = document.getElementById('statusNotesWrap');
     if (notes) {
       document.getElementById('statusNotes').textContent = notes;
@@ -179,7 +186,7 @@
     } else {
       wrap.hidden = true;
     }
-    var ai = String(d.admin_reply || d.ai_answer || '');
+    var ai = String(d.admin_reply || d.ai_answer || '').trim();
     var aiWrap = document.getElementById('statusAiWrap');
     if (ai) {
       document.getElementById('statusAi').textContent = ai;
@@ -190,7 +197,7 @@
     loading.hidden = true;
     missing.hidden = true;
     body.hidden = false;
-  }).catch(function () { showMissing(); });
+  }).catch(function () { showError(); });
 })();
 </script>
 </body>
