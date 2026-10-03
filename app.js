@@ -1,8 +1,6 @@
 // Klip landing: nav, parallax, spotlight video, wall, faq
 (function () {
   var pill = document.getElementById('navPill');
-  var bgFixed = document.getElementById('bgFixed');
-  var bgSky = document.getElementById('bgSky');
   var spot = document.getElementById('demo');
   var veil = document.getElementById('spotVeil');
   var video = document.getElementById('demoVideo');
@@ -15,10 +13,6 @@
     ticking = false;
     var y = window.scrollY;
     if (pill) pill.classList.toggle('scrolled', y > 24);
-    if (!RM) {
-      if (bgFixed) bgFixed.style.transform = 'translateY(' + (y * 0.12) + 'px)';
-      if (bgSky) bgSky.style.transform = 'translateY(' + (y * 0.06) + 'px)';
-    }
     spotlight();
   }
   window.addEventListener('scroll', function () {

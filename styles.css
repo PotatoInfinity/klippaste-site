@@ -34,6 +34,7 @@ html {
   scrollbar-width: thin; scrollbar-color: rgba(20, 21, 17, 0.28) transparent;
 }
 body {
+  position: relative;
   margin: 0;
   font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: clamp(1rem, 0.94rem + 0.3vw, 1.0625rem); line-height: 1.6;
@@ -45,31 +46,26 @@ body {
 img { max-width: 100%; }
 
 /* ---------- backdrop: matte paper + gaussian blobs + fine grain ---------- */
+/* Backdrop scrolls with the page (absolute, feathered only — no masks, no size stops). */
 .bg-fixed {
-  position: fixed; inset: -6% 0; z-index: -3;
+  position: absolute; inset: 0; z-index: -3;
   background-color: var(--paper);
   background-image:
     radial-gradient(620px 420px at 14% 8%, rgba(255, 214, 10, 0.16), transparent 70%),
     radial-gradient(720px 520px at 86% 6%, rgba(46, 160, 67, 0.1), transparent 70%),
     radial-gradient(80% 50% at 50% 0%, rgba(20, 21, 17, 0.04), transparent 70%);
-  background-size: auto, auto, 100% 60%;
-  background-position: center, center top, center top;
   background-repeat: no-repeat;
-  will-change: transform;
 }
 .bg-sky {
-  position: fixed; inset: 0; z-index: -2; pointer-events: none;
+  position: absolute; inset: 0; z-index: -2; pointer-events: none;
   background:
     radial-gradient(560px 380px at 82% 22%, rgba(255, 214, 10, 0.1), transparent 70%),
     radial-gradient(640px 420px at 12% 30%, rgba(20, 21, 17, 0.05), transparent 70%);
-  opacity: 0.9;
-  -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 45%);
-  mask-image: linear-gradient(to bottom, black 0%, transparent 45%);
-  will-change: transform;
+  background-repeat: no-repeat;
 }
 body::before {
-  content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
-  background: linear-gradient(to bottom, rgba(253,252,247,0), rgba(253,252,247,0.6) 60%, rgba(244,241,232,0.7));
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: none;
 }
 .grain {
   position: fixed; inset: 0; z-index: 50; pointer-events: none; opacity: 0.035;
@@ -277,6 +273,7 @@ footer { margin-top: clamp(48px, 6vw, 80px); border-top: 2px solid var(--pen); b
 .plan.featured.metal {
   --angle: 0deg;
   isolation: isolate;
+  overflow: hidden;
   border: 2.5px solid transparent;
   background-image:
     linear-gradient(#ffffff, #ffffff),
@@ -290,14 +287,15 @@ footer { margin-top: clamp(48px, 6vw, 80px); border-top: 2px solid var(--pen); b
   animation: metal-spin 6s linear infinite;
 }
 .plan.featured.metal::after {
-  content: ""; position: absolute; inset: 2.5px; border-radius: 17px;
+  content: ""; position: absolute; top: -15%; bottom: -15%; left: 0; width: 55%;
   pointer-events: none;
-  background: linear-gradient(115deg, transparent 35%, rgba(148,163,184,0.18) 44%, rgba(255,255,255,0.95) 50%, rgba(148,163,184,0.18) 56%, transparent 65%);
-  background-size: 250% 100%; background-position: 120% 0;
+  background: linear-gradient(100deg, transparent 20%, rgba(148,163,184,0.25) 42%, rgba(255,255,255,0.95) 50%, rgba(148,163,184,0.25) 58%, transparent 80%);
+  transform: translateX(220%) skewX(-6deg);
   animation: metal-sheen 2.2s ease-in-out 0.6s 1 forwards;
 }
 @keyframes metal-spin { to { --angle: 360deg; } }
-@keyframes metal-sheen { 0% { background-position: 120% 0; } 55%, 100% { background-position: -130% 0; } }
+/* deterministic: stripe travels right→left, parks with only a corner sliver visible */
+@keyframes metal-sheen { from { transform: translateX(220%) skewX(-6deg); } to { transform: translateX(-85%) skewX(-6deg); } }
 .plan-badge { display: inline-block; margin: 0 0 12px; padding: 6px 14px; border-radius: 999px; background: var(--yellow); color: var(--ink); border: 1.5px solid var(--pen); font-size: 13px; font-weight: 700; }
 .plan-badge.blue { background: var(--ink); color: #fff; border-color: var(--pen); }
 .plan.wide { max-width: 840px; margin-left: auto; margin-right: auto; }
