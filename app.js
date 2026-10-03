@@ -164,11 +164,42 @@
   var yr = document.getElementById('year');
   if (yr) yr.textContent = new Date().getFullYear();
 
-  // FAQ: click toggle, single-open
+  // FAQ: smooth close + single-open (native <details> snaps shut, so animate height first)
   var faqs = Array.prototype.slice.call(document.querySelectorAll('.faq details'));
+  function faqClose(d) {
+    if (!d.open || d.getAttribute('data-closing')) return;
+    var a = d.querySelector('.a');
+    if (RM || !a || !a.animate) { d.open = false; return; }
+    var h = a.offsetHeight;
+    if (!h) { d.open = false; return; }
+    var inner = a.firstElementChild;
+    d.setAttribute('data-closing', '1');
+    a.style.height = h + 'px';
+    a.style.overflow = 'hidden';
+    var anim = a.animate([{ height: h + 'px', opacity: '1' }, { height: '0px', opacity: '0.4' }], { duration: 280, easing: 'cubic-bezier(0.22, 1, 0.36, 1)' });
+    if (inner && inner.animate) {
+      try { inner.animate([{ opacity: '1', transform: 'translateY(0px)' }, { opacity: '0', transform: 'translateY(-6px)' }], { duration: 220, easing: 'cubic-bezier(0.22, 1, 0.36, 1)' }); } catch (e) {}
+    }
+    anim.onfinish = function () {
+      d.open = false;
+      d.removeAttribute('data-closing');
+      a.style.height = '';
+      a.style.overflow = '';
+    };
+    anim.oncancel = function () {
+      d.removeAttribute('data-closing');
+      a.style.height = '';
+      a.style.overflow = '';
+    };
+  }
   faqs.forEach(function (d) {
-    d.addEventListener('toggle', function () {
-      if (d.open) faqs.forEach(function (o) { if (o !== d) o.open = false; });
+    var s = d.querySelector('summary');
+    if (!s) return;
+    s.addEventListener('click', function (e) {
+      if (RM) return;
+      if (d.getAttribute('data-closing')) { e.preventDefault(); return; }
+      if (d.open) { e.preventDefault(); faqClose(d); }
+      else { faqs.forEach(function (o) { if (o !== d && o.open) faqClose(o); }); }
     });
   });
 

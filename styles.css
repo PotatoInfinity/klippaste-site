@@ -243,11 +243,14 @@ main { display: block; }
 .faq-row summary { display: flex; align-items: center; gap: 14px; cursor: pointer; list-style: none; }
 .faq-row summary::-webkit-details-marker { display: none; }
 .q-pill { flex: 1; min-width: 0; background: rgba(255, 255, 255, 0.85); border: 1.5px solid var(--pen); color: var(--ink); font-weight: 600; font-size: 16px; line-height: 1.4; padding: 16px 32px; border-radius: 999px; box-shadow: var(--hi-light), var(--lo-light); transition: transform 0.25s var(--ease), background 0.25s, box-shadow 0.25s; }
-.faq-row details:hover .q-pill { transform: translateY(-2px); background: var(--yellow-wash); }
-.faq-row details[open] .q-pill { background: linear-gradient(135deg, rgba(255, 214, 10, 0.34), rgba(255, 214, 10, 0.16)); }
-.q-plus { flex: 0 0 auto; width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid var(--pen); background: var(--paper-2); color: var(--ink); display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 300; line-height: 1; padding-bottom: 3px; transition: transform 0.3s var(--ease), background 0.3s, color 0.3s; }
+.faq-row summary { border-radius: 999px; }
+.faq-row summary:focus { outline: none; }
+.faq-row details:hover .q-pill, .faq-row summary:focus-visible .q-pill { transform: translateY(-2px); background: var(--yellow-wash); box-shadow: 3px 3px 0 var(--yellow), var(--hi-light), var(--lo-light); }
+.faq-row details[open] .q-pill { transform: translateY(-2px); background: linear-gradient(135deg, rgba(255, 214, 10, 0.34), rgba(255, 214, 10, 0.16)); box-shadow: 3px 3px 0 var(--yellow), var(--hi-light), var(--lo-light); }
+.q-plus { flex: 0 0 auto; width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid var(--pen); background: var(--paper-2); color: var(--ink); display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 300; line-height: 1; padding-bottom: 3px; transition: transform 0.3s var(--ease), background 0.3s, color 0.3s, box-shadow 0.25s; }
+.faq-row summary:hover .q-plus, .faq-row summary:focus-visible .q-plus { background: var(--yellow-wash); box-shadow: 2px 2px 0 var(--yellow); }
 /* + ink sits ~1.7px low in Inter Tight: bottom padding lifts content only, ring stays centered; composes with open-state rotate */
-.faq-row details[open] .q-plus { transform: rotate(45deg); background: var(--yellow); border-color: var(--pen); color: var(--ink); }
+.faq-row details[open] .q-plus { transform: rotate(45deg); background: var(--yellow); border-color: var(--pen); color: var(--ink); box-shadow: 2px 2px 0 rgba(20, 21, 17, 0.14); }
 .faq-row .a { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.3s var(--ease); }
 .faq-row details[open] .a { grid-template-rows: 1fr; }
 .faq-row .a > div { overflow: hidden; opacity: 0; transform: translateY(-6px); transition: opacity 0.25s var(--ease), transform 0.3s var(--ease); }
