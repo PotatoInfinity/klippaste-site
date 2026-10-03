@@ -408,3 +408,8 @@ footer { margin-top: clamp(48px, 6vw, 80px); border-top: 2px solid var(--pen); b
 @media (forced-colors: active) {
   .dl-btn, .q-pill, .card, .plan, .nav-pill, .nav-mobile, .wall-card, .wall-dots, .wall-btn, .badges span { border: 1px solid ButtonText; }
 }
+
+/* === EXPERIMENT: mute page colors 15% — REVERT by deleting this block ===
+   (filter sits on main/footer only so fixed nav/backdrop never break) */
+main, footer { filter: saturate(0.85); }
+.bg-fixed, .bg-sky { opacity: 0.85; }
