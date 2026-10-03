@@ -179,7 +179,7 @@
     } else {
       wrap.hidden = true;
     }
-    var ai = String(d.ai_answer || '');
+    var ai = String(d.admin_reply || d.ai_answer || '');
     var aiWrap = document.getElementById('statusAiWrap');
     if (ai) {
       document.getElementById('statusAi').textContent = ai;
