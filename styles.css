@@ -110,7 +110,7 @@ button.dl-btn { font-family: "Inter Tight", sans-serif; }
 .dl-text { transition: opacity 0.15s linear 0.06s; }
 .dl-apple { position: absolute; display: flex; color: inherit; transform: scale(0.5); opacity: 0; transition: opacity 0.15s linear, transform 0.25s var(--ease); }
 @media (hover: hover) {
-  .dl-btn:hover .dl-text { opacity: 0; transition-delay: 0.08s; }
+  .dl-btn:has(.dl-apple):hover .dl-text { opacity: 0; transition-delay: 0.08s; }
   .dl-btn:hover .dl-apple { opacity: 1; transform: scale(1.15); transition: opacity 0.12s linear, transform 0.22s var(--ease); }
 }
 
