@@ -130,6 +130,8 @@ button.dl-btn { font-family: "Inter Tight", sans-serif; }
 .nav-pill.scrolled { background: rgba(255, 255, 255, 0.85); border-color: rgba(255, 255, 255, 0.85); box-shadow: 0 12px 40px rgba(20, 21, 17, 0.16); }
 .brand { display: flex; align-items: center; gap: 8px; color: var(--ink); text-decoration: none; font-weight: 700; font-size: 17px; }
 .brand img { border-radius: 8px; border: 1px solid var(--line); }
+/* slight paper cast on our icons (wall product logos untouched) */
+.brand img, .app-mini img, .foot-brand img { filter: sepia(0.22) contrast(0.97) brightness(1.02); }
 .nav-links { display: flex; gap: 2px; }
 .nav-links a { position: relative; color: var(--ink-2); text-decoration: none; font-size: 14px; font-weight: 500; padding: 10px 13px; border-radius: 999px; transition: color 0.2s, background-color 0.2s; }
 .nav-links a:hover, .nav-links a:focus-visible { color: var(--ink); background: rgba(20, 21, 17, 0.06); }
