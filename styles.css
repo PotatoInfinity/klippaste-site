@@ -294,7 +294,7 @@ footer { margin-top: clamp(48px, 6vw, 80px); border-top: 2px solid var(--pen); b
   pointer-events: none;
   background: linear-gradient(115deg, transparent 35%, rgba(148,163,184,0.18) 44%, rgba(255,255,255,0.95) 50%, rgba(148,163,184,0.18) 56%, transparent 65%);
   background-size: 250% 100%; background-position: 120% 0;
-  animation: metal-sheen 5s ease-in-out infinite;
+  animation: metal-sheen 2.2s ease-in-out 0.6s 1 forwards;
 }
 @keyframes metal-spin { to { --angle: 360deg; } }
 @keyframes metal-sheen { 0% { background-position: 120% 0; } 55%, 100% { background-position: -130% 0; } }
