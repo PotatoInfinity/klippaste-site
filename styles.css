@@ -215,7 +215,9 @@ main { display: block; }
 .wall-card figcaption { margin-top: 16px; font-size: 15px; line-height: 1.6; color: var(--ink-2); max-width: 52ch; }
 .wall-card figcaption strong { color: var(--ink); }
 .wall-ctrl { display: flex; align-items: center; justify-content: center; flex-wrap: nowrap; gap: 16px; margin-top: 24px; padding: 0 20px; }
-.wall-dots { display: flex; align-items: center; justify-content: flex-start; flex: 0 1 auto; min-width: 0; max-width: 100%; flex-wrap: nowrap; overflow-x: auto; overflow-y: hidden; scroll-behavior: smooth; scroll-padding-inline: 12px; gap: 8px; background: var(--paper-2); border: 1.5px solid var(--pen); padding: 8px 16px; border-radius: 999px; scrollbar-width: none; }
+.wall-dots { display: flex; align-items: center; justify-content: flex-start; flex: 0 1 auto; min-width: 0; max-width: 100%; flex-wrap: nowrap; overflow-x: auto; overflow-y: hidden; scroll-padding-inline: 12px; gap: 8px; background: var(--paper-2); border: 1.5px solid var(--pen); padding: 8px 16px; border-radius: 999px; scrollbar-width: none; }
+/* cutoff-only: smooth strip glide applies solely when dots overflow */
+.wall-dots.cut { scroll-behavior: smooth; }
 /* auto end-margins: centered while all dots fit, start-aligned + fully
    scrollable on narrow screens (no safe-center support needed, no clipped end) */
 .wall-dots > :first-child { margin-left: auto; }
@@ -226,8 +228,14 @@ main { display: block; }
 .wall-dots button:hover::after { background: rgba(20, 21, 17, 0.55); }
 .wall-dots button.on::after { width: 24px; background: var(--yellow); border: 1px solid var(--pen); }
 .wall-btn { flex: 0 0 auto; width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid var(--pen); background: var(--paper-2); color: var(--ink); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform 0.2s var(--ease), background 0.2s; font-size: 15px; }
-.wall-btn:hover, .wall-btn:focus-visible { transform: scale(1.08); background: var(--yellow-wash); }
 .wall-btn:active { transform: scale(0.95); }
+.wall-btn:focus-visible { background: var(--yellow-wash); }
+/* hover tint only on precise pointers: no retained scale (it rasterizes
+   blurry for the whole hover on 1x / fractionally-scaled Windows screens),
+   and no stuck highlight on touch laptops */
+@media (hover: hover) and (pointer: fine) {
+  .wall-btn:hover { background: var(--yellow-wash); }
+}
 .wall-btn svg { width: 16px; height: 16px; }
 
 /* ---------- features: white bento, pen borders ---------- */
@@ -425,7 +433,7 @@ footer { margin-top: clamp(48px, 6vw, 80px); border-top: 2px solid var(--pen); b
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
   html { scroll-behavior: auto; }
-  .wall-dots { scroll-behavior: auto; }
+  .wall-dots.cut { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; }
   .spot { height: auto; }
   .spot-sticky { position: static; height: auto; padding: 40px 20px; }

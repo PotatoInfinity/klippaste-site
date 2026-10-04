@@ -246,16 +246,27 @@
     var n = dotsWrap ? dotsWrap.children.length : 0;
     var g = dotsGeomGet();
     if (!n || !g || !g.slot) return;
-    var visible = Math.max(1, Math.floor((dotsWrap.clientWidth - g.padL - g.padR + g.gap) / g.slot));
-    var start = 0;
-    if (visible < n) {
-      var cap = Math.max(0, visible - 2);
-      start = Math.min(Math.max(active - cap, 0), n - visible);
+    var vw = dotsWrap.clientWidth;
+    var visible = Math.max(1, Math.floor((vw - g.padL - g.padR + g.gap) / g.slot));
+    // Cutoff-only: everything below runs solely when dots overflow. When all
+    // dots fit, the pill is byte-for-byte the old static behavior.
+    var cut = visible < n;
+    if (dotsWrap.classList.contains('cut') !== cut) dotsWrap.classList.toggle('cut', cut);
+    if (!cut) {
+      dotsStart = 0;
+      if (dotsWrap.scrollLeft) dotsWrap.scrollLeft = 0;
+      return;
     }
-    if (start !== dotsStart) {
-      dotsStart = start;
-      dotsWrap.scrollLeft = start * g.slot;
-    }
+    var cap = Math.max(0, visible - 2);
+    var start = Math.min(Math.max(active - cap, 0), n - visible);
+    if (start === dotsStart) return;
+    dotsStart = start;
+    // Center the window when possible: equal breathing room at both pill
+    // edges, so no dot or highlight ever sits flush against the border.
+    // Clamped at the ends, where the pill's own padding takes over.
+    var maxScroll = Math.max(dotsWrap.scrollWidth - vw, 0);
+    var target = g.padL + start * g.slot + (visible * g.slot - g.gap) / 2 - vw / 2;
+    dotsWrap.scrollLeft = Math.min(Math.max(target, 0), maxScroll);
   }
   function wallActive() {
     var cards = wallCards();
