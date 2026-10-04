@@ -26,11 +26,11 @@
   --space-8: 64px;
   --space-10: 80px;
   --shadow-nav: 0 8px 32px rgba(20, 21, 17, 0.12);
-  /* edge polish: light-from-above — 1px top highlight + 1px bottom lowlight.
-     Light surfaces: white top / ink bottom; dark surfaces: inverted. */
+  /* edge polish: light-from-above — top highlight + bottom lowlight.
+     Light surfaces: 1px white top / ink bottom; dark surfaces: 2px stronger streak. */
   --hi-light: inset 0 1px 0 rgba(255, 255, 255, 0.9);
   --lo-light: inset 0 -1px 0 rgba(20, 21, 17, 0.05);
-  --hi-dark: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  --hi-dark: inset 0 2px 0 rgba(255, 255, 255, 0.3);
   --lo-dark: inset 0 -1px 0 rgba(0, 0, 0, 0.32);
   --hi-glass: inset 0 1px 0 rgba(255, 255, 255, 0.65);
 }
@@ -252,9 +252,9 @@ main { display: block; }
 
 /* ---------- features: white bento, pen borders ---------- */
 .bento { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; margin-top: 24px; }
-.card { position: relative; color: var(--ink); background: linear-gradient(150deg, #ffffff 0%, #fdfcf7 62%, #f1ede1 100%); border: 1.5px solid var(--pen); border-radius: var(--r2); padding: 24px; box-shadow: 0 0 0 transparent, var(--hi-light), var(--lo-light); transition: border-color 0.25s, transform 0.25s var(--ease), box-shadow 0.25s var(--ease); }
-.card:hover { transform: translate(-1px, -3px); box-shadow: 4px 4px 0 var(--accent, var(--yellow)), var(--hi-light), var(--lo-light); }
-.card:focus-within { box-shadow: 4px 4px 0 var(--accent, var(--yellow)), var(--hi-light), var(--lo-light); }
+.card { position: relative; color: var(--ink); background: linear-gradient(150deg, #ffffff 0%, #fdfcf7 62%, #f1ede1 100%); border: 1.5px solid var(--pen); border-radius: var(--r2); padding: 24px; box-shadow: 0 0 0 transparent, var(--hi-light), var(--lo-light); transition: border-color 0.3s var(--ease), transform 0.3s var(--ease), box-shadow 0.3s var(--ease); }
+.card:hover { transform: translate(-2px, -5px); box-shadow: 6px 7px 0 var(--accent, var(--yellow)), var(--hi-light), var(--lo-light); }
+.card:focus-within { transform: translate(-2px, -5px); box-shadow: 6px 7px 0 var(--accent, var(--yellow)), var(--hi-light), var(--lo-light); }
 .card h3 { color: var(--ink); font-size: clamp(1.125rem, 1.05rem + 0.35vw, 1.25rem); line-height: 1.5; letter-spacing: -0.015em; margin: 0 0 8px; }
 .card h3::before { content: ""; display: block; width: 28px; height: 6px; border-radius: 999px; background: var(--accent, var(--yellow)); border: 1px solid var(--pen); margin-bottom: 12px; }
 .card h3 .hl { background: var(--hl, var(--yellow)); padding: 1px 8px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
