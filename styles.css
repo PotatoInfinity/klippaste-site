@@ -479,34 +479,48 @@ footer { margin-top: clamp(48px, 6vw, 80px); border-top: 2px solid var(--pen); b
 #statusAi { border-left-color: #7840d8; }
 #statusAiWrap .status-notes-label { color: #7840d8; }
 
-/* === NHẤN MÀU THEO MẢNG: vàng (Klip/hero) · xanh dương (office/wall) · xanh lá (OCR/offline) ===
-   Giữ nền giấy, chỉ đổi accent từng mảng cho có nhịp mà không lòe loẹt. */
-:root {
-  --blue: #2e63d7;
-  --blue-wash: rgba(46, 99, 215, 0.12);
-  --green: #3b9c4d;
-  --green-wash: rgba(59, 156, 77, 0.14);
+/* === NHẤN THEO MẢNG: nhịp sáng–tối trên nền giấy ===
+   Sáng: hero · wall · faq (giấy thoáng, dễ đọc)
+   Tối: demo (khung video đen) · features · final (khối mực chốt nhịp)
+   Chỉ dùng mực + vàng, không thêm hue. */
+#features {
+  background:
+    radial-gradient(480px 240px at 12% 8%, rgba(251, 216, 43, 0.1), transparent 70%),
+    radial-gradient(520px 280px at 88% 92%, rgba(253, 252, 247, 0.06), transparent 70%),
+    #171812;
+  color: #fdfcf7;
+  border: 2px solid var(--pen);
+  border-radius: 28px;
+  margin-top: clamp(48px, 6vw, 80px);
+  padding: clamp(28px, 4vw, 44px) clamp(20px, 3.4vw, 36px);
+  box-shadow: 6px 6px 0 var(--yellow), 0 24px 64px rgba(20, 21, 17, 0.25), var(--hi-dark);
 }
-/* hero: badges — nhấn ô giữa (one-time payment) */
-.badges span:nth-child(2) { background: var(--yellow); }
-/* hero: flow 1 Capture vàng · 2 Convert xanh office · 3 Paste xanh lá (xong) */
-.flow-strip div:nth-child(1) .n { background: var(--yellow); color: var(--ink); }
-.flow-strip div:nth-child(2) .n { background: var(--blue); color: #fff; }
-.flow-strip div:nth-child(3) .n { background: var(--green); color: var(--ink); border-color: var(--pen); }
-/* wall (mảng office): hover + nút điều hướng ngả xanh dương */
-.wall-card { transition: transform 0.25s var(--ease), box-shadow 0.25s; }
-.wall-card:hover { transform: translate(-1px, -3px); box-shadow: 4px 4px 0 #c5ddfb, var(--hi-light), var(--lo-light); }
-@media (hover: hover) and (pointer: fine) {
-  .wall-btn:hover { background: var(--blue-wash); }
+#features h2 { color: #fdfcf7; }
+#features .card { background: linear-gradient(150deg, #ffffff 0%, #fdfcf7 62%, #f1ede1 100%); }
+#features *:focus-visible { outline-color: #fdfcf7; }
+
+/* final: khối mực chốt trang — nút chính vàng, nút phụ viền sáng */
+.final {
+  background:
+    radial-gradient(420px 220px at 18% 12%, rgba(251, 216, 43, 0.14), transparent 70%),
+    radial-gradient(460px 260px at 85% 88%, rgba(253, 252, 247, 0.07), transparent 70%),
+    #171812;
+  color: #fdfcf7;
+  border: 2px solid var(--pen);
+  border-radius: 28px;
+  max-width: 880px;
+  margin-top: clamp(48px, 6vw, 80px);
+  padding: clamp(36px, 5vw, 60px) clamp(24px, 4vw, 48px);
+  box-shadow: 6px 6px 0 var(--yellow), 0 24px 64px rgba(20, 21, 17, 0.28), var(--hi-dark);
 }
-.wall-btn:focus-visible { background: var(--blue-wash); }
-/* features (mảng bento): xoay vòng vàng → xanh dương → xanh lá theo từng thẻ */
-.bento .card { --accent: var(--yellow); }
-.bento .card:nth-child(3n+2) { --accent: var(--blue); }
-.bento .card:nth-child(3n) { --accent: var(--green); }
-.bento .card h3::before { background: var(--accent); }
-.bento .card:hover, .bento .card:focus-within { box-shadow: 4px 4px 0 var(--accent), var(--hi-light), var(--lo-light); }
-/* faq: trái vàng (Klip) · phải xanh dương (office) — cả pill mở lẫn nút + */
-.faq-row.right details[open] .q-pill { background: linear-gradient(135deg, rgba(46, 99, 215, 0.22), rgba(46, 99, 215, 0.1)); }
-.faq-row.right summary:hover .q-plus, .faq-row.right summary:focus-visible .q-plus { background: var(--blue-wash); box-shadow: 2px 2px 0 var(--blue); }
-.faq-row.right details[open] .q-plus { background: var(--blue); color: #fff; box-shadow: 2px 2px 0 rgba(20, 21, 17, 0.14); }
+.final h2 { color: #fdfcf7; }
+.final .dl-btn { background: var(--yellow); color: var(--ink); border-color: var(--pen); box-shadow: 3px 3px 0 rgba(253, 252, 247, 0.9), var(--hi-dark), var(--lo-dark); }
+.final .dl-btn:hover, .final .dl-btn:focus-visible { background: #ffe14d; box-shadow: 4px 5px 0 rgba(253, 252, 247, 0.9), var(--hi-dark), var(--lo-dark); }
+.final .dl-btn:active { box-shadow: 1px 1px 0 rgba(253, 252, 247, 0.9), var(--hi-dark), var(--lo-dark); }
+.final a.dl-btn:not(:first-child) { background: transparent; color: #fdfcf7; border-color: #fdfcf7; box-shadow: 3px 3px 0 rgba(253, 252, 247, 0.35), var(--hi-dark), var(--lo-dark); }
+.final a.dl-btn:not(:first-child):hover, .final a.dl-btn:not(:first-child):focus-visible { background: rgba(253, 252, 247, 0.12); }
+.final *:focus-visible { outline-color: #fdfcf7; }
+
+@media (max-width: 640px) {
+  #features, .final { border-radius: 22px; box-shadow: 4px 4px 0 var(--yellow), 0 16px 40px rgba(20, 21, 17, 0.25); }
+}
