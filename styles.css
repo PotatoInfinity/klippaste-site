@@ -289,11 +289,11 @@ main { display: block; }
 .faq-row .a > div { overflow: hidden; opacity: 0; transform: translateY(-6px); transition: opacity 0.25s var(--ease), transform 0.3s var(--ease); }
 .faq-row details[open] .a > div { opacity: 1; transform: none; }
 .faq-row .a p { margin: 0; padding: 16px 32px 0; color: #33362e; font-size: 15px; font-weight: 500; line-height: 1.65; }
-/* mỗi FAQ một màu: hover + mở + nút + bóng đi theo accent của dòng */
+/* mỗi FAQ một màu ấm: vàng → cam → hồng, lặp lại (không qua xanh lạnh) */
 .faq-row:nth-child(1) { --accent: #eab308; --wash: rgba(251, 216, 43, 0.22); --open: linear-gradient(135deg, rgba(251, 216, 43, 0.34), rgba(251, 216, 43, 0.16)); --on-ink: #141511; }
-.faq-row:nth-child(2) { --accent: #2e63d7; --wash: rgba(46, 99, 215, 0.12); --open: linear-gradient(135deg, rgba(46, 99, 215, 0.22), rgba(46, 99, 215, 0.1)); --on-ink: #ffffff; }
-.faq-row:nth-child(3) { --accent: #3b9c4d; --wash: rgba(59, 156, 77, 0.14); --open: linear-gradient(135deg, rgba(59, 156, 77, 0.24), rgba(59, 156, 77, 0.1)); --on-ink: #ffffff; }
-.faq-row:nth-child(4) { --accent: #7c3aed; --wash: rgba(124, 58, 237, 0.13); --open: linear-gradient(135deg, rgba(124, 58, 237, 0.22), rgba(236, 72, 153, 0.1)); --on-ink: #ffffff; }
+.faq-row:nth-child(2) { --accent: #ea580c; --wash: rgba(234, 88, 12, 0.12); --open: linear-gradient(135deg, rgba(234, 88, 12, 0.22), rgba(234, 88, 12, 0.08)); --on-ink: #ffffff; }
+.faq-row:nth-child(3) { --accent: #ec4899; --wash: rgba(236, 72, 153, 0.13); --open: linear-gradient(135deg, rgba(236, 72, 153, 0.22), rgba(236, 72, 153, 0.08)); --on-ink: #ffffff; }
+.faq-row:nth-child(4) { --accent: #eab308; --wash: rgba(251, 216, 43, 0.22); --open: linear-gradient(135deg, rgba(251, 216, 43, 0.34), rgba(251, 216, 43, 0.16)); --on-ink: #141511; }
 .faq-row:nth-child(5) { --accent: #ea580c; --wash: rgba(234, 88, 12, 0.12); --open: linear-gradient(135deg, rgba(234, 88, 12, 0.22), rgba(234, 88, 12, 0.08)); --on-ink: #ffffff; }
 .faq-row:nth-child(6) { --accent: #ec4899; --wash: rgba(236, 72, 153, 0.13); --open: linear-gradient(135deg, rgba(236, 72, 153, 0.22), rgba(236, 72, 153, 0.08)); --on-ink: #ffffff; }
 .faq-row details:hover .q-pill, .faq-row summary:focus-visible .q-pill { background: var(--wash, var(--yellow-wash)); box-shadow: 3px 3px 0 var(--accent, var(--yellow)), var(--hi-light), var(--lo-light); }
