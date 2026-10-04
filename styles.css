@@ -215,7 +215,7 @@ main { display: block; }
 .wall-card figcaption { margin-top: 16px; font-size: 15px; line-height: 1.6; color: var(--ink-2); max-width: 52ch; }
 .wall-card figcaption strong { color: var(--ink); }
 .wall-ctrl { display: flex; align-items: center; justify-content: center; flex-wrap: nowrap; gap: 16px; margin-top: 24px; padding: 0 20px; }
-.wall-dots { display: flex; align-items: center; justify-content: flex-start; flex: 0 1 auto; min-width: 0; max-width: 100%; flex-wrap: nowrap; overflow-x: auto; overflow-y: hidden; scroll-padding-inline: 12px; gap: 8px; background: var(--paper-2); border: 1.5px solid var(--pen); padding: 8px 16px; border-radius: 999px; scrollbar-width: none; }
+.wall-dots { display: flex; align-items: center; justify-content: flex-start; flex: 0 1 auto; min-width: 0; max-width: 100%; flex-wrap: nowrap; overflow-x: auto; overflow-y: hidden; scroll-behavior: smooth; scroll-padding-inline: 12px; gap: 8px; background: var(--paper-2); border: 1.5px solid var(--pen); padding: 8px 16px; border-radius: 999px; scrollbar-width: none; }
 /* auto end-margins: centered while all dots fit, start-aligned + fully
    scrollable on narrow screens (no safe-center support needed, no clipped end) */
 .wall-dots > :first-child { margin-left: auto; }
@@ -414,7 +414,8 @@ footer { margin-top: clamp(48px, 6vw, 80px); border-top: 2px solid var(--pen); b
   .wall-ctrl { gap: 8px; padding: 0 16px; }
   .wall-dots { gap: 4px; padding: 8px 12px; }
   .wall-dots button { width: 24px; }
-  .wall-btn { width: 40px; height: 40px; }
+  .wall-btn { width: 44px; height: 44px; }
+  .wall-btn svg { width: 18px; height: 18px; }
   .dl-btn { min-width: 0; width: 100%; max-width: 340px; }
   .final-btns .dl-btn { width: 100%; }
 }
@@ -424,6 +425,7 @@ footer { margin-top: clamp(48px, 6vw, 80px); border-top: 2px solid var(--pen); b
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
   html { scroll-behavior: auto; }
+  .wall-dots { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; }
   .spot { height: auto; }
   .spot-sticky { position: static; height: auto; padding: 40px 20px; }

@@ -221,6 +221,42 @@
     i = (i + cards.length) % cards.length;
     wall.scrollTo({ left: cards[i].offsetLeft - wall.offsetLeft - (wall.clientWidth - cards[i].clientWidth) / 2, behavior: RM ? 'auto' : 'smooth' });
   }
+  // Windowed dots (Instagram / Swiper dynamicBullets pattern): when dots are
+  // cut off, the highlight advances only up to the slot before the last
+  // visible dot, then parks — further pages slide the dots strip under it,
+  // scrolling back reverses. Strip glides via scroll-behavior: smooth
+  // (instant under reduced motion); moves in whole-dot steps only, so fast
+  // scrubbing never queues laggy animations. Geometry cached, reset on resize.
+  var dotsGeom = null;
+  var dotsStart = -1;
+  function dotsGeomGet() {
+    if (!dotsGeom && dotsWrap && dotsWrap.children.length) {
+      var cs = window.getComputedStyle(dotsWrap);
+      var gap = parseFloat(cs.columnGap || cs.gap) || 0;
+      dotsGeom = {
+        slot: dotsWrap.children[0].offsetWidth + gap,
+        gap: gap,
+        padL: parseFloat(cs.paddingLeft) || 0,
+        padR: parseFloat(cs.paddingRight) || 0
+      };
+    }
+    return dotsGeom;
+  }
+  function pinDots(active) {
+    var n = dotsWrap ? dotsWrap.children.length : 0;
+    var g = dotsGeomGet();
+    if (!n || !g || !g.slot) return;
+    var visible = Math.max(1, Math.floor((dotsWrap.clientWidth - g.padL - g.padR + g.gap) / g.slot));
+    var start = 0;
+    if (visible < n) {
+      var cap = Math.max(0, visible - 2);
+      start = Math.min(Math.max(active - cap, 0), n - visible);
+    }
+    if (start !== dotsStart) {
+      dotsStart = start;
+      dotsWrap.scrollLeft = start * g.slot;
+    }
+  }
   function wallActive() {
     var cards = wallCards();
     if (!cards.length || !dotsWrap) return 0;
@@ -236,17 +272,7 @@
       if (on) b.setAttribute('aria-current', 'true');
       else b.removeAttribute('aria-current');
     });
-    // Pinned highlight: the yellow dot never leaves the visible pill. When the
-    // active dot would sit outside the strip, move the dots underneath it
-    // (minimal scroll, instant so it never fights the track's own scrolling).
-    var btn = dotsWrap.children[best];
-    if (btn) {
-      var wr = dotsWrap.getBoundingClientRect();
-      var br = btn.getBoundingClientRect();
-      var pad = 8;
-      if (br.left < wr.left + pad) dotsWrap.scrollLeft -= (wr.left + pad - br.left);
-      else if (br.right > wr.right - pad) dotsWrap.scrollLeft += (br.right - (wr.right - pad));
-    }
+    pinDots(best);
     return best;
   }
   function wallAuto() {
@@ -283,6 +309,7 @@
     if (nextBtn) nextBtn.addEventListener('click', function () { wallGo(wallActive() + 1); wallAuto(); });
     wallActive();
     wallAuto();
+    window.addEventListener('resize', function () { dotsGeom = null; dotsStart = -1; wallActive(); });
   }
   if (pauseBtn && wall) {
     pauseBtn.innerHTML = SVG_PAUSE;
