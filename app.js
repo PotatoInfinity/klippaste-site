@@ -164,7 +164,8 @@
   var yr = document.getElementById('year');
   if (yr) yr.textContent = new Date().getFullYear();
 
-  // FAQ: smooth close + single-open (native <details> snaps shut, so animate height first)
+  // FAQ: smooth close (native <details> snaps shut, so animate height first).
+  // Multiple items may stay open; clicking an open summary closes just that one.
   var faqs = Array.prototype.slice.call(document.querySelectorAll('.faq details'));
   function faqClose(d) {
     if (!d.open || d.getAttribute('data-closing')) return;
@@ -199,7 +200,6 @@
       if (RM) return;
       if (d.getAttribute('data-closing')) { e.preventDefault(); return; }
       if (d.open) { e.preventDefault(); faqClose(d); }
-      else { faqs.forEach(function (o) { if (o !== d && o.open) faqClose(o); }); }
     });
   });
 
