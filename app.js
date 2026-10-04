@@ -229,6 +229,7 @@
   // scrubbing never queues laggy animations. Geometry cached, reset on resize.
   var dotsGeom = null;
   var dotsStart = -1;
+  var dotsAvail = -1;
   function dotsGeomGet() {
     if (!dotsGeom && dotsWrap && dotsWrap.children.length) {
       var cs = window.getComputedStyle(dotsWrap);
@@ -237,7 +238,10 @@
         slot: dotsWrap.children[0].offsetWidth + gap,
         gap: gap,
         padL: parseFloat(cs.paddingLeft) || 0,
-        padR: parseFloat(cs.paddingRight) || 0
+        padR: parseFloat(cs.paddingRight) || 0,
+        // style.width is border-box (includes the 1.5px pen ring); clientWidth
+        // is not — add the ring back when sizing the quantized window.
+        frame: dotsWrap.offsetWidth - dotsWrap.clientWidth
       };
     }
     return dotsGeom;
@@ -246,24 +250,33 @@
     var n = dotsWrap ? dotsWrap.children.length : 0;
     var g = dotsGeomGet();
     if (!n || !g || !g.slot) return;
-    var vw = dotsWrap.clientWidth;
-    var visible = Math.max(1, Math.floor((vw - g.padL - g.padR + g.gap) / g.slot));
-    // Cutoff-only: everything below runs solely when dots overflow. When all
+    // Available row width, cached (the quantized window width persists on the
+    // element once set; cleared + remeasured on resize).
+    if (dotsAvail < 0) {
+      var prev = dotsWrap.style.width;
+      if (prev) dotsWrap.style.width = '';
+      dotsAvail = dotsWrap.clientWidth;
+      if (prev) dotsWrap.style.width = prev;
+    }
+    var visible = Math.max(1, Math.floor((dotsAvail - g.padL - g.padR + g.gap) / g.slot));
+    // Overflow-only: everything below runs solely when dots overflow. When all
     // dots fit, the pill is byte-for-byte the old static behavior.
-    var cut = visible < n;
-    if (dotsWrap.classList.contains('cut') !== cut) dotsWrap.classList.toggle('cut', cut);
-    if (!cut) {
+    if (visible >= n) {
       dotsStart = 0;
+      if (dotsWrap.style.width) dotsWrap.style.width = '';
       if (dotsWrap.scrollLeft) dotsWrap.scrollLeft = 0;
       return;
     }
+    // Quantized window: size the pill to exactly `visible` whole dots, so no
+    // sliced spare dot ever peeks at either rounded end and both ends keep
+    // full padding (strip is overflow:hidden: reachable only in whole steps).
+    var win = Math.round(g.padL + g.padR + visible * g.slot - g.gap + (g.frame || 0));
+    if (dotsWrap.clientWidth !== win) dotsWrap.style.width = win + 'px';
     var cap = Math.max(0, visible - 2);
     var start = Math.min(Math.max(active - cap, 0), n - visible);
     if (start === dotsStart) return;
     dotsStart = start;
-    // Center the window when possible: equal breathing room at both pill
-    // edges, so no dot or highlight ever sits flush against the border.
-    // Clamped at the ends, where the pill's own padding takes over.
+    var vw = dotsWrap.clientWidth;
     var maxScroll = Math.max(dotsWrap.scrollWidth - vw, 0);
     var target = g.padL + start * g.slot + (visible * g.slot - g.gap) / 2 - vw / 2;
     dotsWrap.scrollLeft = Math.min(Math.max(target, 0), maxScroll);
@@ -271,12 +284,21 @@
   function wallActive() {
     var cards = wallCards();
     if (!cards.length || !dotsWrap) return 0;
-    var mid = wall.scrollLeft + wall.clientWidth / 2;
-    var best = 0, bd = Infinity;
-    cards.forEach(function (c, i) {
-      var d = Math.abs(c.offsetLeft - wall.offsetLeft + c.clientWidth / 2 - mid);
-      if (d < bd) { bd = d; best = i; }
-    });
+    // Clamped ends: first/last cards can never reach center on wide tracks,
+    // so crown them explicitly — otherwise the end dots never get used.
+    var max = wall.scrollWidth - wall.clientWidth;
+    var best;
+    if (wall.scrollLeft <= 1) best = 0;
+    else if (wall.scrollLeft >= max - 1) best = cards.length - 1;
+    else {
+      var mid = wall.scrollLeft + wall.clientWidth / 2;
+      best = 0;
+      var bd = Infinity;
+      cards.forEach(function (c, i) {
+        var d = Math.abs(c.offsetLeft - wall.offsetLeft + c.clientWidth / 2 - mid);
+        if (d < bd) { bd = d; best = i; }
+      });
+    }
     Array.prototype.forEach.call(dotsWrap.children, function (b, i) {
       var on = i === best;
       b.classList.toggle('on', on);
@@ -320,7 +342,15 @@
     if (nextBtn) nextBtn.addEventListener('click', function () { wallGo(wallActive() + 1); wallAuto(); });
     wallActive();
     wallAuto();
-    window.addEventListener('resize', function () { dotsGeom = null; dotsStart = -1; wallActive(); });
+    window.addEventListener('resize', function () { dotsGeom = null; dotsStart = -1; dotsAvail = -1; if (dotsWrap) dotsWrap.style.width = ''; wallActive(); });
+    // Strip is overflow:hidden (no user scrub to fractional spots): gliding
+    // the window to a keyboard-focused dot keeps every dot reachable.
+    dotsWrap.addEventListener('focusin', function (e) {
+      var b = e.target && e.target.closest ? e.target.closest('button') : null;
+      if (!b) return;
+      var i = Array.prototype.indexOf.call(dotsWrap.children, b);
+      if (i > -1) pinDots(i);
+    });
   }
   if (pauseBtn && wall) {
     pauseBtn.innerHTML = SVG_PAUSE;
