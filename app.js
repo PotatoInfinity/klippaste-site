@@ -329,7 +329,7 @@
   function wallAuto() {
     if (wallTimer) { clearInterval(wallTimer); wallTimer = null; }
     if (wallPaused || !wall || RM || document.hidden || !wallVisible) return;
-    wallTimer = setInterval(function () { wallGo(wallActive() + 1); }, 5000);
+    wallTimer = setInterval(function () { wallGo(wallActive() + 1); }, 2000);
   }
   if (wall && dotsWrap) {
     if ('IntersectionObserver' in window) {
