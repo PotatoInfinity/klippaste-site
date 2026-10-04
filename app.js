@@ -242,16 +242,6 @@
     }
     return dotsGeom;
   }
-  // Edge fades ride the strip: left fade only once scrolled, right fade only
-  // while more dots continue — resting edge dots always stay crisp.
-  function dotsFades() {
-    if (!dotsWrap) return;
-    var cut = dotsWrap.classList.contains('cut');
-    var max = Math.max(dotsWrap.scrollWidth - dotsWrap.clientWidth, 0);
-    var sl = dotsWrap.scrollLeft;
-    dotsWrap.classList.toggle('cut-l', cut && sl > 1);
-    dotsWrap.classList.toggle('cut-r', cut && sl < max - 1);
-  }
   function pinDots(active) {
     var n = dotsWrap ? dotsWrap.children.length : 0;
     var g = dotsGeomGet();
@@ -265,7 +255,6 @@
     if (!cut) {
       dotsStart = 0;
       if (dotsWrap.scrollLeft) dotsWrap.scrollLeft = 0;
-      dotsWrap.classList.remove('cut-l', 'cut-r');
       return;
     }
     var cap = Math.max(0, visible - 2);
@@ -278,7 +267,6 @@
     var maxScroll = Math.max(dotsWrap.scrollWidth - vw, 0);
     var target = g.padL + start * g.slot + (visible * g.slot - g.gap) / 2 - vw / 2;
     dotsWrap.scrollLeft = Math.min(Math.max(target, 0), maxScroll);
-    dotsFades();
   }
   function wallActive() {
     var cards = wallCards();
@@ -319,10 +307,6 @@
     var wallTick = false;
     wall.addEventListener('scroll', function () {
       if (!wallTick) { wallTick = true; requestAnimationFrame(function () { wallTick = false; wallActive(); }); }
-    }, { passive: true });
-    var dotsTick = false;
-    dotsWrap.addEventListener('scroll', function () {
-      if (!dotsTick) { dotsTick = true; requestAnimationFrame(function () { dotsTick = false; dotsFades(); }); }
     }, { passive: true });
     wall.addEventListener('mouseenter', function () { if (wallTimer) { clearInterval(wallTimer); wallTimer = null; } });
     wall.addEventListener('mouseleave', wallAuto);

@@ -229,15 +229,6 @@ main { display: block; }
    scrollable on narrow screens (no safe-center support needed, no clipped end) */
 .wall-dots > button:first-of-type { margin-left: auto; }
 .wall-dots > button:last-of-type { margin-right: auto; }
-/* cutoff-only edge fades: shown solely on sides where dots continue, so dots
-   glide in/out under a soft fade and never hard-cut against the pill border
-   (sticky overlays ride the scrollport; toggled from pinDots + strip scroll) */
-.wall-dots.cut-l::before, .wall-dots.cut-r::after {
-  content: ""; position: sticky; flex: 0 0 auto; align-self: stretch; width: 22px;
-  pointer-events: none; z-index: 1;
-}
-.wall-dots.cut-l::before { left: 0; margin-right: -30px; background: linear-gradient(90deg, var(--paper-2), transparent); }
-.wall-dots.cut-r::after { right: 0; margin-left: -30px; background: linear-gradient(-90deg, var(--paper-2), transparent); }
 .wall-dots::-webkit-scrollbar { display: none; }
 .wall-dots button { flex: 0 0 auto; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; border: 0; border-radius: 8px; background: none; cursor: pointer; padding: 0; }
 .wall-dots button::after { content: ""; width: 6px; height: 6px; border-radius: 999px; background: rgba(20, 21, 17, 0.3); transition: width 0.3s var(--ease), background 0.3s; }
@@ -436,11 +427,7 @@ footer { margin-top: clamp(48px, 6vw, 80px); border-top: 2px solid var(--pen); b
   .plan { padding: 24px 20px 26px; }
   .wall-card { flex-basis: 300px; }
   .wall-ctrl { gap: 8px; padding: 0 16px; }
-  .wall-dots { gap: 4px; padding: 8px 12px; }
-  /* overlay footprint = width + one gap: 22 + 4 on phones */
-  .wall-dots.cut-l::before { margin-right: -26px; }
-  .wall-dots.cut-r::after { margin-left: -26px; }
-  .wall-dots button { width: 24px; }
+  .wall-dots { gap: 8px; padding: 8px 16px; }
   .wall-btn { width: 44px; height: 44px; }
   .wall-btn svg { width: 18px; height: 18px; }
   .dl-btn { min-width: 0; width: 100%; max-width: 340px; }
