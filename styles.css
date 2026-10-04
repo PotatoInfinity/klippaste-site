@@ -259,11 +259,11 @@ main { display: block; }
 .card h3::before { content: ""; display: block; width: 28px; height: 6px; border-radius: 999px; background: var(--accent, var(--yellow)); border: 1px solid var(--pen); margin-bottom: 12px; }
 .card h3 .hl { background: var(--hl, var(--yellow)); padding: 1px 8px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
 .card p { margin: 0; color: #33362e; font-size: 15px; font-weight: 500; line-height: 1.65; }
-/* mỗi thẻ một màu highlight + pill đi kèm */
+/* mỗi thẻ một màu ấm: vàng → cam → hồng, lặp lại (khớp FAQ) */
 .bento .card:nth-child(1) { --accent: #eab308; --hl: #fbd82b; --wash: rgba(251, 216, 43, 0.22); }
-.bento .card:nth-child(2) { --accent: #2e63d7; --hl: #c5ddfb; --wash: rgba(46, 99, 215, 0.14); }
-.bento .card:nth-child(3) { --accent: #3b9c4d; --hl: #bfe6c6; --wash: rgba(59, 156, 77, 0.16); }
-.bento .card:nth-child(4) { --accent: #7c3aed; --hl: #dccdf6; --wash: rgba(124, 58, 237, 0.14); }
+.bento .card:nth-child(2) { --accent: #ea580c; --hl: #f9dcc3; --wash: rgba(234, 88, 12, 0.15); }
+.bento .card:nth-child(3) { --accent: #ec4899; --hl: #f6cfe2; --wash: rgba(236, 72, 153, 0.15); }
+.bento .card:nth-child(4) { --accent: #eab308; --hl: #fbd82b; --wash: rgba(251, 216, 43, 0.22); }
 .bento .card:nth-child(5) { --accent: #ea580c; --hl: #f9dcc3; --wash: rgba(234, 88, 12, 0.15); }
 .bento .card:nth-child(6) { --accent: #ec4899; --hl: #f6cfe2; --wash: rgba(236, 72, 153, 0.15); }
 
