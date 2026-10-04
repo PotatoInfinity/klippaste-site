@@ -182,7 +182,7 @@ main { display: block; }
 .app-mini img:hover { transform: scale(1.06) rotate(-2deg); }
 .app-mini .tag { margin: 0; color: var(--ink); font-weight: 600; font-size: 14px; background: linear-gradient(transparent 60%, var(--yellow-wash) 60%); padding: 0 4px; }
 .badges { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 24px; }
-.badges span { font-size: 13px; font-weight: 600; padding: 8px 16px; border-radius: 999px; background: var(--paper-2); border: 1.5px solid var(--pen); color: var(--ink); }
+.badges span { font-size: 13px; font-weight: 600; padding: 8px 16px; border-radius: 999px; background: var(--ink); border: 1.5px solid var(--pen); color: #fdfcf7; box-shadow: 2px 2px 0 var(--yellow), var(--hi-dark), var(--lo-dark); }
 
 /* flow strip: pen numbers, no cards */
 .flow-strip { display: flex; gap: 32px; justify-content: center; flex-wrap: wrap; max-width: 900px; margin: 48px auto 0; padding: 24px 0 0; border-top: 2px solid var(--pen); }
@@ -251,12 +251,20 @@ main { display: block; }
 
 /* ---------- features: white bento, pen borders ---------- */
 .bento { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; margin-top: 24px; }
-.card { position: relative; background: linear-gradient(150deg, #ffffff 0%, #fdfcf7 62%, #f1ede1 100%); border: 1.5px solid var(--pen); border-radius: var(--r2); padding: 24px; box-shadow: var(--hi-light), var(--lo-light); transition: border-color 0.25s, transform 0.25s var(--ease), box-shadow 0.25s; }
-.card:hover { transform: translate(-1px, -3px); box-shadow: 4px 4px 0 var(--yellow), var(--hi-light), var(--lo-light); }
-.card:focus-within { box-shadow: 4px 4px 0 var(--yellow), var(--hi-light), var(--lo-light); }
-.card h3 { font-size: clamp(1.125rem, 1.05rem + 0.35vw, 1.25rem); line-height: 1.3; letter-spacing: -0.015em; margin: 0 0 8px; }
-.card h3::before { content: ""; display: block; width: 28px; height: 6px; border-radius: 999px; background: var(--yellow); border: 1px solid var(--pen); margin-bottom: 12px; }
-.card p { margin: 0; color: var(--ink-2); font-size: 15px; line-height: 1.6; }
+.card { position: relative; color: var(--ink); background: linear-gradient(150deg, #ffffff 0%, #fdfcf7 62%, #f1ede1 100%); border: 1.5px solid var(--pen); border-radius: var(--r2); padding: 24px; box-shadow: var(--hi-light), var(--lo-light); transition: border-color 0.25s, transform 0.25s var(--ease), box-shadow 0.25s; }
+.card:hover { transform: translate(-1px, -3px); box-shadow: 4px 4px 0 var(--accent, var(--yellow)), var(--hi-light), var(--lo-light); }
+.card:focus-within { box-shadow: 4px 4px 0 var(--accent, var(--yellow)), var(--hi-light), var(--lo-light); }
+.card h3 { color: var(--ink); font-size: clamp(1.125rem, 1.05rem + 0.35vw, 1.25rem); line-height: 1.5; letter-spacing: -0.015em; margin: 0 0 8px; }
+.card h3::before { content: ""; display: block; width: 28px; height: 6px; border-radius: 999px; background: var(--accent, var(--yellow)); border: 1px solid var(--pen); margin-bottom: 12px; }
+.card h3 .hl { background: var(--hl, var(--yellow)); padding: 1px 8px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.card p { margin: 0; color: #33362e; font-size: 15px; font-weight: 500; line-height: 1.65; }
+/* mỗi thẻ một màu highlight + pill đi kèm */
+.bento .card:nth-child(1) { --accent: #eab308; --hl: #fbd82b; --wash: rgba(251, 216, 43, 0.22); }
+.bento .card:nth-child(2) { --accent: #2e63d7; --hl: #c5ddfb; --wash: rgba(46, 99, 215, 0.14); }
+.bento .card:nth-child(3) { --accent: #3b9c4d; --hl: #bfe6c6; --wash: rgba(59, 156, 77, 0.16); }
+.bento .card:nth-child(4) { --accent: #7c3aed; --hl: #dccdf6; --wash: rgba(124, 58, 237, 0.14); }
+.bento .card:nth-child(5) { --accent: #ea580c; --hl: #f9dcc3; --wash: rgba(234, 88, 12, 0.15); }
+.bento .card:nth-child(6) { --accent: #ec4899; --hl: #f6cfe2; --wash: rgba(236, 72, 153, 0.15); }
 
 /* ---------- FAQ: paper pills, pen ring ---------- */
 .faq { display: flex; flex-direction: column; gap: 16px; margin-top: 24px; }
@@ -279,7 +287,18 @@ main { display: block; }
 .faq-row details[open] .a { grid-template-rows: 1fr; }
 .faq-row .a > div { overflow: hidden; opacity: 0; transform: translateY(-6px); transition: opacity 0.25s var(--ease), transform 0.3s var(--ease); }
 .faq-row details[open] .a > div { opacity: 1; transform: none; }
-.faq-row .a p { margin: 0; padding: 16px 32px 0; color: var(--ink-2); font-size: 15px; line-height: 1.6; }
+.faq-row .a p { margin: 0; padding: 16px 32px 0; color: #33362e; font-size: 15px; font-weight: 500; line-height: 1.65; }
+/* mỗi FAQ một màu: hover + mở + nút + bóng đi theo accent của dòng */
+.faq-row:nth-child(1) { --accent: #eab308; --wash: rgba(251, 216, 43, 0.22); --open: linear-gradient(135deg, rgba(251, 216, 43, 0.34), rgba(251, 216, 43, 0.16)); --on-ink: #141511; }
+.faq-row:nth-child(2) { --accent: #2e63d7; --wash: rgba(46, 99, 215, 0.12); --open: linear-gradient(135deg, rgba(46, 99, 215, 0.22), rgba(46, 99, 215, 0.1)); --on-ink: #ffffff; }
+.faq-row:nth-child(3) { --accent: #3b9c4d; --wash: rgba(59, 156, 77, 0.14); --open: linear-gradient(135deg, rgba(59, 156, 77, 0.24), rgba(59, 156, 77, 0.1)); --on-ink: #ffffff; }
+.faq-row:nth-child(4) { --accent: #7c3aed; --wash: rgba(124, 58, 237, 0.13); --open: linear-gradient(135deg, rgba(124, 58, 237, 0.22), rgba(236, 72, 153, 0.1)); --on-ink: #ffffff; }
+.faq-row:nth-child(5) { --accent: #ea580c; --wash: rgba(234, 88, 12, 0.12); --open: linear-gradient(135deg, rgba(234, 88, 12, 0.22), rgba(234, 88, 12, 0.08)); --on-ink: #ffffff; }
+.faq-row:nth-child(6) { --accent: #ec4899; --wash: rgba(236, 72, 153, 0.13); --open: linear-gradient(135deg, rgba(236, 72, 153, 0.22), rgba(236, 72, 153, 0.08)); --on-ink: #ffffff; }
+.faq-row details:hover .q-pill, .faq-row summary:focus-visible .q-pill { background: var(--wash, var(--yellow-wash)); box-shadow: 3px 3px 0 var(--accent, var(--yellow)), var(--hi-light), var(--lo-light); }
+.faq-row details[open] .q-pill { background: var(--open); box-shadow: 3px 3px 0 var(--accent, var(--yellow)), var(--hi-light), var(--lo-light); }
+.faq-row summary:hover .q-plus, .faq-row summary:focus-visible .q-plus { background: var(--wash, var(--yellow-wash)); box-shadow: 2px 2px 0 var(--accent, var(--yellow)); }
+.faq-row details[open] .q-plus { background: var(--accent, var(--yellow)); color: var(--on-ink, var(--ink)); }
 
 /* ---------- final ---------- */
 .final { text-align: center; padding: clamp(48px, 6vw, 80px) 20px 0; max-width: 720px; margin: 0 auto; }
