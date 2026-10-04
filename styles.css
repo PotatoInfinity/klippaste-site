@@ -109,9 +109,16 @@ button.dl-btn { font-family: "Inter Tight", sans-serif; }
 .dl-btn:disabled, .dl-btn[aria-disabled="true"] { opacity: 0.55; cursor: not-allowed; transform: none; box-shadow: none; }
 .dl-text { transition: opacity 0.15s linear 0.06s; }
 .dl-apple { position: absolute; display: flex; color: inherit; transform: scale(0.5); opacity: 0; transition: opacity 0.15s linear, transform 0.25s var(--ease); }
+/* Windows visitors: Win10-style mark at rest, flat Win11 grid on hover */
+.dl-apple .os-ico { display: inline-flex; }
+.dl-apple .os-11 { display: none; }
+.dl-btn:focus-visible .dl-apple .os-10 { display: none; }
+.dl-btn:focus-visible .dl-apple .os-11 { display: inline-flex; }
 @media (hover: hover) {
   .dl-btn:has(.dl-apple):hover .dl-text { opacity: 0; transition-delay: 0.08s; }
   .dl-btn:hover .dl-apple { opacity: 1; transform: scale(1.15); transition: opacity 0.12s linear, transform 0.22s var(--ease); }
+  .dl-btn:hover .dl-apple .os-10 { display: none; }
+  .dl-btn:hover .dl-apple .os-11 { display: inline-flex; }
 }
 
 *:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
@@ -220,8 +227,17 @@ main { display: block; }
 .wall-dots.cut { scroll-behavior: smooth; }
 /* auto end-margins: centered while all dots fit, start-aligned + fully
    scrollable on narrow screens (no safe-center support needed, no clipped end) */
-.wall-dots > :first-child { margin-left: auto; }
-.wall-dots > :last-child { margin-right: auto; }
+.wall-dots > button:first-of-type { margin-left: auto; }
+.wall-dots > button:last-of-type { margin-right: auto; }
+/* cutoff-only edge fades: shown solely on sides where dots continue, so dots
+   glide in/out under a soft fade and never hard-cut against the pill border
+   (sticky overlays ride the scrollport; toggled from pinDots + strip scroll) */
+.wall-dots.cut-l::before, .wall-dots.cut-r::after {
+  content: ""; position: sticky; flex: 0 0 auto; align-self: stretch; width: 22px;
+  pointer-events: none; z-index: 1;
+}
+.wall-dots.cut-l::before { left: 0; margin-right: -30px; background: linear-gradient(90deg, var(--paper-2), transparent); }
+.wall-dots.cut-r::after { right: 0; margin-left: -30px; background: linear-gradient(-90deg, var(--paper-2), transparent); }
 .wall-dots::-webkit-scrollbar { display: none; }
 .wall-dots button { flex: 0 0 auto; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; border: 0; border-radius: 8px; background: none; cursor: pointer; padding: 0; }
 .wall-dots button::after { content: ""; width: 6px; height: 6px; border-radius: 999px; background: rgba(20, 21, 17, 0.3); transition: width 0.3s var(--ease), background 0.3s; }
@@ -421,6 +437,9 @@ footer { margin-top: clamp(48px, 6vw, 80px); border-top: 2px solid var(--pen); b
   .wall-card { flex-basis: 300px; }
   .wall-ctrl { gap: 8px; padding: 0 16px; }
   .wall-dots { gap: 4px; padding: 8px 12px; }
+  /* overlay footprint = width + one gap: 22 + 4 on phones */
+  .wall-dots.cut-l::before { margin-right: -26px; }
+  .wall-dots.cut-r::after { margin-left: -26px; }
   .wall-dots button { width: 24px; }
   .wall-btn { width: 44px; height: 44px; }
   .wall-btn svg { width: 18px; height: 18px; }

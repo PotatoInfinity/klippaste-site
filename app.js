@@ -242,6 +242,16 @@
     }
     return dotsGeom;
   }
+  // Edge fades ride the strip: left fade only once scrolled, right fade only
+  // while more dots continue — resting edge dots always stay crisp.
+  function dotsFades() {
+    if (!dotsWrap) return;
+    var cut = dotsWrap.classList.contains('cut');
+    var max = Math.max(dotsWrap.scrollWidth - dotsWrap.clientWidth, 0);
+    var sl = dotsWrap.scrollLeft;
+    dotsWrap.classList.toggle('cut-l', cut && sl > 1);
+    dotsWrap.classList.toggle('cut-r', cut && sl < max - 1);
+  }
   function pinDots(active) {
     var n = dotsWrap ? dotsWrap.children.length : 0;
     var g = dotsGeomGet();
@@ -255,6 +265,7 @@
     if (!cut) {
       dotsStart = 0;
       if (dotsWrap.scrollLeft) dotsWrap.scrollLeft = 0;
+      dotsWrap.classList.remove('cut-l', 'cut-r');
       return;
     }
     var cap = Math.max(0, visible - 2);
@@ -267,6 +278,7 @@
     var maxScroll = Math.max(dotsWrap.scrollWidth - vw, 0);
     var target = g.padL + start * g.slot + (visible * g.slot - g.gap) / 2 - vw / 2;
     dotsWrap.scrollLeft = Math.min(Math.max(target, 0), maxScroll);
+    dotsFades();
   }
   function wallActive() {
     var cards = wallCards();
@@ -308,6 +320,10 @@
     wall.addEventListener('scroll', function () {
       if (!wallTick) { wallTick = true; requestAnimationFrame(function () { wallTick = false; wallActive(); }); }
     }, { passive: true });
+    var dotsTick = false;
+    dotsWrap.addEventListener('scroll', function () {
+      if (!dotsTick) { dotsTick = true; requestAnimationFrame(function () { dotsTick = false; dotsFades(); }); }
+    }, { passive: true });
     wall.addEventListener('mouseenter', function () { if (wallTimer) { clearInterval(wallTimer); wallTimer = null; } });
     wall.addEventListener('mouseleave', wallAuto);
     wall.addEventListener('pointerdown', function () { if (wallTimer) { clearInterval(wallTimer); wallTimer = null; } });
@@ -333,9 +349,12 @@
   }
 
   // Download buttons: icon follows the visitor's OS. macOS/iOS keeps the
-  // Apple mark already in the markup; Windows gets a Windows mark; anything
+  // Apple mark already in the markup; Windows gets a Windows mark (Win10-style
+  // at rest, flat Win11 grid on hover — CSS swaps .os-10/.os-11); anything
   // else gets a neutral download arrow. License (seal) buttons untouched.
-  var WIN_ICON = '<svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M3 5.5 10.5 4.4v7.1H3zM11.6 4.2 21 3v8.5h-9.4zM3 12.5h7.5v7.1L3 18.5zM11.6 12.5H21V21l-9.4-1.2z"/></svg>';
+  var WIN10_ICON = '<svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M3 5.5 10.5 4.4v7.1H3zM11.6 4.2 21 3v8.5h-9.4zM3 12.5h7.5v7.1L3 18.5zM11.6 12.5H21V21l-9.4-1.2z"/></svg>';
+  var WIN11_ICON = '<svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></svg>';
+  var WIN_ICON = '<span class="os-ico os-10">' + WIN10_ICON + '</span><span class="os-ico os-11">' + WIN11_ICON + '</span>';
   var DL_ICON = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>';
   function visitorOS() {
     var p = '';
