@@ -228,8 +228,11 @@ main { display: block; }
    in whole-dot steps, instantly — no glide to trail behind) */
 /* auto end-margins: centered while all dots fit, start-aligned + fully
    scrollable on narrow screens (no safe-center support needed, no clipped end) */
-.wall-dots > button:first-of-type { margin-left: auto; }
-.wall-dots > button:last-of-type { margin-right: auto; }
+.wall-dots > :first-child { margin-left: auto; }
+.wall-dots > :last-child { margin-right: auto; }
+/* static cutoff strip: fixed grey dots, no highlight, no tracking */
+.wall-dots span.dot { flex: 0 0 auto; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; }
+.wall-dots span.dot::after { content: ""; width: 6px; height: 6px; border-radius: 999px; background: rgba(20, 21, 17, 0.3); }
 .wall-dots::-webkit-scrollbar { display: none; }
 .wall-dots button { flex: 0 0 auto; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; border: 0; border-radius: 8px; background: none; cursor: pointer; padding: 0; }
 .wall-dots button::after { content: ""; width: 6px; height: 6px; border-radius: 999px; background: rgba(20, 21, 17, 0.3); transition: width 0.3s var(--ease), background 0.3s; }

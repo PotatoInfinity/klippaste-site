@@ -221,15 +221,14 @@
     i = (i + cards.length) % cards.length;
     wall.scrollTo({ left: cards[i].offsetLeft - wall.offsetLeft - (wall.clientWidth - cards[i].clientWidth) / 2, behavior: RM ? 'auto' : 'smooth' });
   }
-  // Windowed dots (Instagram / Swiper dynamicBullets pattern): when dots are
-  // cut off, the highlight advances only up to the slot before the last
-  // visible dot, then parks — further pages slide the dots strip under it,
-  // scrolling back reverses. Strip glides via scroll-behavior: smooth
-  // (instant under reduced motion); moves in whole-dot steps only, so fast
-  // scrubbing never queues laggy animations. Geometry cached, reset on resize.
+  // Dots modes: all fit → live buttons + yellow highlight (original behavior).
+  // Cutoff (dots would overflow) → static strip: exactly as many grey dots as
+  // fit, no highlight, no tracking; arrows, swipe and autoplay still move the
+  // cards. Geometry cached, reset on resize.
   var dotsGeom = null;
-  var dotsStart = -1;
   var dotsAvail = -1;
+  var dotsStatic = false;
+  var dotsCount = -1;
   function dotsGeomGet() {
     if (!dotsGeom && dotsWrap && dotsWrap.children.length) {
       var cs = window.getComputedStyle(dotsWrap);
@@ -238,48 +237,67 @@
         slot: dotsWrap.children[0].offsetWidth + gap,
         gap: gap,
         padL: parseFloat(cs.paddingLeft) || 0,
-        padR: parseFloat(cs.paddingRight) || 0,
-        // style.width is border-box (includes the 1.5px pen ring); clientWidth
-        // is not — add the ring back when sizing the quantized window.
-        frame: dotsWrap.offsetWidth - dotsWrap.clientWidth
+        padR: parseFloat(cs.paddingRight) || 0
       };
     }
     return dotsGeom;
   }
-  function pinDots(active) {
-    var n = dotsWrap ? dotsWrap.children.length : 0;
-    var g = dotsGeomGet();
-    if (!n || !g || !g.slot) return;
-    // Available row width, cached (the quantized window width persists on the
-    // element once set; cleared + remeasured on resize).
-    if (dotsAvail < 0) {
-      var prev = dotsWrap.style.width;
-      if (prev) dotsWrap.style.width = '';
+  // Row space the pill may take, independent of the strip currently built:
+  // briefly let it grow to fill the row, then restore.
+  function dotsAvailGet() {
+    if (dotsAvail < 0 && dotsWrap) {
+      var fg = dotsWrap.style.flexGrow;
+      dotsWrap.style.flexGrow = '1';
       dotsAvail = dotsWrap.clientWidth;
-      if (prev) dotsWrap.style.width = prev;
+      dotsWrap.style.flexGrow = fg;
     }
-    var visible = Math.max(1, Math.floor((dotsAvail - g.padL - g.padR + g.gap) / g.slot));
-    // Overflow-only: everything below runs solely when dots overflow. When all
-    // dots fit, the pill is byte-for-byte the old static behavior.
-    if (visible >= n) {
-      dotsStart = 0;
-      if (dotsWrap.style.width) dotsWrap.style.width = '';
-      if (dotsWrap.scrollLeft) dotsWrap.scrollLeft = 0;
-      return;
+    return dotsAvail;
+  }
+  function dotsVisible() {
+    var g = dotsGeomGet();
+    if (!g || !g.slot) return 0;
+    return Math.max(1, Math.floor((dotsAvailGet() - g.padL - g.padR + g.gap) / g.slot));
+  }
+  function dotsLive() {
+    dotsStatic = false;
+    dotsCount = -1;
+    dotsWrap.innerHTML = '';
+    wallCards().forEach(function (_, i) {
+      var b = document.createElement('button');
+      b.setAttribute('aria-label', 'Show application ' + (i + 1));
+      b.addEventListener('click', function () { wallGo(i); wallAuto(); });
+      dotsWrap.appendChild(b);
+    });
+    dotsWrap.classList.remove('static');
+    dotsWrap.setAttribute('aria-label', 'Choose application');
+    dotsGeom = null;
+  }
+  // (Re)build the strip for the current mode. Returns true when static.
+  function dotsBuild() {
+    var n = wallCards().length;
+    if (!n || !dotsWrap) return true;
+    if (!dotsWrap.children.length) dotsLive();
+    var v = dotsVisible();
+    if (!v) return true;
+    if (v < n) {
+      if (!dotsStatic || dotsCount !== v) {
+        dotsStatic = true;
+        dotsCount = v;
+        dotsWrap.innerHTML = '';
+        for (var i = 0; i < v; i++) {
+          var s = document.createElement('span');
+          s.className = 'dot';
+          s.setAttribute('aria-hidden', 'true');
+          dotsWrap.appendChild(s);
+        }
+        dotsWrap.classList.add('static');
+        dotsWrap.removeAttribute('aria-label');
+        dotsGeom = null;
+      }
+      return true;
     }
-    // Quantized window: size the pill to exactly `visible` whole dots, so no
-    // sliced spare dot ever peeks at either rounded end and both ends keep
-    // full padding (strip is overflow:hidden: reachable only in whole steps).
-    var win = Math.round(g.padL + g.padR + visible * g.slot - g.gap + (g.frame || 0));
-    if (dotsWrap.clientWidth !== win) dotsWrap.style.width = win + 'px';
-    var cap = Math.max(0, visible - 2);
-    var start = Math.min(Math.max(active - cap, 0), n - visible);
-    if (start === dotsStart) return;
-    dotsStart = start;
-    var vw = dotsWrap.clientWidth;
-    var maxScroll = Math.max(dotsWrap.scrollWidth - vw, 0);
-    var target = g.padL + start * g.slot + (visible * g.slot - g.gap) / 2 - vw / 2;
-    dotsWrap.scrollLeft = Math.min(Math.max(target, 0), maxScroll);
+    if (dotsStatic || dotsWrap.querySelector('span.dot')) dotsLive();
+    return false;
   }
   function wallActive() {
     var cards = wallCards();
@@ -299,13 +317,13 @@
         if (d < bd) { bd = d; best = i; }
       });
     }
+    if (dotsBuild()) return best; // static cutoff: no highlight, no tracking
     Array.prototype.forEach.call(dotsWrap.children, function (b, i) {
       var on = i === best;
       b.classList.toggle('on', on);
       if (on) b.setAttribute('aria-current', 'true');
       else b.removeAttribute('aria-current');
     });
-    pinDots(best);
     return best;
   }
   function wallAuto() {
@@ -320,12 +338,7 @@
         wallAuto();
       }, { threshold: 0.15 }).observe(document.getElementById('wall'));
     } else wallVisible = true;
-    wallCards().forEach(function (_, i) {
-      var b = document.createElement('button');
-      b.setAttribute('aria-label', 'Show application ' + (i + 1));
-      b.addEventListener('click', function () { wallGo(i); wallAuto(); });
-      dotsWrap.appendChild(b);
-    });
+    dotsBuild();
     var wallTick = false;
     wall.addEventListener('scroll', function () {
       if (!wallTick) { wallTick = true; requestAnimationFrame(function () { wallTick = false; wallActive(); }); }
@@ -342,15 +355,7 @@
     if (nextBtn) nextBtn.addEventListener('click', function () { wallGo(wallActive() + 1); wallAuto(); });
     wallActive();
     wallAuto();
-    window.addEventListener('resize', function () { dotsGeom = null; dotsStart = -1; dotsAvail = -1; if (dotsWrap) dotsWrap.style.width = ''; wallActive(); });
-    // Strip is overflow:hidden (no user scrub to fractional spots): gliding
-    // the window to a keyboard-focused dot keeps every dot reachable.
-    dotsWrap.addEventListener('focusin', function (e) {
-      var b = e.target && e.target.closest ? e.target.closest('button') : null;
-      if (!b) return;
-      var i = Array.prototype.indexOf.call(dotsWrap.children, b);
-      if (i > -1) pinDots(i);
-    });
+    window.addEventListener('resize', function () { dotsGeom = null; dotsAvail = -1; wallActive(); });
   }
   if (pauseBtn && wall) {
     pauseBtn.innerHTML = SVG_PAUSE;
