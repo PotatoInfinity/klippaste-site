@@ -252,9 +252,9 @@ main { display: block; }
 
 /* ---------- features: white bento, pen borders ---------- */
 .bento { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; margin-top: 24px; }
-.card { position: relative; color: var(--ink); background: linear-gradient(150deg, #ffffff 0%, #fdfcf7 62%, #f1ede1 100%); border: 1.5px solid var(--pen); border-radius: var(--r2); padding: 24px; box-shadow: 3px 3px 0 var(--accent, var(--yellow)), var(--hi-light), var(--lo-light); transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), border-color 0.2s; }
-.card:hover { transform: translate(-1px, -2px); box-shadow: 4px 5px 0 var(--accent, var(--yellow)), var(--hi-light), var(--lo-light); }
-.card:focus-within { transform: translate(-1px, -2px); box-shadow: 4px 5px 0 var(--accent, var(--yellow)), var(--hi-light), var(--lo-light); }
+.card { position: relative; color: var(--ink); background: linear-gradient(150deg, #ffffff 0%, #fdfcf7 62%, #f1ede1 100%); border: 1.5px solid var(--pen); border-radius: var(--r2); padding: 24px; box-shadow: var(--hi-light), var(--lo-light); transition: transform 0.25s var(--ease), box-shadow 0.25s; }
+.card:hover { transform: translateY(-2px); box-shadow: 3px 3px 0 var(--accent, var(--yellow)), var(--hi-light), var(--lo-light); }
+.card:focus-within { transform: translateY(-2px); box-shadow: 3px 3px 0 var(--accent, var(--yellow)), var(--hi-light), var(--lo-light); }
 .card h3 { color: var(--ink); font-size: clamp(1.125rem, 1.05rem + 0.35vw, 1.25rem); line-height: 1.5; letter-spacing: -0.015em; margin: 0 0 8px; }
 .card h3::before { content: ""; display: block; width: 28px; height: 6px; border-radius: 999px; background: var(--accent, var(--yellow)); border: 1px solid var(--pen); margin-bottom: 12px; }
 .card h3 .hl { background: var(--hl, var(--yellow)); padding: 1px 8px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
