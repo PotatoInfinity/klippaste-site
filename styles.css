@@ -260,10 +260,10 @@ main { display: block; }
 .card h3 .hl { background: var(--hl, var(--yellow)); padding: 1px 8px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
 .card p { margin: 0; color: #33362e; font-size: 15px; font-weight: 500; line-height: 1.65; }
 /* mỗi thẻ một màu ấm: vàng → cam → hồng, lặp lại (khớp FAQ) */
-.bento .card:nth-child(1) { --accent: #eab308; --hl: #fbd82b; --wash: rgba(251, 216, 43, 0.22); }
+.bento .card:nth-child(1) { --accent: #eab308; --hl: #ffd60a; --wash: rgba(255, 214, 10, 0.22); }
 .bento .card:nth-child(2) { --accent: #ea580c; --hl: #f9dcc3; --wash: rgba(234, 88, 12, 0.15); }
 .bento .card:nth-child(3) { --accent: #ec4899; --hl: #f6cfe2; --wash: rgba(236, 72, 153, 0.15); }
-.bento .card:nth-child(4) { --accent: #eab308; --hl: #fbd82b; --wash: rgba(251, 216, 43, 0.22); }
+.bento .card:nth-child(4) { --accent: #eab308; --hl: #ffd60a; --wash: rgba(255, 214, 10, 0.22); }
 .bento .card:nth-child(5) { --accent: #ea580c; --hl: #f9dcc3; --wash: rgba(234, 88, 12, 0.15); }
 .bento .card:nth-child(6) { --accent: #ec4899; --hl: #f6cfe2; --wash: rgba(236, 72, 153, 0.15); }
 
@@ -290,10 +290,10 @@ main { display: block; }
 .faq-row details[open] .a > div { opacity: 1; transform: none; }
 .faq-row .a p { margin: 0; padding: 16px 32px 0; color: #33362e; font-size: 15px; font-weight: 500; line-height: 1.65; }
 /* mỗi FAQ một màu ấm: vàng → cam → hồng, lặp lại (không qua xanh lạnh) */
-.faq-row:nth-child(1) { --accent: #eab308; --wash: rgba(251, 216, 43, 0.22); --open: linear-gradient(135deg, rgba(251, 216, 43, 0.34), rgba(251, 216, 43, 0.16)); --on-ink: #141511; }
+.faq-row:nth-child(1) { --accent: #eab308; --wash: rgba(255, 214, 10, 0.22); --open: linear-gradient(135deg, rgba(255, 214, 10, 0.34), rgba(255, 214, 10, 0.16)); --on-ink: #141511; }
 .faq-row:nth-child(2) { --accent: #ea580c; --wash: rgba(234, 88, 12, 0.12); --open: linear-gradient(135deg, rgba(234, 88, 12, 0.22), rgba(234, 88, 12, 0.08)); --on-ink: #ffffff; }
 .faq-row:nth-child(3) { --accent: #ec4899; --wash: rgba(236, 72, 153, 0.13); --open: linear-gradient(135deg, rgba(236, 72, 153, 0.22), rgba(236, 72, 153, 0.08)); --on-ink: #ffffff; }
-.faq-row:nth-child(4) { --accent: #eab308; --wash: rgba(251, 216, 43, 0.22); --open: linear-gradient(135deg, rgba(251, 216, 43, 0.34), rgba(251, 216, 43, 0.16)); --on-ink: #141511; }
+.faq-row:nth-child(4) { --accent: #eab308; --wash: rgba(255, 214, 10, 0.22); --open: linear-gradient(135deg, rgba(255, 214, 10, 0.34), rgba(255, 214, 10, 0.16)); --on-ink: #141511; }
 .faq-row:nth-child(5) { --accent: #ea580c; --wash: rgba(234, 88, 12, 0.12); --open: linear-gradient(135deg, rgba(234, 88, 12, 0.22), rgba(234, 88, 12, 0.08)); --on-ink: #ffffff; }
 .faq-row:nth-child(6) { --accent: #ec4899; --wash: rgba(236, 72, 153, 0.13); --open: linear-gradient(135deg, rgba(236, 72, 153, 0.22), rgba(236, 72, 153, 0.08)); --on-ink: #ffffff; }
 .faq-row details:hover .q-pill, .faq-row summary:focus-visible .q-pill { background: var(--wash, var(--yellow-wash)); box-shadow: 3px 3px 0 var(--accent, var(--yellow)), var(--hi-light), var(--lo-light); }
@@ -476,33 +476,6 @@ footer { margin-top: clamp(48px, 6vw, 80px); border-top: 2px solid var(--pen); b
   .dl-btn, .q-pill, .card, .plan, .nav-pill, .nav-mobile, .wall-card, .wall-dots, .wall-btn, .badges span { border: 1px solid ButtonText; }
 }
 
-/* === EXPERIMENT: mute page colors ~15% — REVERT by deleting this block ===
-   Baked into tokens (zero runtime cost; a filter: saturate() here would
-   force the whole page through the GPU compositor on every scroll frame). */
-:root {
-  --yellow: #fbd82b;
-  --yellow-wash: rgba(251, 216, 43, 0.22);
-}
-.bg-fixed {
-  background-image:
-    radial-gradient(620px 420px at 14% 8%, rgba(251, 216, 43, 0.14), transparent 70%),
-    radial-gradient(720px 520px at 86% 6%, rgba(59, 156, 77, 0.09), transparent 70%),
-    radial-gradient(80% 50% at 50% 0%, rgba(20, 21, 17, 0.04), transparent 70%);
-}
-.bg-sky {
-  background:
-    radial-gradient(560px 380px at 82% 22%, rgba(251, 216, 43, 0.09), transparent 70%),
-    radial-gradient(640px 420px at 12% 30%, rgba(20, 21, 17, 0.05), transparent 70%);
-}
-.hero h1 u {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 12' preserveAspectRatio='none'%3E%3Cpath d='M2 8 Q 20 2 40 7 T 78 7 T 118 5' fill='none' stroke='%23FEE87C' stroke-width='5' stroke-linecap='round'/%3E%3Cpath d='M2 9 Q 20 3 40 8 T 78 8 T 118 6' fill='none' stroke='%23141511' stroke-width='1.4' stroke-linecap='round' opacity='0.85'/%3E%3C/svg%3E");
-}
-.plan-badge.blue { background: #2e63d7; }
-.plan.wide .dl-btn.ghost:hover, .plan.wide .dl-btn.ghost:focus-visible { background: rgba(46, 99, 215, 0.17); box-shadow: 4px 5px 0 #aecbfb; }
-.plan.wide .dl-btn.ghost:active { background: rgba(46, 99, 215, 0.23); box-shadow: 1px 1px 0 #aecbfb; }
-#statusAi { border-left-color: #7840d8; }
-#statusAiWrap .status-notes-label { color: #7840d8; }
-
 /* === NHẤN THEO MẢNG: nhịp sáng–tối trên nền giấy ===
    Sáng: hero · wall · features · faq (giấy thoáng, highlight màu giữ lại)
    Tối: demo (khung video đen) · final (khối mực chốt nhịp) */
@@ -510,7 +483,7 @@ footer { margin-top: clamp(48px, 6vw, 80px); border-top: 2px solid var(--pen); b
 /* final: khối mực chốt trang — nút chính vàng, nút phụ viền sáng */
 .final {
   background:
-    radial-gradient(420px 220px at 18% 12%, rgba(251, 216, 43, 0.14), transparent 70%),
+    radial-gradient(420px 220px at 18% 12%, rgba(255, 214, 10, 0.14), transparent 70%),
     radial-gradient(460px 260px at 85% 88%, rgba(253, 252, 247, 0.07), transparent 70%),
     #171812;
   color: #fdfcf7;
