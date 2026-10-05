@@ -45,7 +45,8 @@ body {
   margin: 0;
   font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: clamp(1rem, 0.94rem + 0.3vw, 1.0625rem); line-height: 1.6;
-  background: var(--paper); color: var(--ink);
+  /* muted warm paper: calmer than --paper, elements keep their own surfaces */
+  background: #f1ebdc; color: var(--ink);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: transparent;
@@ -53,23 +54,25 @@ body {
 img { max-width: 100%; }
 
 /* ---------- backdrop: matte paper + gaussian blobs + fine grain ---------- */
-/* Backdrop scrolls with the page (absolute, feathered only — no masks, no size stops). */
+/* Backdrop scrolls with the page (absolute, feathered only — no masks, no size stops).
+   Glare fix (background-only): muted base + visible-but-soft blob color.
+   Element surfaces (--paper, cards, buttons, nav) untouched. */
 .bg-fixed {
   position: absolute; inset: 0; z-index: -3;
-  background-color: var(--paper);
+  background-color: #f1ebdc;
   background-image:
-    radial-gradient(620px 420px at 14% 8%, rgba(255, 214, 10, 0.18), transparent 70%),
-    radial-gradient(720px 520px at 86% 12%, rgba(234, 88, 12, 0.11), transparent 70%),
-    radial-gradient(680px 480px at 10% 62%, rgba(236, 72, 153, 0.1), transparent 70%),
-    radial-gradient(80% 50% at 50% 0%, rgba(20, 21, 17, 0.045), transparent 70%);
+    radial-gradient(620px 420px at 14% 8%, rgba(255, 214, 10, 0.2), transparent 70%),
+    radial-gradient(720px 520px at 86% 12%, rgba(234, 88, 12, 0.13), transparent 70%),
+    radial-gradient(680px 480px at 10% 62%, rgba(236, 72, 153, 0.11), transparent 70%),
+    radial-gradient(80% 50% at 50% 0%, rgba(20, 21, 17, 0.03), transparent 70%);
   background-repeat: no-repeat;
 }
 .bg-sky {
   position: absolute; inset: 0; z-index: -2; pointer-events: none;
   background:
-    radial-gradient(560px 380px at 82% 22%, rgba(255, 214, 10, 0.11), transparent 70%),
-    radial-gradient(640px 420px at 12% 30%, rgba(20, 21, 17, 0.055), transparent 70%),
-    radial-gradient(600px 420px at 85% 75%, rgba(236, 72, 153, 0.06), transparent 70%);
+    radial-gradient(560px 380px at 82% 22%, rgba(255, 214, 10, 0.12), transparent 70%),
+    radial-gradient(640px 420px at 12% 30%, rgba(20, 21, 17, 0.03), transparent 70%),
+    radial-gradient(600px 420px at 85% 75%, rgba(236, 72, 153, 0.075), transparent 70%);
   background-repeat: no-repeat;
 }
 body::before {
@@ -77,7 +80,7 @@ body::before {
   background: none;
 }
 .grain {
-  position: fixed; inset: 0; z-index: 50; pointer-events: none; opacity: 0.035;
+  position: fixed; inset: 0; z-index: 50; pointer-events: none; opacity: 0.028;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
@@ -434,7 +437,7 @@ footer { margin-top: clamp(48px, 6vw, 80px); border-top: 2px solid var(--pen); b
 /* ---------- webkit scrollbar: thin ink-on-transparent ---------- */
 ::-webkit-scrollbar { width: 10px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: rgba(20, 21, 17, 0.22); border-radius: 999px; border: 2px solid var(--paper); }
+::-webkit-scrollbar-thumb { background: rgba(20, 21, 17, 0.22); border-radius: 999px; border: 2px solid #f1ebdc; }
 ::-webkit-scrollbar-thumb:hover { background: rgba(20, 21, 17, 0.36); }
 
 @media (max-width: 860px) {
