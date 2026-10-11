@@ -6,7 +6,7 @@
 <title>Terms &amp; Privacy — Klip</title>
 <meta name="description" content="Terms and privacy for Klip and KlipOCR: one-time payment, one Mac, all sales final, no support. English + Vietnamese.">
 <meta name="theme-color" content="#f1ebdc">
-<meta property="og:title" content="Terms of Sale — Klip">
+<meta property="og:title" content="Terms &amp; Privacy — Klip">
 <meta property="og:description" content="One-time payment. All sales final. English + Vietnamese.">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
@@ -36,21 +36,26 @@
   .legal-seller { margin: 16px 0 0; padding: 16px 20px; background: var(--paper-2); border: 1.5px solid var(--pen); border-radius: var(--r1); }
   .legal-seller p { margin: 4px 0 0; font-size: 14px; }
   .legal-fine { font-size: 13px; color: var(--muted); }
+  .tbl-wrap { overflow-x: auto; margin: 12px 0 0; border: 1.5px solid var(--pen); border-radius: var(--r1); background: var(--paper-2); }
+  .tbl { width: 100%; border-collapse: collapse; font-size: 14px; line-height: 1.55; color: var(--ink-2); }
+  .tbl th, .tbl td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+  .tbl thead th { color: var(--ink); font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; background: rgba(0,0,0,0.03); }
+  .tbl tbody tr:last-child th, .tbl tbody tr:last-child td { border-bottom: 0; }
+  .tbl code { font-size: 13px; }
   @media (max-width: 640px) {
     .legal { padding-top: 130px; }
     .legal-card { padding: 24px 20px; }
   }
-
   .lang-toggle{display:inline-flex;align-items:center;gap:10px;margin-top:18px;border:1.5px solid var(--pen);border-radius:999px;padding:6px 8px;background:var(--paper-2);box-shadow:var(--hi-light),var(--lo-light);font-weight:700;font-size:14px}
   .lang-toggle a{padding:6px 18px;border-radius:999px;color:var(--ink-2);text-decoration:none}
-  .lang-toggle a[aria-selected="true"]{background:var(--ink);color:var(--paper)}
+  .lang-toggle a[aria-current="true"]{background:var(--ink);color:var(--paper)}
   @media(max-width:480px){.lang-toggle{width:100%;justify-content:center}}
   @media print{.lang-toggle{display:none}}
 </style>
 <noscript><style>.reveal { opacity: 1; transform: none; }
   .lang-toggle{display:inline-flex;align-items:center;gap:10px;margin-top:18px;border:1.5px solid var(--pen);border-radius:999px;padding:6px 8px;background:var(--paper-2);box-shadow:var(--hi-light),var(--lo-light);font-weight:700;font-size:14px}
   .lang-toggle a{padding:6px 18px;border-radius:999px;color:var(--ink-2);text-decoration:none}
-  .lang-toggle a[aria-selected="true"]{background:var(--ink);color:var(--paper)}
+  .lang-toggle a[aria-current="true"]{background:var(--ink);color:var(--paper)}
   @media(max-width:480px){.lang-toggle{width:100%;justify-content:center}}
   @media print{.lang-toggle{display:none}}
 </style></noscript>
@@ -69,7 +74,7 @@
       <a href="index.html#apps">Apps</a><a href="index.html#demo">Demo</a>
       <a href="index.html#features">Features</a><a href="index.html#faq">FAQ</a>
     </div>
-    <a class="dl-btn small" href="license.html"><span class="dl-text">Get license</span><span class="dl-apple" aria-hidden="true"><svg class="dl-seal" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path class="seal-shield" d="M12 2.5 4.5 5.5v6c0 4.6 3.2 8 7.5 10 4.3-2 7.5-5.4 7.5-10v-6L12 2.5z"/><path class="seal-check" d="m9 12 2 2 4-4"/></svg></span></a>
+    <a class="dl-btn" href="license.html"><span class="dl-text">Get license</span><span class="dl-apple" aria-hidden="true"><svg class="dl-seal" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path class="seal-shield" d="M12 2.5 4.5 5.5v6c0 4.6 3.2 8 7.5 10 4.3-2 7.5-5.4 7.5-10v-6L12 2.5z"/><path class="seal-check" d="m9 12 2 2 4-4"/></svg></span></a>
     <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false" aria-controls="navMobile"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 5h16M2 10h16M2 15h16"/></svg></button>
   </nav>
   <div class="nav-mobile" id="navMobile">
@@ -82,30 +87,47 @@
 <main id="top" class="legal">
   <div class="legal-head reveal in" id="content">
     <h1>Terms &amp; Privacy</h1>
-    <p class="lede">Pay once. One Mac per license. All sales final. No support. Document content stays on-device.</p>
+    <p class="lede">Pay once — Klip $4.99, KlipOCR $2.99, bundle $6.99. One Mac per license, yours to keep on that Mac. Try the free tier first: all sales are final and there is no support, plainly. Document content stays on-device.</p>
+    <div class="legal-seller" id="read-first">
+      <p><strong>Read this first.</strong> Klip sells perpetual one-Mac license codes with no support and no refunds, except what Lemon Squeezy or mandatory law decides. Keys arrive once by email and never move to another Mac. Lost keys, new Macs, failed delivery or activation mean buying again. Checkout is closed today. Try the free tier before paying.</p>
+      <p lang="vi"><strong>Đọc trước.</strong> Klip bán code bản quyền vĩnh viễn cho một máy Mac, không hỗ trợ và không hoàn tiền, trừ quyết định của Lemon Squeezy hoặc luật bắt buộc. Key gửi một lần qua email và không chuyển máy. Mất key, đổi máy, giao lỗi hay kích hoạt lỗi nghĩa là mua lại. Checkout hôm nay chưa mở. Dùng bản miễn phí trước khi trả tiền.</p>
+    </div>
+    <p class="legal-fine">Effective 2026-10-11 · Version 2.0 · English + Vietnamese on this page · Checkout is not active today</p>
     <div class="lang-toggle" role="group" aria-label="Language / Ngôn ngữ">
-      <a id="tab-en" href="#en" aria-selected="true">EN</a><span aria-hidden="true">|</span><a id="tab-vi" href="#vi" aria-selected="false">VI</a>
+      <a id="tab-en" href="#en" aria-current="true">EN</a><span aria-hidden="true">|</span><a id="tab-vi" href="#vi" aria-current="false">VI</a>
     </div>
   </div>
 
   <div data-lang="en" id="en">
   <section id="terms" aria-label="Terms of sale">
   <article class="legal-card reveal in" aria-label="Terms of sale">
+    <p class="legal-fine"><strong>Terms of sale.</strong> Start with the summary at the top, then sections 1–24.</p>
     <nav aria-label="Contents">
       <ol class="legal-toc">
         <li><a href="#seller">1. Seller</a></li>
-        <li><a href="#products">2. Products and prices</a></li>
-        <li><a href="#tax">3. Taxes at checkout</a></li>
-        <li><a href="#payment">4. Payment — one-time, no subscriptions</a></li>
-        <li><a href="#delivery">5. Delivery by email</a></li>
-        <li><a href="#eula">6. End-User License Agreement (EULA)</a></li>
-        <li><a href="#refund">7. Refunds</a></li>
-        <li><a href="#support">8. No support</a></li>
-        <li><a href="#warranty">9. Warranty</a></li>
-        <li><a href="#liability">10. Liability limit</a></li>
-        <li><a href="#termination">11. Termination</a></li>
-        <li><a href="#law">12. Governing law and disputes</a></li>
-        <li><a href="#changes">13. Changes to these terms</a></li>
+        <li><a href="#definitions">2. Definitions</a></li>
+        <li><a href="#precedence">3. Precedence</a></li>
+        <li><a href="#eligibility">4. Eligibility</a></li>
+        <li><a href="#products">5. Products and prices</a></li>
+        <li><a href="#tax">6. Taxes at checkout</a></li>
+        <li><a href="#ordering">7. Ordering flow</a></li>
+        <li><a href="#payment">8. Payment — one-time, no subscriptions</a></li>
+        <li><a href="#delivery">9. Delivery by email</a></li>
+        <li><a href="#eula">10. End-User License Agreement (EULA)</a></li>
+        <li><a href="#refund">11. Refunds — all sales final</a></li>
+        <li><a href="#support">12. No support</a></li>
+        <li><a href="#warranty">13. Warranty</a></li>
+        <li><a href="#liability">14. Liability limit</a></li>
+        <li><a href="#indemnity">15. Indemnity</a></li>
+        <li><a href="#termination">16. Termination</a></li>
+        <li><a href="#law">17. Governing law and disputes</a></li>
+        <li><a href="#force-majeure">18. Force majeure</a></li>
+        <li><a href="#notices">19. Notices</a></li>
+        <li><a href="#assignment">20. Assignment</a></li>
+        <li><a href="#severability">21. Severability</a></li>
+        <li><a href="#entire">22. Entire agreement</a></li>
+        <li><a href="#changes">23. Changes to these terms</a></li>
+        <li><a href="#version-history">24. Version history</a></li>
       </ol>
     </nav>
 
@@ -117,90 +139,158 @@
     </div>
     <p>“Klip”, “we”, or “seller” means the seller named above. “You” means the buyer.</p>
 
-    <h2 id="products">2. Products and prices</h2>
+    <h2 id="definitions">2. Definitions</h2>
+    <p><strong>Seller</strong> means Truong Minh Huy at the address above. <strong>Buyer / you</strong> means the person placing the order. <strong>Apps</strong> means the macOS applications Klip and KlipOCR. <strong>License code / key</strong> means the string that unlocks paid features. <strong>Seat</strong> means one activated Mac for one code. <strong>Merchant of Record (MoR)</strong> means the party that, when checkout opens, sells to you on our behalf and handles payment, tax collection, and chargebacks — planned to be Lemon Squeezy. <strong>Checkout</strong> means the MoR-hosted purchase flow. <strong>Free tier</strong> means the no-key functionality described in section 5.</p>
+
+    <h2 id="precedence">3. Precedence</h2>
+    <p>If documents conflict, this order applies, top first: (a) mandatory law that cannot be waived; (b) when checkout opens, the Lemon Squeezy Buyer Terms for matters Lemon Squeezy as planned Merchant of Record would handle (payment processing, tax collection at checkout, chargebacks, and any refund Lemon Squeezy itself grants); (c) these Terms including the EULA in section 10; (d) the Privacy Policy on this page; (e) product and seat details stated on the <a href="license.html">License page</a> at purchase. Our no-refund and no-support rules do not bind Lemon Squeezy, your bank, or the law.</p>
+
+    <h2 id="eligibility">4. Eligibility</h2>
+    <p>You must have legal capacity to enter a contract where you live, and be old enough to buy under local law. The apps require a compatible Mac; activation requires a one-time internet connection and a working email address you control. We do not sell to resellers; each order is for your own use.</p>
+
+    <h2 id="products">5. Products and prices</h2>
+    <p class="legal-fine">TL;DR: fixed one-time prices below — no refunds, no support except where Lemon Squeezy or mandatory law decides, because each sale is one final code for one Mac.</p>
+    <p>Except where Art. 25 of Law 19/2023 prohibits, to the maximum extent permitted; any void part is severed and the rest stands.</p>
     <p>We sell perpetual licenses for two macOS apps: <strong>Klip</strong> and <strong>KlipOCR</strong>.</p>
     <ul>
       <li><strong>Klip — $4.99 USD:</strong> LaTeX, Markdown and HTML to office.</li>
       <li><strong>KlipOCR — $2.99 USD:</strong> screenshots and scans to text.</li>
       <li><strong>Bundle — $6.99 USD:</strong> one Klip code plus one KlipOCR code in a single checkout.</li>
     </ul>
-    <p>Prices are shown and charged in <strong>USD</strong>. The price shown at checkout is the price you pay, plus any tax stated at checkout (see section 3).</p>
+    <p>Prices are shown and charged in <strong>USD</strong>. The price shown at checkout is the price you pay, plus any tax stated at checkout (see section 6). Free tiers keep working without a key on a rolling-7-day basis: Klip pastes up to 1000 characters, 21 free in the first 7 days, then 14 per rolling 7 days; KlipOCR free snips with unlimited length, document mode locked. The price buys the as-is version only — updates are never promised. No delivery-time promise is made beyond the email send in section 9. Enterprise or team packs, if offered, state their own seat count on the <a href="license.html">License page</a> at purchase; each seat remains one Mac, non-transferable.</p>
 
-    <h2 id="tax">3. Taxes at checkout</h2>
-    <p>Depending on your country, VAT, GST, sales tax, or other indirect taxes may apply. Any such taxes are <strong>calculated and collected at checkout by our Merchant of Record</strong> and shown before you pay. The receipt or invoice issued at checkout states the final total, including any tax charged.</p>
+    <h2 id="tax">6. Taxes at checkout</h2>
+    <p class="legal-fine">TL;DR: any tax would be added at checkout by the Merchant of Record — never by us directly.</p>
+    <p>Except where Art. 25 of Law 19/2023 prohibits, to the maximum extent permitted; any void part is severed and the rest stands.</p>
+    <p>Depending on your country, VAT, GST, sales tax, or other indirect taxes may apply. When checkout opens, any such taxes would be <strong>calculated</strong> and <strong>collected</strong> at checkout by our planned Merchant of Record and shown before you pay. The receipt or invoice issued at checkout would state the final total, including any tax charged, plus the Terms version and hash (see section 23). For Vietnam (Decree 52 on e-commerce; MoIT notice): checkout is OFF today and we will notify the Ministry of Industry and Trade before selling. A Merchant-of-Record receipt is not a Vietnamese red (VAT) invoice; the seller declares personal income tax on receipts as required.</p>
 
-    <h2 id="payment">4. Payment — one-time, no subscriptions</h2>
-    <p>Every purchase is a <strong>one-time payment</strong>. There are <strong>no subscriptions, no recurring charges, and no auto-renewals</strong>. You pay once for each license code. Checkout is handled by our Merchant of Record; we never see or store your full card details.</p>
+    <h2 id="ordering">7. Ordering flow</h2>
+    <p class="legal-fine">TL;DR: pay plus key sent equals a completed order — activation changes nothing and extends no withdrawal right.</p>
+    <p>Except where Art. 25 of Law 19/2023 prohibits, to the maximum extent permitted; any void part is severed and the rest stands.</p>
+    <ol>
+      <li>Choose a product on the <a href="license.html">License page</a> (Klip for $4.99 USD, KlipOCR for $2.99 USD, or the bundle for $6.99 USD).</li>
+      <li>Check out through the Merchant of Record (planned: Lemon Squeezy). <strong>Checkout is not active today</strong> — no orders, no payment data, no keys sold today.</li>
+      <li>Type a correct, working email address; that address receives the key.</li>
+      <li>Pay the USD total shown, including any tax stated at checkout.</li>
+      <li>Receive the key by email and activate self-serve in the app.</li>
+    </ol>
+    <p>Your order is complete when payment succeeds and the key is sent (see section 9); activation is irrelevant to completion and does not extend any withdrawal right. Double-check the edition and your email before paying — all sales are final (see section 11). E-transactions: your click to pay forms the contract; order records are archived for 3 years. You are given reasonable review time before paying, and you may request a storable and printable copy within 7 days (write under section 19; print or save this page).</p>
 
-    <h2 id="delivery">5. Delivery — complete on send, no resend</h2>
-    <p>License codes are <strong>sent once by email via Resend</strong> to the address you type at checkout. <strong>Delivery is complete when the code is sent; risk passes on send.</strong> Delays, spam/promotions filtering, inbox-full, a typo'd address, a lost or deleted code, and activation failure do <strong>not</strong> reopen delivery.</p>
-    <p><strong>Your duties:</strong> type a correct, working email; check spam on your own; <strong>back up your code</strong> — it is shown once and cannot be recovered from us. <strong>We have no duty to resend, reissue, reset, transfer, or troubleshoot.</strong> Lost key, new Mac (including repair / logic-board change), wiped disk without a key backup, non-receipt, or activation failure = <strong>buy a new license</strong> if you want one. The free tiers keep working without a key.</p>
+    <h2 id="payment">8. Payment — one-time, no subscriptions</h2>
+    <p class="legal-fine">TL;DR: one charge per code, never recurring — checkout would run through the Merchant of Record.</p>
+    <p>Except where Art. 25 of Law 19/2023 prohibits, to the maximum extent permitted; any void part is severed and the rest stands.</p>
+    <p>Every purchase is a <strong>one-time payment</strong>. There are <strong>no subscriptions, no recurring charges, and no auto-renewals</strong>. You pay once for each license code. When checkout opens, checkout would be handled by our planned Merchant of Record; we would never see or store your full card details.</p>
 
-    <h2 id="eula">6. End-User License Agreement (EULA)</h2>
+    <h2 id="delivery">9. Delivery by email</h2>
+    <p class="legal-fine">TL;DR: delivery ends when the code is sent — delays, spam filters, typos, and lost codes do not reopen it.</p>
+    <p>Except where Art. 25 of Law 19/2023 prohibits, to the maximum extent permitted; any void part is severed and the rest stands.</p>
+    <p>License codes are <strong>sent</strong> once by email via Resend to the address you type at checkout. Delivery is <strong>complete</strong> when the code is <strong>sent</strong>; risk passes on send. Delays, spam/promotions filtering, inbox-full, a typo'd address, a lost or deleted code, and activation failure do <strong>not</strong> reopen delivery. No delivery-time promise is made beyond this send. Our will-<strong>not</strong>-reissue rule is policy; whatever software can technically block is separate and creates no duty to help.</p>
+    <p><strong>Your duties:</strong> type a correct, working email; check spam on your own; <strong>back up your code</strong> — it is shown once and we will not reissue, resend, reset, transfer, or troubleshoot it. Lost key, new Mac (including repair / logic-board change), wiped disk without a key backup, non-receipt, or activation failure = <strong>buy a new license</strong> if you want one. The free tiers keep working without a key.</p>
+    <p>Using Resend to send keys, and Lemon Squeezy as future Merchant of Record to take payment, does not exclude our liability as seller for supply of the digital content where mandatory law holds the seller liable. Except where mandatory law holds the seller liable (see section 3), no reissue, resend, or refund is owed.</p>
+
+    <h2 id="eula">10. End-User License Agreement (EULA)</h2>
     <p class="legal-fine">This section is the End-User License Agreement. It is kept here as the single source — the apps and this site refer to this page rather than a separate copy.</p>
-    <p><strong>6.1 Grant.</strong> On full payment, we grant you a personal, non-exclusive, non-transferable license to install and use one purchased copy per code, as follows: a Klip code unlocks Klip; a KlipOCR code unlocks KlipOCR; a bundle unlocks both, one code per app.</p>
-    <p><strong>6.2 One Mac, no transfer.</strong> Each code covers <strong>one Mac only</strong>. It is <strong>yours to keep on that computer</strong> — it does not expire — but it may not be shared, resold, lent, transferred to another person, or moved to another Mac. Reinstalling on the same Mac is allowed. Enterprise or team packs, if offered, state their own seat count in <a href="license.html">license.html</a> at purchase; each seat remains one Mac, non-transferable.</p>
-    <p><strong>6.3 What you may not do.</strong> You may not sell, rent, sublicense, publish, or redistribute the apps or your codes; circumvent activation or free-tier limits; reverse-engineer or extract source except where mandatory law permits; or use the apps in breach of law.</p>
-    <p><strong>6.4 Ownership.</strong> The apps remain our property. This is a license, not a sale of the software itself. No rights are granted except as written here.</p>
-    <p><strong>6.5 Offline use.</strong> Both apps run fully offline after activation. Activation needs an internet connection once; after that no account and no ongoing connection is required.</p>
-    <p><strong>6.6 No reissue, no reset, no transfer — no exceptions.</strong> Each code locks to <strong>one Mac at first activation and never moves</strong>. We do <strong>not</strong> reissue lost or deleted codes, reset activations for new/repaired devices, transfer seats between Macs or persons, or make exceptions for typo'd emails, failed delivery, or failed activation. Need the app on another Mac = <strong>new purchase</strong>. Enterprise/team packs, if offered, state their seat count in <a href="license.html">license.html</a>; each seat is still one locked Mac under this 6.6.</p>
-    <p><strong>6.7 No support under this EULA.</strong> The license price buys the code as-is. It buys <strong>no support, no reply, no fix, and no troubleshooting</strong> — see section 8. Activation is self-serve and offline after the one-time online check; if it fails on your machine, section 6.6 applies.</p>
+    <p><strong>10.1 Grant.</strong> On full payment, we grant you a personal, non-exclusive, non-transferable license to install and use one purchased copy per code, as follows: a Klip code unlocks Klip; a KlipOCR code unlocks KlipOCR; a bundle unlocks both, one code per app.</p>
+    <p><strong>10.2 One Mac, no transfer.</strong> Each code covers <strong>one Mac only</strong>. It is <strong>yours to keep</strong> on that computer — it does not expire while not terminated for fraud or abuse under section 16 — but it may not be shared, resold, lent, transferred to another person, or moved to another Mac. Reinstalling on the same Mac is allowed. Enterprise or team packs, if offered, state their own seat count on the <a href="license.html">License page</a> at purchase; each seat remains one Mac, non-transferable.</p>
+    <p><strong>10.3 What you may not do.</strong> You may not sell, rent, sublicense, publish, or redistribute the apps or your codes; circumvent activation or free-tier limits; reverse-engineer or extract source except where mandatory law permits; or use the apps in breach of law.</p>
+    <p><strong>10.4 Ownership.</strong> The apps remain our property. This is a license, not a sale of the software itself. No rights are granted except as written here.</p>
+    <p><strong>10.5 Offline use.</strong> Both apps run fully offline after activation. Activation needs an internet connection once; after that no account and no ongoing connection is required.</p>
+    <p class="legal-fine">TL;DR: one code, one Mac, forever locked — no moves, no reissues, except what Lemon Squeezy or mandatory law decides.</p>
+    <p><strong>10.6 No reissue, no reset, no transfer — carved.</strong> Each code locks to <strong>one Mac at first activation and never moves</strong>. We will not reissue lost or deleted codes, reset activations for new/repaired devices, transfer seats between Macs or persons, or troubleshoot activation — carved only for (a) whatever Lemon Squeezy in its discretion decides as Merchant of Record, and (b) rights under mandatory law that cannot be waived. Need the app on another Mac = <strong>new purchase</strong>. Enterprise/team packs, if offered, state their seat count on the <a href="license.html">License page</a>; each seat is still one locked Mac under this 10.6.</p>
+    <p><strong>10.7 No support under this EULA.</strong> The license price buys the code as-is. It buys <strong>no support, no reply, no fix, and no troubleshooting</strong> — see section 12. Activation is self-serve and offline after the one-time online check; if it fails on your machine, section 10.6 applies.</p>
 
-    <h2 id="refund">7. Refunds — all sales final</h2>
-    <p><strong>All sales are final.</strong> Buy + activate = completed sale. We grant <strong>no refunds, no goodwill credits, and no exceptions</strong> — not for change of mind, duplicates, wrong editions, lost keys, new devices, non-delivery, or activation failure. Lost key, new Mac, deleted email, failed delivery or activation = <strong>buy a new license</strong>. We provide <strong>no refund help and promise no reply</strong>.</p>
-    <p>Legal seller at checkout is Lemon Squeezy as Merchant of Record. Lemon Squeezy may in its sole discretion grant or deny refunds within 60 days to prevent chargebacks and handles chargebacks per <a href="https://www.lemonsqueezy.com/buyer-terms">its Buyer Terms</a> — our no-refund rule does not bind Lemon Squeezy, your bank, or the law. While a dispute is open the seats of that order stay locked; granted credits revoke that order's keys with no replacement.</p>
-    <p>EU customers: keys are delivered immediately as digital content. Withdrawal ends when supply begins with your express consent plus acknowledgement of loss of right — checkout carries an unchecked checkbox you must tick; a policy page alone does not create the waiver. Nothing here excludes rights under mandatory law that cannot be waived (VN warranty/defect remedies, EU/UK conformity, fraud/wilful misconduct).</p>
+    <h2 id="refund">11. Refunds — all sales final</h2>
+    <p class="legal-fine">TL;DR: every sale is final — pay plus key sent completes it; only Lemon Squeezy or mandatory law can override, because one-time codes cannot be taken back.</p>
+    <p>All sales are <strong>final</strong>. Pay + sent = completed sale; activation is irrelevant and does not extend any withdrawal right. We <strong>grant</strong> no refunds, no goodwill credits — carved only for (a) whatever Lemon Squeezy itself decides as Merchant of Record, and (b) rights under mandatory law that cannot be waived — not otherwise for change of mind, duplicates, wrong editions, lost keys, new devices, non-delivery, or activation failure. Lost key, new Mac, deleted email, failed delivery or activation = <strong>buy</strong> a new license if you want one. We provide no refund help and promise no reply.</p>
+    <p>When checkout opens, the legal seller at checkout would be Lemon Squeezy as Merchant of Record. Per its Buyer Terms, Lemon Squeezy may in its sole discretion grant or refuse refunds on a case-by-case basis, and may refuse where it suspects fraud or abuse. Any Lemon Squeezy replacement is solely Lemon Squeezy’s act — it grants no second code and no help from us. Any time limit Lemon Squeezy itself states for particular request types (such as certain tax-code-related requests) is set by Lemon Squeezy, not by us — we promise no general 60-day window. For technical non-delivery Lemon Squeezy may provide a replacement or a refund under its own terms. Contact Lemon Squeezy first for any payment, tax-invoice, chargeback, or refund question; we will not handle those. Our no-refund rule does not bind Lemon Squeezy, your bank, or the law.</p>
+    <p>Seats are locked only after Lemon Squeezy or the bank decides the dispute, or where abuse is proven (for example stolen payment details, chargeback abuse, published or resold codes, bypassing activation) — not on a mere open dispute. Granted credits revoke that order's keys with no replacement from us.</p>
+    <p>EU customers: keys are delivered immediately as digital content. Withdrawal ends when supply begins with your express consent plus acknowledgement of loss of right — when checkout opens it will carry TWO unchecked boxes you must tick (one for immediate supply, one for loss of right); a durable confirmation with timestamp log is kept and checkout will not launch without both; a policy page alone does not create the waiver. Nothing here excludes rights under mandatory law that cannot be waived (VN warranty/defect remedies, EU/UK conformity, fraud/wilful misconduct).</p>
 
-    <h2 id="support">8. No support</h2>
-    <p><strong>We provide no support whatsoever:</strong> no helpdesk, no troubleshooting, no license or refund help, <strong>no reply promise, no response-time, no fix — for any reason</strong>, including lost keys, new devices, non-delivery, and activation failure. Do not buy if you may need help; use the free tiers first.</p>
-    <p><strong>One legal-notices-only contact (not support).</strong> <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a> is monitored on a best-effort basis <strong>solely</strong> for privacy-rights requests (GDPR / VN PDPD), mandatory consumer-law notices, and EU ODR correspondence. Messages asking for keys, resets, refunds, or fixes <strong>may receive no reply</strong>, and no reply creates no obligation. EU ODR: <a href="https://ec.europa.eu/consumers/odr">https://ec.europa.eu/consumers/odr</a>. Seller: Truong Minh Huy, 128 Le Quang Hoa, Vietnam.</p>
+    <h2 id="support">12. No support</h2>
+    <p>We provide <strong>no</strong> support whatsoever: no helpdesk, no troubleshooting, no license or refund help, no reply promise, no response-time, no fix — for any reason, including lost keys, new devices, non-delivery, and activation failure. Do not buy if you may need help; use the free tiers first.</p>
+    <p><strong>One legal-notices-only contact (not support).</strong> <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a> is monitored on a best-effort basis <strong>solely</strong> for privacy-rights requests, mandatory consumer-law notices, and EU ODR/ADR correspondence. Messages asking for keys, resets, refunds, or fixes <strong>may receive no reply</strong>, and no reply creates no obligation. See footnote <a href="#contact-note">(*)</a>.</p>
+    <p>EU ODR/ADR: consumers in the EU may use the European Commission's dispute-resolution platform at <a href="https://consumer-redress.ec.europa.eu" target="_blank" rel="noopener">EU consumer redress platform</a> (the old ODR site was retired on 2025-07-20). For ADR correspondence by email, write to <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a> with subject COMPLAINT plus your order email and a short description; mandatory notices with subject COMPLAINT are acknowledged within 3 days — acknowledgement is not a fix and creates no support duty. Seller: Truong Minh Huy, 128 Le Quang Hoa, Vietnam.</p>
+    <p>Complaint handling (Art. 31): (1) send to the section 19 address with subject COMPLAINT; (2) we handle it under mandatory law; (3) we respond only as the law requires. Support-seeking messages (keys, resets, refunds, fixes) are not COMPLAINT notices even if labeled so — disguised support is not notice. Auto-acknowledgement confirms receipt only and promises no fix. Proof-of-send: Resend message-ID, Lemon Squeezy receipt, and server logs where available.</p>
 
-    <h2 id="warranty">9. Warranty</h2>
-    <p>The apps are provided <strong>“AS-IS”</strong>, without warranties of any kind — express, implied, or statutory, including merchantability, fitness for a particular purpose, and non-infringement — <strong>to the maximum extent permitted by law</strong>. Where you are a consumer in the EU or EEA, nothing here limits your mandatory statutory rights, including the conformity guarantees that cannot be excluded under applicable consumer law.</p>
+    <h2 id="warranty">13. Warranty</h2>
+    <p>The apps are provided “AS-IS”, without warranties of any kind — express, implied, or statutory, including merchantability, fitness for a particular purpose, and non-infringement — to the maximum extent permitted by law. Where you are a consumer in the EU or EEA, nothing here limits your mandatory statutory rights, including the conformity guarantees that cannot be excluded under applicable consumer law.</p>
+    <p>Vietnam (Art. 30) annex: no general warranty is given; for a compulsory defect, the ladder is one replacement key if possible, otherwise a Merchant-of-Record refund under its terms; transport or delivery cost of a replacement is on the seller where the law requires; the emailed key and the stated period serve as the certificate. Verify OCR outputs before any professional reliance — KlipOCR is an aid, not a certified source. Accessibility: pages aim for plain readable text; report access barriers via the section 19 legal-notices address.</p>
 
-    <h2 id="liability">10. Liability limit</h2>
-    <p>To the maximum extent permitted by law, our total liability for any claim arising from a purchase or use of the apps is limited to <strong>the price you paid for that license</strong> (Klip $4.99, KlipOCR $2.99, or bundle $6.99, as applicable). We are not liable for indirect, incidental, or consequential loss, including lost documents, lost profit, or reformatting costs.</p>
+    <h2 id="liability">14. Liability limit</h2>
+    <p>To the maximum extent permitted by law, our total liability for any claim arising from a purchase or use of the apps is limited to <strong>the price you paid for that license</strong> (Klip $4.99 USD, KlipOCR $2.99 USD, or bundle $6.99 USD, as applicable). We are not liable for indirect, incidental, or consequential loss, including examples such as lost documents, lost profit, reformatting costs, or time spent re-creating work.</p>
     <p>Nothing in these terms limits liability where the law does not allow it — including liability for fraud or wilful misconduct, and any consumer or product-liability rights that cannot be limited or excluded.</p>
+    <p>Recall and compensation: where mandatory law requires recall or compensation for defective digital content, we comply to that extent. Vulnerable consumers (elderly, disabled, minors via guardians, others needing plain language): ask via the section 19 legal-notices address for clearer explanation. Activities not listed in the Decision 07/2024 product lists are not claimed as certified (Art. 28 disclaimer).</p>
 
-    <h2 id="termination">11. Termination</h2>
-    <p>We may refuse, cancel, or deactivate a license for <strong>fraud or abuse</strong> — for example stolen payment details, chargeback abuse, published or resold codes, or bypassing activation. Honest limit of an offline app: an <strong>already-activated offline copy cannot be remotely disabled</strong>, so termination means we block that code from future activations and updates, and revoke any replacement obligation. Lawful copies you already activated keep running on that Mac; nothing here grants a right to new installs or transfers after termination.</p>
+    <h2 id="indemnity">15. Indemnity</h2>
+    <p>To the extent permitted by law, you agree to cover our reasonable losses caused by your breach of these terms or your unlawful use of the apps (for example sharing or reselling codes, or bypassing activation). This section does not apply to consumers where local law forbids it, does not cover losses caused by our own fault, and does not limit your mandatory consumer rights.</p>
 
-    <h2 id="law">12. Governing law and disputes</h2>
+    <h2 id="termination">16. Termination</h2>
+    <p>We may refuse, cancel, or deactivate a license for <strong>fraud or abuse</strong> — for example stolen payment details, chargeback abuse, published or resold codes, or bypassing activation. Honest limit of an offline app: an <strong>already-activated offline copy cannot be remotely disabled</strong>, so termination means we block that code from future activations and updates, and revoke any replacement obligation. Lawful copies you already activated keep running on that Mac; nothing here grants a right to new installs, transfers, refunds, or support after termination.</p>
+
+    <h2 id="law">17. Governing law and disputes</h2>
     <p>These terms are governed by <strong>the laws of Vietnam</strong>. If you buy as a consumer, the mandatory consumer protections of the country where you habitually live continue to apply on top of these terms where the law requires it.</p>
-    <p>Consumers in the EU may also use the European Commission’s Online Dispute Resolution platform: <a href="https://ec.europa.eu/consumers/odr">https://ec.europa.eu/consumers/odr</a>. No court venue is named here — nothing stops you from bringing a claim where your local law gives you that right.</p>
+    <p>Consumers in the EU may use the European Commission's dispute-resolution platform at <a href="https://consumer-redress.ec.europa.eu" target="_blank" rel="noopener">EU consumer redress platform</a>, or write to us under section 12 for ADR correspondence. No court venue is named here and no arbitration is imposed — nothing stops you from bringing a claim where your local law gives you that right.</p>
+    <p>Ambiguities are construed in favour of the consumer (Art. 24). For consumers in Vietnam the Vietnamese version controls except where English is more favorable (mirror of VI section 17); for buyers outside Vietnam the English version controls (Art. 23(2)). The UN Convention on Contracts for the International Sale of Goods (CISG) does not apply. Export and sanctions: subject to applicable export controls and sanctions; you self-certify you are not a denied or sanctioned party and will not export in breach of law; we transact with no sanctioned party.</p>
 
-    <h2 id="changes">13. Changes to these terms</h2>
-    <p>We may update these terms (for example when checkout, taxes, or contact details change), and each version carries its date above. <strong>The version in effect when you purchased applies to your order</strong> — later changes do not retroactively alter completed sales. The current version is always the one published on this page.</p>
+    <h2 id="force-majeure">18. Force majeure</h2>
+    <p>Neither party is liable for delay or failure caused by events beyond reasonable control — for example natural disasters, war, network or infrastructure outages, or government orders — except for checkout payment obligations already due at the time of the event. Delivery-by-email duties in section 9 still apply once the event ends.</p>
 
-    <p class="legal-fine" style="margin-top:24px">Legal-notices-only contact (not support): <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a>. Related page: <a href="license.html">license.html</a>.</p>
+    <h2 id="notices">19. Notices</h2>
+    <p>Send legal notices to <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a>. An email you send is deemed received when it reaches our mailbox; a notice we post on this page is deemed received when posted. Mandatory notices with subject COMPLAINT are acknowledged within 3 days — acknowledgement confirms receipt only and promises no fix (see section 12). Marketing or support requests sent to this address are not notices and may receive no reply. Government requests: we notify you unless prohibited by law.</p>
+
+    <h2 id="assignment">20. Assignment</h2>
+    <p>You may not transfer or assign your license or rights — each seat is locked to one Mac and one buyer (see section 10). We may assign these terms only with a transfer of the Klip business, and only if your rights are not reduced; we will post notice of any such transfer on this page. Seller assignment never moves buyer seats — each seat stays locked to its Mac and buyer.</p>
+
+    <h2 id="severability">21. Severability</h2>
+    <p>If any part of these terms is found invalid or unenforceable, that part is cut to the minimum needed and the rest continues in full force.</p>
+
+    <h2 id="entire">22. Entire agreement</h2>
+    <p>These Terms (including the EULA), the Privacy Policy on this page, and the product details on the <a href="license.html">License page</a> at purchase are the entire agreement for a license purchase. They replace earlier statements about price, delivery, refunds, or support. No oral variation: only the posted terms as purchased apply, and contrary oral claims are estopped. Survival: sections 10–16 survive termination. Insolvency: if either side becomes insolvent, lawfully activated copies keep running offline, but no new installs, transfers, refunds, or support are owed either way. Government requests are handled under section 19. The apps are not HIPAA-ready — do not use them for protected health information.</p>
+
+    <h2 id="changes">23. Changes to these terms</h2>
+    <p>We may update these terms (for example when checkout, taxes, or contact details change), and each version carries its date above. <strong>The version in effect when you purchased applies to your order</strong> — later changes do not retroactively alter completed sales. The current version is always the one published on this page. When checkout opens, your receipt will state the Terms version and hash; the history table below is kept and snapshots are published per version.</p>
+
+    <h2 id="version-history">24. Version history</h2>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Version</th><th>Date</th><th>What changed</th></tr></thead>
+      <tbody>
+        <tr><td>2.0</td><td>2026-10-11</td><td>Merged Terms-first + Privacy on one page; verbose expansion (definitions, precedence, ordering, indemnity, assignment, notices, TOMs, transfer and retention tables); corrected dispute-platform link and refund wording; no change to zero-refund / no-support stance.</td></tr>
+        <tr><td>1.0</td><td>2026-09-01</td><td>Initial sale terms and EULA.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p class="legal-fine" id="contact-note">(*) Contact rule: <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a> is legal-notices-only. Privacy-rights and mandatory consumer-law notices are answered within 30 days. Messages asking for keys, resets, refunds, or fixes may receive no reply. Related page: <a href="license.html">License page</a>.</p>
   </article>
   </section>
 
   <section id="privacy" aria-label="Privacy policy">
-  <div class="legal-head reveal in"><h1 style="font-size:clamp(1.75rem,1.3rem+2vw,2.5rem)">Privacy Policy</h1>
+  <div class="legal-head reveal in"><h2 style="font-size:clamp(1.75rem,1.3rem+2vw,2.5rem)">Privacy Policy</h2>
   <p class="lede">Document content is processed on-device; activation, feedback, and this site require network. Payments are NOT active today.</p></div>
-  <nav class="toc" aria-label="Policy contents">
-    <p>Contents</p>
-    <ul>
+  <nav class="legal-toc" aria-label="Policy contents">
+    <ol class="legal-toc">
       <li><a href="#p-summary">1. Summary</a></li>
       <li><a href="#p-scope">2. Offline scope</a></li>
       <li><a href="#p-controller">3. Controller</a></li>
       <li><a href="#p-data-endpoints">4. Data per endpoint</a></li>
       <li><a href="#p-purposes">5. Purposes and legal bases</a></li>
-      <li><a href="#p-processors">6. Processors</a></li>
-      <li><a href="#p-retention">7. Retention and deletion</a></li>
-      <li><a href="#p-rights">8. Your rights</a></li>
-      <li><a href="#p-children">9. Children</a></li>
-      <li><a href="#p-security">10. Security and breach</a></li>
-      <li><a href="#p-sources">11. Data sources</a></li>
-      <li><a href="#p-changes">12. Changes and contact</a></li>
-    </ul>
+      <li><a href="#p-processors">6. Processors and third parties</a></li>
+      <li><a href="#p-transfers">7. International transfers and safeguards</a></li>
+      <li><a href="#p-retention">8. Retention and deletion</a></li>
+      <li><a href="#p-rights">9. Your rights</a></li>
+      <li><a href="#p-children">10. Children</a></li>
+      <li><a href="#p-security">11. Security, TOMs and breach notice</a></li>
+      <li><a href="#p-cookies">12. Cookies, Do-Not-Track and fonts</a></li>
+      <li><a href="#p-sources">13. Data sources</a></li>
+      <li><a href="#p-changes">14. Changes and contact</a></li>
+    </ol>
   </nav>
 
   <section class="legal-card" id="p-summary">
     <h2>1. Summary</h2>
     <p>This policy covers the Klip and KlipOCR macOS apps and this website. Document content you convert or read (clipboard text, images, PDFs) is processed on-device. Activation, feedback, and this site require network and send only the limited data described below.</p>
-    <p>Payments are NOT active today and we collect no payment data today. Prices when checkout opens: Klip $4.99, KlipOCR $2.99, bundle $6.99. Free tiers: Klip pastes up to 1000 characters, 21 free the first week, then 14 a week; KlipOCR free snips with unlimited length, document mode locked. Terms: see <a href="#terms">Terms above</a>. Refunds: see <a href="#refund">§7</a>. License options: see <a href="license.html">license.html</a>.</p>
+    <p>Payments are NOT active today and we collect no payment data today. Prices when checkout opens: Klip $4.99 USD, KlipOCR $2.99 USD, bundle $6.99 USD. Free tiers: Klip pastes up to 1000 characters, 21 free in the first 7 days, then 14 per rolling 7 days; KlipOCR free snips with unlimited length, document mode locked. Terms: see <a href="#terms">Terms above</a>. Refunds: see <a href="#refund">refund section</a>. License options: see <a href="license.html">License page</a>.</p>
   </section>
 
   <section class="legal-card" id="p-scope">
@@ -213,18 +303,20 @@
     <h2>3. Controller</h2>
     <p>The data controller is Truong Minh Huy, 128 Le Quang Hoa, Vietnam.</p>
     <p>This is our current contact address in Vietnam. Fuller registered business details will be added before store launch, and this policy will be updated at that time. Contact for all privacy matters: <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a>.</p>
+    <p>No data protection officer is appointed: processing is small-scale (license activation, feedback tickets, site logs) and does not require one; a formal DPO will be designated later if required. EU representative (Art. 27): to be designated before EU scale; the controller contact above serves meanwhile. Write to the controller address above for any privacy matter.</p>
   </section>
 
   <section class="legal-card" id="p-data-endpoints">
     <h2>4. Data per endpoint</h2>
     <p><code>hwid_hash</code> (hashed hardware identifier) and <code>dev_pub</code> (device public key) are pseudonymous personal data: they identify a device, and combined with a license key or email they can relate to a person. They are personal data under GDPR/UK GDPR.</p>
+    <p>Fields marked * are mandatory — without them the request will not be processed. Unmarked fields are optional.</p>
     <div class="tbl-wrap">
     <table class="tbl">
       <thead><tr><th>Endpoint</th><th>Data sent</th><th>Purpose</th></tr></thead>
       <tbody>
-        <tr><td>License activation (app to Supabase)</td><td>License key, <code>hwid_hash</code>, <code>dev_pub</code>, app version, OS version, timestamp</td><td>Validate the license, bind seats, detect fraud and abuse</td></tr>
-        <tr><td>Feedback and support (app or site to Supabase, email via Resend)</td><td>Message text, contact email if you provide it, app and OS version, ticket code, <code>hwid_hash</code> where included by the app</td><td>Receive, track, and answer your report or request</td></tr>
-        <tr><td>Checkout (future, NOT active today)</td><td>No payment data today. When opened: name, email, and order details handled by the merchant of record; card and payment data go to the merchant of record and its payment processors, not to us</td><td>Sell and deliver license keys; handle tax, fraud screening, and refunds (see <a href="#refund">§7</a>)</td></tr>
+        <tr><td>License activation (app to Supabase)</td><td>License key*, <code>hwid_hash</code>*, <code>dev_pub</code>*, app version*, OS version*, timestamp</td><td>Validate the license, bind seats, detect fraud and abuse</td></tr>
+        <tr><td>Feedback and support (app or site to Supabase, email via Resend)</td><td>Message text*, contact email if you provide it, app and OS version, ticket code, <code>hwid_hash</code> where included by the app</td><td>Receive and track on a best-effort basis; a reply may not be sent and no reply is owed except privacy-rights, mandatory, or ODR requests (answered within 30 days); submitting feedback creates no reply duty</td></tr>
+        <tr><td>Checkout (future, NOT active today)</td><td>No payment data today. When opened: name, email, and order details handled by the merchant of record; card and payment data go to the merchant of record and its payment processors, not to us</td><td>Sell and deliver license keys; handle tax, fraud screening, and refunds (see <a href="#refund">refund section</a>)</td></tr>
         <tr><td>Infrastructure logs (site, Supabase, Resend)</td><td>IP address, user agent, timestamps, request metadata; Google Fonts requests disclose IP address and user agent to Google</td><td>Security, abuse prevention, debugging, and delivery of content</td></tr>
       </tbody>
     </table>
@@ -238,65 +330,109 @@
     <table class="tbl">
       <thead><tr><th>Purpose</th><th>Data used</th><th>Legal basis (GDPR Art. 6)</th></tr></thead>
       <tbody>
-        <tr><td>License activation and fraud prevention</td><td>License key, <code>hwid_hash</code>, <code>dev_pub</code>, app/OS version</td><td>Contract (Art. 6(1)(b)); legitimate interests in preventing fraud and abuse (Art. 6(1)(f))</td></tr>
-        <tr><td>Feedback and support</td><td>Email if provided, message, ticket code, app/OS version</td><td>Legitimate interests in operating support (Art. 6(1)(f)); contract where reply is owed</td></tr>
-        <tr><td>Future checkout and order records</td><td>Order email, order metadata from merchant of record; no payment data held by us today</td><td>Contract (Art. 6(1)(b)); legal obligation for tax and accounting (Art. 6(1)(c))</td></tr>
-        <tr><td>Site and infrastructure security</td><td>IP address, user agent, logs</td><td>Legitimate interests in security and abuse prevention (Art. 6(1)(f))</td></tr>
+        <tr><td>License activation and fraud prevention</td><td>License key, <code>hwid_hash</code>, <code>dev_pub</code>, app/OS version</td><td>Contract (Art. 6(1)(b)) — primary</td></tr>
+        <tr><td>Feedback and support handling</td><td>Email if provided, message, ticket code, app/OS version, <code>hwid_hash</code> where included by the app</td><td>Legitimate interests in operating feedback handling (Art. 6(1)(f)) — primary; no reply is owed except privacy-rights, mandatory, or ODR requests</td></tr>
+        <tr><td>Future checkout and order records</td><td>Order email, order metadata from merchant of record; no payment data held by us today</td><td>Contract (Art. 6(1)(b)) — primary</td></tr>
+        <tr><td>Site and infrastructure security</td><td>IP address, user agent, logs</td><td>Legitimate interests in security and abuse prevention (Art. 6(1)(f)) — primary</td></tr>
       </tbody>
     </table>
     </div>
-    <p>Where consent is required (for example non-essential cookies if added later), we will ask first and you may withdraw consent at any time.</p>
+    <p>Article 5 principles: processing is lawful, fair, and transparent; collected for specified purposes only; limited to what is necessary; kept accurate; stored no longer than needed; and kept secure and confidential — with accountability for all of the above.</p>
+    <p>Legitimate-interests register: feedback handling (to receive and track reports), and security logging (to prevent abuse) — necessary for those purposes and balanced against your interests given data minimisation and short retention; object via <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a> or section 9.</p>
+    <p>Where consent is required (for example non-essential cookies if added later), we will ask first and you may withdraw consent at any time by writing to <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a> — withdrawing is as easy as consenting (same email channel) and takes effect prospectively. Vietnam PDP: consent is per purpose via separate tick-boxes, never pre-ticked, with proof of consent stored.</p>
   </section>
 
   <section class="legal-card" id="p-processors">
     <h2>6. Processors and third parties</h2>
     <ul>
-      <li>Supabase (hosting, database, edge functions for activation, feedback, and ticket-status pages; project <code>cuipdwllryitspasbtut</code>, South Asia Mumbai <code>ap-south-1</code> India; Postgres/Auth/Storage origin in Mumbai, Edge Functions at nearest edge globally, Storage CDN cache globally via Cloudflare) — DPA: <a href="https://supabase.com/legal/customer-resources/data-processing-addendum">https://supabase.com/legal/customer-resources/data-processing-addendum</a>.</li>
-      <li>Resend (transactional email for support replies and ticket confirmations) — DPA: <a href="https://resend.com/legal/dpa">https://resend.com/legal/dpa</a>.</li>
-      <li>Lemon Squeezy, planned merchant of record — NOT active today, no payment data today. When checkout opens, Lemon Squeezy will act as merchant of record for sale, tax, and chargebacks — DPA: <a href="https://www.lemonsqueezy.com/dpa">https://www.lemonsqueezy.com/dpa</a>. Refund rules: <a href="#refund">§7</a>.</li>
-      <li>OpenRouter (AI infrastructure assisting support replies) — minimal use: only the support message you submit may be processed to help draft a reply; document content is not sent there. DPA: <a href="https://openrouter.ai/data-processing-agreement">https://openrouter.ai/data-processing-agreement</a>.</li>
+      <li>Supabase (hosting, database, edge functions for activation, feedback, and ticket-status pages; project <code>cuipdwllryitspasbtut</code>, South Asia Mumbai <code>ap-south-1</code> India; Postgres/Auth/Storage origin in Mumbai, Edge Functions at nearest edge globally, Storage CDN cache globally via Cloudflare) — <a href="https://supabase.com/legal/customer-resources/data-processing-addendum" target="_blank" rel="noopener">Supabase data-processing addendum</a>.</li>
+      <li>Resend (transactional email for support replies and ticket confirmations) — <a href="https://resend.com/legal/dpa" target="_blank" rel="noopener">Resend data-processing addendum</a>.</li>
+      <li>Lemon Squeezy, planned merchant of record — NOT active today, no payment data today. When checkout opens, Lemon Squeezy will act as merchant of record for sale, tax, and chargebacks — <a href="https://www.lemonsqueezy.com/dpa" target="_blank" rel="noopener">Lemon Squeezy data-processing addendum</a>. Refund rules: <a href="#refund">refund section</a>.</li>
+      <li>OpenRouter (AI infrastructure that only drafts text, and only if a reply is actually sent — using only the support message you submitted; document content is never sent there; submitting feedback creates no reply duty) — <a href="https://openrouter.ai/data-processing-agreement" target="_blank" rel="noopener">OpenRouter data-processing agreement</a>.</li>
       <li>Google Fonts (this site loads fonts from Google servers; visiting this site discloses your IP address and user agent to Google to serve the files). We keep this disclosure and continue loading fonts from Google on this page.</li>
     </ul>
+    <p>Controller/processor split (Art. 28): we are the controller for license, support, and log data; Supabase, Resend, Lemon Squeezy (when active), and OpenRouter act as processors under their DPAs linked above; their subprocessors are as listed in those DPAs; we give prior notice of processor changes on this page.</p>
+  </section>
+
+  <section class="legal-card" id="p-transfers">
+    <h2>7. International transfers and safeguards</h2>
+    <p>Where data leaves your country (including the EEA/UK), we rely on adequacy decisions where available. Recipient categories (Art. 13(1)(e)): payments, tax, and banks via the Merchant of Record; Cloudflare and AWS via infrastructure subprocessors (see the DPAs in section 6). There are no adequacy decisions for India or the US. Where the DPAs incorporate the EU Standard Contractual Clauses (Commission Implementing Decision 2021/914, Module Two, controller-to-processor), those apply per-DPA; a transfer impact assessment is available on request (write under section 14).</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Data</th><th>Destination</th><th>Safeguard</th></tr></thead>
+      <tbody>
+        <tr><td>License and feedback records</td><td>India (Mumbai, ap-south-1); edge/CDN globally</td><td>2021/914 Module Two per DPA + transport encryption + pseudonymous device identifiers; TIA on request</td></tr>
+        <tr><td>Transactional email</td><td>Resend infrastructure (see its addendum)</td><td>2021/914 Module Two per DPA + transport encryption; TIA on request</td></tr>
+        <tr><td>Future order data</td><td>Merchant of Record (planned Lemon Squeezy)</td><td>Merchant DPA (2021/914 Module Two where incorporated) when checkout opens; no payment data held by us today; TIA on request</td></tr>
+        <tr><td>Support drafting</td><td>OpenRouter infrastructure</td><td>2021/914 Module Two per DPA; only the submitted message, minimal use; TIA on request</td></tr>
+        <tr><td>Font delivery</td><td>Google servers</td><td>Direct disclosure to receive fonts; IP + user agent only</td></tr>
+      </tbody>
+    </table>
+    </div>
   </section>
 
   <section class="legal-card" id="p-retention">
-    <h2>7. Retention and deletion</h2>
-    <ul>
-      <li>License records (key, <code>hwid_hash</code>, <code>dev_pub</code>, activations): kept for the life of the license plus a fraud and audit period required for tax, accounting, and abuse prevention.</li>
-      <li>Feedback and support tickets: kept until your request is resolved, plus a reasonable follow-up period for quality and dispute handling.</li>
-      <li>Infrastructure and security logs: kept short-term (days to weeks) and then deleted or aggregated, unless needed longer to investigate abuse or incidents.</li>
-      <li>Future order records: kept as required by tax and accounting law.</li>
-    </ul>
-    <p>Deletion requests are honored subject to exceptions: we retain data where needed for audit, fraud prevention, legal claims or obligations, and in backups that roll over on their normal cycle. Backups are not rewritten for individual deletions but age out.</p>
+    <h2>8. Retention and deletion</h2>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Data</th><th>Retention</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>License records (key, <code>hwid_hash</code>, <code>dev_pub</code>, activations)</td><td>Life of the license + fraud/audit period required by tax and accounting law</td><td>Required for tax, accounting, and abuse prevention</td></tr>
+        <tr><td>Feedback and support tickets</td><td>24 months after resolution, then deleted</td><td>Quality and dispute handling</td></tr>
+        <tr><td>Infrastructure and security logs</td><td>30 days rolling, then deleted or aggregated</td><td>Kept longer only to investigate abuse or incidents</td></tr>
+        <tr><td>Future order records</td><td>As required by tax and accounting law (no order data held today)</td><td>No order data held today</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Deletion requests are honored subject to exceptions: we retain data where needed for audit, fraud prevention, legal claims or obligations, and in backups that roll over on their normal cycle. Backups are not rewritten for individual deletions but age out on the normal 30–90-day cycle.</p>
   </section>
 
   <section class="legal-card" id="p-rights">
-    <h2>8. Your rights</h2>
+    <h2>9. Your rights</h2>
     <p>You have the rights of access, rectification, erasure, restriction, portability, and objection, plus the right to withdraw consent where consent applies. To exercise a right, email <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a> from the address related to your request and describe the right and the data concerned.</p>
-    <p>We respond to rights requests within 30 days. You also have the right to lodge a complaint with your local supervisory authority.</p>
+    <p>We respond to rights requests within 30 days (GDPR outer limit); Vietnam PDP service levels apply alongside: acknowledgement within 2 days, implementation within 10–20 days. You also have the right to lodge a complaint, fee-free, with your local supervisory authority — an EDPB member authority where you live or work, the UK ICO, or the competent Vietnamese PDP authority; verify identity from the address related to your request with minimal details. Contact rule <a href="#contact-note">(*)</a> applies.</p>
+    <p>Erasure exceptions (Art. 17(3)): we retain data where needed for legal claims, legal obligations such as tax and accounting, or other mandatory purposes. Objection (Art. 21) procedure: write to <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a> stating “objection” and your grounds relating to your situation; we stop unless compelling legitimate grounds override; we do no direct marketing today. Mandatory fields are marked * in section 4 — without them the request is not processed. No automated decision-making (Art. 22): none today; any future automation includes human review — write to the same address for review.</p>
   </section>
 
   <section class="legal-card" id="p-children">
-    <h2>9. Children</h2>
-    <p>Our apps and site are not directed to children under 13, and we do not knowingly collect data from children under 13. Ages 13–16: where EU/UK law requires parental consent (digital consent age 16, lower where a member state sets it), a parent or guardian must consent or authorize the use. If you believe a child has provided data, contact <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a> and we will delete it subject to section 7 exceptions.</p>
+    <h2>10. Children</h2>
+    <p>Our apps and site are not directed to children under 13, and we do not knowingly collect data from children under 13. Ages 13–16: where EU/UK law requires parental consent (digital consent age 16, lower where a member state sets it), a parent or guardian must consent or authorize the use. If you believe a child has provided data, contact <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a> and we will delete it subject to section 8 exceptions.</p>
   </section>
 
   <section class="legal-card" id="p-security">
-    <h2>10. Security and breach notice</h2>
-    <p>We use transport encryption, least-access controls, and pseudonymous device identifiers (<code>hwid_hash</code>, <code>dev_pub</code>) instead of raw hardware identifiers. No method is fully secure, but we work to protect license, support, and log data.</p>
-    <p>In case of a personal-data breach, we will assess the risk, notify the competent supervisory authority without undue delay where required, and notify affected individuals where the risk requires it, describing the nature, likely consequences, and measures taken.</p>
+    <h2>11. Security, TOMs and breach notice</h2>
+    <p>Technical and organisational measures (TOMs): transport encryption in transit, least-access controls for stored records, pseudonymous device identifiers (<code>hwid_hash</code>, <code>dev_pub</code>) instead of raw hardware identifiers, separation of license/support/log stores, and short log retention. No method is fully secure, but we work to protect license, support, and log data.</p>
+    <p>Breach timeline: on learning of a suspected personal-data breach we (1) contain and assess risk without delay, (2) notify the competent supervisory authority within 72 hours where the risk requires it, (3) notify affected individuals without undue delay where there is high risk, describing the nature, likely consequences, and measures taken, and (4) log the incident. Authority notices state (Art. 33(3)): (a) nature, categories, and approximate numbers of subjects and records; (b) the contact point; (c) likely consequences; (d) measures taken or proposed; delayed notices state the reasons, and every incident is logged. Report suspected breaches to <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a>.</p>
+    <p>Vietnam PDP: authority notice within 72 hours of a breach, plus a 24-hour limb for attacks disrupting systems, with a 5-year breach log. DPIA and cross-border transfer impact filings will be submitted within 60 days of starting processing and updated within 10 days of any material change. Data-protection contact: the section 14 email (formal DPO later if required). Sensitive data: none collected beyond section 4; children under 16 need parental consent (see section 10); AI safeguards: OpenRouter drafting-only with data minimisation and human review before any reply is sent.</p>
+  </section>
+
+  <section class="legal-card" id="p-cookies">
+    <h2>12. Cookies, Do-Not-Track and fonts</h2>
+    <p>Strictly-necessary storage only: your language preference (localStorage “legal-lang”) stays on your device. We set no non-essential cookies today and run no analytics or ad trackers on this page. If non-essential cookies or trackers are added later, an opt-in consent banner is planned and you may withdraw at any time. Do-Not-Track: there is nothing to track today, so no DNT switch is needed; a future tracker would honor DNT as a withdrawal signal. Fonts: this page preloads Google Fonts from Google servers on page load — visiting this page discloses your IP address and user agent to Google for that purpose; disclosed here. If you do not want that disclosure, avoid loading this page (for example use reader mode or block remote fonts where your browser supports it).</p>
   </section>
 
   <section class="legal-card" id="p-sources">
-    <h2>11. Data sources (Art. 14)</h2>
-    <p>Most data comes directly from you (license key entry, feedback text, email). Where we do not collect directly from you: device-generated identifiers (<code>hwid_hash</code>, <code>dev_pub</code>, app/OS version) come from your device; order metadata will come from the future merchant of record Lemon Squeezy; technical data (IP address, user agent) comes from your browser or network when you use the site, activation, or feedback endpoints.</p>
+    <h2>13. Data sources</h2>
+    <p>Most data comes directly from you. Where it does not, Article 14 details are:</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Data</th><th>Source</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>License key entry, feedback text, contact email</td><td>You</td><td>Provided directly (Art. 13)</td></tr>
+        <tr><td>Device identifiers (<code>hwid_hash</code>, <code>dev_pub</code>), app/OS version</td><td>Your device</td><td>Generated at activation / included by the app</td></tr>
+        <tr><td>Order metadata (future)</td><td>Merchant of Record (planned Lemon Squeezy)</td><td>Only when checkout opens; no payment data today</td></tr>
+        <tr><td>IP address, user agent, timestamps</td><td>Your browser / network</td><td>Site, activation, feedback, and font requests</td></tr>
+      </tbody>
+    </table>
+    </div>
   </section>
 
   <section class="legal-card" id="p-changes">
-    <h2>12. Changes and contact</h2>
-    <p>We will post any changes to this policy on this page and update the Last updated date. Material changes will be announced by a notice on this site. Continued use after the updated date applies the revised policy. Related pages: <a href="#terms">Terms</a>, <a href="license.html">License</a>, <a href="#privacy">Privacy (this page)</a>.</p>
-    <p>Controller: Truong Minh Huy, 128 Le Quang Hoa, Vietnam (current contact address; fuller registered details to follow before store launch). Email: <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a>. Vietnamese version below: <a href="#vi-privacy">Quyền riêng tư</a> (for consumers in Vietnam the Vietnamese version controls except where English is more favorable).</p>
-    <p class="legal-fine">Prices stated here match the store plan: Klip $4.99, KlipOCR $2.99, bundle $6.99. Checkout is not active today.</p>
+    <h2>14. Changes and contact</h2>
+    <p>We will post any changes to this policy on this page and update the Last updated date. Material changes will be announced by a notice on this site. Continued use after the updated date applies the revised policy. Related pages: <a href="#terms">Terms</a>, <a href="license.html">License page</a>, <a href="#privacy">Privacy (this page)</a>.</p>
+    <p id="privacy-note">Effective 2026-10-11; Last updated 2026-10-11; prior versions are archived per the history approach in section 23 (in-page note; footers unchanged). California (CalOPPA): categories collected and sharing parties are labeled in sections 4 and 6–7; review or correct your data via the section 9 email steps; Do-Not-Track is described in section 12; third-party disclosure per (b)(6): Google Fonts receives IP address and user agent to serve font files.</p>
+    <p>Controller: Truong Minh Huy, 128 Le Quang Hoa, Vietnam (current contact address; fuller registered details to follow before store launch). Email: <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a>. Vietnamese version below: <a href="#vi-privacy">Vietnamese privacy section</a> (for consumers in Vietnam the Vietnamese version controls except where English is more favorable).</p>
+    <p class="legal-fine">Prices stated here match the store plan: Klip $4.99 USD, KlipOCR $2.99 USD, bundle $6.99 USD. Checkout is not active today.</p>
   </section>
   </section>
   </div>
@@ -304,120 +440,310 @@
   <div data-lang="vi" id="vi">
   <section id="vi-terms" lang="vi" aria-label="Điều khoản bán hàng">
   <article class="legal-card">
-    <h2>1. Người bán</h2>
-    <p><strong>Người bán:</strong> Truong Minh Huy. <strong>Địa chỉ:</strong> 128 Le Quang Hoa, Vietnam — chi tiết đăng ký đầy đủ sẽ bổ sung. <strong>Liên hệ:</strong> <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a>.</p>
-    <h2>2. Sản phẩm và giá</h2>
+    <p class="legal-fine"><strong>Điều khoản bán hàng.</strong> Đọc tóm tắt ở đầu trang, rồi các mục 1–24.</p>
+    <nav aria-label="Mục lục">
+      <ol class="legal-toc">
+        <li><a href="#seller-vi">1. Người bán</a></li>
+        <li><a href="#definitions-vi">2. Định nghĩa</a></li>
+        <li><a href="#precedence-vi">3. Thứ tự áp dụng</a></li>
+        <li><a href="#eligibility-vi">4. Điều kiện mua</a></li>
+        <li><a href="#products-vi">5. Sản phẩm và giá</a></li>
+        <li><a href="#tax-vi">6. Thuế tại checkout</a></li>
+        <li><a href="#ordering-vi">7. Quy trình đặt hàng</a></li>
+        <li><a href="#payment-vi">8. Thanh toán — một lần, không thuê bao</a></li>
+        <li><a href="#delivery-vi">9. Giao hàng qua email</a></li>
+        <li><a href="#eula-vi">10. Thỏa thuận Cấp phép (EULA)</a></li>
+        <li><a href="#refund-vi">11. Hoàn tiền — bán đứt</a></li>
+        <li><a href="#support-vi">12. Không hỗ trợ</a></li>
+        <li><a href="#warranty-vi">13. Bảo hành</a></li>
+        <li><a href="#liability-vi">14. Giới hạn trách nhiệm</a></li>
+        <li><a href="#indemnity-vi">15. Bồi hoàn</a></li>
+        <li><a href="#termination-vi">16. Chấm dứt</a></li>
+        <li><a href="#law-vi">17. Luật và tranh chấp</a></li>
+        <li><a href="#force-majeure-vi">18. Bất khả kháng</a></li>
+        <li><a href="#notices-vi">19. Thông báo</a></li>
+        <li><a href="#assignment-vi">20. Chuyển nhượng</a></li>
+        <li><a href="#severability-vi">21. Tách điều khoản</a></li>
+        <li><a href="#entire-vi">22. Toàn bộ thỏa thuận</a></li>
+        <li><a href="#changes-vi">23. Thay đổi điều khoản</a></li>
+        <li><a href="#version-history-vi">24. Lịch sử phiên bản</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="seller-vi">1. Người bán</h2>
+    <p><strong>Người bán:</strong> Truong Minh Huy. <strong>Địa chỉ:</strong> 128 Le Quang Hoa, Vietnam — chi tiết đăng ký đầy đủ sẽ bổ sung. <strong>Liên hệ:</strong> <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a> (chỉ nhận thông báo pháp lý — không phải hỗ trợ).</p>
+    <p>“Klip”, “chúng tôi” là người bán nêu trên. “Bạn” là người mua.</p>
+
+    <h2 id="definitions-vi">2. Định nghĩa</h2>
+    <p><strong>Người bán</strong> là Truong Minh Huy theo địa chỉ trên. <strong>Bạn</strong> là người đặt hàng. <strong>App</strong> là Klip và KlipOCR cho macOS. <strong>Code/key</strong> là chuỗi mở tính năng trả phí. <strong>Suất</strong> là một máy Mac đã kích hoạt cho một code. <strong>Merchant of Record (MoR)</strong> là bên bán thay khi checkout mở (dự kiến Lemon Squeezy), lo thanh toán, thu thuế và chargeback. <strong>Checkout</strong> là trang mua của MoR. <strong>Bản miễn phí</strong> là chức năng không cần key ở mục 5.</p>
+
+    <h2 id="precedence-vi">3. Thứ tự áp dụng</h2>
+    <p>Khi có mâu thuẫn, thứ tự là: (a) luật bắt buộc không thể từ bỏ; (b) Điều khoản Người mua của Lemon Squeezy cho việc do Lemon Squeezy làm MoR (thanh toán, thu thuế, chargeback, hoàn tiền do Lemon Squeezy quyết); (c) Điều khoản này gồm EULA ở mục 10; (d) Chính sách quyền riêng tư tại trang này; (e) chi tiết sản phẩm và suất trên <a href="license.html">trang License</a> lúc mua. Quy định không hoàn / không hỗ trợ của chúng tôi không ràng buộc Lemon Squeezy, ngân hàng hay pháp luật.</p>
+
+    <h2 id="eligibility-vi">4. Điều kiện mua</h2>
+    <p>Bạn phải có năng lực pháp luật nơi cư trú và đủ tuổi mua theo luật địa phương. App cần máy Mac tương thích; kích hoạt cần mạng một lần và email còn dùng được do bạn kiểm soát. Không bán cho bên mua đi bán lại; mỗi đơn là để bạn dùng.</p>
+
+    <h2 id="products-vi">5. Sản phẩm và giá</h2>
+    <p class="legal-fine">TL;DR: giá cố định trả một lần dưới đây — không hoàn, không hỗ trợ trừ khi Lemon Squeezy hoặc luật bắt buộc quyết, vì mỗi đơn là một code cuối cho một máy.</p>
+    <p>Trừ khi Điều 25 Luật 19/2023 cấm, ở mức tối đa luật cho phép; phần vô hiệu bị tách, phần còn lại vẫn hiệu lực.</p>
     <ul><li><strong>Klip — $4.99 USD:</strong> LaTeX, Markdown, HTML sang office.</li><li><strong>KlipOCR — $2.99 USD:</strong> ảnh chụp/scan sang văn bản.</li><li><strong>Gói cả hai — $6.99 USD:</strong> một code Klip + một code KlipOCR.</li></ul>
-    <p>Giá hiển thị và thu bằng USD. Giá tại checkout là giá phải trả, cộng thuế nêu tại checkout (mục 3).</p>
-    <h2>3. Thuế tại checkout</h2>
-    <p>Tùy nước bạn, có thể có VAT/GST/sales tax do Merchant of Record tính và thu, hiển thị trước khi trả. Hóa đơn tại checkout ghi tổng cuối gồm thuế.</p>
-    <h2>4. Thanh toán — một lần, không thuê bao</h2>
-    <p>Mỗi lần mua là trả một lần. Không thuê bao, không tự gia hạn. Checkout do Merchant of Record xử lý; chúng tôi không thấy/lưu đủ số thẻ.</p>
-    <h2>5. Giao hàng — xong khi gửi, không gửi lại</h2>
-    <p>Code gửi <strong>một lần qua email (Resend)</strong> tới địa chỉ bạn nhập. <strong>Giao xong khi đã gửi; rủi ro sang bạn từ lúc gửi.</strong> Trễ, vào spam, hộp đầy, nhập sai địa chỉ, mất/xóa code hay kích hoạt lỗi đều <strong>không</strong> mở lại giao hàng.</p>
-    <p><strong>Việc của bạn:</strong> nhập đúng email còn dùng được; tự kiểm tra spam; <strong>tự lưu code</strong> — chỉ hiện một lần, chúng tôi không khôi phục được. <strong>Không có nghĩa vụ gửi lại, cấp lại, reset, chuyển hay sửa lỗi.</strong> Mất key, đổi máy mới (kể cả sửa/thay main), xóa ổ mà không lưu key, không nhận được mail hay kích hoạt lỗi = <strong>mua key mới</strong> nếu muốn dùng. Bản miễn phí vẫn chạy không cần key.</p>
-    <h2>6. Thỏa thuận Cấp phép (EULA)</h2>
-    <p><strong>6.1. Cấp quyền.</strong> Trả đủ tiền, bạn được quyền cá nhân, không độc quyền, không chuyển nhượng, cài và dùng một bản đã mua mỗi code.</p>
-    <p><strong>6.2. Một máy, không chuyển.</strong> Mỗi code chỉ một máy Mac. Giữ vĩnh viễn trên máy đó, nhưng không chia sẻ, bán lại, cho mượn, chuyển người khác hay chuyển máy khác. Cài lại trên cùng máy được phép.</p>
-    <p><strong>6.3. Không được:</strong> bán/cho thuê/cấp lại/đăng lại code; vượt kích hoạt/giới hạn miễn phí; dịch ngược trừ khi luật bắt buộc cho phép; dùng app trái luật.</p>
-    <p><strong>6.4. Sở hữu.</strong> App vẫn của chúng tôi. Đây là cấp phép, không phải bán phần mềm.</p>
-    <p><strong>6.5. Offline.</strong> Sau kích hoạt chạy offline hoàn toàn. Kích hoạt cần mạng một lần.</p>
-    <p><strong>6.6. Không cấp lại, không reset, không chuyển — không ngoại lệ.</strong> Mỗi code khóa vào <strong>một máy Mac từ lần kích hoạt đầu và không di chuyển</strong>. Chúng tôi <strong>không</strong> cấp lại code mất/xóa, không reset cho máy mới/sửa, không chuyển suất giữa các máy hay người, không ngoại lệ cho nhập sai email, giao lỗi hay kích hoạt lỗi. Muốn dùng trên máy khác = <strong>mua mới</strong>.</p>
-    <p><strong>6.7. Không hỗ trợ theo EULA.</strong> Giá key chỉ mua code nguyên trạng. <strong>Không hỗ trợ, không trả lời, không sửa, không xử lý sự cố</strong> — xem mục 8.</p>
-    <h2 id="refund-vi">7. Hoàn tiền — bán đứt</h2>
-    <p><strong>Bán đứt.</strong> Mua + kích hoạt = giao dịch xong. <strong>Không hoàn tiền, không tín nhiệm, không ngoại lệ</strong> — đổi ý, trùng đơn, nhầm bản, mất key, đổi máy, không nhận mail hay kích hoạt lỗi cũng vậy. Mất key, đổi máy, mất mail, giao lỗi hay kích hoạt lỗi = <strong>mua key mới</strong>. <strong>Không hỗ trợ hoàn tiền, không hứa trả lời.</strong></p>
-    <p>Người bán hợp pháp tại checkout là Lemon Squeezy (Merchant of Record), có thể tự quyết hoàn/deny trong 60 ngày để chống chargeback — chính sách của chúng tôi không ràng buộc Lemon Squeezy, ngân hàng hay pháp luật. Trong khi dispute mở, suất bị khóa; tiền được duyệt thu hồi key, không cấp thay thế. Khách EU: key giao ngay là nội dung số; cần checkbox đồng ý明示 + xác nhận mất quyền tại checkout. Không loại trừ quyền theo luật bắt buộc.</p>
-    <h2>8. Không hỗ trợ</h2>
-    <p><strong>Chúng tôi không hỗ trợ dưới mọi hình thức:</strong> không helpdesk, không sửa lỗi, không giúp về key hay hoàn tiền, <strong>không hứa trả lời, không thời gian phản hồi, không sửa — vì bất kỳ lý do gì</strong>, kể cả mất key, đổi máy, không nhận mail và kích hoạt lỗi. Nếu có thể cần giúp, đừng mua; dùng bản miễn phí trước.</p>
-    <p><strong>Một liên hệ chỉ-nhận-thông-báo-pháp-lý (không phải hỗ trợ).</strong> <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a> chỉ nhận yêu cầu quyền riêng tư (GDPR / PDPD VN), thông báo luật tiêu dùng bắt buộc và thư ODR EU, theo khả năng. Tin xin key, reset, hoàn tiền hay sửa lỗi <strong>có thể không được trả lời</strong>, và không trả lời không tạo nghĩa vụ. ODR EU: <a href="https://ec.europa.eu/consumers/odr">https://ec.europa.eu/consumers/odr</a>. Người bán: Truong Minh Huy, 128 Le Quang Hoa, Vietnam.</p>
-    <h2>9. Bảo hành</h2>
-    <p>App “NGUYÊN TRẠNG” (AS-IS) ở mức tối đa luật cho phép. Nếu bạn là người tiêu dùng EU/EEA, quyền bắt buộc (như bảo đảm phù hợp) không bị giới hạn.</p>
-    <h2>10. Giới hạn trách nhiệm</h2>
-    <p>Tổng trách nhiệm giới hạn ở giá bạn đã trả (Klip $4.99, KlipOCR $2.99, gói $6.99). Không chịu thiệt hại gián tiếp. Không giới hạn nơi luật cấm (gian lận/cố ý, quyền người tiêu dùng).</p>
-    <h2>11. Chấm dứt</h2>
-    <p>Chúng tôi có thể khóa key vì gian lận/lạm dụng. Bản đã kích hoạt không thể tắt từ xa; chấm dứt = chặn kích hoạt mới, cập nhật, hỗ trợ.</p>
-    <h2>12. Luật và tranh chấp</h2>
-    <p>Điều khoản theo luật Việt Nam. Biện pháp bảo vệ bắt buộc nơi bạn thường trú vẫn áp dụng chồng lên khi luật yêu cầu. Người tiêu dùng EU: ODR <a href="https://ec.europa.eu/consumers/odr">https://ec.europa.eu/consumers/odr</a>.</p>
-    <p><em>Bản tiếng Việt là gốc với người tiêu dùng tại Việt Nam; bản tiếng Anh chỉ tham khảo. Khác biệt thì áp dụng bản có lợi hơn cho người tiêu dùng. Với người mua ngoài Việt Nam, bản tiếng Anh là gốc.</em> Bản tiếng Anh: <a href="#terms">terms.html</a>.</p>
-    <h2>13. Thay đổi điều khoản</h2>
-    <p>Bản tại lúc bạn mua áp dụng cho đơn đó. Bản hiện hành luôn là bản trên trang này. Trang liên quan: <a href="license.html">license.html</a>.</p>
+    <p>Giá hiển thị và thu bằng USD. Giá tại checkout là giá phải trả, cộng thuế nêu tại checkout (mục 6). Giá mua là giá của bản nguyên trạng — không hứa cập nhật. Ngoài gửi email ở mục 9, không hứa thời gian giao. Bản miễn phí vẫn chạy không cần key theo chu kỳ 7 ngày lăn: Klip dán tối đa 1000 ký tự, 21 lượt miễn phí trong 7 ngày đầu, sau đó 14 lượt mỗi 7 ngày lăn; KlipOCR cắt ảnh miễn phí không giới hạn độ dài, chế độ tài liệu bị khóa. Gói doanh nghiệp/nhóm, nếu có, ghi số suất trên <a href="license.html">trang License</a> lúc mua; mỗi suất vẫn một máy Mac, không chuyển nhượng.</p>
+
+    <h2 id="tax-vi">6. Thuế tại checkout</h2>
+    <p class="legal-fine">TL;DR: thuế (nếu có) sẽ cộng tại checkout bởi Merchant of Record — không bao giờ do chúng tôi thu trực tiếp.</p>
+    <p>Trừ khi Điều 25 Luật 19/2023 cấm, ở mức tối đa luật cho phép; phần vô hiệu bị tách, phần còn lại vẫn hiệu lực.</p>
+    <p>Tùy nước bạn, có thể có VAT/GST/sales tax; khi checkout mở, thuế sẽ do Merchant of Record dự kiến tính và thu, hiển thị trước khi trả. Hóa đơn tại checkout sẽ ghi tổng cuối gồm thuế, kèm phiên bản và mã băm Điều khoản (mục 23). Tại Việt Nam (Nghị định 52 về thương mại điện tử; thông báo Bộ Công Thương): checkout hôm nay CHƯA mở, chúng tôi sẽ thông báo trước khi bán. Hóa đơn của MoR không phải hóa đơn đỏ VAT Việt Nam; người bán kê khai thuế thu nhập cá nhân theo quy định.</p>
+
+    <h2 id="ordering-vi">7. Quy trình đặt hàng</h2>
+    <p class="legal-fine">TL;DR: trả tiền cộng gửi key là đơn xong — kích hoạt không đổi gì và không kéo dài quyền rút lại.</p>
+    <p>Trừ khi Điều 25 Luật 19/2023 cấm, ở mức tối đa luật cho phép; phần vô hiệu bị tách, phần còn lại vẫn hiệu lực.</p>
+    <ol>
+      <li>Chọn sản phẩm trên <a href="license.html">trang License</a> (Klip $4.99 USD, KlipOCR $2.99 USD, gói cả hai $6.99 USD).</li>
+      <li>Thanh toán qua Merchant of Record (dự kiến Lemon Squeezy). <strong>Checkout chưa hoạt động hôm nay</strong> — hôm nay chưa bán, chưa thu dữ liệu thanh toán, chưa giao key.</li>
+      <li>Nhập đúng email còn dùng được; key gửi về địa chỉ đó.</li>
+      <li>Trả tổng USD hiển thị, gồm thuế nêu tại checkout.</li>
+      <li>Nhận key qua email và tự kích hoạt trong app.</li>
+    </ol>
+    <p>Đơn xong khi thanh toán thành công và key đã gửi (mục 9); kích hoạt không liên quan tới hoàn tất và không kéo dài quyền rút lại. Kiểm tra kỹ bản mua và email trước khi trả — bán đứt (mục 11). Giao dịch điện tử: click trả tiền là giao kết hợp đồng; hồ sơ đơn lưu 3 năm. Bạn có thời gian xem lại hợp lý trước khi trả và được yêu cầu bản lưu/in được trong 7 ngày (viết theo mục 19; in hoặc lưu trang này).</p>
+
+    <h2 id="payment-vi">8. Thanh toán — một lần, không thuê bao</h2>
+    <p class="legal-fine">TL;DR: mỗi code trả một lần, không bao giờ định kỳ — checkout (khi mở) chạy qua Merchant of Record.</p>
+    <p>Trừ khi Điều 25 Luật 19/2023 cấm, ở mức tối đa luật cho phép; phần vô hiệu bị tách, phần còn lại vẫn hiệu lực.</p>
+    <p>Mỗi lần mua là trả một lần. Không thuê bao, không tự gia hạn. Khi checkout mở, checkout sẽ do Merchant of Record dự kiến xử lý; chúng tôi sẽ không thấy/lưu đủ số thẻ.</p>
+
+    <h2 id="delivery-vi">9. Giao hàng qua email</h2>
+    <p class="legal-fine">TL;DR: giao xong khi đã gửi code — trễ, spam, nhập sai và mất code không mở lại giao hàng.</p>
+    <p>Trừ khi Điều 25 Luật 19/2023 cấm, ở mức tối đa luật cho phép; phần vô hiệu bị tách, phần còn lại vẫn hiệu lực.</p>
+    <p>Code được <strong>gửi</strong> một lần qua email (Resend) tới địa chỉ bạn nhập. Giao <strong>xong</strong> khi đã <strong>gửi</strong>; rủi ro sang bạn từ lúc gửi. Trễ, vào spam, hộp đầy, nhập sai địa chỉ, mất/xóa code hay kích hoạt lỗi đều <strong>không</strong> mở lại giao hàng.</p>
+    <p><strong>Việc của bạn:</strong> nhập đúng email còn dùng được; tự kiểm tra spam; <strong>tự lưu code</strong> — chỉ hiện một lần, chúng tôi sẽ không gửi lại, cấp lại, reset, chuyển hay sửa lỗi. Mất key, đổi máy mới (kể cả sửa/thay main), xóa ổ mà không lưu key, không nhận được mail hay kích hoạt lỗi = <strong>mua</strong> key mới nếu muốn dùng. Bản miễn phí vẫn chạy không cần key. Ngoài gửi email, không hứa thời gian giao. Quy định không cấp lại là chính sách; khả năng chặn kỹ thuật (nếu có) là việc khác và không tạo nghĩa vụ giúp đỡ. Trừ khi luật bắt buộc quy người bán chịu trách nhiệm (mục 3), không gửi lại, cấp lại hay hoàn tiền.</p>
+    <p>Dùng Resend để gửi key và Lemon Squeezy làm MoR tương lai không loại trừ trách nhiệm của người bán về cung cấp nội dung số nơi luật bắt buộc quy người bán chịu trách nhiệm.</p>
+
+    <h2 id="eula-vi">10. Thỏa thuận Cấp phép (EULA)</h2>
+    <p><strong>10.1. Cấp quyền.</strong> Trả đủ tiền, bạn được quyền cá nhân, không độc quyền, không chuyển nhượng, cài và dùng một bản đã mua mỗi code: code Klip mở Klip; code KlipOCR mở KlipOCR; gói mở cả hai, mỗi app một code.</p>
+    <p><strong>10.2. Một máy, không chuyển.</strong> Mỗi code chỉ một máy Mac. Giữ vĩnh viễn trên máy đó, miễn chưa bị chấm dứt vì gian lận/lạm dụng theo mục 16, nhưng không chia sẻ, bán lại, cho mượn, chuyển người khác hay chuyển máy khác. Cài lại trên cùng máy được phép. Gói doanh nghiệp/nhóm, nếu có, ghi số suất trên <a href="license.html">trang License</a>; mỗi suất vẫn một máy Mac, không chuyển nhượng.</p>
+    <p><strong>10.3. Không được:</strong> bán/cho thuê/cấp lại/đăng lại code; vượt kích hoạt/giới hạn miễn phí; dịch ngược trừ khi luật bắt buộc cho phép; dùng app trái luật.</p>
+    <p><strong>10.4. Sở hữu.</strong> App vẫn của chúng tôi. Đây là cấp phép, không phải bán phần mềm.</p>
+    <p><strong>10.5. Offline.</strong> Sau kích hoạt chạy offline hoàn toàn. Kích hoạt cần mạng một lần; sau đó không cần tài khoản hay mạng.</p>
+    <p class="legal-fine">TL;DR: một code, một máy, khóa vĩnh viễn — không di chuyển, không cấp lại, trừ khi Lemon Squeezy hoặc luật bắt buộc quyết.</p>
+    <p><strong>10.6. Không cấp lại, không reset, không chuyển — có giới hạn.</strong> Mỗi code khóa vào <strong>một máy Mac từ lần kích hoạt đầu và không di chuyển</strong>. Chúng tôi sẽ không cấp lại code mất/xóa, không reset cho máy mới/sửa, không chuyển suất giữa các máy hay người, không xử lý kích hoạt lỗi — chỉ giới hạn bởi (a) quyết định của Lemon Squeezy với tư cách MoR, và (b) quyền theo luật bắt buộc. Muốn dùng trên máy khác = <strong>mua mới</strong>. Gói doanh nghiệp/nhóm, nếu có, ghi số suất trên <a href="license.html">trang License</a>; mỗi suất vẫn một máy khóa theo mục 10.6 này.</p>
+    <p><strong>10.7. Không hỗ trợ theo EULA.</strong> Giá key chỉ mua code nguyên trạng. <strong>Không</strong> hỗ trợ, trả lời, sửa hay xử lý sự cố — xem mục 12. Kích hoạt tự phục vụ, offline sau một lần kiểm tra online; nếu lỗi trên máy của bạn, áp dụng mục 10.6.</p>
+
+    <h2 id="refund-vi">11. Hoàn tiền — bán đứt</h2>
+    <p class="legal-fine">TL;DR: mọi đơn đều bán đứt — trả tiền cộng gửi key là xong; chỉ Lemon Squeezy hoặc luật bắt buộc mới thay đổi được.</p>
+    <p>Bán <strong>đứt</strong>. Trả tiền + gửi key = giao dịch xong; kích hoạt không liên quan và không kéo dài quyền rút lại. Chúng tôi <strong>không hoàn tiền, không tín nhiệm</strong> — chỉ giới hạn bởi (a) quyết định của Lemon Squeezy với tư cách MoR, và (b) quyền theo luật bắt buộc — ngoài ra không xét đổi ý, trùng đơn, nhầm bản, mất key, đổi máy, không nhận mail hay kích hoạt lỗi. Mất key, đổi máy, mất mail, giao lỗi hay kích hoạt lỗi = <strong>mua key mới</strong>. Không hỗ trợ hoàn tiền, không hứa trả lời.</p>
+    <p>Khi checkout mở, người bán hợp pháp tại checkout sẽ là Lemon Squeezy (Merchant of Record). Theo Điều khoản Người mua của Lemon Squeezy, Lemon Squeezy có thể toàn quyền quyết từng trường hợp có hoàn hay từ chối, và có thể từ chối khi nghi gian lận hoặc lạm dụng. Mọi thời hạn do Lemon Squeezy nêu cho từng loại yêu cầu cụ thể (như một số yêu cầu liên quan mã số thuế) là do Lemon Squeezy đặt, không phải chúng tôi — chúng tôi không hứa khung 60 ngày chung. Với lỗi kỹ thuật không giao được, Lemon Squeezy có thể cấp thay thế hoặc hoàn tiền theo điều khoản của họ. Mọi câu hỏi về thanh toán, hóa đơn thuế, chargeback hay hoàn tiền: liên hệ Lemon Squeezy trước; chúng tôi không xử lý. Thay thế (nếu có) của Lemon Squeezy hoàn toàn là việc của Lemon Squeezy — không cho bạn code thứ hai và không có giúp đỡ từ chúng tôi. Chính sách của chúng tôi không ràng buộc Lemon Squeezy, ngân hàng hay pháp luật.</p>
+    <p>Suất chỉ bị khóa sau khi Lemon Squeezy hoặc ngân hàng đã quyết định tranh chấp, hoặc khi đã chứng minh lạm dụng (ví dụ thẻ đánh cắp, lạm dụng chargeback, đăng/bán lại code, vượt kích hoạt) — không khóa chỉ vì tranh chấp đang mở. Tiền được duyệt thì key của đơn đó bị thu hồi, chúng tôi không cấp thay thế.</p>
+    <p>Khách EU: key giao ngay là nội dung số; quyền rút lại hết khi bắt đầu cung cấp với sự đồng ý rõ ràng của bạn cộng xác nhận mất quyền tại checkout — dùng HAI checkbox chưa tích sẵn bạn phải tự tích (một cho giao ngay, một cho mất quyền rút lại); có xác nhận bền vững kèm log thời gian, thiếu một là checkout không chạy; trang chính sách không tự tạo từ bỏ. Không loại trừ quyền theo luật bắt buộc (bảo hành/khuyết tật VN, phù hợp EU/UK, gian lận/cố ý).</p>
+    <h2 id="support-vi">12. Không hỗ trợ</h2>
+    <p>Chúng tôi <strong>không</strong> hỗ trợ dưới mọi hình thức: không helpdesk, không sửa lỗi, không giúp về key hay hoàn tiền, không hứa trả lời, không thời gian phản hồi, không sửa — vì bất kỳ lý do gì, kể cả mất key, đổi máy, không nhận mail và kích hoạt lỗi. Nếu có thể cần giúp, đừng mua; dùng bản miễn phí trước.</p>
+    <p><strong>Một liên hệ chỉ-nhận-thông-báo-pháp-lý (không phải hỗ trợ).</strong> <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a> chỉ nhận yêu cầu quyền riêng tư (GDPR / PDPD VN), thông báo luật tiêu dùng bắt buộc và thư ODR/ADR EU, theo khả năng. Tin xin key, reset, hoàn tiền hay sửa lỗi <strong>có thể không được trả lời</strong>, và không trả lời không tạo nghĩa vụ. Xem ghi chú <a href="#contact-note-vi">(*)</a>.</p>
+    <p>ODR/ADR EU: người tiêu dùng EU dùng nền tảng của Ủy ban châu Âu tại <a href="https://consumer-redress.ec.europa.eu" target="_blank" rel="noopener">nền tảng bảo vệ người tiêu dùng EU</a> (trang ODR cũ đã dừng từ 2025-07-20). Thư ADR qua email: gửi tới <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a> với tiêu đề COMPLAINT kèm email đặt hàng và mô tả ngắn; thông báo bắt buộc có tiêu đề COMPLAINT được xác nhận đã nhận trong 3 ngày — xác nhận không phải sửa lỗi và không tạo nghĩa vụ hỗ trợ. Người bán: Truong Minh Huy, 128 Le Quang Hoa, Vietnam.</p>
+    <p>Xử lý khiếu nại (Điều 31): (1) gửi tới địa chỉ mục 19 với tiêu đề COMPLAINT; (2) chúng tôi xử lý theo luật bắt buộc; (3) chỉ trả lời ở mức luật yêu cầu. Tin xin hỗ trợ (key, reset, hoàn tiền, sửa lỗi) không phải thông báo COMPLAINT dù ghi tiêu đề đó — hỗ trợ trá hình không phải thông báo. Xác nhận tự động chỉ là đã nhận, không hứa sửa. Bằng chứng gửi: message-ID của Resend, hóa đơn Lemon Squeezy và log máy chủ (nếu có).</p>
+
+    <h2 id="warranty-vi">13. Bảo hành</h2>
+    <p>App “NGUYÊN TRẠNG” (AS-IS) ở mức tối đa luật cho phép, không bảo đảm rõ ràng hay hàm ý (thương mại, phù hợp mục đích, không xâm phạm). Nếu bạn là người tiêu dùng EU/EEA, quyền bắt buộc (như bảo đảm phù hợp) không bị giới hạn.</p>
+    <p>Phụ lục Việt Nam (Điều 30): không bảo hành chung; với khuyết tật bắt buộc: một key thay thế nếu được, nếu không thì MoR hoàn tiền theo điều khoản của họ; chi phí vận chuyển/giao thay thế do người bán chịu nơi luật yêu cầu; key qua email và thời hạn đã nêu là chứng từ. Kiểm tra lại kết quả OCR trước khi dùng cho công việc chuyên môn. Khả năng tiếp cận: trang dùng chữ dễ đọc; báo rào cản qua địa chỉ mục 19.</p>
+
+    <h2 id="liability-vi">14. Giới hạn trách nhiệm</h2>
+    <p>Ở mức tối đa luật cho phép, tổng trách nhiệm cho mọi khiếu nại từ mua/dùng app giới hạn ở giá bạn đã trả (Klip $4.99 USD, KlipOCR $2.99 USD, gói $6.99 USD). Không chịu thiệt hại gián tiếp, ngẫu nhiên hay hệ quả, ví dụ mất tài liệu, mất lợi nhuận, chi phí định dạng lại hay công làm lại.</p>
+    <p>Không giới hạn nơi luật cấm (gian lận/cố ý, quyền người tiêu dùng hay trách nhiệm sản phẩm không thể loại trừ).</p>
+    <p>Thu hồi và bồi thường: nơi luật bắt buộc yêu cầu thu hồi hay bồi thường đối với nội dung số khuyết tật, chúng tôi tuân thủ ở mức đó. Người tiêu dùng dễ tổn thương (cao tuổi, khuyết tật, trẻ em qua người giám hộ, người cần ngôn ngữ đơn giản): hỏi qua địa chỉ mục 19 để được giải thích rõ hơn. Hoạt động không thuộc danh mục Quyết định 07/2024 không được quảng bá là đã chứng nhận (tuyên bố Điều 28).</p>
+
+    <h2 id="indemnity-vi">15. Bồi hoàn</h2>
+    <p>Trong phạm vi luật cho phép, bạn bù thiệt hại hợp lý do bạn vi phạm điều khoản hay dùng app trái luật (ví dụ chia sẻ/bán lại code, vượt kích hoạt). Mục này không áp dụng với người tiêu dùng nơi luật cấm, không bao thiệt hại do lỗi của chúng tôi, và không giới hạn quyền bắt buộc của bạn.</p>
+
+    <h2 id="termination-vi">16. Chấm dứt</h2>
+    <p>Chúng tôi có thể từ chối, hủy hay vô hiệu key vì gian lận/lạm dụng — ví dụ thẻ đánh cắp, lạm dụng chargeback, đăng/bán lại code, vượt kích hoạt. Giới hạn thật của app offline: <strong>bản đã kích hoạt không thể tắt từ xa</strong>, nên chấm dứt nghĩa là chặn kích hoạt mới và cập nhật của code đó, thu hồi nghĩa vụ thay thế. Bản bạn đã kích hoạt hợp lệ vẫn chạy trên máy đó; không có quyền cài mới, chuyển, hoàn tiền hay hỗ trợ sau chấm dứt.</p>
+
+    <h2 id="law-vi">17. Luật và tranh chấp</h2>
+    <p>Điều khoản theo luật Việt Nam. Biện pháp bảo vệ bắt buộc nơi bạn thường trú vẫn áp dụng chồng lên khi luật yêu cầu. Người tiêu dùng EU: dùng <a href="https://consumer-redress.ec.europa.eu" target="_blank" rel="noopener">nền tảng bảo vệ người tiêu dùng EU</a> hoặc viết thư theo mục 12. Không nêu địa điểm tòa án và không áp đặt trọng tài — bạn vẫn kiện nơi luật địa phương cho quyền.</p>
+    <p><em>Bản tiếng Việt là gốc với người tiêu dùng tại Việt Nam; bản tiếng Anh chỉ tham khảo. Khác biệt thì áp dụng bản có lợi hơn cho người tiêu dùng. Với người mua ngoài Việt Nam, bản tiếng Anh là gốc.</em> Bản tiếng Anh: <a href="#terms">mục Terms tiếng Anh</a>.</p>
+    <p>Cách diễn đạt mơ hồ được hiểu theo hướng có lợi cho người tiêu dùng (Điều 24). Công ước Viên CISG không áp dụng. Xuất khẩu và trừng phạt: tuân thủ kiểm soát xuất khẩu và trừng phạt hiện hành; bạn tự chứng nhận không thuộc diện cấm và không xuất khẩu trái luật; chúng tôi không giao dịch với bên bị trừng phạt.</p>
+
+    <h2 id="force-majeure-vi">18. Bất khả kháng</h2>
+    <p>Không bên nào chịu trách nhiệm vì chậm/trễ do sự kiện ngoài kiểm soát hợp lý — ví dụ thiên tai, chiến tranh, đứt mạng/hạ tầng, lệnh nhà nước — trừ nghĩa vụ thanh toán checkout đã đến hạn tại thời điểm xảy ra sự kiện. Nghĩa vụ giao qua email ở mục 9 vẫn áp dụng khi sự kiện kết thúc.</p>
+
+    <h2 id="notices-vi">19. Thông báo</h2>
+    <p>Gửi thông báo pháp lý tới <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a>. Email bạn gửi được coi đã nhận khi vào hộp thư của chúng tôi; thông báo chúng tôi đăng trên trang này được coi đã nhận khi đăng. Thông báo bắt buộc có tiêu đề COMPLAINT được xác nhận trong 3 ngày — xác nhận chỉ là đã nhận, không hứa sửa (mục 12). Tin tiếp thị hay xin hỗ trợ gửi tới địa chỉ này không phải thông báo và có thể không được trả lời. Yêu cầu của cơ quan nhà nước: chúng tôi báo cho bạn trừ khi luật cấm.</p>
+
+    <h2 id="assignment-vi">20. Chuyển nhượng</h2>
+    <p>Bạn không được chuyển hay nhượng key/quyền — mỗi suất khóa một máy Mac và một người mua (mục 10). Chúng tôi chỉ chuyển nhượng điều khoản này kèm chuyển giao việc kinh doanh Klip, và chỉ khi quyền của bạn không giảm; sẽ đăng thông báo trên trang này. Chuyển nhượng của người bán không bao giờ di chuyển suất của bạn — mỗi suất vẫn khóa theo máy và người mua.</p>
+
+    <h2 id="severability-vi">21. Tách điều khoản</h2>
+    <p>Nếu một phần bị coi vô hiệu hay không thi hành được, phần đó cắt ở mức tối thiểu cần thiết, phần còn lại vẫn hiệu lực đầy đủ.</p>
+
+    <h2 id="entire-vi">22. Toàn bộ thỏa thuận</h2>
+    <p>Điều khoản này (gồm EULA), Chính sách quyền riêng tư tại trang này và chi tiết sản phẩm trên <a href="license.html">trang License</a> lúc mua là toàn bộ thỏa thuận mua key. Chúng thay thế mọi phát biểu trước về giá, giao hàng, hoàn tiền hay hỗ trợ. Không sửa bằng miệng: chỉ bản đăng tại lúc mua áp dụng. Còn hiệu lực sau chấm dứt: các mục 10–16. Mất khả năng thanh toán: nếu một bên mất khả năng thanh toán, bản đã kích hoạt hợp lệ vẫn chạy offline, nhưng không cài mới, chuyển, hoàn tiền hay hỗ trợ theo cả hai chiều. App chưa sẵn sàng cho HIPAA — không dùng cho thông tin sức khỏe được bảo vệ.</p>
+
+    <h2 id="changes-vi">23. Thay đổi điều khoản</h2>
+    <p>Chúng tôi có thể cập nhật điều khoản (ví dụ khi checkout, thuế hay thông tin liên hệ đổi), mỗi bản mang ngày ở trên. Bản tại lúc bạn mua áp dụng cho đơn đó; sửa sau không đổi ngược giao dịch đã xong. Bản hiện hành luôn là bản trên trang này. Khi checkout mở, hóa đơn của bạn sẽ ghi phiên bản và mã băm Điều khoản; bảng lịch sử dưới đây được giữ và mỗi phiên bản có bản snapshot. Trang liên quan: <a href="license.html">trang License</a>.</p>
+
+    <h2 id="version-history-vi">24. Lịch sử phiên bản</h2>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Phiên bản</th><th>Ngày</th><th>Thay đổi</th></tr></thead>
+      <tbody>
+        <tr><td>2.0</td><td>2026-10-11</td><td>Gộp Điều khoản trước + Quyền riêng tư một trang; mở rộng chi tiết (định nghĩa, thứ tự, đặt hàng, bồi hoàn, chuyển nhượng, thông báo, TOM, bảng chuyển giao và lưu trữ); sửa link tranh chấp và cách diễn đạt hoàn tiền; giữ nguyên lập trường không hoàn / không hỗ trợ.</td></tr>
+        <tr><td>1.0</td><td>2026-09-01</td><td>Điều khoản bán và EULA ban đầu.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p class="legal-fine" id="contact-note-vi">(*) Quy định liên hệ: <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a> chỉ nhận thông báo pháp lý. Yêu cầu quyền riêng tư và thông báo luật tiêu dùng bắt buộc được trả lời trong 30 ngày. Tin xin key, reset, hoàn tiền hay sửa lỗi có thể không được trả lời.</p>
   </article>
   </section>
 
   <section id="vi-privacy" lang="vi" aria-label="Chính sách quyền riêng tư">
-  <div class="legal-head reveal in"><h1 style="font-size:clamp(1.75rem,1.3rem+2vw,2.5rem)">Chính sách Quyền riêng tư</h1>
+  <div class="legal-head reveal in"><h2 style="font-size:clamp(1.75rem,1.3rem+2vw,2.5rem)">Chính sách Quyền riêng tư</h2>
   <p class="lede">Nội dung tài liệu xử lý trên máy. Kích hoạt, góp ý và website cần mạng. Thanh toán CHƯA hoạt động.</p></div>
-  <section class="legal-card"><h2>1. Tóm tắt</h2>
-    <p>Chính sách này áp dụng cho app macOS Klip, KlipOCR và website này. Nội dung tài liệu bạn chuyển đổi (văn bản clipboard, ảnh, PDF) được xử lý trên máy (on-device). Kích hoạt bản quyền, góp ý/hỗ trợ và website cần mạng và chỉ gửi dữ liệu tối thiểu ở mục 4. Thanh toán CHƯA hoạt động, hiện không thu dữ liệu thanh toán. Giá dự kiến khi mở bán: Klip $4.99, KlipOCR $2.99, gói cả hai $6.99 USD. Bản miễn phí: Klip tối đa 1.000 ký tự/paste, 21 lượt tuần đầu rồi 14 lượt/tuần; KlipOCR cắt tự do không giới hạn độ dài, chế độ tài liệu bị khóa. Điều khoản bán: <a href="#vi-terms">Điều khoản</a>. Hoàn tiền: <a href="#refund-vi">mục 7</a>. Bản tiếng Anh: <a href="#privacy">Privacy (English)</a>.</p>
+  <nav aria-label="Mục lục">
+    <ol class="legal-toc">
+      <li><a href="#p-summary-vi">1. Tóm tắt</a></li>
+      <li><a href="#p-scope-vi">2. Phạm vi offline</a></li>
+      <li><a href="#p-controller-vi">3. Bên kiểm soát</a></li>
+      <li><a href="#p-data-endpoints-vi">4. Dữ liệu theo từng đầu mối</a></li>
+      <li><a href="#p-purposes-vi">5. Mục đích và cơ sở pháp lý</a></li>
+      <li><a href="#p-processors-vi">6. Bên xử lý</a></li>
+      <li><a href="#p-transfers-vi">7. Chuyển giao quốc tế và bảo đảm</a></li>
+      <li><a href="#p-retention-vi">8. Lưu trữ và xóa</a></li>
+      <li><a href="#p-rights-vi">9. Quyền của bạn</a></li>
+      <li><a href="#p-children-vi">10. Trẻ em</a></li>
+      <li><a href="#p-security-vi">11. Bảo mật, TOM và sự cố</a></li>
+      <li><a href="#p-cookies-vi">12. Cookie, Do-Not-Track và font</a></li>
+      <li><a href="#p-sources-vi">13. Nguồn dữ liệu</a></li>
+      <li><a href="#p-changes-vi">14. Thay đổi và liên hệ</a></li>
+    </ol>
+  </nav>
+
+  <section class="legal-card"><h2 id="p-summary-vi">1. Tóm tắt</h2>
+    <p>Chính sách này áp dụng cho app macOS Klip, KlipOCR và website này. Nội dung tài liệu bạn chuyển đổi (văn bản clipboard, ảnh, PDF) được xử lý trên máy (on-device). Kích hoạt bản quyền, góp ý/hỗ trợ và website cần mạng và chỉ gửi dữ liệu tối thiểu ở mục 4. Thanh toán CHƯA hoạt động, hiện không thu dữ liệu thanh toán. Giá dự kiến khi mở bán: Klip $4.99 USD, KlipOCR $2.99 USD, gói cả hai $6.99 USD. Bản miễn phí: Klip dán tối đa 1000 ký tự, 21 lượt miễn phí trong 7 ngày đầu, sau đó 14 lượt mỗi 7 ngày lăn; KlipOCR cắt ảnh miễn phí không giới hạn độ dài, chế độ tài liệu bị khóa. Điều khoản bán: <a href="#vi-terms">mục Điều khoản tiếng Việt</a>. Hoàn tiền: <a href="#refund-vi">mục hoàn tiền tiếng Việt</a>. Bản tiếng Anh: <a href="#privacy">mục Privacy tiếng Anh</a>.</p>
     <p><em>Bản tiếng Việt là bản gốc đối với người tiêu dùng tại Việt Nam. Bản tiếng Anh đi kèm chỉ để tham khảo. Nếu có khác biệt, áp dụng bản có lợi hơn cho người tiêu dùng.</em></p>
   </section>
 
-  <section class="legal-card"><h2>2. Phạm vi offline</h2>
-    <p>Chuyển đổi và OCR chạy local, không gửi tài liệu cho chúng tôi. Khi kích hoạt, gửi góp ý, hoặc mở website, thiết bị mới truyền dữ liệu (mục 4). Website tải font Google từ máy chủ Google → IP và user agent của bạn được gửi cho Google để tải font.</p>
+  <section class="legal-card"><h2 id="p-scope-vi">2. Phạm vi offline</h2>
+    <p>Chuyển đổi và OCR chạy local, không gửi tài liệu cho chúng tôi. Khi kích hoạt, gửi góp ý, hoặc mở website, thiết bị mới truyền dữ liệu (mục 4). Website tải font Google từ máy chủ Google nên IP và user agent của bạn được gửi cho Google để tải font.</p>
   </section>
 
-  <section class="legal-card"><h2>3. Bên kiểm soát</h2>
+  <section class="legal-card"><h2 id="p-controller-vi">3. Bên kiểm soát</h2>
     <p>Truong Minh Huy, 128 Le Quang Hoa, Vietnam. Đây là địa chỉ liên hệ hiện tại tại Việt Nam. Chi tiết đăng ký kinh doanh đầy đủ sẽ bổ sung trước khi mở bán. Mọi vấn đề riêng tư: <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a>.</p>
+    <p>Không bổ nhiệm cán bộ bảo vệ dữ liệu: xử lý quy mô nhỏ (kích hoạt, ticket góp ý, log site) nên chưa cần; sẽ bổ nhiệm chính thức sau nếu cần. Đại diện EU (Điều 27): sẽ chỉ định trước khi mở rộng sang EU; liên hệ bên kiểm soát ở trên giải quyết tạm thời. Mọi việc viết cho bên kiểm soát ở trên.</p>
   </section>
 
-  <section class="legal-card"><h2>4. Dữ liệu theo từng đầu mối</h2>
+  <section class="legal-card"><h2 id="p-data-endpoints-vi">4. Dữ liệu theo từng đầu mối</h2>
     <p><code>hwid_hash</code> (mã máy đã băm) và <code>dev_pub</code> (khóa công khai của thiết bị) là dữ liệu giả danh, là dữ liệu cá nhân theo GDPR.</p>
-    <ul>
-      <li>Kích hoạt (app → Supabase Mumbai <code>ap-south-1</code> Ấn Độ): license key, <code>hwid_hash</code>, <code>dev_pub</code>, phiên bản app/macOS, thời gian. Mục đích: xác thực key, quản lý suất, chống gian lận.</li>
-      <li>Góp ý/hỗ trợ (app/site → Supabase, email qua Resend): nội dung tin, email nếu bạn cho, phiên bản app/OS, mã ticket. Mục đích: tiếp nhận và trả lời.</li>
-      <li>Thanh toán (tương lai, CHƯA mở): hiện không thu gì. Khi mở: tên, email, thông tin đơn do Merchant of Record (dự kiến Lemon Squeezy) xử lý; dữ liệu thẻ không gửi cho chúng tôi.</li>
-      <li>Log hạ tầng: IP, user agent, thời gian. Mục đích: bảo mật, chống lạm dụng, sửa lỗi. Edge Functions chạy ở biên gần nhất toàn cầu; DB/Auth/Storage gốc ở Mumbai; CDN cache toàn cầu qua Cloudflare.</li>
-    </ul>
+    <p>Trường đánh dấu * là bắt buộc — thiếu thì yêu cầu không được xử lý. Trường không dấu * là tùy chọn.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Đầu mối</th><th>Dữ liệu gửi</th><th>Mục đích</th></tr></thead>
+      <tbody>
+        <tr><td>Kích hoạt (app tới Supabase)</td><td>Key* , <code>hwid_hash</code>*, <code>dev_pub</code>*, phiên bản app*, phiên bản macOS*, thời gian</td><td>Xác thực key, quản lý suất, chống gian lận</td></tr>
+        <tr><td>Góp ý/hỗ trợ (app/site tới Supabase, email qua Resend)</td><td>Nội dung tin*, email nếu bạn cho, phiên bản app/OS, mã ticket, <code>hwid_hash</code> nếu app đính kèm</td><td>Tiếp nhận và theo dõi theo khả năng; có thể không trả lời và không nợ trả lời trừ yêu cầu quyền riêng tư, thông báo bắt buộc hay ODR (trả lời trong 30 ngày); gửi góp ý không tạo nghĩa vụ trả lời</td></tr>
+        <tr><td>Thanh toán (tương lai, CHƯA mở)</td><td>Hiện không thu gì. Khi mở: tên, email, thông tin đơn do Merchant of Record xử lý; dữ liệu thẻ không gửi cho chúng tôi</td><td>Bán và giao key; thuế, chống gian lận, hoàn tiền (xem <a href="#refund-vi">mục hoàn tiền tiếng Việt</a>)</td></tr>
+        <tr><td>Log hạ tầng</td><td>IP, user agent, thời gian</td><td>Bảo mật, chống lạm dụng, sửa lỗi</td></tr>
+      </tbody>
+    </table>
+    </div>
     <p>Chúng tôi không thu nội dung tài liệu qua các kênh trên.</p>
   </section>
 
-  <section class="legal-card"><h2>5. Mục đích và cơ sở pháp lý</h2>
+  <section class="legal-card"><h2 id="p-purposes-vi">5. Mục đích và cơ sở pháp lý</h2>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Mục đích</th><th>Dữ liệu dùng</th><th>Cơ sở (GDPR Điều 6)</th></tr></thead>
+      <tbody>
+        <tr><td>Kích hoạt + chống gian lận</td><td>Key, <code>hwid_hash</code>, <code>dev_pub</code>, phiên bản app/OS</td><td>Hợp đồng (6(1)(b)) — chính</td></tr>
+        <tr><td>Góp ý/hỗ trợ</td><td>Email nếu cho, nội dung, mã ticket, phiên bản app/OS, <code>hwid_hash</code> nếu app đính kèm</td><td>Lợi ích hợp pháp (6(1)(f)) — chính; không nợ trả lời trừ yêu cầu quyền riêng tư, thông báo bắt buộc hay ODR</td></tr>
+        <tr><td>Đơn hàng tương lai</td><td>Email đơn, metadata từ MoR; hôm nay chưa giữ dữ liệu thanh toán</td><td>Hợp đồng (6(1)(b)) — chính</td></tr>
+        <tr><td>Bảo mật site/log</td><td>IP, user agent, log</td><td>Lợi ích hợp pháp (6(1)(f)) — chính</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Nguyên tắc Điều 5: xử lý hợp pháp, công bằng, minh bạch; đúng mục đích đã nêu; tối thiểu dữ liệu; chính xác; không giữ quá lâu; bảo mật và chịu trách nhiệm về mọi điểm trên.</p>
+    <p>Sổ lợi ích hợp pháp: tiếp nhận góp ý (để nhận và theo dõi báo cáo) và log bảo mật (để chống lạm dụng) — cần thiết cho các mục đích đó và cân bằng với lợi ích của bạn nhờ tối thiểu dữ liệu và giữ ngắn hạn; phản đối qua <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a> hoặc mục 9.</p>
+    <p>Nơi cần đồng ý (ví dụ cookie không cần thiết nếu thêm sau), chúng tôi hỏi trước và bạn rút lại được bất cứ lúc nào bằng email tới <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a> — rút dễ như đồng ý (cùng kênh email), hiệu lực về sau. PDP Việt Nam: đồng ý theo từng mục đích bằng ô tick riêng, không tick sẵn, có lưu bằng chứng đồng ý.</p>
+  </section>
+
+  <section class="legal-card"><h2 id="p-processors-vi">6. Bên xử lý</h2>
     <ul>
-      <li>Kích hoạt + chống gian lận: hợp đồng (GDPR 6(1)(b)); lợi ích hợp pháp (6(1)(f)).</li>
-      <li>Góp ý/hỗ trợ: lợi ích hợp pháp (6(1)(f)); hợp đồng khi phải trả lời.</li>
-      <li>Đơn hàng tương lai: hợp đồng (6(1)(b)); nghĩa vụ thuế/kế toán (6(1)(c)).</li>
-      <li>Bảo mật site/log: lợi ích hợp pháp (6(1)(f)).</li>
+      <li>Supabase (host, DB, edge functions; dự án <code>cuipdwllryitspasbtut</code>, vùng Nam Á Mumbai <code>ap-south-1</code>; DB/Auth/Storage gốc ở Mumbai, Edge Functions ở biên gần nhất toàn cầu, CDN cache toàn cầu qua Cloudflare) — <a href="https://supabase.com/legal/customer-resources/data-processing-addendum" target="_blank" rel="noopener">phụ lục xử lý dữ liệu Supabase</a>.</li>
+      <li>Resend (email giao dịch) — <a href="https://resend.com/legal/dpa" target="_blank" rel="noopener">phụ lục xử lý dữ liệu Resend</a>.</li>
+      <li>Lemon Squeezy (MoR dự kiến) — CHƯA hoạt động, hôm nay chưa có dữ liệu thanh toán — <a href="https://www.lemonsqueezy.com/dpa" target="_blank" rel="noopener">phụ lục xử lý dữ liệu Lemon Squeezy</a>.</li>
+      <li>OpenRouter (chỉ soạn thảo, và chỉ khi thực sự gửi trả lời — dùng đúng tin bạn gửi; không bao giờ gửi nội dung tài liệu; gửi góp ý không tạo nghĩa vụ trả lời) — <a href="https://openrouter.ai/data-processing-agreement" target="_blank" rel="noopener">thỏa thuận xử lý dữ liệu OpenRouter</a>.</li>
+      <li>Google Fonts — IP + user agent gửi cho Google để tải font.</li>
     </ul>
+    <p>Phân vai bên kiểm soát / bên xử lý (Điều 28): chúng tôi là bên kiểm soát dữ liệu bản quyền, hỗ trợ và log; Supabase, Resend, Lemon Squeezy (khi mở) và OpenRouter là bên xử lý theo các DPA dẫn ở trên; bên xử lý phụ theo danh sách trong các DPA đó; thay đổi bên xử lý được báo trước tại trang này.</p>
   </section>
 
-  <section class="legal-card"><h2>6. Bên xử lý</h2>
-    <ul>
-      <li>Supabase (host, DB, edge functions; dự án <code>cuipdwllryitspasbtut</code>, vùng Nam Á Mumbai <code>ap-south-1</code>) — DPA: <a href="https://supabase.com/legal/customer-resources/data-processing-addendum">supabase.com/legal/customer-resources/data-processing-addendum</a>.</li>
-      <li>Resend (email) — DPA: <a href="https://resend.com/legal/dpa">resend.com/legal/dpa</a>.</li>
-      <li>Lemon Squeezy (dự kiến MoR) — CHƯA hoạt động — DPA: <a href="https://www.lemonsqueezy.com/dpa">lemonsqueezy.com/dpa</a>.</li>
-      <li>OpenRouter (hỗ trợ soạn trả lời) — chỉ tin bạn gửi — <a href="https://openrouter.ai/data-processing-agreement">openrouter.ai/data-processing-agreement</a>.</li>
-      <li>Google Fonts — IP + user agent gửi cho Google.</li>
-    </ul>
+  <section class="legal-card"><h2 id="p-transfers-vi">7. Chuyển giao quốc tế và bảo đảm</h2>
+    <p>Nơi dữ liệu ra khỏi nước bạn (gồm EEA/UK), chúng tôi dựa vào quyết định đầy đủ nơi có. Nhóm bên nhận (Điều 13(1)(e)): thanh toán, thuế và ngân hàng qua Merchant of Record; Cloudflare và AWS qua hạ tầng phụ (xem các DPA ở mục 6). Không có quyết định đầy đủ cho Ấn Độ hay Hoa Kỳ. Nơi các DPA gắn Điều khoản hợp đồng mẫu EU (Quyết định 2021/914, Module Hai, bên kiểm soát sang bên xử lý), các điều khoản đó áp dụng theo từng DPA; đánh giá tác động chuyển giao được cung cấp theo yêu cầu (viết theo mục 14).</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Dữ liệu</th><th>Nơi đến</th><th>Bảo đảm</th></tr></thead>
+      <tbody>
+        <tr><td>Bản quyền và góp ý</td><td>Ấn Độ (Mumbai, ap-south-1); biên/CDN toàn cầu</td><td>Module Hai 2021/914 theo từng DPA + mã hóa + mã giả danh; TIA theo yêu cầu</td></tr>
+        <tr><td>Email giao dịch</td><td>Hạ tầng Resend (xem phụ lục của họ)</td><td>Module Hai 2021/914 theo từng DPA + mã hóa đường truyền; TIA theo yêu cầu</td></tr>
+        <tr><td>Đơn hàng tương lai</td><td>MoR (dự kiến Lemon Squeezy)</td><td>DPA của MoR (Module Hai 2021/914 nơi được gắn) khi mở bán; hôm nay chưa giữ dữ liệu thanh toán; TIA theo yêu cầu</td></tr>
+        <tr><td>Soạn trả lời hỗ trợ</td><td>Hạ tầng OpenRouter</td><td>Module Hai 2021/914 theo từng DPA; chỉ tin bạn gửi, dùng tối thiểu; TIA theo yêu cầu</td></tr>
+        <tr><td>Tải font</td><td>Máy chủ Google</td><td>Tiết lộ trực tiếp để nhận font; chỉ IP + user agent</td></tr>
+      </tbody>
+    </table>
+    </div>
   </section>
 
-  <section class="legal-card"><h2>7. Lưu trữ và xóa</h2>
-    <ul>
-      <li>Bản quyền: giữ suốt đời key + thời gian kiểm toán/chống gian lận theo luật thuế/kế toán.</li>
-      <li>Ticket hỗ trợ: giữ đến khi xong + thời gian đối chiếu/khiếu nại.</li>
-      <li>Log bảo mật: ngắn hạn rồi xóa/gộp, trừ khi điều tra.</li>
-      <li>Đơn hàng tương lai: giữ theo luật thuế/kế toán.</li>
-    </ul>
-    <p>Yêu cầu xóa được đáp ứng trừ khi phải giữ để kiểm toán, chống gian lận, khiếu nại, nghĩa vụ pháp lý; backup cuốn chiếu theo chu kỳ.</p>
+  <section class="legal-card"><h2 id="p-retention-vi">8. Lưu trữ và xóa</h2>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Dữ liệu</th><th>Giữ bao lâu</th><th>Ghi chú</th></tr></thead>
+      <tbody>
+        <tr><td>Bản quyền (key, <code>hwid_hash</code>, <code>dev_pub</code>, lượt kích hoạt)</td><td>Suốt đời key + thời gian kiểm toán/chống gian lận theo luật thuế/kế toán</td><td>Theo luật thuế/kế toán và chống gian lận</td></tr>
+        <tr><td>Ticket hỗ trợ</td><td>24 tháng sau khi xong, rồi xóa</td><td>Chất lượng và tranh chấp</td></tr>
+        <tr><td>Log bảo mật</td><td>30 ngày cuốn chiếu, rồi xóa/gộp</td><td>Giữ lâu hơn chỉ để điều tra lạm dụng/sự cố</td></tr>
+        <tr><td>Đơn hàng tương lai</td><td>Theo luật thuế/kế toán (hôm nay chưa có dữ liệu đơn)</td><td>Hôm nay chưa có dữ liệu đơn</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Yêu cầu xóa được đáp ứng trừ khi phải giữ để kiểm toán, chống gian lận, khiếu nại, nghĩa vụ pháp lý; backup cuốn chiếu theo chu kỳ 30–90 ngày, không viết lại backup cho từng yêu cầu mà để hết vòng đời.</p>
   </section>
 
-  <section class="legal-card"><h2>8. Quyền của bạn</h2>
-    <p>Truy cập, sửa, xóa, hạn chế, mang đi, phản đối; rút đồng ý khi áp dụng. Gửi từ email liên quan tới: <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a>. Trả lời trong 30 ngày. Bạn có quyền khiếu nại với cơ quan giám sát địa phương.</p>
+  <section class="legal-card"><h2 id="p-rights-vi">9. Quyền của bạn</h2>
+    <p>Truy cập, sửa, xóa, hạn chế, mang đi, phản đối; rút đồng ý khi áp dụng. Gửi từ email liên quan tới: <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a>, nêu rõ quyền và dữ liệu liên quan.</p>
+    <p>Trả lời trong 30 ngày (trần GDPR); mức PDP Việt Nam áp dụng song song: xác nhận trong 2 ngày, thực hiện trong 10–20 ngày. Bạn có quyền khiếu nại miễn phí với cơ quan giám sát địa phương — cơ quan thành viên EDPB nơi bạn sống/làm việc, ICO Anh, hoặc cơ quan PDP có thẩm quyền của Việt Nam; xác minh danh tính từ email liên quan với thông tin tối thiểu. Quy định liên hệ <a href="#contact-note-vi">(*)</a> áp dụng.</p>
+    <p>Ngoại lệ xóa (Điều 17(3)): chúng tôi giữ dữ liệu nơi cần cho khiếu kiện pháp lý, nghĩa vụ pháp lý như thuế/kế toán, hay mục đích bắt buộc khác. Thủ tục phản đối (Điều 21): viết tới <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a> ghi “phản đối” kèm lý do liên quan tới bạn; chúng tôi dừng trừ khi có cơ sở chính đáng ghi đè; hôm nay chúng tôi không tiếp thị trực tiếp. Trường đánh dấu * ở mục 4 là bắt buộc — thiếu thì yêu cầu không được xử lý. Không ra quyết định tự động (Điều 22): hôm nay không có; tự động tương lai đều có người duyệt — viết tới cùng địa chỉ để duyệt.</p>
   </section>
 
-  <section class="legal-card"><h2>9. Trẻ em</h2>
-    <p>Không hướng tới trẻ dưới 13 tuổi. 13–16 tuổi: nơi luật EU/UK yêu cầu cần cha mẹ/người giám hộ đồng ý. Nếu nghi trẻ đã gửi dữ liệu: viết cho <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a> để xóa.</p>
+  <section class="legal-card"><h2 id="p-children-vi">10. Trẻ em</h2>
+    <p>Không hướng tới trẻ dưới 13 tuổi, không cố ý thu dữ liệu trẻ dưới 13. 13–16 tuổi: nơi luật EU/UK yêu cầu cần cha mẹ/người giám hộ đồng ý. Nếu nghi trẻ đã gửi dữ liệu: viết cho <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a> để xóa, theo ngoại lệ ở mục 8.</p>
   </section>
 
-  <section class="legal-card"><h2>10. Bảo mật và sự cố</h2>
-    <p>Mã hóa đường truyền, hạn chế quyền truy cập, dùng mã giả danh. Khi rò rỉ dữ liệu cá nhân, chúng tôi đánh giá rủi ro, báo cơ quan có thẩm quyền và báo người bị ảnh hưởng khi luật yêu cầu.</p>
+  <section class="legal-card"><h2 id="p-security-vi">11. Bảo mật, TOM và sự cố</h2>
+    <p>Biện pháp kỹ thuật và tổ chức (TOM): mã hóa đường truyền, hạn chế quyền truy cập ở mức tối thiểu, dùng mã giả danh (<code>hwid_hash</code>, <code>dev_pub</code>) thay vì mã phần cứng thô, tách kho bản quyền/hỗ trợ/log, giữ log ngắn hạn. Không phương thức nào an toàn tuyệt đối, nhưng chúng tôi bảo vệ dữ liệu bản quyền, hỗ trợ và log.</p>
+    <p>Khi nghi rò rỉ dữ liệu cá nhân, chúng tôi (1) khoanh vùng và đánh giá rủi ro ngay, (2) báo cơ quan có thẩm quyền trong 72 giờ nơi luật yêu cầu, (3) báo người bị ảnh hưởng không chậm trễ khi rủi ro cao, nêu bản chất, hậu quả và biện pháp, và (4) ghi log sự cố. Báo sự cố tới <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a>.</p>
+    <p>Thông báo cho cơ quan nêu (Điều 33(3)): (a) bản chất, nhóm và số lượng gần đúng chủ thể/bản ghi; (b) điểm liên hệ; (c) hậu quả có thể; (d) biện pháp đã/dự kiến làm; thông báo trễ nêu lý do, mọi sự cố đều ghi log.</p>
+    <p>PDP Việt Nam: báo cơ quan trong 72 giờ kể từ khi rò rỉ, thêm nhánh 24 giờ khi bị tấn công làm gián đoạn hệ thống, log sự cố 5 năm. Hồ sơ đánh giá tác động (DPIA) và chuyển giao sẽ nộp trong 60 ngày kể từ khi xử lý, cập nhật trong 10 ngày khi thay đổi đáng kể. Liên hệ bảo vệ dữ liệu: email mục 14 (DPO chính thức sau nếu cần). Dữ liệu nhạy cảm: không thu ngoài mục 4; trẻ dưới 16 cần cha mẹ đồng ý (mục 10); AI: OpenRouter chỉ soạn thảo, tối thiểu dữ liệu, người duyệt trước mọi trả lời được gửi.</p>
   </section>
 
-  <section class="legal-card"><h2>11. Nguồn dữ liệu</h2>
-    <p>Chủ yếu từ bạn. Không từ bạn: mã do thiết bị sinh, metadata đơn từ MoR tương lai, dữ liệu kỹ thuật (IP, user agent) từ trình duyệt/mạng.</p>
+  <section class="legal-card"><h2 id="p-cookies-vi">12. Cookie, Do-Not-Track và font</h2>
+    <p>Chỉ lưu trữ kỹ thuật thực sự cần: tùy chọn ngôn ngữ (localStorage “legal-lang”) nằm trên thiết bị của bạn. Hôm nay không đặt cookie không cần thiết, không chạy phân tích hay theo dõi quảng cáo. Nếu sau này thêm cookie/công cụ không cần thiết, banner đồng ý chọn tham gia được dự kiến và bạn rút lại được bất cứ lúc nào. Do-Not-Track: hôm nay không có gì để theo dõi nên chưa cần công tắc DNT; công cụ theo dõi tương lai sẽ coi DNT là tín hiệu rút. Font: trang này tải trước Google Fonts từ máy chủ Google khi mở trang — mở trang là IP và user agent của bạn được tiết lộ cho Google cho mục đích đó; nêu rõ tại đây. Nếu không muốn tiết lộ, đừng tải trang này (ví dụ dùng chế độ đọc hoặc chặn font từ xa nơi trình duyệt hỗ trợ).</p>
   </section>
 
-  <section class="legal-card"><h2>12. Thay đổi và liên hệ</h2>
-    <p>Thay đổi đăng tại trang này + cập nhật ngày. Bên kiểm soát: Truong Minh Huy, 128 Le Quang Hoa, Vietnam. Email: <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a>. Giá: Klip $4.99, KlipOCR $2.99, gói $6.99. Chưa bán hôm nay. Trang liên quan: <a href="#vi-terms">Điều khoản</a>, <a href="license.html">license.html</a>.</p>
+  <section class="legal-card"><h2 id="p-sources-vi">13. Nguồn dữ liệu</h2>
+    <p>Chủ yếu từ bạn. Nơi không từ bạn, chi tiết Điều 14 là:</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Dữ liệu</th><th>Nguồn</th><th>Ghi chú</th></tr></thead>
+      <tbody>
+        <tr><td>Key bạn nhập, nội dung góp ý, email liên hệ</td><td>Bạn</td><td>Cung cấp trực tiếp (Điều 13)</td></tr>
+        <tr><td>Mã do thiết bị sinh (<code>hwid_hash</code>, <code>dev_pub</code>), phiên bản app/OS</td><td>Thiết bị của bạn</td><td>Sinh lúc kích hoạt / app đính kèm</td></tr>
+        <tr><td>Metadata đơn (tương lai)</td><td>MoR (dự kiến Lemon Squeezy)</td><td>Chỉ khi mở checkout; hôm nay chưa có dữ liệu thanh toán</td></tr>
+        <tr><td>IP, user agent, thời gian</td><td>Trình duyệt / mạng của bạn</td><td>Site, kích hoạt, góp ý và tải font</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </section>
+
+  <section class="legal-card"><h2 id="p-changes-vi">14. Thay đổi và liên hệ</h2>
+    <p>Thay đổi đăng tại trang này + cập nhật ngày. Bên kiểm soát: Truong Minh Huy, 128 Le Quang Hoa, Vietnam. Email: <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a>. Giá: Klip $4.99 USD, KlipOCR $2.99 USD, gói $6.99 USD. Chưa bán hôm nay. Hiệu lực 2026-10-11; Cập nhật lần cuối 2026-10-11; bản cũ lưu trữ theo cách làm lịch sử ở mục 23 (ghi chú trong trang; không sửa footer). California (CalOPPA): nhóm dữ liệu và bên chia sẻ được ghi ở mục 4 và 6–7; xem/sửa dữ liệu qua các bước email mục 9; Do-Not-Track ở mục 12; tiết lộ bên thứ ba theo (b)(6): Google Fonts nhận IP và user agent để phục vụ font.</p>
+    <p id="privacy-note-vi">Neo chính sách: <a href="#vi-privacy">mục Quyền riêng tư tiếng Việt</a> tại trang này (ghi chú trong trang; không sửa footer). Trang liên quan: <a href="#vi-terms">mục Điều khoản tiếng Việt</a>, <a href="license.html">trang License</a>.</p>
   </section>
   </section>
   </div>
@@ -437,7 +763,7 @@
     </div>
   </div>
   <div class="wordmark" aria-hidden="true">Klip</div>
-  <p class="copy">© <span id="year">2026</span> Klip.</p>
+  <p class="copy">© <span id="year">2026</span> Klip. Offline by design.</p>
 </footer>
 
 <script src="app.js?v=paper5"></script>
@@ -451,20 +777,22 @@
   function show(vi) {
     ens.forEach(function (e) { e.hidden = vi; });
     vis.forEach(function (e) { e.hidden = !vi; });
-    tEn.setAttribute('aria-selected', String(!vi));
-    tVi.setAttribute('aria-selected', String(vi));
+    tEn.setAttribute('aria-current', String(!vi));
+    tVi.setAttribute('aria-current', String(vi));
     try { document.documentElement.lang = vi ? 'vi' : 'en'; } catch (e) {}
     try { localStorage.setItem('legal-lang', vi ? 'vi' : 'en'); } catch (e) {}
   }
   function fromHash() {
     var h = location.hash || '';
+    if (!h || h === '#') {
+      try { return localStorage.getItem('legal-lang') === 'vi'; } catch (e) { return false; }
+    }
     if (/^(#vi(-.*)?|#.*-vi)$/.test(h)) return true;
-    if (h === '#en') return false;
-    try { return localStorage.getItem('legal-lang') === 'vi'; } catch (e) { return false; }
+    return false;
   }
   tEn.addEventListener('click', function () { show(false); });
   tVi.addEventListener('click', function () { show(true); });
-  window.addEventListener('hashchange', function () { show(fromHash()); });
+  window.addEventListener('hashchange', function () { var h = location.hash || ''; if (h === '#top' || h === '#content') return; show(fromHash()); });
   show(fromHash());
 })();
 </script>
