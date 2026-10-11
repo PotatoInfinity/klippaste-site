@@ -49,11 +49,11 @@ If push is rejected (non-fast-forward — GitHub auto-commits CNAME), pull
   Enterprise labeled Coming later, button dead (`<button
   type="button">`, no handler); base formula Total = (seats × list price)
   − discount + tax, discount tiers + seat-count + total set at checkout.
-  Try-free-first line per card. No payment-coming-later fine print.
+  Try-free-first line per card. No payment-coming-later fine print, no
+  checkout-not-active / button-does-nothing note.
 - Index: download `<button type="button">`s stay dead (no handler, no
-  navigation) with adjacent small print (free tier, macOS download, paid
-  key at License page, checkout NOT active) — never imply download works.
-  No hero badges-note / try-first banner, no final-note try-free line, no
+  navigation) — never imply download works. No dl-note small print, no
+  hero badges-note / try-first banner, no final-note try-free line, no
   seller line, no payment-coming-later note (all live in Terms only).
   Compat wall lede carries best-effort /
   varies-by-app-version / plain-text-fallback prefix. Yours-to-keep means
