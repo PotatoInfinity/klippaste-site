@@ -321,8 +321,8 @@ footer { margin-top: clamp(48px, 6vw, 80px); border-top: 2px solid var(--pen); b
 .foot-brand { display: flex; align-items: center; gap: 16px; font-weight: 700; }
 .foot-brand img { border-radius: 8px; border: 1px solid var(--line); }
 .foot-brand small { display: block; font-weight: 400; color: var(--ink-2); font-size: 13px; }
-.foot-links { display: flex; gap: 4px 8px; flex-wrap: wrap; }
-.foot-links a { color: var(--ink-2); text-decoration: none; font-size: 14px; padding: 8px 10px; border-radius: var(--r1); transition: color 0.2s, background 0.2s; }
+.foot-links { display: flex; gap: 2px; flex-wrap: wrap; }
+.foot-links a { color: var(--ink-2); text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; min-height: 44px; padding: 10px 14px; border-radius: var(--r1); transition: color 0.2s, background 0.2s; }
 .foot-links a:hover, .foot-links a:focus-visible { color: var(--ink); background: var(--yellow-wash); }
 .wordmark { font-family: "Fraunces", serif; font-weight: 700; font-size: clamp(96px, 23vw, 300px); letter-spacing: -0.04em; line-height: 0.85; text-align: center; color: rgba(20, 21, 17, 0.06); margin: 32px 0 -0.12em; user-select: none; }
 .copy { text-align: center; color: var(--muted); font-size: 13px; margin: 0; padding: 16px 0 24px; position: relative; }
