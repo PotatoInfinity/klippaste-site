@@ -523,3 +523,7 @@ body a.dl-btn.ghost, body a.dl-btn.ghost:visited { color: #7a5c00; }
 body .final a.dl-btn, body .final a.dl-btn:visited { color: var(--ink); }
 body a.skip, body a.skip:visited { color: var(--ink); }
 body .lang-toggle a[aria-selected="true"], body .lang-toggle a[aria-selected="true"]:visited { color: var(--paper); }
+body .foot-links a, body .foot-links a:visited { color: #7a5c00; }
+body .foot-links a:hover, body .foot-links a:focus-visible { color: #5c4500; }
+body .nav-mobile a, body .nav-mobile a:visited { color: #7a5c00; }
+body .nav-mobile a:hover, body .nav-mobile a:focus-visible { color: #5c4500; }
