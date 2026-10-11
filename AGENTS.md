@@ -33,7 +33,7 @@ If push is rejected (non-fast-forward — GitHub auto-commits CNAME), pull
   per rolling 7 days; KlipOCR free snips with unlimited length, document
   mode locked.
 - Offline claims always carry the after-one-time-online-activation
-  qualifier (hero, badges, feature cards, FAQ, license cards). Index FAQ is
+  qualifier (hero sub, feature cards, FAQ, license cards). Index FAQ is
   scoped: document content never leaves the device; activation / feedback /
   site traffic does (Terms §9 / Privacy §4). Never write "ever".
 - Refunds: all sales final, stated inline in `terms.html` §§7+11 (+ VI).
@@ -45,23 +45,25 @@ If push is rejected (non-fast-forward — GitHub auto-commits CNAME), pull
   ticket-status pages say best-effort, no reply promise.
 - License page: conspicuous pre-price warning box required (final sale,
   1 Mac never moves, no support, try-free-first; links Terms §§5-8 +
-  §§10-12). Enterprise labeled Coming later, button dead (`<button
+  §§10-12 in Terms yellow style: `#7a5c00`, yellow underline, hover wash).
+  Enterprise labeled Coming later, button dead (`<button
   type="button">`, no handler); base formula Total = (seats × list price)
   − discount + tax, discount tiers + seat-count + total set at checkout.
-  Try-free-first line per card.
+  Try-free-first line per card. No payment-coming-later fine print.
 - Index: download `<button type="button">`s stay dead (no handler, no
   navigation) with adjacent small print (free tier, macOS download, paid
   key at License page, checkout NOT active) — never imply download works.
-  Try-free-first one-liner under hero badges + near final CTA (paid keys
-  final-sale, 1 Mac, no support). Compat wall lede carries best-effort /
+  No hero badges-note / try-first banner, no final-note try-free line, no
+  seller line, no payment-coming-later note (all live in Terms only).
+  Compat wall lede carries best-effort /
   varies-by-app-version / plain-text-fallback prefix. Yours-to-keep means
   on that one Mac, this version only.
 - Head: `og:title` matches `<title>` verbatim on every page (`404.html`
   keeps `noindex`); one `h1` per page only.
 - Footer: single combined Terms & Privacy link only; Back-to-top present
   (`#top` on own page); copy `© 2026 Klip. Offline by design.` on every
-  page + seller line (Truong Minh Huy + legal-only email) on index +
-  license footers; no VI in footer.
+  page; no seller line in footers (seller lives in Terms §1/§12 only);
+  no VI in footer.
 - Processors: factual disclosures only (Supabase Mumbai ap-south-1,
   Resend, Lemon Squeezy future MoR, OpenRouter support path, Google Fonts).
   No model/vendor marketing claims.
