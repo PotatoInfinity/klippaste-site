@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Refunds — Klip, pay once</title>
+<meta name="description" content="Try free first. Pay once, no subscription. 60-day discretionary goodwill credit, one per order. Digital delivery via Lemon Squeezy.">
+<meta name="theme-color" content="#fdf9ef">
+<meta property="og:title" content="Refunds — Klip, pay once">
+<meta property="og:description" content="Try free first. Pay once, no subscription. 60-day discretionary goodwill credit, one per order.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" href="icons/favicon-64.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=paper5">
+</head>
+<body>
+<div class="bg-fixed" id="bgFixed" aria-hidden="true"></div>
+<div class="bg-sky" id="bgSky" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav-wrap">
+  <nav class="nav-pill" id="navPill" aria-label="Main">
+    <a class="brand" href="index.html"><img src="icons/klip-512.png" alt="Klip icon" width="28" height="28"><span>Klip</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html#apps">Apps</a><a href="index.html#demo">Demo</a>
+      <a href="index.html#features">Features</a><a href="index.html#faq">FAQ</a>
+    </div>
+    <a class="dl-btn small" href="license.html"><span class="dl-text">Get license</span><span class="dl-apple" aria-hidden="true"><svg class="dl-seal" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path class="seal-shield" d="M12 2.5 4.5 5.5v6c0 4.6 3.2 8 7.5 10 4.3-2 7.5-5.4 7.5-10v-6L12 2.5z"/><path class="seal-check" d="m9 12 2 2 4-4"/></svg></span></a>
+    <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false" aria-controls="navMobile"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 5h16M2 10h16M2 15h16"/></svg></button>
+  </nav>
+  <div class="nav-mobile" id="navMobile">
+    <a href="index.html#apps">Apps</a><a href="index.html#demo">Demo</a>
+    <a href="index.html#features">Features</a><a href="index.html#faq">FAQ</a>
+    <a href="license.html">License</a><a href="refund.html">Refund Policy</a>
+  </div>
+</header>
+
+<main class="plans" id="top">
+  <div class="plans-head reveal in">
+    <h1>Refunds</h1>
+    <p class="lede">Try free first. Pay once, no subscription. Yours to keep on your computer.</p>
+    <div class="badges" aria-label="Purchase facts">
+      <span>Runs locally</span><span>One-time payment</span><span>No account</span>
+    </div>
+  </div>
+
+  <div class="plans-grid">
+    <article class="plan wide reveal in" aria-label="Try before you buy">
+      <p class="plan-badge blue">Try before you buy</p>
+      <h2>Free tiers first</h2>
+      <ul class="plan-list">
+        <li>Klip — Free to try: 1,000 chars per paste, 21 first week then 14 a week</li>
+        <li>KlipOCR — Free to try: snips with unlimited length, document mode locked</li>
+        <li>Prices: Klip $4.99, KlipOCR $2.99, bundle $6.99. Pay once, no subscription.</li>
+      </ul>
+    </article>
+
+    <article class="plan wide reveal in" aria-label="Goodwill credit">
+      <p class="plan-badge">Goodwill</p>
+      <h2>60-day discretionary goodwill credit</h2>
+      <p class="plan-for">Not a guarantee. A goodwill credit we may grant when the apps genuinely fail for you.</p>
+      <ul class="plan-list">
+        <li>Ask within 60 days of purchase with your order id and checkout email.</li>
+        <li>One per order. Abuse voids eligibility for that order and any later goodwill.</li>
+        <li>Granted credits revoke the license keys from that order; replacements are never issued on the same order.</li>
+        <li>Paid back to the original payment method by our Merchant of Record, Lemon Squeezy.</li>
+      </ul>
+    </article>
+
+    <article class="plan wide reveal in" aria-label="Automatic window versus request window">
+      <h2>30 days automatic vs 60 days on request</h2>
+      <ul class="plan-list">
+        <li>30 days post-order is automatic only: referral credits qualify automatically once the refund window has elapsed, and refunded orders claw back via the order_refunded event. Nothing is paid back to you automatically at 30 days.</li>
+        <li>60 days is on request only: the goodwill credit above never happens on its own — you must contact us within 60 days and we decide case by case.</li>
+      </ul>
+    </article>
+
+    <article class="plan wide reveal in" aria-label="EU digital content waiver">
+      <h2>EU customers: express waiver at checkout</h2>
+      <ul class="plan-list">
+        <li>Keys are delivered immediately as digital content. EU withdrawal rights end when supply begins with your express consent plus your acknowledgement that you lose the right once supply starts.</li>
+        <li>Seller and Merchant of Record is Lemon Squeezy; checkout states this before you pay.</li>
+        <li>Checkout carries an unchecked checkbox you must tick: you give express consent to immediate supply and acknowledge the loss of withdrawal.</li>
+        <li>A policy page alone is insufficient to create this waiver — only the express consent plus acknowledgement checkbox at checkout creates it.</li>
+      </ul>
+    </article>
+
+    <article class="plan wide reveal in" aria-label="Chargebacks">
+      <h2>Payment disputes: contact us first</h2>
+      <ul class="plan-list">
+        <li>Contact us first with your order id so we can check the license and the charge before you file.</li>
+        <li>While a dispute is open the license seats from that order stay locked pending the outcome.</li>
+        <li>Granted or dispute-decided credits go back via the original payment method through Lemon Squeezy.</li>
+      </ul>
+    </article>
+
+    <article class="plan wide reveal in" aria-label="Enterprise plan">
+      <p class="plan-badge blue">Enterprise</p>
+      <h2>Teams of 20+</h2>
+      <p class="plan-for">Up to 20% off, one order for the whole team.</p>
+      <ul class="plan-list">
+        <li>20 or more seats per purchase</li>
+        <li>Mix Klip and KlipOCR seats freely</li>
+        <li>Pay once for all seats, get up to 20% discount</li>
+        <li>Goodwill for team orders is one per order across all seats in that order.</li>
+      </ul>
+      <button type="button" class="dl-btn ghost has-seal"><svg class="dl-seal" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path class="seal-shield" d="M12 2.5 4.5 5.5v6c0 4.6 3.2 8 7.5 10 4.3-2 7.5-5.4 7.5-10v-6L12 2.5z"/><path class="seal-check" d="m9 12 2 2 4-4"/></svg><span class="dl-text">Contact us</span></button>
+    </article>
+
+    <p class="plans-note">Questions? Write with your order id and checkout email. Full terms in <a href="terms.html">terms</a>, data handling in <a href="privacy.html">privacy</a>.</p>
+    <p class="plans-fine">License delivery is immediate and offline; revoked seats block future activation while already-activated offline copies keep working until online or update.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="foot-row">
+    <div class="foot-brand">
+      <img src="icons/klip-512.png" alt="" width="36" height="36">
+      <span>Klip<small>Documents for school and work · Offline</small></span>
+    </div>
+    <div class="foot-links">
+      <a href="index.html#apps">Apps</a><a href="index.html#demo">Demo</a>
+      <a href="index.html#features">Features</a><a href="index.html#faq">FAQ</a><a href="license.html">License</a>
+      <a href="refund.html">Refunds</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </div>
+  <p class="copy">© <span id="year">2026</span> Klip. Offline by design.</p>
+</footer>
+<script src="app.js?v=paper5"></script>
+</body>
+</html>
