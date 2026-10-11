@@ -511,5 +511,15 @@ footer { margin-top: clamp(48px, 6vw, 80px); border-top: 2px solid var(--pen); b
 .final *:focus-visible { outline-color: #fdf9ef; }
 
 @media (max-width: 640px) {
-  .final { border-radius: 22px; box-shadow: 4px 4px 0 var(--yellow), 0 16px 40px rgba(20, 21, 17, 0.25); }
+  .final { border-radius: 22px; box-shadow: 4px 4px 0 var(--yellow), 0 16px 40px rgba(20, 21, 17, 0.28); }
 }
+
+/* ---------- Global link color: every hyperlink yellow-family, no default blue ---------- */
+body a { color: #7a5c00; }
+body a:visited { color: #7a5c00; }
+body a:hover, body a:focus-visible { color: #5c4500; }
+body a.dl-btn, body a.dl-btn:visited { color: #ffd60a; }
+body a.dl-btn.ghost, body a.dl-btn.ghost:visited { color: #7a5c00; }
+body .final a.dl-btn, body .final a.dl-btn:visited { color: var(--ink); }
+body a.skip, body a.skip:visited { color: var(--ink); }
+body .lang-toggle a[aria-selected="true"], body .lang-toggle a[aria-selected="true"]:visited { color: var(--paper); }
