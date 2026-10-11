@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Terms of Sale — Klip</title>
-<meta name="description" content="Terms of sale for Klip and KlipOCR: one-time payment, one Mac per license, delivery by email. Includes the End-User License Agreement.">
+<title>Terms &amp; Privacy — Klip</title>
+<meta name="description" content="Terms and privacy for Klip and KlipOCR: one-time payment, one Mac, all sales final, no support. English + Vietnamese.">
 <meta name="theme-color" content="#f1ebdc">
 <meta property="og:title" content="Terms of Sale — Klip">
-<meta property="og:description" content="One-time payment. One Mac per license. Yours to keep on that computer. Includes the EULA.">
+<meta property="og:description" content="One-time payment. All sales final. English + Vietnamese.">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
 <link rel="icon" type="image/png" href="icons/favicon-64.png">
@@ -42,8 +42,20 @@
     .legal { padding-top: 130px; }
     .legal-card { padding: 24px 20px; }
   }
+
+  .lang-toggle{display:inline-flex;align-items:center;gap:10px;margin-top:18px;border:1.5px solid var(--pen);border-radius:999px;padding:6px 8px;background:var(--paper-2);box-shadow:var(--hi-light),var(--lo-light);font-weight:700;font-size:14px}
+  .lang-toggle a{padding:6px 18px;border-radius:999px;color:var(--ink-2);text-decoration:none}
+  .lang-toggle a[aria-selected="true"]{background:var(--ink);color:var(--paper)}
+  @media(max-width:480px){.lang-toggle{width:100%;justify-content:center}}
+  @media print{.lang-toggle{display:none}}
 </style>
-<noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
+<noscript><style>.reveal { opacity: 1; transform: none; }
+  .lang-toggle{display:inline-flex;align-items:center;gap:10px;margin-top:18px;border:1.5px solid var(--pen);border-radius:999px;padding:6px 8px;background:var(--paper-2);box-shadow:var(--hi-light),var(--lo-light);font-weight:700;font-size:14px}
+  .lang-toggle a{padding:6px 18px;border-radius:999px;color:var(--ink-2);text-decoration:none}
+  .lang-toggle a[aria-selected="true"]{background:var(--ink);color:var(--paper)}
+  @media(max-width:480px){.lang-toggle{width:100%;justify-content:center}}
+  @media print{.lang-toggle{display:none}}
+</style></noscript>
 </head>
 <body>
 
@@ -71,15 +83,21 @@
 
 <main id="top" class="legal">
   <div class="legal-head reveal in" id="content">
-    <h1>Terms of Sale</h1>
-    <p class="lede">Pay once. One Mac per license. Yours to keep on that computer. No subscriptions.</p>
+    <h1>Terms &amp; Privacy</h1>
+    <p class="lede">Pay once. One Mac per license. All sales final. No support. Document content stays on-device.</p>
     <div class="legal-meta" aria-label="Document version">
-      <span>Version 1.0 — 11 October 2026</span>
+      <span>Version 2.0 — 11 October 2026</span>
       <span>Prices in USD</span>
-      <span>Contact: louistruong1111@gmail.com</span>
+      <span>Legal notices only: louistruong1111@gmail.com</span>
     </div>
+    <div class="lang-toggle" role="group" aria-label="Language / Ngôn ngữ">
+      <a id="tab-en" href="#en" aria-selected="true">EN</a><span aria-hidden="true">|</span><a id="tab-vi" href="#vi" aria-selected="false">VI</a>
+    </div>
+    <p class="legal-fine">English default. <a href="#vi-terms">Tiếng Việt bên dưới</a>. / Mặc định tiếng Anh. <a href="#en">English above</a>.</p>
   </div>
 
+  <div data-lang="en" id="en">
+  <section id="terms" aria-label="Terms of sale">
   <article class="legal-card reveal in" aria-label="Terms of sale">
     <nav aria-label="Contents">
       <ol class="legal-toc">
@@ -90,7 +108,7 @@
         <li><a href="#delivery">5. Delivery by email</a></li>
         <li><a href="#eula">6. End-User License Agreement (EULA)</a></li>
         <li><a href="#refund">7. Refunds</a></li>
-        <li><a href="#support">8. Support — best effort</a></li>
+        <li><a href="#support">8. No support</a></li>
         <li><a href="#warranty">9. Warranty</a></li>
         <li><a href="#liability">10. Liability limit</a></li>
         <li><a href="#termination">11. Termination</a></li>
@@ -103,7 +121,7 @@
     <div class="legal-seller">
       <p><strong>Seller:</strong> Truong Minh Huy</p>
       <p><strong>Address:</strong> 128 Le Quang Hoa, Vietnam — full registered details to follow</p>
-      <p><strong>Contact:</strong> <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a></p>
+      <p><strong>Contact:</strong> <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a> (legal notices only — not support)</p>
     </div>
     <p>“Klip”, “we”, or “seller” means the seller named above. “You” means the buyer.</p>
 
@@ -122,8 +140,9 @@
     <h2 id="payment">4. Payment — one-time, no subscriptions</h2>
     <p>Every purchase is a <strong>one-time payment</strong>. There are <strong>no subscriptions, no recurring charges, and no auto-renewals</strong>. You pay once for each license code. Checkout is handled by our Merchant of Record; we never see or store your full card details.</p>
 
-    <h2 id="delivery">5. Delivery by email</h2>
-    <p>License codes are <strong>delivered by email via Resend</strong> to the address you enter at checkout. Delivery is normally within minutes, but email providers can delay or filter messages — check spam and promotions folders. If your code has not arrived within 24 hours, write to <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a> with your order details and we will resend it on a best-effort basis. A purchase is complete when the code is sent to your address; you are responsible for keeping the code and for typing the correct email at checkout.</p>
+    <h2 id="delivery">5. Delivery — complete on send, no resend</h2>
+    <p>License codes are <strong>sent once by email via Resend</strong> to the address you type at checkout. <strong>Delivery is complete when the code is sent; risk passes on send.</strong> Delays, spam/promotions filtering, inbox-full, a typo'd address, a lost or deleted code, and activation failure do <strong>not</strong> reopen delivery.</p>
+    <p><strong>Your duties:</strong> type a correct, working email; check spam on your own; <strong>back up your code</strong> — it is shown once and cannot be recovered from us. <strong>We have no duty to resend, reissue, reset, transfer, or troubleshoot.</strong> Lost key, new Mac (including repair / logic-board change), wiped disk without a key backup, non-receipt, or activation failure = <strong>buy a new license</strong> if you want one. The free tiers keep working without a key.</p>
 
     <h2 id="eula">6. End-User License Agreement (EULA)</h2>
     <p class="legal-fine">This section is the End-User License Agreement. It is kept here as the single source — the apps and this site refer to this page rather than a separate copy.</p>
@@ -132,12 +151,15 @@
     <p><strong>6.3 What you may not do.</strong> You may not sell, rent, sublicense, publish, or redistribute the apps or your codes; circumvent activation or free-tier limits; reverse-engineer or extract source except where mandatory law permits; or use the apps in breach of law.</p>
     <p><strong>6.4 Ownership.</strong> The apps remain our property. This is a license, not a sale of the software itself. No rights are granted except as written here.</p>
     <p><strong>6.5 Offline use.</strong> Both apps run fully offline after activation. Activation needs an internet connection once; after that no account and no ongoing connection is required.</p>
+    <p><strong>6.6 No reissue, no reset, no transfer — no exceptions.</strong> Each code locks to <strong>one Mac at first activation and never moves</strong>. We do <strong>not</strong> reissue lost or deleted codes, reset activations for new/repaired devices, transfer seats between Macs or persons, or make exceptions for typo'd emails, failed delivery, or failed activation. Need the app on another Mac = <strong>new purchase</strong>. Enterprise/team packs, if offered, state their seat count in <a href="license.html">license.html</a>; each seat is still one locked Mac under this 6.6.</p>
+    <p><strong>6.7 No support under this EULA.</strong> The license price buys the code as-is. It buys <strong>no support, no reply, no fix, and no troubleshooting</strong> — see section 8. Activation is self-serve and offline after the one-time online check; if it fails on your machine, section 6.6 applies.</p>
 
-    <h2 id="refund">7. Refunds</h2>
-    <p>Our refund rules live on one page: <a href="refund.html">refund.html</a>. Read it before you buy — it is part of these terms. Nothing here creates a separate refund promise beyond that page and your mandatory consumer rights.</p>
+    <h2 id="refund">7. Refunds — all sales final</h2>
+    <p><strong>All sales are final.</strong> Buy + activate = completed sale. We grant <strong>no refunds, no goodwill credits, and no exceptions</strong> — not for change of mind, duplicates, wrong editions, lost keys, new devices, non-delivery, or activation failure. Our full no-refund rules live on one page: <a href="refund.html">refund.html</a>. Read it before you buy — it is part of these terms. Nothing here creates any refund promise; only rights your mandatory consumer law gives you (see sections 9–10 and 12) can override this section.</p>
 
-    <h2 id="support">8. Support — best effort</h2>
-    <p>Write to <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a> if something breaks. Support is provided on a <strong>best-effort basis only</strong>: there is <strong>no response-time guarantee, no service level, and no promise of a fix</strong>. We read every message and help when we can, but troubleshooting is offered as-is alongside the offline apps.</p>
+    <h2 id="support">8. No support</h2>
+    <p><strong>We provide no support whatsoever:</strong> no helpdesk, no troubleshooting, no license or refund help, <strong>no reply promise, no response-time, no fix — for any reason</strong>, including lost keys, new devices, non-delivery, and activation failure. Do not buy if you may need help; use the free tiers first.</p>
+    <p><strong>One legal-notices-only contact (not support).</strong> <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a> is monitored on a best-effort basis <strong>solely</strong> for privacy-rights requests (GDPR / VN PDPD), mandatory consumer-law notices, and EU ODR correspondence. Messages asking for keys, resets, refunds, or fixes <strong>may receive no reply</strong>, and no reply creates no obligation. EU ODR: <a href="https://ec.europa.eu/consumers/odr">https://ec.europa.eu/consumers/odr</a>. Seller: Truong Minh Huy, 128 Le Quang Hoa, Vietnam.</p>
 
     <h2 id="warranty">9. Warranty</h2>
     <p>The apps are provided <strong>“AS-IS”</strong>, without warranties of any kind — express, implied, or statutory, including merchantability, fitness for a particular purpose, and non-infringement — <strong>to the maximum extent permitted by law</strong>. Where you are a consumer in the EU or EEA, nothing here limits your mandatory statutory rights, including the conformity guarantees that cannot be excluded under applicable consumer law.</p>
@@ -147,7 +169,7 @@
     <p>Nothing in these terms limits liability where the law does not allow it — including liability for fraud or wilful misconduct, and any consumer or product-liability rights that cannot be limited or excluded.</p>
 
     <h2 id="termination">11. Termination</h2>
-    <p>We may refuse, cancel, or deactivate a license for <strong>fraud or abuse</strong> — for example stolen payment details, chargeback abuse, published or resold codes, or bypassing activation. Honest limit of an offline app: an <strong>already-activated offline copy cannot be remotely disabled</strong>, so termination means we block that code from future activations, updates, and support, and revoke any replacement obligation. Lawful copies you already activated keep running on that Mac; nothing here grants a right to new installs or transfers after termination.</p>
+    <p>We may refuse, cancel, or deactivate a license for <strong>fraud or abuse</strong> — for example stolen payment details, chargeback abuse, published or resold codes, or bypassing activation. Honest limit of an offline app: an <strong>already-activated offline copy cannot be remotely disabled</strong>, so termination means we block that code from future activations and updates, and revoke any replacement obligation. Lawful copies you already activated keep running on that Mac; nothing here grants a right to new installs or transfers after termination.</p>
 
     <h2 id="law">12. Governing law and disputes</h2>
     <p>These terms are governed by <strong>the laws of Vietnam</strong>. If you buy as a consumer, the mandatory consumer protections of the country where you habitually live continue to apply on top of these terms where the law requires it.</p>
@@ -156,8 +178,254 @@
     <h2 id="changes">13. Changes to these terms</h2>
     <p>We may update these terms (for example when checkout, taxes, or contact details change), and each version carries its date above. <strong>The version in effect when you purchased applies to your order</strong> — later changes do not retroactively alter completed sales. The current version is always the one published on this page.</p>
 
-    <p class="legal-fine" style="margin-top:24px">Questions about these terms: <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a>. Related pages: <a href="license.html">license.html</a> · <a href="refund.html">refund.html</a>.</p>
+    <p class="legal-fine" style="margin-top:24px">Legal-notices-only contact (not support): <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a>. Related pages: <a href="license.html">license.html</a> · <a href="refund.html">refund.html</a>.</p>
   </article>
+  </section>
+
+  <section id="privacy" aria-label="Privacy policy">
+  <div class="legal-head reveal in"><h1 style="font-size:clamp(1.75rem,1.3rem+2vw,2.5rem)">Privacy Policy</h1>
+  <p class="lede">Document content is processed on-device; activation, feedback, and this site require network. Payments are NOT active today.</p></div>
+  <nav class="toc" aria-label="Policy contents">
+    <p>Contents</p>
+    <ul>
+      <li><a href="#p-summary">1. Summary</a></li>
+      <li><a href="#p-scope">2. Offline scope</a></li>
+      <li><a href="#p-controller">3. Controller</a></li>
+      <li><a href="#p-data-endpoints">4. Data per endpoint</a></li>
+      <li><a href="#p-purposes">5. Purposes and legal bases</a></li>
+      <li><a href="#p-processors">6. Processors</a></li>
+      <li><a href="#p-retention">7. Retention and deletion</a></li>
+      <li><a href="#p-rights">8. Your rights</a></li>
+      <li><a href="#p-children">9. Children</a></li>
+      <li><a href="#p-security">10. Security and breach</a></li>
+      <li><a href="#p-sources">11. Data sources</a></li>
+      <li><a href="#p-changes">12. Changes and contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="legal-card" id="p-summary">
+    <h2>1. Summary</h2>
+    <p>This policy covers the Klip and KlipOCR macOS apps and this website. Document content you convert or read (clipboard text, images, PDFs) is processed on-device. Activation, feedback, and this site require network and send only the limited data described below.</p>
+    <p>Payments are NOT active today and we collect no payment data today. Prices when checkout opens: Klip $4.99, KlipOCR $2.99, bundle $6.99. Free tiers: Klip pastes up to 1000 characters, 21 free the first week, then 14 a week; KlipOCR free snips with unlimited length, document mode locked. Terms: see <a href="#terms">terms.html</a>. Refunds: see <a href="refund.html">refund.html</a>. License options: see <a href="license.html">license.html</a>.</p>
+  </section>
+
+  <section class="legal-card" id="p-scope">
+    <h2>2. Offline scope</h2>
+    <p>Document content is processed on-device; activation, feedback, and this site require network. Conversion and OCR run locally without sending your documents to us. When you activate a license, submit feedback, or browse this site, your device transmits the data listed in section 4 over the network to provide that function.</p>
+    <p>This site loads Google Fonts from Google servers (see section 6). Visiting this site therefore transmits your IP address and user agent to Google to serve the font files.</p>
+  </section>
+
+  <section class="legal-card" id="p-controller">
+    <h2>3. Controller</h2>
+    <p>The data controller is Truong Minh Huy, 128 Le Quang Hoa, Vietnam.</p>
+    <p>This is our current contact address in Vietnam. Fuller registered business details will be added before store launch, and this policy will be updated at that time. Contact for all privacy matters: <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a>.</p>
+  </section>
+
+  <section class="legal-card" id="p-data-endpoints">
+    <h2>4. Data per endpoint</h2>
+    <p><code>hwid_hash</code> (hashed hardware identifier) and <code>dev_pub</code> (device public key) are pseudonymous personal data: they identify a device, and combined with a license key or email they can relate to a person. They are personal data under GDPR/UK GDPR.</p>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Endpoint</th><th>Data sent</th><th>Purpose</th></tr></thead>
+      <tbody>
+        <tr><td>License activation (app to Supabase)</td><td>License key, <code>hwid_hash</code>, <code>dev_pub</code>, app version, OS version, timestamp</td><td>Validate the license, bind seats, detect fraud and abuse</td></tr>
+        <tr><td>Feedback and support (app or site to Supabase, email via Resend)</td><td>Message text, contact email if you provide it, app and OS version, ticket code, <code>hwid_hash</code> where included by the app</td><td>Receive, track, and answer your report or request</td></tr>
+        <tr><td>Checkout (future, NOT active today)</td><td>No payment data today. When opened: name, email, and order details handled by the merchant of record; card and payment data go to the merchant of record and its payment processors, not to us</td><td>Sell and deliver license keys; handle tax, fraud screening, and refunds (see <a href="refund.html">refund.html</a>)</td></tr>
+        <tr><td>Infrastructure logs (site, Supabase, Resend)</td><td>IP address, user agent, timestamps, request metadata; Google Fonts requests disclose IP address and user agent to Google</td><td>Security, abuse prevention, debugging, and delivery of content</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>We do not collect document content through activation, feedback, checkout, or logs. Do not paste documents into feedback forms unless needed to reproduce a bug.</p>
+  </section>
+
+  <section class="legal-card" id="p-purposes">
+    <h2>5. Purposes and legal bases</h2>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Purpose</th><th>Data used</th><th>Legal basis (GDPR Art. 6)</th></tr></thead>
+      <tbody>
+        <tr><td>License activation and fraud prevention</td><td>License key, <code>hwid_hash</code>, <code>dev_pub</code>, app/OS version</td><td>Contract (Art. 6(1)(b)); legitimate interests in preventing fraud and abuse (Art. 6(1)(f))</td></tr>
+        <tr><td>Feedback and support</td><td>Email if provided, message, ticket code, app/OS version</td><td>Legitimate interests in operating support (Art. 6(1)(f)); contract where reply is owed</td></tr>
+        <tr><td>Future checkout and order records</td><td>Order email, order metadata from merchant of record; no payment data held by us today</td><td>Contract (Art. 6(1)(b)); legal obligation for tax and accounting (Art. 6(1)(c))</td></tr>
+        <tr><td>Site and infrastructure security</td><td>IP address, user agent, logs</td><td>Legitimate interests in security and abuse prevention (Art. 6(1)(f))</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Where consent is required (for example non-essential cookies if added later), we will ask first and you may withdraw consent at any time.</p>
+  </section>
+
+  <section class="legal-card" id="p-processors">
+    <h2>6. Processors and third parties</h2>
+    <ul>
+      <li>Supabase (hosting, database, edge functions for activation, feedback, and ticket-status pages; project <code>cuipdwllryitspasbtut</code>, South Asia Mumbai <code>ap-south-1</code> India; Postgres/Auth/Storage origin in Mumbai, Edge Functions at nearest edge globally, Storage CDN cache globally via Cloudflare) — DPA: <a href="https://supabase.com/legal/customer-resources/data-processing-addendum">https://supabase.com/legal/customer-resources/data-processing-addendum</a>.</li>
+      <li>Resend (transactional email for support replies and ticket confirmations) — DPA: <a href="https://resend.com/legal/dpa">https://resend.com/legal/dpa</a>.</li>
+      <li>Lemon Squeezy, planned merchant of record — NOT active today, no payment data today. When checkout opens, Lemon Squeezy will act as merchant of record for sale, tax, and refunds — DPA: <a href="https://www.lemonsqueezy.com/dpa">https://www.lemonsqueezy.com/dpa</a>. Refund rules: <a href="refund.html">refund.html</a>.</li>
+      <li>OpenRouter (AI infrastructure assisting support replies) — minimal use: only the support message you submit may be processed to help draft a reply; document content is not sent there. DPA: <a href="https://openrouter.ai/data-processing-agreement">https://openrouter.ai/data-processing-agreement</a>.</li>
+      <li>Google Fonts (this site loads fonts from Google servers; visiting this site discloses your IP address and user agent to Google to serve the files). We keep this disclosure and continue loading fonts from Google on this page.</li>
+    </ul>
+  </section>
+
+  <section class="legal-card" id="p-retention">
+    <h2>7. Retention and deletion</h2>
+    <ul>
+      <li>License records (key, <code>hwid_hash</code>, <code>dev_pub</code>, activations): kept for the life of the license plus a fraud and audit period required for tax, accounting, and abuse prevention.</li>
+      <li>Feedback and support tickets: kept until your request is resolved, plus a reasonable follow-up period for quality and dispute handling.</li>
+      <li>Infrastructure and security logs: kept short-term (days to weeks) and then deleted or aggregated, unless needed longer to investigate abuse or incidents.</li>
+      <li>Future order records: kept as required by tax and accounting law.</li>
+    </ul>
+    <p>Deletion requests are honored subject to exceptions: we retain data where needed for audit, fraud prevention, legal claims or obligations, and in backups that roll over on their normal cycle. Backups are not rewritten for individual deletions but age out.</p>
+  </section>
+
+  <section class="legal-card" id="p-rights">
+    <h2>8. Your rights</h2>
+    <p>You have the rights of access, rectification, erasure, restriction, portability, and objection, plus the right to withdraw consent where consent applies. To exercise a right, email <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a> from the address related to your request and describe the right and the data concerned.</p>
+    <p>We respond to rights requests within 30 days. You also have the right to lodge a complaint with your local supervisory authority.</p>
+  </section>
+
+  <section class="legal-card" id="p-children">
+    <h2>9. Children</h2>
+    <p>Our apps and site are not directed to children under 13, and we do not knowingly collect data from children under 13. Ages 13–16: where EU/UK law requires parental consent (digital consent age 16, lower where a member state sets it), a parent or guardian must consent or authorize the use. If you believe a child has provided data, contact <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a> and we will delete it subject to section 7 exceptions.</p>
+  </section>
+
+  <section class="legal-card" id="p-security">
+    <h2>10. Security and breach notice</h2>
+    <p>We use transport encryption, least-access controls, and pseudonymous device identifiers (<code>hwid_hash</code>, <code>dev_pub</code>) instead of raw hardware identifiers. No method is fully secure, but we work to protect license, support, and log data.</p>
+    <p>In case of a personal-data breach, we will assess the risk, notify the competent supervisory authority without undue delay where required, and notify affected individuals where the risk requires it, describing the nature, likely consequences, and measures taken.</p>
+  </section>
+
+  <section class="legal-card" id="p-sources">
+    <h2>11. Data sources (Art. 14)</h2>
+    <p>Most data comes directly from you (license key entry, feedback text, email). Where we do not collect directly from you: device-generated identifiers (<code>hwid_hash</code>, <code>dev_pub</code>, app/OS version) come from your device; order metadata will come from the future merchant of record Lemon Squeezy; technical data (IP address, user agent) comes from your browser or network when you use the site, activation, or feedback endpoints.</p>
+  </section>
+
+  <section class="legal-card" id="p-changes">
+    <h2>12. Changes and contact</h2>
+    <p>We will post any changes to this policy on this page and update the Last updated date. Material changes will be announced by a notice on this site. Continued use after the updated date applies the revised policy. Related pages: <a href="#terms">Terms</a>, <a href="refund.html">Refunds</a>, <a href="license.html">License</a>, <a href="#privacy">Privacy (this page)</a>.</p>
+    <p>Controller: Truong Minh Huy, 128 Le Quang Hoa, Vietnam (current contact address; fuller registered details to follow before store launch). Email: <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a>. Vietnamese version below: <a href="#vi-privacy">Quyền riêng tư</a> (for consumers in Vietnam the Vietnamese version controls except where English is more favorable).</p>
+    <p class="legal-fine">Prices stated here match the store plan: Klip $4.99, KlipOCR $2.99, bundle $6.99. Checkout is not active today.</p>
+  </section>
+  </section>
+  </div>
+
+  <div data-lang="vi" id="vi">
+  <section id="vi-terms" lang="vi" aria-label="Điều khoản bán hàng">
+  <article class="legal-card">
+    <h2>1. Người bán</h2>
+    <p><strong>Người bán:</strong> Truong Minh Huy. <strong>Địa chỉ:</strong> 128 Le Quang Hoa, Vietnam — chi tiết đăng ký đầy đủ sẽ bổ sung. <strong>Liên hệ:</strong> <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a>.</p>
+    <h2>2. Sản phẩm và giá</h2>
+    <ul><li><strong>Klip — $4.99 USD:</strong> LaTeX, Markdown, HTML sang office.</li><li><strong>KlipOCR — $2.99 USD:</strong> ảnh chụp/scan sang văn bản.</li><li><strong>Gói cả hai — $6.99 USD:</strong> một code Klip + một code KlipOCR.</li></ul>
+    <p>Giá hiển thị và thu bằng USD. Giá tại checkout là giá phải trả, cộng thuế nêu tại checkout (mục 3).</p>
+    <h2>3. Thuế tại checkout</h2>
+    <p>Tùy nước bạn, có thể có VAT/GST/sales tax do Merchant of Record tính và thu, hiển thị trước khi trả. Hóa đơn tại checkout ghi tổng cuối gồm thuế.</p>
+    <h2>4. Thanh toán — một lần, không thuê bao</h2>
+    <p>Mỗi lần mua là trả một lần. Không thuê bao, không tự gia hạn. Checkout do Merchant of Record xử lý; chúng tôi không thấy/lưu đủ số thẻ.</p>
+    <h2>5. Giao hàng — xong khi gửi, không gửi lại</h2>
+    <p>Code gửi <strong>một lần qua email (Resend)</strong> tới địa chỉ bạn nhập. <strong>Giao xong khi đã gửi; rủi ro sang bạn từ lúc gửi.</strong> Trễ, vào spam, hộp đầy, nhập sai địa chỉ, mất/xóa code hay kích hoạt lỗi đều <strong>không</strong> mở lại giao hàng.</p>
+    <p><strong>Việc của bạn:</strong> nhập đúng email còn dùng được; tự kiểm tra spam; <strong>tự lưu code</strong> — chỉ hiện một lần, chúng tôi không khôi phục được. <strong>Không có nghĩa vụ gửi lại, cấp lại, reset, chuyển hay sửa lỗi.</strong> Mất key, đổi máy mới (kể cả sửa/thay main), xóa ổ mà không lưu key, không nhận được mail hay kích hoạt lỗi = <strong>mua key mới</strong> nếu muốn dùng. Bản miễn phí vẫn chạy không cần key.</p>
+    <h2>6. Thỏa thuận Cấp phép (EULA)</h2>
+    <p><strong>6.1. Cấp quyền.</strong> Trả đủ tiền, bạn được quyền cá nhân, không độc quyền, không chuyển nhượng, cài và dùng một bản đã mua mỗi code.</p>
+    <p><strong>6.2. Một máy, không chuyển.</strong> Mỗi code chỉ một máy Mac. Giữ vĩnh viễn trên máy đó, nhưng không chia sẻ, bán lại, cho mượn, chuyển người khác hay chuyển máy khác. Cài lại trên cùng máy được phép.</p>
+    <p><strong>6.3. Không được:</strong> bán/cho thuê/cấp lại/đăng lại code; vượt kích hoạt/giới hạn miễn phí; dịch ngược trừ khi luật bắt buộc cho phép; dùng app trái luật.</p>
+    <p><strong>6.4. Sở hữu.</strong> App vẫn của chúng tôi. Đây là cấp phép, không phải bán phần mềm.</p>
+    <p><strong>6.5. Offline.</strong> Sau kích hoạt chạy offline hoàn toàn. Kích hoạt cần mạng một lần.</p>
+    <p><strong>6.6. Không cấp lại, không reset, không chuyển — không ngoại lệ.</strong> Mỗi code khóa vào <strong>một máy Mac từ lần kích hoạt đầu và không di chuyển</strong>. Chúng tôi <strong>không</strong> cấp lại code mất/xóa, không reset cho máy mới/sửa, không chuyển suất giữa các máy hay người, không ngoại lệ cho nhập sai email, giao lỗi hay kích hoạt lỗi. Muốn dùng trên máy khác = <strong>mua mới</strong>.</p>
+    <p><strong>6.7. Không hỗ trợ theo EULA.</strong> Giá key chỉ mua code nguyên trạng. <strong>Không hỗ trợ, không trả lời, không sửa, không xử lý sự cố</strong> — xem mục 8.</p>
+    <h2>7. Hoàn tiền</h2>
+    <p>Quy tắc ở một trang: <a href="refund-vi.html">refund-vi.html</a>. Đọc trước khi mua — là một phần của điều khoản này.</p>
+    <h2>8. Không hỗ trợ</h2>
+    <p><strong>Chúng tôi không hỗ trợ dưới mọi hình thức:</strong> không helpdesk, không sửa lỗi, không giúp về key hay hoàn tiền, <strong>không hứa trả lời, không thời gian phản hồi, không sửa — vì bất kỳ lý do gì</strong>, kể cả mất key, đổi máy, không nhận mail và kích hoạt lỗi. Nếu có thể cần giúp, đừng mua; dùng bản miễn phí trước.</p>
+    <p><strong>Một liên hệ chỉ-nhận-thông-báo-pháp-lý (không phải hỗ trợ).</strong> <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a> chỉ nhận yêu cầu quyền riêng tư (GDPR / PDPD VN), thông báo luật tiêu dùng bắt buộc và thư ODR EU, theo khả năng. Tin xin key, reset, hoàn tiền hay sửa lỗi <strong>có thể không được trả lời</strong>, và không trả lời không tạo nghĩa vụ. ODR EU: <a href="https://ec.europa.eu/consumers/odr">https://ec.europa.eu/consumers/odr</a>. Người bán: Truong Minh Huy, 128 Le Quang Hoa, Vietnam.</p>
+    <h2>9. Bảo hành</h2>
+    <p>App “NGUYÊN TRẠNG” (AS-IS) ở mức tối đa luật cho phép. Nếu bạn là người tiêu dùng EU/EEA, quyền bắt buộc (như bảo đảm phù hợp) không bị giới hạn.</p>
+    <h2>10. Giới hạn trách nhiệm</h2>
+    <p>Tổng trách nhiệm giới hạn ở giá bạn đã trả (Klip $4.99, KlipOCR $2.99, gói $6.99). Không chịu thiệt hại gián tiếp. Không giới hạn nơi luật cấm (gian lận/cố ý, quyền người tiêu dùng).</p>
+    <h2>11. Chấm dứt</h2>
+    <p>Chúng tôi có thể khóa key vì gian lận/lạm dụng. Bản đã kích hoạt không thể tắt từ xa; chấm dứt = chặn kích hoạt mới, cập nhật, hỗ trợ.</p>
+    <h2>12. Luật và tranh chấp</h2>
+    <p>Điều khoản theo luật Việt Nam. Biện pháp bảo vệ bắt buộc nơi bạn thường trú vẫn áp dụng chồng lên khi luật yêu cầu. Người tiêu dùng EU: ODR <a href="https://ec.europa.eu/consumers/odr">https://ec.europa.eu/consumers/odr</a>.</p>
+    <p><em>Bản tiếng Việt là gốc với người tiêu dùng tại Việt Nam; bản tiếng Anh chỉ tham khảo. Khác biệt thì áp dụng bản có lợi hơn cho người tiêu dùng. Với người mua ngoài Việt Nam, bản tiếng Anh là gốc.</em> Bản tiếng Anh: <a href="#terms">terms.html</a>.</p>
+    <h2>13. Thay đổi điều khoản</h2>
+    <p>Bản tại lúc bạn mua áp dụng cho đơn đó. Bản hiện hành luôn là bản trên trang này. Trang liên quan: <a href="license.html">license.html</a> · <a href="refund-vi.html">refund-vi.html</a>.</p>
+  </article>
+  </section>
+
+  <section id="vi-privacy" lang="vi" aria-label="Chính sách quyền riêng tư">
+  <div class="legal-head reveal in"><h1 style="font-size:clamp(1.75rem,1.3rem+2vw,2.5rem)">Chính sách Quyền riêng tư</h1>
+  <p class="lede">Nội dung tài liệu xử lý trên máy. Kích hoạt, góp ý và website cần mạng. Thanh toán CHƯA hoạt động.</p></div>
+  <section class="legal-card"><h2>1. Tóm tắt</h2>
+    <p>Chính sách này áp dụng cho app macOS Klip, KlipOCR và website này. Nội dung tài liệu bạn chuyển đổi (văn bản clipboard, ảnh, PDF) được xử lý trên máy (on-device). Kích hoạt bản quyền, góp ý/hỗ trợ và website cần mạng và chỉ gửi dữ liệu tối thiểu ở mục 4. Thanh toán CHƯA hoạt động, hiện không thu dữ liệu thanh toán. Giá dự kiến khi mở bán: Klip $4.99, KlipOCR $2.99, gói cả hai $6.99 USD. Bản miễn phí: Klip tối đa 1.000 ký tự/paste, 21 lượt tuần đầu rồi 14 lượt/tuần; KlipOCR cắt tự do không giới hạn độ dài, chế độ tài liệu bị khóa. Điều khoản bán: <a href="#vi-terms">Điều khoản</a>. Hoàn tiền: <a href="refund-vi.html">Hoàn tiền</a>. Bản tiếng Anh: <a href="#privacy">Privacy (English)</a>.</p>
+    <p><em>Bản tiếng Việt là bản gốc đối với người tiêu dùng tại Việt Nam. Bản tiếng Anh đi kèm chỉ để tham khảo. Nếu có khác biệt, áp dụng bản có lợi hơn cho người tiêu dùng.</em></p>
+  </section>
+
+  <section class="legal-card"><h2>2. Phạm vi offline</h2>
+    <p>Chuyển đổi và OCR chạy local, không gửi tài liệu cho chúng tôi. Khi kích hoạt, gửi góp ý, hoặc mở website, thiết bị mới truyền dữ liệu (mục 4). Website tải font Google từ máy chủ Google → IP và user agent của bạn được gửi cho Google để tải font.</p>
+  </section>
+
+  <section class="legal-card"><h2>3. Bên kiểm soát</h2>
+    <p>Truong Minh Huy, 128 Le Quang Hoa, Vietnam. Đây là địa chỉ liên hệ hiện tại tại Việt Nam. Chi tiết đăng ký kinh doanh đầy đủ sẽ bổ sung trước khi mở bán. Mọi vấn đề riêng tư: <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a>.</p>
+  </section>
+
+  <section class="legal-card"><h2>4. Dữ liệu theo từng đầu mối</h2>
+    <p><code>hwid_hash</code> (mã máy đã băm) và <code>dev_pub</code> (khóa công khai của thiết bị) là dữ liệu giả danh, là dữ liệu cá nhân theo GDPR.</p>
+    <ul>
+      <li>Kích hoạt (app → Supabase Mumbai <code>ap-south-1</code> Ấn Độ): license key, <code>hwid_hash</code>, <code>dev_pub</code>, phiên bản app/macOS, thời gian. Mục đích: xác thực key, quản lý suất, chống gian lận.</li>
+      <li>Góp ý/hỗ trợ (app/site → Supabase, email qua Resend): nội dung tin, email nếu bạn cho, phiên bản app/OS, mã ticket. Mục đích: tiếp nhận và trả lời.</li>
+      <li>Thanh toán (tương lai, CHƯA mở): hiện không thu gì. Khi mở: tên, email, thông tin đơn do Merchant of Record (dự kiến Lemon Squeezy) xử lý; dữ liệu thẻ không gửi cho chúng tôi.</li>
+      <li>Log hạ tầng: IP, user agent, thời gian. Mục đích: bảo mật, chống lạm dụng, sửa lỗi. Edge Functions chạy ở biên gần nhất toàn cầu; DB/Auth/Storage gốc ở Mumbai; CDN cache toàn cầu qua Cloudflare.</li>
+    </ul>
+    <p>Chúng tôi không thu nội dung tài liệu qua các kênh trên.</p>
+  </section>
+
+  <section class="legal-card"><h2>5. Mục đích và cơ sở pháp lý</h2>
+    <ul>
+      <li>Kích hoạt + chống gian lận: hợp đồng (GDPR 6(1)(b)); lợi ích hợp pháp (6(1)(f)).</li>
+      <li>Góp ý/hỗ trợ: lợi ích hợp pháp (6(1)(f)); hợp đồng khi phải trả lời.</li>
+      <li>Đơn hàng tương lai: hợp đồng (6(1)(b)); nghĩa vụ thuế/kế toán (6(1)(c)).</li>
+      <li>Bảo mật site/log: lợi ích hợp pháp (6(1)(f)).</li>
+    </ul>
+  </section>
+
+  <section class="legal-card"><h2>6. Bên xử lý</h2>
+    <ul>
+      <li>Supabase (host, DB, edge functions; dự án <code>cuipdwllryitspasbtut</code>, vùng Nam Á Mumbai <code>ap-south-1</code>) — DPA: <a href="https://supabase.com/legal/customer-resources/data-processing-addendum">supabase.com/legal/customer-resources/data-processing-addendum</a>.</li>
+      <li>Resend (email) — DPA: <a href="https://resend.com/legal/dpa">resend.com/legal/dpa</a>.</li>
+      <li>Lemon Squeezy (dự kiến MoR) — CHƯA hoạt động — DPA: <a href="https://www.lemonsqueezy.com/dpa">lemonsqueezy.com/dpa</a>.</li>
+      <li>OpenRouter (hỗ trợ soạn trả lời) — chỉ tin bạn gửi — <a href="https://openrouter.ai/data-processing-agreement">openrouter.ai/data-processing-agreement</a>.</li>
+      <li>Google Fonts — IP + user agent gửi cho Google.</li>
+    </ul>
+  </section>
+
+  <section class="legal-card"><h2>7. Lưu trữ và xóa</h2>
+    <ul>
+      <li>Bản quyền: giữ suốt đời key + thời gian kiểm toán/chống gian lận theo luật thuế/kế toán.</li>
+      <li>Ticket hỗ trợ: giữ đến khi xong + thời gian đối chiếu/khiếu nại.</li>
+      <li>Log bảo mật: ngắn hạn rồi xóa/gộp, trừ khi điều tra.</li>
+      <li>Đơn hàng tương lai: giữ theo luật thuế/kế toán.</li>
+    </ul>
+    <p>Yêu cầu xóa được đáp ứng trừ khi phải giữ để kiểm toán, chống gian lận, khiếu nại, nghĩa vụ pháp lý; backup cuốn chiếu theo chu kỳ.</p>
+  </section>
+
+  <section class="legal-card"><h2>8. Quyền của bạn</h2>
+    <p>Truy cập, sửa, xóa, hạn chế, mang đi, phản đối; rút đồng ý khi áp dụng. Gửi từ email liên quan tới: <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a>. Trả lời trong 30 ngày. Bạn có quyền khiếu nại với cơ quan giám sát địa phương.</p>
+  </section>
+
+  <section class="legal-card"><h2>9. Trẻ em</h2>
+    <p>Không hướng tới trẻ dưới 13 tuổi. 13–16 tuổi: nơi luật EU/UK yêu cầu cần cha mẹ/người giám hộ đồng ý. Nếu nghi trẻ đã gửi dữ liệu: viết cho <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a> để xóa.</p>
+  </section>
+
+  <section class="legal-card"><h2>10. Bảo mật và sự cố</h2>
+    <p>Mã hóa đường truyền, hạn chế quyền truy cập, dùng mã giả danh. Khi rò rỉ dữ liệu cá nhân, chúng tôi đánh giá rủi ro, báo cơ quan có thẩm quyền và báo người bị ảnh hưởng khi luật yêu cầu.</p>
+  </section>
+
+  <section class="legal-card"><h2>11. Nguồn dữ liệu</h2>
+    <p>Chủ yếu từ bạn. Không từ bạn: mã do thiết bị sinh, metadata đơn từ MoR tương lai, dữ liệu kỹ thuật (IP, user agent) từ trình duyệt/mạng.</p>
+  </section>
+
+  <section class="legal-card"><h2>12. Thay đổi và liên hệ</h2>
+    <p>Thay đổi đăng tại trang này + cập nhật ngày. Bên kiểm soát: Truong Minh Huy, 128 Le Quang Hoa, Vietnam. Email: <a href="mailto:louistruong1111@gmail.com">louistruong1111@gmail.com</a>. Giá: Klip $4.99, KlipOCR $2.99, gói $6.99. Chưa bán hôm nay. Trang liên quan: <a href="#vi-terms">Điều khoản</a>, <a href="refund-vi.html">Hoàn tiền</a>, <a href="license.html">license.html</a>.</p>
+  </section>
+  </section>
+  </div>
 </main>
 
 <footer>
@@ -169,8 +437,7 @@
     <div class="foot-links">
       <a href="index.html#apps">Apps</a><a href="index.html#demo">Demo</a>
       <a href="index.html#features">Features</a><a href="index.html#faq">FAQ</a><a href="license.html">License</a>
-      <a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="refund.html">Refunds</a>
-      <a href="terms-vi.html">Tiếng Việt</a>
+      <a href="terms.html#terms">Terms &amp; Privacy</a><a href="refund.html">Refunds</a>
       <a href="#top">Back to top ↑</a>
     </div>
   </div>
@@ -179,5 +446,32 @@
 </footer>
 
 <script src="app.js?v=paper5"></script>
+<script>
+(function () {
+  var ens = document.querySelectorAll('[data-lang="en"]');
+  var vis = document.querySelectorAll('[data-lang="vi"]');
+  var tEn = document.getElementById('tab-en');
+  var tVi = document.getElementById('tab-vi');
+  if (!ens.length || !vis.length || !tEn || !tVi) return;
+  function show(vi) {
+    ens.forEach(function (e) { e.hidden = vi; });
+    vis.forEach(function (e) { e.hidden = !vi; });
+    tEn.setAttribute('aria-selected', String(!vi));
+    tVi.setAttribute('aria-selected', String(vi));
+    try { document.documentElement.lang = vi ? 'vi' : 'en'; } catch (e) {}
+    try { localStorage.setItem('legal-lang', vi ? 'vi' : 'en'); } catch (e) {}
+  }
+  function fromHash() {
+    var h = location.hash || '';
+    if (/^(#vi(-.*)?|#.*-vi)$/.test(h)) return true;
+    if (h === '#en') return false;
+    try { return localStorage.getItem('legal-lang') === 'vi'; } catch (e) { return false; }
+  }
+  tEn.addEventListener('click', function () { show(false); });
+  tVi.addEventListener('click', function () { show(true); });
+  window.addEventListener('hashchange', function () { show(fromHash()); });
+  show(fromHash());
+})();
+</script>
 </body>
 </html>
