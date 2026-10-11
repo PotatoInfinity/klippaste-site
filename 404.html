@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Page not found — Klip</title>
 <meta name="description" content="This page doesn't exist. Klip turns LaTeX, Markdown and HTML into editable documents. Runs locally, no account.">
+<meta property="og:title" content="Page not found — Klip">
 <meta name="robots" content="noindex,nofollow">
 <meta name="theme-color" content="#fdf9ef">
 <link rel="icon" type="image/png" href="/icons/favicon-64.png">
@@ -98,7 +99,7 @@
         </div>
       </div>
       <div class="status-missing" id="statusMissing" hidden>
-        <h1 style="font-size:28px;margin:0 0 10px">No report with this code.</h1>
+        <h2 style="font-size:28px;margin:0 0 10px">No report with this code.</h2>
         <p class="status-sub">Check the code and try again. Codes look like <strong>FB-ABC123</strong>.</p>
       </div>
       <p class="status-foot">Status shown best-effort; replies may never come — see <a href="/terms.html#support">Terms §12</a>.<br><a href="/index.html">Back to Klip</a></p>
@@ -116,7 +117,7 @@
       <a href="/index.html#apps">Apps</a><a href="/index.html#demo">Demo</a>
       <a href="/index.html#features">Features</a><a href="/index.html#faq">FAQ</a><a href="/license.html">License</a>
       <a href="/terms.html#terms">Terms &amp; Privacy</a>
-      <a href="/index.html#top">Back to top ↑</a>
+      <a href="#top">Back to top ↑</a>
     </div>
   </div>
   <p class="copy">© <span id="year">2026</span> Klip. Offline by design.</p>
@@ -152,7 +153,7 @@
     loading.hidden = true;
     body.hidden = true;
     missing.hidden = false;
-    missing.querySelector('h1').textContent = "Couldn't load this report.";
+    missing.querySelector('h2').textContent = "Couldn't load this report.";
     missing.querySelector('p').textContent = 'Check your connection and reload to try again.';
   }
   function prettyKind(k) {

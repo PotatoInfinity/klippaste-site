@@ -25,11 +25,13 @@ If push is rejected (non-fast-forward — GitHub auto-commits CNAME), pull
 - No console-breaking JS (`node --check` if app.js touched).
 - CSS braces balanced; responsive intact (390/768/1440 by reasoning).
 - Copy stays truthful: prices Klip $4.99 USD / KlipOCR $2.99 USD / bundle
-  $6.99 USD (Save $0.99), no subscriptions. Per-card microcopy on
+  $6.99 USD (Save $0.99 stays bare), no subscriptions. Meta/og + button
+  labels on `license.html` carry USD. Per-card microcopy on
   `license.html`: USD, +tax if applies at checkout, per 1 Mac, final sale.
-- Free tiers verbatim everywhere (index FAQ = license cards): Klip pastes
-  up to 1000 characters, 21 free the first week, then 14 a week; KlipOCR
-  free snips with unlimited length, document mode locked.
+- Free tiers verbatim everywhere (index FAQ = license cards = Terms §5):
+  Klip pastes up to 1000 characters, 21 free in the first 7 days, then 14
+  per rolling 7 days; KlipOCR free snips with unlimited length, document
+  mode locked.
 - Offline claims always carry the after-one-time-online-activation
   qualifier (hero, badges, feature cards, FAQ, license cards). Index FAQ is
   scoped: document content never leaves the device; activation / feedback /
@@ -43,13 +45,23 @@ If push is rejected (non-fast-forward — GitHub auto-commits CNAME), pull
   ticket-status pages say best-effort, no reply promise.
 - License page: conspicuous pre-price warning box required (final sale,
   1 Mac never moves, no support, try-free-first; links Terms §§5-8 +
-  §§10-12). Enterprise labeled Coming later, button dead, seat-count +
-  total set at checkout. Try-free-first line per card.
-- Index: download `<button type="button">`s stay dead with adjacent small
-  print (free tier, macOS download, paid key at License page, checkout NOT
-  active). Try-free-first one-liner under hero badges + near final CTA.
-- Footer: single combined Terms & Privacy link only; Back-to-top present;
-  copy `© 2026 Klip. Offline by design.` on every page; no VI in footer.
+  §§10-12). Enterprise labeled Coming later, button dead (`<button
+  type="button">`, no handler); base formula Total = (seats × list price)
+  − discount + tax, discount tiers + seat-count + total set at checkout.
+  Try-free-first line per card.
+- Index: download `<button type="button">`s stay dead (no handler, no
+  navigation) with adjacent small print (free tier, macOS download, paid
+  key at License page, checkout NOT active) — never imply download works.
+  Try-free-first one-liner under hero badges + near final CTA (paid keys
+  final-sale, 1 Mac, no support). Compat wall lede carries best-effort /
+  varies-by-app-version / plain-text-fallback prefix. Yours-to-keep means
+  on that one Mac, this version only.
+- Head: `og:title` matches `<title>` verbatim on every page (`404.html`
+  keeps `noindex`); one `h1` per page only.
+- Footer: single combined Terms & Privacy link only; Back-to-top present
+  (`#top` on own page); copy `© 2026 Klip. Offline by design.` on every
+  page + seller line (Truong Minh Huy + legal-only email) on index +
+  license footers; no VI in footer.
 - Processors: factual disclosures only (Supabase Mumbai ap-south-1,
   Resend, Lemon Squeezy future MoR, OpenRouter support path, Google Fonts).
   No model/vendor marketing claims.
