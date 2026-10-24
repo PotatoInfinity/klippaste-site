@@ -1,16 +1,15 @@
 // Klip checkout: Lemon Squeezy hosted checkout links for license.html.
 // Checkout uses variant UUIDs (slugs), not numeric variant IDs; numeric IDs
 // are for webhooks/API only.
-// TEST MODE: swap the variant slugs and set mode to "live" at release.
-// Test-mode checkout links must not stay public long-term.
+// Live-mode variant slugs; keep in sync with the hosted LS_VARIANT_MAP.
 (function () {
   var CONFIG = {
     store: "klip",
-    mode: "test",
+    mode: "live",
     variants: {
-      klip: "c3faa744-f5bd-4d31-98ed-1dc3ed6e38da",
-      klipocr: "3de8ea6c-cec3-4dca-9295-01611ac3ca65",
-      bundle: "e8351746-8a09-4f5f-bc66-81a66dcec470"
+      klip: "78a3f203-078e-4559-b9b4-b12d5474c862",
+      klipocr: "0dcb5647-23a7-42a8-8c2c-d692fc231b78",
+      bundle: "31b83864-5b2a-41f8-8e5f-28a3b199ae50"
     }
   };
 
