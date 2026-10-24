@@ -50,7 +50,7 @@ If push is rejected (non-fast-forward — GitHub auto-commits CNAME), pull
   within 3 days — ack is receipt only, never a fix). Do not promise 24/7
   replies; ticket-status pages say best-effort, no reply promise.
 - License page: conspicuous pre-price warning box required (final sale,
-  1 device never moves, best-effort in-app support, try-free-first; links
+  1 device, 24/7 best-effort in-app support, try-free-first; links
   Terms §§5-8 + §§10-12 in Terms yellow style: `#7a5c00`, yellow underline,
   hover wash).
   Enterprise labeled Coming later, button dead (`<button
