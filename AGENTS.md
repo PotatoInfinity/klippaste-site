@@ -49,8 +49,9 @@ If push is rejected (non-fast-forward — GitHub auto-commits CNAME), pull
   Enterprise labeled Coming later, button dead (`<button
   type="button">`, no handler); base formula Total = (seats × list price)
   − discount + tax, discount tiers + seat-count + total set at checkout.
-  Try-free-first line per card. No payment-coming-later fine print, no
-  checkout-not-active / button-does-nothing note.
+  Try-free-first line per card. No payment-coming-later fine print;
+  checkout links point to Lemon Squeezy; Enterprise stays a non-link until
+  offered.
 - Index: download `<button type="button">`s stay dead (no handler, no
   navigation) — never imply download works. No dl-note small print, no
   hero badges-note / try-first banner, no final-note try-free line, no
@@ -65,7 +66,7 @@ If push is rejected (non-fast-forward — GitHub auto-commits CNAME), pull
   page; no seller line in footers (seller lives in Terms §1/§12 only);
   no VI in footer.
 - Processors: factual disclosures only (Supabase Mumbai ap-south-1,
-  Resend, Lemon Squeezy future MoR, OpenRouter support path, Google Fonts).
+  Resend, Lemon Squeezy MoR, OpenRouter support path, Google Fonts).
   No model/vendor marketing claims.
 - Buttons that must not navigate yet stay `<button type="button">` with
   no handler.
