@@ -43,12 +43,12 @@ If push is rejected (non-fast-forward — GitHub auto-commits CNAME), pull
   No separate refund page; no goodwill, no reissue (LS-discretion +
   mandatory-law carve-outs noted in §11). No refund promises; support
   mentions stay best-effort.
-- Support: in-app Help & Feedback (Supabase) is the support channel;
-  replies/fixes are best-effort, with no response-time guarantee. Seller
-  mail is legal-notices-only and may get no reply (privacy rights answered
-  within 30 days; COMPLAINT notices acked within 3 days — ack is receipt
-  only, never a fix). No 24/7 promises; ticket-status pages say best-effort,
-  no reply promise.
+- Support: the in-app Help & Feedback portal (Supabase) is available 24/7
+  and is the support channel; replies/fixes are best-effort, with no
+  response-time guarantee. Seller mail is legal-notices-only and may get no
+  reply (privacy rights answered within 30 days; COMPLAINT notices acked
+  within 3 days — ack is receipt only, never a fix). Do not promise 24/7
+  replies; ticket-status pages say best-effort, no reply promise.
 - License page: conspicuous pre-price warning box required (final sale,
   1 device never moves, best-effort in-app support, try-free-first; links
   Terms §§5-8 + §§10-12 in Terms yellow style: `#7a5c00`, yellow underline,
@@ -69,7 +69,7 @@ If push is rejected (non-fast-forward — GitHub auto-commits CNAME), pull
 - Head: `og:title` matches `<title>` verbatim on every page (`404.html`
   keeps `noindex`); one `h1` per page only.
 - Footer: single combined Terms & Privacy link only; Back-to-top present
-  (`#top` on own page); copy `© 2026 Klip. Made with ❤️` on every page;
+  (`#top` on own page); copy `© 2026 Klip.` on every page;
   no seller line in footers (seller lives in Terms §1/§12 only);
   no VI in footer.
 - Processors: factual disclosures only (Supabase Mumbai ap-south-1,
