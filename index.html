@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Klip — LaTeX, Markdown and HTML to office · KlipOCR — Read text from pictures</title>
-<meta name="description" content="Klip turns LaTeX, Markdown and HTML into editable documents across the full Microsoft Office suite, LibreOffice, ONLYOFFICE, WPS and Google Workspace (Docs, Sheets and Slides), converts between suites, and turns office copies back into clean Markdown. KlipOCR reads screenshots into text. Runs locally, no account.">
+<title>Klip · KlipOCR — Supercharge your office workflow</title>
+<meta name="description" content="Klip converts LaTeX, Markdown and HTML into native office pastes. KlipOCR turns screenshots into clean text and equations. Local, private, Mac + Windows.">
 <meta name="theme-color" content="#f1ebdc">
-<meta property="og:title" content="Klip — LaTeX, Markdown and HTML to office · KlipOCR — Read text from pictures">
-<meta property="og:description" content="LaTeX, Markdown and HTML to office. Screenshots to text. Runs locally, no account.">
+<meta property="og:title" content="Klip · KlipOCR — Supercharge your office workflow">
+<meta property="og:description" content="Native, editable pastes for your office suites, and screenshots to clean text and equations. Runs locally, no account.">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="icons/favicon-64.png">
@@ -15,14 +15,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=paper5">
+<link rel="stylesheet" href="styles.css?v=paper6">
 <style>
   .dl-note, .badges-note, .try-first { text-align: center; font-size: 13px; line-height: 1.55; color: var(--muted); margin: 14px auto 0; max-width: 640px; }
   .dl-note a { color: inherit; }
   .try-first { color: var(--ink-2); font-weight: 600; }
   .final-note { font-size: 13px; line-height: 1.55; color: rgba(253, 249, 239, 0.78); margin: 18px 0 0; }
 </style>
-<noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
+<noscript><style>.reveal, .mini-table, .mt-row span { opacity: 1; transform: none; } .mini-table { border-color: var(--pen); }</style></noscript>
 </head>
 <body>
 
@@ -65,14 +65,14 @@
       </div>
       <div class="app-mini">
         <img src="icons/klipocr-512.png" alt="KlipOCR app icon" width="88" height="88">
-        <p class="tag">Screenshots and scans to text</p>
+        <p class="tag">Screenshots and document OCR</p>
         <button type="button" class="dl-btn ghost"><span class="dl-text">Download KlipOCR</span><span class="dl-apple" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.81-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8.78-.16 2.05-.93 3.57-.84 1.58.13 2.77.75 3.55 1.9-3.27 1.96-2.5 6.24.5 7.45-.6 1.58-1.42 3.14-2.7 3.66zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg></span></button>
       </div>
     </div>
-    <h1 class="reveal">From messy clipboard to <u>clean, native pastes</u>.</h1>
-    <p class="sub reveal">Klip turns LaTeX, Markdown and HTML in your clipboard into <strong>clean office formats you can keep editing</strong> across the full Microsoft Office suite, LibreOffice, WPS, ONLYOFFICE and Google Workspace (Docs, Sheets and Slides) — converts a copy from one suite to another, and turns office copies back into <strong>clean Markdown</strong>. Text formatting stays intact, it adapts to your workflow, and it's fully customizable. KlipOCR turns your <strong>screenshots and documents into editable text</strong>. Both run offline after a one-time online activation and work together.</p>
+    <h1 class="reveal">Supercharge your <u>office workflow</u>.</h1>
+    <p class="sub reveal">Klip turns LaTeX, Markdown and HTML in your clipboard into <strong>native, editable pastes</strong> across the office suites you love, converts between them, and turns office copies back into <strong>clean Markdown</strong>. KlipOCR turns a screenshot into <strong>clean, formatted text and equations</strong> in your clipboard, powered by state-of-the-art OCR models. Both run locally on Mac and Windows with no account, so your documents stay private — fully offline after a one-time online activation. Free weekly limits are generous, and one-time licenses for heavy users start at $2.99 — less than a coffee. The two apps work together seamlessly.</p>
     <div class="badges reveal">
-      <span>Runs locally</span><span>One-time payment</span><span>No account</span>
+      <span>Runs locally</span><span>One-time payment</span><span>Private</span>
     </div>
   </section>
 
@@ -90,7 +90,7 @@
   <!-- COMPATIBILITY WALL -->
   <section class="panel wall-panel" id="targets">
     <h2 class="reveal">Works where you write.</h2>
-    <p class="lede reveal">Best-effort, varies by app/version; tricky math falls back to plain text. Copy once. Tables, math and formatting land clean in every app where you write.</p>
+    <p class="lede reveal">The app runs and converts to specialized formats in real time as you paste, so tables, math and formatting automatically land clean in every app where you write.</p>
     <div class="wall reveal" id="wall">
       <div class="wall-track" id="wallTrack">
         <figure class="wall-card"><span class="wall-img"><img src="icons/apps/word.png" alt="Microsoft Word icon" loading="lazy"></span><figcaption><strong>Native Word output.</strong> Equations stay editable, tables stay tables.</figcaption></figure>
@@ -98,7 +98,7 @@
         <figure class="wall-card"><span class="wall-img"><img src="icons/apps/powerpoint.png" alt="Microsoft PowerPoint icon" loading="lazy"></span><figcaption><strong>Editable on the slide.</strong> Math and tables land ready to present.</figcaption></figure>
         <figure class="wall-card"><span class="wall-img"><img src="icons/apps/libreoffice.png" alt="LibreOffice icon" loading="lazy"></span><figcaption><strong>Native across the suite.</strong> Equations and tables in Writer, Calc and Impress.</figcaption></figure>
         <figure class="wall-card"><span class="wall-img"><img src="icons/apps/onlyoffice.png" alt="ONLYOFFICE icon" loading="lazy"></span><figcaption><strong>Docs, sheets and slides.</strong> Everything pastes over cleanly.</figcaption></figure>
-        <figure class="wall-card"><span class="wall-img"><img src="icons/apps/wps-office.svg" alt="WPS Office icon" loading="lazy"></span><figcaption><strong>Full fidelity.</strong> The same polished paste as Word.</figcaption></figure>
+        <figure class="wall-card"><span class="wall-img"><img src="icons/apps/wps-office.svg" alt="WPS Office icon" loading="lazy"></span><figcaption><strong>Full fidelity.</strong> Polished formatting lands cleanly.</figcaption></figure>
         <figure class="wall-card"><span class="wall-img"><img src="icons/apps/googledocs.svg" alt="Google Workspace icon" loading="lazy"></span><figcaption><strong>Intact across Google Workspace.</strong> Docs, Sheets and Slides keep tables, lists and formatting.</figcaption></figure>
         <figure class="wall-card"><span class="wall-img"><img src="icons/apps/obsidian.png" alt="Obsidian icon" loading="lazy"></span><figcaption><strong>Source stays source.</strong> Markdown and LaTeX arrive untouched.</figcaption></figure>
         <figure class="wall-card"><span class="wall-img"><img src="icons/apps/typora.webp" alt="Typora icon" loading="lazy"></span><figcaption><strong>Clean by default.</strong> Your Markdown lands ready to render.</figcaption></figure>
@@ -117,12 +117,17 @@
   <section class="panel" id="features">
     <h2 class="reveal">Made for school and office work.</h2>
     <div class="bento reveal">
-      <div class="card"><h3><span class="hl">Math you can edit</span></h3><p>Math stays editable across Word, Excel, PowerPoint, LibreOffice, ONLYOFFICE and WPS. Google Workspace apps receive the same content with equations as text or images. Anything tricky stays as plain text, so nothing gets lost.</p></div>
-      <div class="card"><h3><span class="hl">Tables that stay tables</span></h3><p>Rows and columns from notes or web pages paste as real tables you can edit, math included.</p></div>
-      <div class="card"><h3><span class="hl">Copy once, paste anywhere</span></h3><p>One copy covers the full Microsoft Office suite — Word, Excel, PowerPoint, Outlook and OneNote — plus the full LibreOffice suite, ONLYOFFICE, WPS Office and Google Workspace (Docs, Sheets and Slides) at once, with bold, headings, lists and links intact. Notes apps receive the Markdown and LaTeX source as-is.</p></div>
+      <div class="card"><h3><span class="hl">Math you can edit</span></h3><p>Math stays editable across all office suites. Anything tricky stays as plain text, so nothing gets lost.</p></div>
+      <div class="card card-table"><h3><span class="hl">Tables that stay tables</span></h3><p>Rows and columns from notes or web pages paste as real tables you can edit, math included.</p>
+        <div class="mini-table" aria-hidden="true">
+          <div class="mt-row mt-r1"><span class="fmt-bold">Bold</span><span class="fmt-italic">Italic</span><span class="fmt-link">Link</span></div>
+          <div class="mt-row mt-r2"><span>E = mc²</span><span>a² + b² = c²</span><span>∑ xᵢ</span></div>
+        </div>
+      </div>
+      <div class="card"><h3><span class="hl">Copy once, paste anywhere</span></h3><p>One copy covers the full Microsoft Office suite, the full LibreOffice suite, ONLYOFFICE, WPS Office and Google Workspace at once, with bold, headings, lists and links intact. Office content pasted into Markdown apps lands as raw Markdown/LaTeX, and content moves between office suites without breaking formatting.</p></div>
       <div class="card"><h3><span class="hl">Read text from pictures</span></h3><p>KlipOCR reads screenshots and documents in natural reading order — prose as text, math as LaTeX, tables kept intact — fully on-device.</p></div>
       <div class="card"><h3><span class="hl">Works fully offline</span></h3><p>Both apps run offline after a one-time online activation. Your documents stay on your computer. No account needed to start.</p></div>
-      <div class="card"><h3><span class="hl">Office back to Markdown</span></h3><p>Copy from any supported suite back into clean Markdown with LaTeX math — or paste from one suite into another without breaking tables and math.</p></div>
+      <div class="card"><h3><span class="hl">Fully customizable</span></h3><p>Meticulous control over equation image fallback, the app list, favicon fetching permissions, citation stripping, engine timing logs, worker count and more.</p></div>
     </div>
   </section>
 
@@ -135,7 +140,7 @@
       <div class="faq-row left reveal"><details><summary><span class="q-pill">Can it read messy screenshots?</span><span class="q-plus" aria-hidden="true">+</span></summary><div class="a"><div><p>Yes for clear text and tables. Blurry or handwritten pages may need a quick fix after pasting.</p></div></div></details></div>
       <div class="faq-row right reveal"><details><summary><span class="q-pill">What if some math won't convert?</span><span class="q-plus" aria-hidden="true">+</span></summary><div class="a"><div><p>You never lose it. Anything tricky stays as plain text you can fix by hand.</p></div></div></details></div>
       <div class="faq-row left reveal"><details><summary><span class="q-pill">Can it read full documents, not just snips?</span><span class="q-plus" aria-hidden="true">+</span></summary><div class="a"><div><p>Yes. Drop in an image or PDF and KlipOCR reads it into editable text — prose as text, math as LaTeX, tables kept intact.</p></div></div></details></div>
-      <div class="faq-row right reveal"><details><summary><span class="q-pill">What can I use for free?</span><span class="q-plus" aria-hidden="true">+</span></summary><div class="a"><div><p>Klip: pastes up to 1000 characters, 21 free in the first 7 days, then 14 per rolling 7 days. KlipOCR: free snips with unlimited length, document mode locked.</p></div></div></details></div>
+      <div class="faq-row right reveal"><details><summary><span class="q-pill">What can I use for free?</span><span class="q-plus" aria-hidden="true">+</span></summary><div class="a"><div><p>Klip: pastes up to 1000 characters, 21 free in the first 7 days, then 14 per rolling 7 days. KlipOCR: 14 free snips per week, no length limit per snip; document mode locked.</p></div></div></details></div>
     </div>
   </section>
 
@@ -154,7 +159,7 @@
   <div class="foot-row">
     <div class="foot-brand">
       <img src="icons/klip-512.png" alt="" width="36" height="36">
-      <span>Klip<small>Documents for school and work · Offline</small></span>
+      <span>Klip<small>Supercharge your productivity.</small></span>
     </div>
     <div class="foot-links">
       <a href="#apps">Apps</a><a href="#demo">Demo</a>
@@ -164,7 +169,7 @@
     </div>
   </div>
   <div class="wordmark" aria-hidden="true">Klip</div>
-  <p class="copy">© <span id="year">2026</span> Klip. Offline by design.</p>
+  <p class="copy">© <span id="year">2026</span> Klip. Made with ❤️</p>
 </footer>
 
 <script src="app.js?v=paper5"></script>

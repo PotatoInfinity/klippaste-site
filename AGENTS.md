@@ -27,25 +27,32 @@ If push is rejected (non-fast-forward — GitHub auto-commits CNAME), pull
 - Copy stays truthful: prices Klip $4.99 USD / KlipOCR $2.99 USD / bundle
   $6.99 USD (Save $0.99 stays bare), no subscriptions. Meta/og + button
   labels on `license.html` carry USD. Per-card microcopy on
-  `license.html`: USD, +tax if applies at checkout, per 1 Mac, final sale.
+  `license.html`: per 1 device, try free first; do not repeat final sale,
+  +tax, or USD there (final sale lives in the warning box).
+- Platform: Mac + Windows are equally supported. Use device, not
+  Mac-only, in license/Terms copy; do not add OS caveats.
 - Free tiers verbatim everywhere (index FAQ = license cards = Terms §5):
   Klip pastes up to 1000 characters, 21 free in the first 7 days, then 14
-  per rolling 7 days; KlipOCR free snips with unlimited length, document
-  mode locked.
+  per rolling 7 days; KlipOCR 14 free snips per week, no length limit per
+  snip, document mode locked.
 - Offline claims always carry the after-one-time-online-activation
   qualifier (hero sub, feature cards, FAQ, license cards). Index FAQ is
   scoped: document content never leaves the device; activation / feedback /
   site traffic does (Terms §9 / Privacy §4). Never write "ever".
 - Refunds: all sales final, stated inline in `terms.html` §§7+11 (+ VI).
   No separate refund page; no goodwill, no reissue (LS-discretion +
-  mandatory-law carve-outs noted in §11). No refund/help promises elsewhere.
-- Support: none whatsoever; seller mail is legal-notices-only (privacy
-  rights answered within 30 days; COMPLAINT notices acked within 3 days —
-  ack is receipt only, never a fix). No help/reply/fix promises anywhere;
-  ticket-status pages say best-effort, no reply promise.
+  mandatory-law carve-outs noted in §11). No refund promises; support
+  mentions stay best-effort.
+- Support: in-app Help & Feedback (Supabase) is the support channel;
+  replies/fixes are best-effort, with no response-time guarantee. Seller
+  mail is legal-notices-only and may get no reply (privacy rights answered
+  within 30 days; COMPLAINT notices acked within 3 days — ack is receipt
+  only, never a fix). No 24/7 promises; ticket-status pages say best-effort,
+  no reply promise.
 - License page: conspicuous pre-price warning box required (final sale,
-  1 Mac never moves, no support, try-free-first; links Terms §§5-8 +
-  §§10-12 in Terms yellow style: `#7a5c00`, yellow underline, hover wash).
+  1 device never moves, best-effort in-app support, try-free-first; links
+  Terms §§5-8 + §§10-12 in Terms yellow style: `#7a5c00`, yellow underline,
+  hover wash).
   Enterprise labeled Coming later, button dead (`<button
   type="button">`, no handler); base formula Total = (seats × list price)
   − discount + tax, discount tiers + seat-count + total set at checkout.
@@ -56,14 +63,14 @@ If push is rejected (non-fast-forward — GitHub auto-commits CNAME), pull
   navigation) — never imply download works. No dl-note small print, no
   hero badges-note / try-first banner, no final-note try-free line, no
   seller line, no payment-coming-later note (all live in Terms only).
-  Compat wall lede carries best-effort /
-  varies-by-app-version / plain-text-fallback prefix. Yours-to-keep means
-  on that one Mac, this version only.
+  Compat wall lede speaks to real-time conversion and clean landing in
+  every app where you write. Yours-to-keep means on that one device, this
+  version only.
 - Head: `og:title` matches `<title>` verbatim on every page (`404.html`
   keeps `noindex`); one `h1` per page only.
 - Footer: single combined Terms & Privacy link only; Back-to-top present
-  (`#top` on own page); copy `© 2026 Klip. Offline by design.` on every
-  page; no seller line in footers (seller lives in Terms §1/§12 only);
+  (`#top` on own page); copy `© 2026 Klip. Made with ❤️` on every page;
+  no seller line in footers (seller lives in Terms §1/§12 only);
   no VI in footer.
 - Processors: factual disclosures only (Supabase Mumbai ap-south-1,
   Resend, Lemon Squeezy MoR, OpenRouter support path, Google Fonts).
