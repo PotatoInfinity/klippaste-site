@@ -50,15 +50,15 @@
     .legal-card { padding: 24px 20px; }
   }
   .lang-toggle{display:inline-flex;align-items:center;gap:10px;margin-top:18px;border:1.5px solid var(--pen);border-radius:999px;padding:6px 8px;background:var(--paper-2);box-shadow:var(--hi-light),var(--lo-light);font-weight:700;font-size:14px}
-  .lang-toggle a{padding:6px 18px;border-radius:999px;color:var(--ink-2);text-decoration:none}
-  .lang-toggle a[aria-current="true"]{background:var(--ink);color:var(--paper)}
+  .lang-toggle a,.lang-toggle button{padding:6px 18px;border-radius:999px;color:var(--ink-2);text-decoration:none;font:inherit;background:none;border:0;cursor:pointer}
+  .lang-toggle a[aria-current="true"],.lang-toggle button[aria-current="true"]{background:var(--ink);color:var(--paper)}
   @media(max-width:480px){.lang-toggle{width:100%;justify-content:center}}
   @media print{.lang-toggle{display:none}}
 </style>
 <noscript><style>.reveal { opacity: 1; transform: none; }
   .lang-toggle{display:inline-flex;align-items:center;gap:10px;margin-top:18px;border:1.5px solid var(--pen);border-radius:999px;padding:6px 8px;background:var(--paper-2);box-shadow:var(--hi-light),var(--lo-light);font-weight:700;font-size:14px}
-  .lang-toggle a{padding:6px 18px;border-radius:999px;color:var(--ink-2);text-decoration:none}
-  .lang-toggle a[aria-current="true"]{background:var(--ink);color:var(--paper)}
+  .lang-toggle a,.lang-toggle button{padding:6px 18px;border-radius:999px;color:var(--ink-2);text-decoration:none;font:inherit;background:none;border:0;cursor:pointer}
+  .lang-toggle a[aria-current="true"],.lang-toggle button[aria-current="true"]{background:var(--ink);color:var(--paper)}
   @media(max-width:480px){.lang-toggle{width:100%;justify-content:center}}
   @media print{.lang-toggle{display:none}}
 </style></noscript>
@@ -97,11 +97,11 @@
     </div>
     <p class="legal-fine">Effective 2026-10-24 · Version 2.2 · English + Vietnamese on this page</p>
     <div class="lang-toggle" role="group" aria-label="Language / Ngôn ngữ">
-      <a id="tab-en" href="#en" aria-current="true">EN</a><span aria-hidden="true">|</span><a id="tab-vi" href="#vi" aria-current="false">VI</a>
+      <button type="button" id="tab-en" aria-current="true">EN</button><span aria-hidden="true">|</span><button type="button" id="tab-vi" aria-current="false">VI</button>
     </div>
   </div>
 
-  <div data-lang="en" id="en">
+  <div data-lang="en">
   <section id="terms" aria-label="Terms of sale">
   <article class="legal-card reveal in" aria-label="Terms of sale">
     <p class="legal-fine"><strong>Terms of sale.</strong> Start with the summary at the top, then sections 1–24.</p>
@@ -443,7 +443,7 @@
   </section>
   </div>
 
-  <div data-lang="vi" id="vi">
+  <div data-lang="vi">
   <section id="vi-terms" lang="vi" aria-label="Điều khoản bán hàng">
   <article class="legal-card">
     <p class="legal-fine"><strong>Điều khoản bán hàng.</strong> Đọc tóm tắt ở đầu trang, rồi các mục 1–24.</p>
@@ -767,7 +767,7 @@
     <div class="foot-links">
       <a href="index.html#apps">Apps</a><a href="index.html#demo">Demo</a>
       <a href="index.html#features">Features</a><a href="index.html#faq">FAQ</a><a href="license.html">License</a>
-      <a href="terms.html#terms">Terms &amp; Privacy</a>
+      <a href="terms.html">Terms &amp; Privacy</a>
       <a href="#top">Back to top ↑</a>
     </div>
   </div>
@@ -799,8 +799,12 @@
     if (/^(#vi(-.*)?|#.*-vi)$/.test(h)) return true;
     return false;
   }
-  tEn.addEventListener('click', function () { show(false); });
-  tVi.addEventListener('click', function () { show(true); });
+  function pick(vi) {
+    show(vi);
+    try { if (location.hash) history.replaceState(null, '', location.pathname + location.search); } catch (e) {}
+  }
+  tEn.addEventListener('click', function () { pick(false); });
+  tVi.addEventListener('click', function () { pick(true); });
   window.addEventListener('hashchange', function () { var h = location.hash || ''; if (h === '#top' || h === '#content') return; show(fromHash()); });
   show(fromHash());
 })();
