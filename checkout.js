@@ -11,6 +11,19 @@
       klip: "c3faa744-f5bd-4d31-98ed-1dc3ed6e38da",
       klipocr: "3de8ea6c-cec3-4dca-9295-01611ac3ca65",
       bundle: "e8351746-8a09-4f5f-bc66-81a66dcec470"
+    },
+    // Mirrors styles.css: paper, ink, ink-2, line. LS wants # as %23.
+    colors: {
+      background_color: "#fdf9ef",
+      headings_color: "#141511",
+      primary_text_color: "#141511",
+      secondary_text_color: "#4b4e45",
+      links_color: "#141511",
+      button_color: "#141511",
+      button_text_color: "#ffffff",
+      borders_color: "#e2dac9",
+      checkbox_color: "#141511",
+      active_state_color: "#141511"
     }
   };
 
@@ -29,6 +42,10 @@
       variant +
       "?checkout[custom][scope]=" + encodeURIComponent(product) +
       "&checkout[custom][seats]=1";
+
+    Object.keys(CONFIG.colors).forEach(function (key) {
+      url += "&" + key + "=" + encodeURIComponent(CONFIG.colors[key]);
+    });
 
     var params = null;
     try {
